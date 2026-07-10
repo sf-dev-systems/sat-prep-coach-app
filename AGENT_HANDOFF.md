@@ -1,6 +1,6 @@
 # AGENT HANDOFF
 
-Proposed / remaining work for the next agent or session. Overwrite each session.
+Proposed / remaining work for the next agent or session. DO NOT OVERWRITE EACH SESSION. USE STRIKETHOUGH IF NEEDED. 
 
 ---
 
@@ -14,8 +14,8 @@ internally consistent. Nothing in the code tree exists yet — that's Phase 1.~~
 **Git Synchronization Complete:**
 - **Remote Target:** GitHub Repository
 - **Branch:** `main` (synchronized and tracking `origin/main`)
-- **Latest Commit Hash:** `aed6bee768f5c3527db1cc6034f5979c53051d9d` (Short: `aed6bee`)
-- **Latest Commit Message:** `"docs: restore complete handoff history with strikethroughs & add initial Phase 2 MissLoop"`
+- **Latest Commit Hash:** `2008e10c511da485121b6d05f333b2fb5049cf4e` (Short: `2008e10`)
+- **Latest Commit Message:** `"docs: define AGENT_HANDOFF.md as cumulative in CLAUDE.md and update logs"`
 
 All four points are fully confirmed:
    1. **Taxonomy Seeding:** YES. The idempotent `seed-skills.ts` was successfully executed and is fully populated and live on your remote Supabase database.
