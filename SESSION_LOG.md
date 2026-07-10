@@ -90,13 +90,13 @@ decisions made, open items. Update at the end of every session.
 - **Seeding, Custom Taxonomy, & Live Verification:** Updated `scripts/seed-skills.ts` with custom SAT taxonomy tree and upsert safety checks; created `scripts/verify-seed.ts` to confirm 3 sections, 11 domains, 29 leaf skills, and perfect parent linking on the remote database. Deployed and verified live!
 - **AI Prompt Templates:** Touched `prompts/tutor.ts`, `prompts/hint.ts`, `prompts/coach.ts`, `prompts/classifier.ts`, `prompts/generator.ts`, `prompts/reporter.ts`.
 - **System Documentation & Invariants:** Created `00 SYSTEM/docs/SYSTEM_ARCHITECTURE.md` to define the statistical tree weights and prediction formulas; updated `CLAUDE.md` to record the model as a locked invariant.
-- **Wiki Integration Documentation:** Touched `09 WIKI/DEV/SETUP.md`, `09 WIKI/OPERATIONS_MANUAL.md`, `09 WIKI/TAXONOMY.md`.
+- **Git Deployment & Handoff:** Deployed the whole Phase 1 Foundation to GitHub on branch `main` at commit `6f942b1`; finalized the `AGENT_HANDOFF.md` with explicit commit references and pushed at commit `793afda`.
 
 **DECISIONS**
 - Database access is strictly isolated inside `lib/db/` and contains absolutely no framework or UI-specific dependencies to guarantee portability.
 - Used standard `supabase link` to link local code safely with the remote ref (`ckuhtjrnnqjnrgpuurlr`), solving local DNS routing barriers automatically.
 - Deployed a custom verification script `scripts/verify-seed.ts` to perform mathematical tree hierarchy assertions on the remote Supabase database.
 
-**SIGN-OFF:** Gemini — 7/10/26 6:00 PM
+**SIGN-OFF:** Gemini — 7/10/26 6:10 PM
 
 ---
