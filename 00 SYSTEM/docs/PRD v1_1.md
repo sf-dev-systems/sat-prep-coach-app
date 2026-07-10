@@ -336,31 +336,41 @@ Installable (manifest + icons + service worker), responsive down to 375px, sessi
 
 **Phase 2 — Intelligence:** BKT + FSRS mastery updates; adaptive session assembler with time-budgeted plan; full miss loop (**tiered hints** → retry → explanation → variant → optional harder-question); diagnostic flow; nightly behavior-signals cron (incl. focus length + time-of-day).
 
-**Phase 3 — Visibility:** Student dashboard; mastery map; **goal-tree view**; score prediction + monthly recalibration; readiness panel; error journal; coach memory (append-only); test entry.
-
-**Phase 4 — Polish:** Parent dashboard (`authorizeParentView`); weekly report cron; PWA install; motivation events; TTS toggle; admin generation pipeline with blind-solve validation.
-
-## Acceptance criteria (v1 done)
-
-- Diagnostic populates mastery for all skills; dashboard shows baseline prediction and seeds the goal tree
-- Sessions verifiably serve due-review and low-mastery skills first and respect the fatigue/focus cap
-- Every miss runs tiered hints → retry → explanation → variant; retry success moves mastery; error type + confidence recorded on every attempt
-- Tutoring output references coach-memory history
-- Prediction updates after sessions; recalibrates after test entry
-- Weekly report generates and appears on both dashboards
-- Parent reaches the dashboard from a phone with only the PIN
-- Same deployment runs installed on a phone home screen and in a desktop browser
-- Over-ceiling sessions degrade to static rationales without blocking
-- `events` rows are written for session/report/parent/milestone actions
-
-## Non-goals (v1 — do not build)
-
-Multi-student UI, signup/onboarding flows, billing, offline mode, native apps,
-essay scoring, in-app timed full-section simulation (Bluebook owns that), parent
-logins, cohorts/orgs/roles. **Deliberately not built (per planning notes):**
-7-dimension memory model (2 numbers only — data too thin at n=1), per-session
-point predictions, interactive-graph/drag-point lessons and video explanations
-(prose-first for this learner), and an in-app full-length test generator.
+		Intelligence & Pedagogical Flow
+		
+		The objective of Phase 2 is to move beyond the plumbing and implement the **MissLoop State Machine**. This is where the AI becomes an active tutor, analyzing _why_ a student missed a question (Content vs. Strategy) and managing the retry sequence.
+		
+		**We will focus on these key components:**
+		
+		1. **`lib/ai/classifier.ts`**: The engine that evaluates response data against the taxonomy.
+		    
+		2. **`components/session/MissLoop.tsx`**: The UI container that renders the pedagogical "Hint → Retry → Explanation" flow.
+		    
+		3. **`lib/hooks/use-miss-loop.ts`**: The state management layer that tracks the progression of the student through the loop.
+		
+		**Phase 3 — Visibility:** Student dashboard; mastery map; **goal-tree view**; score prediction + monthly recalibration; readiness panel; error journal; coach memory (append-only); test entry.
+		
+		**Phase 4 — Polish:** Parent dashboard (`authorizeParentView`); weekly report cron; PWA install; motivation events; TTS toggle; admin generation pipeline with blind-solve validation.
+		
+		acceptance criteria (v1 done)
+		- Diagnostic populates mastery for all skills; dashboard shows baseline prediction and seeds the goal tree
+		- Sessions verifiably serve due-review and low-mastery skills first and respect the fatigue/focus cap
+		- Every miss runs tiered hints → retry → explanation → variant; retry success moves mastery; error type + confidence recorded on every attempt
+		- Tutoring output references coach-memory history
+		- Prediction updates after sessions; recalibrates after test entry
+		- Weekly report generates and appears on both dashboards
+		- Parent reaches the dashboard from a phone with only the PIN
+		- Same deployment runs installed on a phone home screen and in a desktop browser
+		- Over-ceiling sessions degrade to static rationales without blocking
+		- `events` rows are written for session/report/parent/milestone actions
+		
+		Non-goals (v1 — do not build)
+		Multi-student UI, signup/onboarding flows, billing, offline mode, native apps,
+		essay scoring, in-app timed full-section simulation (Bluebook owns that), parent
+		logins, cohorts/orgs/roles. **Deliberately not built (per planning notes):**
+		7-dimension memory model (2 numbers only — data too thin at n=1), per-session
+		point predictions, interactive-graph/drag-point lessons and video explanations
+		(prose-first for this learner), and an in-app full-length test generator.
 
 ---
 
