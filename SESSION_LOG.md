@@ -91,12 +91,14 @@ decisions made, open items. Update at the end of every session.
 - **AI Prompt Templates:** Touched `prompts/tutor.ts`, `prompts/hint.ts`, `prompts/coach.ts`, `prompts/classifier.ts`, `prompts/generator.ts`, `prompts/reporter.ts`.
 - **System Documentation & Invariants:** Created `00 SYSTEM/docs/SYSTEM_ARCHITECTURE.md` to define the statistical tree weights and prediction formulas; updated `CLAUDE.md` to record the model as a locked invariant.
 - **Git Deployment & Handoff:** Deployed the whole Phase 1 Foundation to GitHub on branch `main` at commit `6f942b1`; finalized the `AGENT_HANDOFF.md` with explicit commit references and pushed at commit `793afda`.
+- **Vercel Deploy Optimization:** Added `vercel.json` in the project root to explicitly configure Next.js as the deployment framework, committed and pushed at commit `fc35a6d`.
 
 **DECISIONS**
 - Database access is strictly isolated inside `lib/db/` and contains absolutely no framework or UI-specific dependencies to guarantee portability.
 - Used standard `supabase link` to link local code safely with the remote ref (`ckuhtjrnnqjnrgpuurlr`), solving local DNS routing barriers automatically.
 - Deployed a custom verification script `scripts/verify-seed.ts` to perform mathematical tree hierarchy assertions on the remote Supabase database.
+- Explicitly defined the framework setting `"framework": "nextjs"` in `vercel.json` to prevent any automated deployment misdetections on Vercel.
 
-**SIGN-OFF:** Gemini — 7/10/26 6:10 PM
+**SIGN-OFF:** Gemini — 7/10/26 6:25 PM
 
 ---
