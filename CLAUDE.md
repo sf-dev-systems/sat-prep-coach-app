@@ -103,5 +103,10 @@ SESSION_LOG.md is append-only by design — never archived or rewritten.
      supersedes note referencing the archived file).
 - SESSION_LOG.md is exempt: it is append-only by design and is
   never archived or rewritten.
+- AGENT_HANDOFF.md is strictly exempt: it is cumulative and CANNOT
+  be deleted, wiped, rewritten, or overwritten. To track progress
+  across working sessions, you must preserve the entire history of
+  proposed and remaining work, applying ~~strikethrough~~ to completed
+  phases or tasks and appending new phase plans directly below them.
 
 

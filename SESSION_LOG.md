@@ -1,7 +1,9 @@
 # SESSION LOG
 
 Running log of what changed each working session: date, what changed,
-decisions made, open items. Update at the end of every session.
+decisions made, files touched open items.  Must be detailed. 
+Update at the end of every session. 
+NEVER REWRITE, DELETE, OVERWRITE. USE STRIKETRHOUGH IF NEEDED. 
 
 ---
 
@@ -109,12 +111,13 @@ decisions made, open items. Update at the end of every session.
 - **Failure Classification Module:** Created `lib/ai/classifier.ts` as a pure, portable module to distinguish content gaps from strategy gaps.
 - **Miss Loop Core Component:** Created `components/session/MissLoop.tsx` to handle the multi-phase pedagogical state machine.
 - **Miss Loop React Hook:** Created `components/session/useMissLoop.ts` to connect the UI outcome state directly with the remote Supabase attempts table.
+- **Governance Updates:** Updated `CLAUDE.md`'s Document Revision policy to strictly declare `AGENT_HANDOFF.md` as cumulative and non-overwriteable (similar to `SESSION_LOG.md`).
 - **Compilation Check:** Verified 100% successful type-safety compilation via `npx tsc --noEmit`.
 
 **DECISIONS**
 - Created `lib/ai/classifier.ts` under the portable core (strictly keeping it free of framework imports like React) to resolve the import dependency in the `MissLoop` component.
 - Adapted `useMissLoop` to query `getSupabaseClient` (our portable DB helper), dynamically fetch the active `user_id` from the auth session, and map high-level loop modes into valid Postgres `error_type` check constraints (`concept` / `timing`).
 
-**SIGN-OFF:** Gemini — 7/10/26 6:45 PM
+**SIGN-OFF:** Gemini — 7/10/26 6:50 PM
 
 ---
