@@ -56,6 +56,7 @@ DEFER register instead of building it.
   decisions made, open items. Update it at the end of every session.
 
 
+
 ALWAYS UPDATE:
 1) AGENT HANDOFF OF PROPOSED WORK, 
 2) COMPLETED WORK, FILES TOUCHED, AND SIGN OFF AS (NAME OF AI: SONNET, OPUS, FABLE, GEMINI PRO, ETC  AND  DATE AND TIME)  EX:  Sonnet 7/10/26 3:27 PM 
@@ -72,7 +73,6 @@ ALWAYS UPDATE:
   One-directional: canonical sources → wiki, never the reverse.
 - Wiki pages are updated as part of completing each build phase,
   written against the actual code, per the wiki schedule in 00_INDEX.md.
-
 
 
 

@@ -43,6 +43,7 @@ DEFER register instead of building it.
 - Secrets in .env.local (gitignored) and Vercel env only; service-role
   key and Anthropic key server-side only
 - coach_memory is append-only; timestamptz everywhere
+- Pedagogical Weighting Model: 3 sections (Math, RW, Strategy); 11 domains; 29 leaf skills; strategy skills weighted 0; weight values are mathematically fixed per leaf skill (Algebra/Advanced: 10-12, Geometry/Ideas: 5-8, Strategy: 0.05-0.12). Ref: 00 SYSTEM/docs/SYSTEM_ARCHITECTURE.md.
 
 ## Working rules
 - Lead with the answer or the code. No preamble, no filler.
