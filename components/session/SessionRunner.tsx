@@ -74,6 +74,7 @@ export default function SessionRunner({ sessionId, items }: SessionRunnerProps) 
       sessionId,
       questionId: current.question.id,
       skillId: current.question.skill_id,
+      difficulty: current.question.difficulty,
       answer,
       isCorrect: correct,
       confidence,
@@ -100,6 +101,7 @@ export default function SessionRunner({ sessionId, items }: SessionRunnerProps) 
       sessionId,
       questionId: current.question.id,
       skillId: current.question.skill_id,
+      difficulty: current.question.difficulty,
       answer: result.retryAnswer,
       isCorrect: result.finalCorrect,
       confidence: null,
@@ -109,8 +111,8 @@ export default function SessionRunner({ sessionId, items }: SessionRunnerProps) 
       timeSpentSeconds: elapsedSeconds(retryStartRef.current),
     });
 
-    // Retry success moves mastery credit (Phase 2 / lib/mastery) — Phase 1
-    // just reflects it in the session's running correct count.
+    // Retry success now moves mastery via lib/mastery (called inside
+    // logAttemptRow) — this just reflects it in the session's running count.
     const correctTotal = questionsCorrect + (result.finalCorrect ? 1 : 0);
     setQuestionsCorrect(correctTotal);
     await goToNext(questionsServed, correctTotal);

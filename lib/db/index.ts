@@ -337,3 +337,86 @@ export async function insertQuestions(supabase: SupabaseClient, questions: Omit<
   const { error } = await supabase.from('questions').insert(questions);
   if (error) throw error;
 }
+
+// ── mastery (lib/mastery is the orchestration layer; all raw table access
+// for it lives here per the "DB access only via lib/db" invariant) ──
+
+export async function fetchMasteryRow(
+  supabase: SupabaseClient,
+  userId: string,
+  skillId: string
+): Promise<Mastery | null> {
+  const { data, error } = await supabase
+    .from('mastery')
+    .select('*')
+    .eq('user_id', userId)
+    .eq('skill_id', skillId)
+    .maybeSingle();
+
+  if (error) throw error;
+  return data as Mastery | null;
+}
+
+export async function fetchMasteryRows(supabase: SupabaseClient, userId: string): Promise<Mastery[]> {
+  const { data, error } = await supabase.from('mastery').select('*').eq('user_id', userId);
+  if (error) throw error;
+  return (data as Mastery[]) || [];
+}
+
+export async function upsertMasteryRow(
+  supabase: SupabaseClient,
+  row: Mastery
+): Promise<Mastery> {
+  const { data, error } = await supabase
+    .from('mastery')
+    .upsert(row, { onConflict: 'user_id,skill_id' })
+    .select('*')
+    .single();
+
+  if (error) throw error;
+  return data as Mastery;
+}
+
+/** Bulk-init default rows (diagnostic F1) — skips rows that already exist. */
+export async function upsertMasteryRowsIgnoringDuplicates(
+  supabase: SupabaseClient,
+  rows: Mastery[]
+): Promise<void> {
+  if (rows.length === 0) return;
+  const { error } = await supabase
+    .from('mastery')
+    .upsert(rows, { onConflict: 'user_id,skill_id', ignoreDuplicates: true });
+  if (error) throw error;
+}
+
+export async function fetchRecentSessions(
+  supabase: SupabaseClient,
+  userId: string,
+  limit = 30
+): Promise<Session[]> {
+  const { data, error } = await supabase
+    .from('sessions')
+    .select('*')
+    .eq('user_id', userId)
+    .order('started_at', { ascending: false })
+    .limit(limit);
+
+  if (error) throw error;
+  return (data as Session[]) || [];
+}
+
+export async function fetchRecentAttempts(
+  supabase: SupabaseClient,
+  userId: string,
+  limit = 200
+): Promise<Attempt[]> {
+  const { data, error } = await supabase
+    .from('attempts')
+    .select('*')
+    .eq('user_id', userId)
+    .order('created_at', { ascending: false })
+    .limit(limit);
+
+  if (error) throw error;
+  return (data as Attempt[]) || [];
+}

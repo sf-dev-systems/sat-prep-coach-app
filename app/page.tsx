@@ -1,38 +1,80 @@
-import React from 'react';
+import { cookies } from 'next/headers';
+import { redirect } from 'next/navigation';
 import { BookOpen, Award, Flame, Calendar, ArrowRight, TrendingUp, Settings } from 'lucide-react';
+import { getSupabaseServerClient } from '@/lib/db';
+import { computeDashboardData } from '@/lib/mastery/dashboard';
 
-export default function StudentDashboard() {
-  // Static placeholder data for Phase 1 scaffolding
-  const predictedScore = 1420;
-  const confidenceInterval = '1380 - 1460';
-  const streakDays = 5;
-  const minutesToday = 25;
-  const questionsToday = 20;
+const STATUS_COLORS: Record<string, string> = {
+  Excellent: 'text-green-600 bg-green-50 border-green-200',
+  'On Track': 'text-green-600 bg-green-50 border-green-200',
+  Warning: 'text-yellow-600 bg-yellow-50 border-yellow-200',
+};
 
-  const readinessMetrics = [
-    { name: 'Content Mastery', value: '72%', status: 'On Track', color: 'text-green-600 bg-green-50 border-green-200' },
-    { name: 'Timing & Pace', value: '1.2m/q', status: 'Warning', color: 'text-yellow-600 bg-yellow-50 border-yellow-200' },
-    { name: 'Consistency', value: '5/4 days', status: 'Excellent', color: 'text-green-600 bg-green-50 border-green-200' },
-    { name: 'Calibration', value: '88%', status: 'On Track', color: 'text-green-600 bg-green-50 border-green-200' },
-  ];
+const FOCUS_COLOR_BY_SECTION: Record<string, string> = {
+  math: 'border-red-100 bg-red-50/50 text-red-700',
+  rw: 'border-orange-100 bg-orange-50/50 text-orange-700',
+  strategy: 'border-yellow-100 bg-yellow-50/50 text-yellow-700',
+};
 
-  const focusSkills = [
-    { section: 'Math', name: 'Systems of 2 Linear Equations', priority: 'High Point Leverage', color: 'border-red-100 bg-red-50/50 text-red-700' },
-    { section: 'RW', name: 'Command of Evidence (Textual)', priority: 'High Weight', color: 'border-orange-100 bg-orange-50/50 text-orange-700' },
-    { section: 'Math', name: 'Nonlinear Functions', priority: 'Review Due', color: 'border-yellow-100 bg-yellow-50/50 text-yellow-700' },
-  ];
+export default async function StudentDashboard() {
+  const cookieStore = cookies();
+  const supabase = getSupabaseServerClient({ getAll: () => cookieStore.getAll() });
+
+  const {
+    data: { user },
+  } = await supabase.auth.getUser();
+
+  // Belt-and-suspenders — middleware.ts already redirects unauthenticated
+  // requests, but this route also renders server-side data keyed to a user.
+  if (!user) {
+    redirect('/login');
+  }
+
+  const data = await computeDashboardData(supabase, user.id);
+
+  if (!data.hasData) {
+    return (
+      <div className="text-center py-24 space-y-4">
+        <h1 className="text-2xl font-bold text-gray-900">Welcome, {data.displayName}</h1>
+        <p className="text-sm text-gray-500 max-w-md mx-auto">
+          No mastery data yet — complete a practice session and your predicted score,
+          readiness panel, and focus skills will populate here.
+        </p>
+        <a
+          href="/session"
+          className="inline-flex items-center gap-2 bg-indigo-900 text-white font-bold px-5 py-2.5 rounded-xl shadow-sm hover:bg-indigo-800 transition-colors text-sm"
+        >
+          <span>Start Practice Session</span>
+          <ArrowRight className="w-4 h-4" />
+        </a>
+      </div>
+    );
+  }
+
+  const {
+    predictedScore,
+    confidenceInterval,
+    streakDays,
+    minutesToday,
+    questionsToday,
+    readinessMetrics,
+    focusSkills,
+  } = data;
+
+  const dailyGoalMinutes = 25;
+  const dailyGoalQuestions = 20;
 
   return (
     <div className="space-y-8">
       {/* Header */}
       <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 pb-4 border-b border-gray-100">
         <div>
-          <h1 className="text-2xl font-bold tracking-tight text-gray-900">Welcome Back, Sienna</h1>
+          <h1 className="text-2xl font-bold tracking-tight text-gray-900">Welcome Back, {data.displayName}</h1>
           <p className="text-sm text-gray-500">Targeting 1500+ · Preparing for the Digital SAT</p>
         </div>
         <div className="flex items-center gap-2 self-start md:self-auto text-xs font-semibold text-indigo-600 bg-indigo-50 border border-indigo-100 px-3 py-1.5 rounded-full">
           <Settings className="w-3.5 h-3.5" />
-          <span>Personal Edition v1 (Phase 1 Live)</span>
+          <span>Personal Edition v1 (Phase 2 Live)</span>
         </div>
       </div>
 
@@ -51,7 +93,7 @@ export default function StudentDashboard() {
               Your prediction updates automatically after each session and recalibrates monthly against official practice tests.
             </p>
             <div className="pt-2">
-              <a 
+              <a
                 href="/session"
                 className="inline-flex items-center gap-2 bg-white text-indigo-900 font-bold px-5 py-2.5 rounded-xl shadow-sm hover:bg-indigo-50 transition-colors text-sm"
               >
@@ -74,19 +116,29 @@ export default function StudentDashboard() {
             <div className="space-y-2">
               <div className="flex justify-between text-xs text-gray-500">
                 <span>Questions Completed</span>
-                <span className="font-semibold text-gray-800">{questionsToday} / 20</span>
+                <span className="font-semibold text-gray-800">
+                  {questionsToday} / {dailyGoalQuestions}
+                </span>
               </div>
               <div className="w-full bg-gray-100 h-2 rounded-full overflow-hidden">
-                <div className="bg-orange-500 h-full rounded-full" style={{ width: '100%' }} />
+                <div
+                  className="bg-orange-500 h-full rounded-full"
+                  style={{ width: `${Math.min(100, (questionsToday / dailyGoalQuestions) * 100)}%` }}
+                />
               </div>
             </div>
             <div className="space-y-2">
               <div className="flex justify-between text-xs text-gray-500">
                 <span>Minutes Studied</span>
-                <span className="font-semibold text-gray-800">{minutesToday} / 25 mins</span>
+                <span className="font-semibold text-gray-800">
+                  {minutesToday} / {dailyGoalMinutes} mins
+                </span>
               </div>
               <div className="w-full bg-gray-100 h-2 rounded-full overflow-hidden">
-                <div className="bg-orange-500 h-full rounded-full" style={{ width: '100%' }} />
+                <div
+                  className="bg-orange-500 h-full rounded-full"
+                  style={{ width: `${Math.min(100, (minutesToday / dailyGoalMinutes) * 100)}%` }}
+                />
               </div>
             </div>
           </div>
@@ -106,7 +158,7 @@ export default function StudentDashboard() {
               <span className="text-xs font-semibold text-gray-400 block">{m.name}</span>
               <div className="flex items-baseline justify-between">
                 <span className="text-xl font-extrabold text-gray-800">{m.value}</span>
-                <span className={`text-[10px] px-2 py-0.5 rounded-full border font-bold ${m.color}`}>
+                <span className={`text-[10px] px-2 py-0.5 rounded-full border font-bold ${STATUS_COLORS[m.status]}`}>
                   {m.status}
                 </span>
               </div>
@@ -119,15 +171,25 @@ export default function StudentDashboard() {
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         {/* Top Focus Skills */}
         <div className="md:col-span-2 space-y-3">
-          <h2 className="text-lg font-bold tracking-tight text-gray-900">Top Focus Skills for Sienna</h2>
+          <h2 className="text-lg font-bold tracking-tight text-gray-900">Top Focus Skills for {data.displayName}</h2>
           <div className="space-y-2.5">
+            {focusSkills.length === 0 && (
+              <p className="text-sm text-gray-500">Keep practicing — focus skills populate once mastery gaps emerge.</p>
+            )}
             {focusSkills.map((sk, idx) => (
-              <div key={idx} className="bg-white border border-gray-100 hover:border-gray-200 transition-all p-4 rounded-xl shadow-2xs flex items-center justify-between">
+              <div
+                key={idx}
+                className="bg-white border border-gray-100 hover:border-gray-200 transition-all p-4 rounded-xl shadow-2xs flex items-center justify-between"
+              >
                 <div className="space-y-0.5">
                   <span className="text-[10px] font-bold uppercase tracking-wider text-indigo-600">{sk.section}</span>
                   <h3 className="font-semibold text-sm text-gray-900">{sk.name}</h3>
                 </div>
-                <span className={`text-xs px-2.5 py-1 rounded-lg font-medium border ${sk.color}`}>
+                <span
+                  className={`text-xs px-2.5 py-1 rounded-lg font-medium border ${
+                    FOCUS_COLOR_BY_SECTION[sk.section] || FOCUS_COLOR_BY_SECTION.strategy
+                  }`}
+                >
                   {sk.priority}
                 </span>
               </div>
@@ -141,15 +203,12 @@ export default function StudentDashboard() {
           <div className="bg-white border border-gray-100 p-5 rounded-xl shadow-2xs space-y-4">
             <div className="flex items-center gap-2">
               <Calendar className="w-4 h-4 text-gray-400" />
-              <span className="text-xs font-semibold text-gray-500">Report of July 12, 2026</span>
+              <span className="text-xs font-semibold text-gray-500">Coming in Phase 4</span>
             </div>
-            <p className="text-sm text-gray-600 line-clamp-4 leading-relaxed">
-              Sienna showed exceptional focus this week, completing 120 questions over 2.5 hours of dedicated study. Accuracy remains high at 84% in Math. We recommend prioritizing <strong>Transitions</strong> in RW to further solidifying Standard Conventions.
+            <p className="text-sm text-gray-600 leading-relaxed">
+              Weekly narrative reports (PRD F8) ship with the Sunday cron in a later phase — this card will
+              show the latest report once that's built.
             </p>
-            <a href="/reports/latest" className="text-xs font-semibold text-indigo-600 hover:text-indigo-700 flex items-center gap-1">
-              <span>Read Full Report</span>
-              <ArrowRight className="w-3.5 h-3.5" />
-            </a>
           </div>
         </div>
       </div>
