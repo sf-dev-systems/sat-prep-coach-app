@@ -8,7 +8,17 @@ belongs in the session log, not here.
 
 ---
 
-## Where things stand (2026-07-11 ~2:30 AM, Sonnet — Phase 2 nearly done)
+## Where things stand (2026-07-11 ~3:00 AM, Sonnet — Phase 2 nearly done)
+
+**Update since the 2:30 AM entry below:** manual testing of the deployed
+cron surfaced a bug — `middleware.ts`'s auth check was intercepting
+`/api/cron/behavior-signals` before the route's own `CRON_SECRET` check
+ever ran (cron requests carry no session cookies, so the session middleware
+treated them as unauthenticated and redirected to `/login`). Fixed by
+adding `/api/cron` to `middleware.ts`'s `PUBLIC_PATHS` — the route's bearer
+token check remains the real security gate. Detail:
+`00 SYSTEM/SESSION_LOG/2026-07-11_0300_middleware-cron-bypass-fix.md`.
+**This fix is not yet pushed or re-tested** — see Next action.
 
 **Phase 1: CLOSED.** **Phase 2:** F1 (diagnostic), F2 (daily practice), and
 now **F4 (nightly behavior_signals cron)** are all built. F1/F2 are
@@ -41,11 +51,13 @@ first session, so a signal row can never exist yet at that point).
 
 ## Next action
 
-**Run `npm run build` on your own machine to verify this session's code**,
-then `git add`/`commit`/`push` (this sandbox's git is still not to be
-trusted — see below). Once verified: set `CRON_SECRET` in both
-`.env.local` and Vercel project env vars (route returns 401 without it).
-After that: **F3's tiered-hints upgrade** is the last item before Phase 2 closes.
+**Push the `middleware.ts` fix** (`git add -A && git commit -m "fix: exclude /api/cron from auth middleware" && git push origin main`),
+wait for Vercel to redeploy, then re-run the manual cron test against the
+production domain (`https://sat-prep-coach-app-wheat.vercel.app/api/cron/behavior-signals`,
+`Authorization: Bearer <CRON_SECRET>`). Confirm the response is clean JSON
+(`{"usersProcessed":...}`, not a redirect/HTML page) and that a
+`behavior_signals` row actually appears in Supabase. Once that's confirmed
+end-to-end: **F3's tiered-hints upgrade** is the last item before Phase 2 closes.
 
 ## Open decisions carried forward
 

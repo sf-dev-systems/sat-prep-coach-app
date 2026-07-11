@@ -4,8 +4,13 @@ import { NextResponse, type NextRequest } from 'next/server';
 // isn't Edge Runtime-safe and reintroduces the process.version warning.
 import { getSupabaseServerClient } from './lib/db/edge';
 
-// Paths reachable without an authenticated session.
-const PUBLIC_PATHS = ['/login'];
+// Paths reachable without an authenticated session. /api/cron is included
+// because cron requests (Vercel Cron, or a manual test call) carry no
+// session cookies at all — the actual security gate for that path is the
+// CRON_SECRET bearer-token check inside app/api/cron/*/route.ts itself, not
+// this middleware. See that route's doc comment for why this is the one
+// deliberate exception to session-derived identity in this app.
+const PUBLIC_PATHS = ['/login', '/api/cron'];
 
 function isPublicPath(pathname: string): boolean {
   return PUBLIC_PATHS.some((path) => pathname === path || pathname.startsWith(`${path}/`));
