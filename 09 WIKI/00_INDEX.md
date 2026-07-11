@@ -25,6 +25,17 @@ canonical sources → wiki, never the reverse.
 - **TAXONOMY.md** — the SAT skill taxonomy (RW / Math / Strategy) as implemented.
 - **OPERATIONS_MANUAL.md** — run/deploy/backup/rotate-keys procedures.
 
+## File locations (where things live)
+
+- **Code** — lowercase tree only: `app/`, `lib/`, `prompts/`, `components/`,
+  `supabase/`, `scripts/`, `public/`. Never place documents here.
+- **AI-generated deliverables** (reports, analyses, one-off plans, audits) —
+  `00 SYSTEM/AI OUTPUTS/`, always. Never place code here.
+- **Canonical docs** (PRD, Charter, this instructions file) — `00 SYSTEM/docs/`.
+- **Explanatory docs** (this wiki) — `09 WIKI/`.
+- Rule source: `CLAUDE.md` → "File locations (hard boundaries)". This index
+  entry exists only so the rule is discoverable without opening CLAUDE.md.
+
 ## Wiki update schedule (routine)
 
 Wiki pages are updated **as part of completing each build phase**, written

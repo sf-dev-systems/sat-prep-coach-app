@@ -1,4 +1,5 @@
 import { createClient, SupabaseClient } from '@supabase/supabase-js';
+import { createBrowserClient, createServerClient } from '@supabase/ssr';
 
 // Portable Supabase clients (no next/react dependencies)
 export function getSupabaseClient(accessToken?: string) {
@@ -20,6 +21,51 @@ export function getSupabaseClient(accessToken?: string) {
   }
 
   return createClient(url, anonKey);
+}
+
+/**
+ * Browser-side Supabase client that persists the auth session to cookies
+ * (via @supabase/ssr) instead of localStorage, so server components and
+ * middleware can read the same session. Use this in any 'use client'
+ * component instead of getSupabaseClient().
+ */
+export function getSupabaseBrowserClient(): SupabaseClient {
+  const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
+  const anonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
+
+  if (!url || !anonKey) {
+    throw new Error('Supabase URL and Anon Key are not defined in environment.');
+  }
+
+  return createBrowserClient(url, anonKey);
+}
+
+/**
+ * Cookie adapter shape required by @supabase/ssr's createServerClient.
+ * The caller (middleware.ts, or a Server Component/Route Handler under
+ * app/) is responsible for supplying this from next/headers or the
+ * request/response objects — this file stays free of any `next` import,
+ * per the lib/ boundary rule.
+ */
+export interface ServerCookieMethods {
+  getAll: () => { name: string; value: string }[];
+  setAll?: (cookies: { name: string; value: string; options: Record<string, unknown> }[]) => void;
+}
+
+/**
+ * Server-side Supabase client bound to request cookies. Used by
+ * middleware.ts and any server component/route handler under app/ that
+ * needs the authenticated user.
+ */
+export function getSupabaseServerClient(cookies: ServerCookieMethods): SupabaseClient {
+  const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
+  const anonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
+
+  if (!url || !anonKey) {
+    throw new Error('Supabase URL and Anon Key are not defined in environment.');
+  }
+
+  return createServerClient(url, anonKey, { cookies });
 }
 
 export function getSupabaseServiceRoleClient() {

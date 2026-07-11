@@ -1,16 +1,20 @@
 ---
-title: PRD v1 — AI SAT Coach (Personal Edition)
+title: PRD  — AI SAT Coach (Personal Edition)
 type: prd
-version: 1.1
+version: 1.2
 status: active
 owner: Sienna (Oni Technologies LLC)
 created: 2026-07-10
 updated: 2026-07-10
 source_of_truth: true
 governs: what to build and how (schema, flows, folder layout)
-supersedes: "99 ARCHIVE/archived_docs/archive_2026-07-10_PRD v1.md (v1.0)"
-related: ["Project Charter", "CLAUDE.md", "raw notes sf.md"]
-changelog: "v1.1 — merged Charter §5 deltas; added GPT bucket-A/B enhancements; removed live secrets."
+supersedes: 99 ARCHIVE/archived_docs/archive_2026-07-10_PRD v1.1.md (v1.1)
+related:
+  - Project Charter
+  - CLAUDE.md
+  - raw notes sf.md
+  - 99 ARCHIVE/archived_docs/archive_addl_PRD v1_2.md
+changelog: "v1.2 — merged architecture-affecting decisions from the draft addl PRD (archived at 99 ARCHIVE/archived_docs/archive_addl_PRD v1_2.md): Zod-validated classifier fallback, Exit Session escape hatch in the miss loop, (student)/(parent)/(admin) route groups. Added non-binding UX-direction note (Forest vs. Report-Card metaphor) to Phase 3/4. v1.1 changelog retained below."
 ---
 
 # PRD: AI SAT Coach — Personal Edition (v1)
@@ -72,7 +76,11 @@ alone.
 
 ```
 sat-prep-coach-app/
-├── app/                 # Next.js routes — thin, UI only: (student), parent, admin, api
+├── app/                 # Next.js routes — thin, UI only
+│   ├── (student)/       # v1.2: route group — /, /session, /mastery, /tests (URLs unchanged; parentheses don't affect the path)
+│   ├── (parent)/        # v1.2: route group — /parent
+│   ├── (admin)/         # v1.2: route group — /admin
+│   └── login/           # /login — not grouped (pre-auth)
 ├── lib/                 # PORTABLE CORE — no next/react imports
 │   ├── mastery/         # BKT updates, FSRS scheduling
 │   ├── sessions/        # session assembler, behavior-signal rules
@@ -278,6 +286,7 @@ events (
 4. One-tap error-type self-tag (concept/calculation/misread/careless/timing/guess); Haiku cross-classifies from the pattern; store the student's tag, log disagreements.
 5. Full four-choice distractor breakdown available on tap; always written into `error_journal`.
    Careless/misread errors apply a reduced mastery penalty vs. concept errors.
+6. **Exit Session escape hatch (v1.2).** A persistent "Exit Session" control is visible at every phase of the miss loop (hint/retry/explanation/variant). Exiting at any point ends the session normally — `sessions.ended_at` is set and `questions_served`/`questions_correct` reflect progress as of that moment; whatever `attempts` rows already exist (including partial `hints_used` counts) are kept as-is. No new schema/column is needed: an "incomplete" session is inferable by comparing `questions_served` to the plan's target count, so this does not require a status field. The miss loop is a *state* inside `/session`, not a separate page, so exiting doesn't lose route context.
 
 **F4 — Mastery + memory update.** Per attempt: BKT update — correct: `p += (1-p) * learn_rate` scaled down if the question was easy relative to current mastery; incorrect: `p *= (1 - slip_penalty)` scaled by difficulty and error_type. FSRS-style update to `stability` and `next_review` (correct answers extend stability; misses reduce it). Nightly job: recompute `behavior_signals` (pace by difficulty, `fatigue_minute`, `avg_focus_minutes`, `time_of_day_performance`, `post_miss_accuracy`, `calibration_score`); refresh `next_review` across all skills. Implement crons as Vercel Cron hitting protected API routes.
 
@@ -311,6 +320,7 @@ events (
 - Prompt templates as per-function files in `prompts/`: `tutor`, `hint`, `coach`, `classifier`, `generator`, `reporter`. No agent framework — plain templated calls.
 - Explanations for CORRECT answers: only on explicit request (token control).
 - No streaming in v1.
+- **Classifier fallback (v1.2).** `lib/ai/classifier.ts`'s Haiku cross-classify call wraps its JSON response in a Zod schema parse (`z.object({ error_type: z.enum([...]) })`). On parse failure (malformed JSON, API error, or an out-of-taxonomy value), default `error_type` to `'concept'` and proceed — never block the miss loop on a classification failure. No new table is needed to track these failures: every call already goes through `lib/ai`'s existing `ai_log` (every call is logged regardless of outcome), so a fallback is visible there as a `call_type='classify'` row whose result was discarded. This is the same degrade-never-block pattern already locked for the AI ceiling (F11), just applied to malformed output instead of over-ceiling.
 
 ## Screens
 
@@ -349,8 +359,12 @@ Installable (manifest + icons + service worker), responsive down to 375px, sessi
 		3. **`lib/hooks/use-miss-loop.ts`**: The state management layer that tracks the progression of the student through the loop.
 		
 		**Phase 3 — Visibility:** Student dashboard; mastery map; **goal-tree view**; score prediction + monthly recalibration; readiness panel; error journal; coach memory (append-only); test entry.
+
+		> **UX direction note (v1.2, non-binding).** For `/mastery`, consider a "Forest" metaphor over a flat grid: 3 section circles (RW/Math/Strategy) → tap to expand into domain bubbles → tap a domain to reveal the goal-tree of individual skills, styled with soft colors and progress rings rather than raw percentages. This is a design direction, not a locked schema/API decision — it doesn't block Phase 3 build-out and can be revisited once the mastery data is actually flowing. Source: `99 ARCHIVE/archived_docs/archive_addl_PRD v1_2.md`.
 		
 		**Phase 4 — Polish:** Parent dashboard (`authorizeParentView`); weekly report cron; PWA install; motivation events; TTS toggle; admin generation pipeline with blind-solve validation.
+
+		> **UX direction note (v1.2, non-binding).** For `/parent`, consider a tabular "Report Card" metaphor (rows = skills, columns = last-practiced date / current mastery % / trend sparkline) rather than mirroring the student's visual mastery map, plus an optional "View as Student" toggle so a parent can see exactly what the student sees. Rationale: parents want trends and aggregates, students want an action-oriented next-step view — but hiding the student's view entirely from parents risks feeling like covert monitoring, hence the toggle. Non-binding — a design direction for whoever builds Phase 4, not a locked requirement. Source: `99 ARCHIVE/archived_docs/archive_addl_PRD v1_2.md`.
 		
 		acceptance criteria (v1 done)
 		- Diagnostic populates mastery for all skills; dashboard shows baseline prediction and seeds the goal tree
@@ -389,3 +403,33 @@ miss loop; optional **harder-question-after-success**; **focus length** and
 Kept **cut** (bucket C, per the FABLE response in raw notes): 7-dimension memory
 model, per-session point predictions, in-app full-length tests, interactive-graph/
 video lessons.
+
+## Appendix — v1.2 change log (from v1.1)
+
+Source: `99 ARCHIVE/archived_docs/archive_addl_PRD v1_2.md` (a working-conversation
+draft, moved to the archive by the user mid-revision; not previously
+merged). Reviewed and split into two buckets — see 2026-07-10 codebase audit
+(`00 SYSTEM/AI OUTPUTS/2026-07-10_codebase-audit.md`) for the reasoning.
+
+**Merged as locked decisions** (implementation-affecting, cheap to lock now,
+expensive to retrofit later):
+- Classifier fallback: Zod-schema-validated parse of the Haiku classify call;
+  malformed/failed output defaults `error_type` to `'concept'` rather than
+  blocking — logged via the existing `ai_log` row, no new table.
+- Miss-loop **Exit Session** escape hatch: student can leave the hint/retry/
+  explanation flow at any point; session ends normally with partial progress
+  saved, no schema change needed.
+- Folder layout: `app/` reorganized into `(student)/`, `(parent)/`, `(admin)/`
+  Next.js route groups. URLs are unchanged (`/`, `/session`, `/mastery`,
+  `/tests`, `/parent`, `/admin`) — this is an organizational grouping, not a
+  routing change.
+
+**Added as non-binding design direction** (real opinions, but nothing is
+blocked without them yet — flagged inline at Phase 3/4, not schema-locked):
+- Student `/mastery` "Forest" metaphor (circles → domain bubbles → goal tree).
+- Parent `/parent` "Report Card" tabular metaphor + "View as Student" toggle.
+
+**Not merged** — restated boilerplate in the draft (stack, secrets list,
+build-phase summary) duplicated v1.1 with no new information.
+
+============

@@ -17,7 +17,11 @@ Local path: C:\Users\go2si\sat-prep-coach-app
 
 ## Source of truth
 Canonical documents (in 00 SYSTEM\docs\):
-1. PRD v1.md (v1.1) — governs WHAT to build and HOW (schema, flows, layout)
+1. PRD v1-2.md (v1.2) — governs WHAT to build and HOW (schema, flows, layout).
+   NOTE: the PRD's filename now carries its version number and changes on
+   each revision (e.g. v1_1.md -> v1-2.md); check 00 SYSTEM\docs\ for the
+   current filename rather than assuming — the frontmatter `version:` field
+   is the real source of truth for which revision you're reading.
 2. Project Charter — governs WHEN (version gates, LOCK/STUB/DEFER register)
 PRD wins on implementation detail; Charter wins on scope. If a request
 conflicts with either, flag it before building. Original planning lives in
@@ -79,13 +83,15 @@ DEFER register instead of building it.
 
 ## End-of-session routine (mandatory — every session)
 At the end of EVERY session, in this order:
-1. AGENT_HANDOFF.md (repo root) — overwrite with proposed/remaining work
-   for the next agent or session.
+1. AGENT_HANDOFF.md (repo root) — REWRITE fully (not append) with a short
+   current-state snapshot: what's verified done, single next action, open
+   decisions. History does not live here anymore — see policy below.
 2. SESSION_LOG.md (repo root) — APPEND a new entry: COMPLETED (work +
    files touched), DECISIONS (choices + why), and SIGN-OFF
    (model name — date time, e.g., "Sonnet — 7/10/26 3:27 PM").
 3. Update any 09 WIKI/ pages affected by the session's changes.
-SESSION_LOG.md is append-only by design — never archived or rewritten.
+SESSION_LOG.md is append-only by design — never archived or rewritten
+(until it's rotated for size — see archive policy below).
 
 ## Document revision & archive policy
 - Never delete content from project documents. For small edits
@@ -98,15 +104,25 @@ SESSION_LOG.md is append-only by design — never archived or rewritten.
      document replaced it, and that document's filepath.
   3. Move the archived copy to the appropriate subfolder of
      99 ARCHIVE\.
-  4. The revised document keeps the original name; update its YAML
-     frontmatter (version number, date, and a superseded-by/
-     supersedes note referencing the archived file).
-- SESSION_LOG.md is exempt: it is append-only by design and is
-  never archived or rewritten.
-- AGENT_HANDOFF.md is strictly exempt: it is cumulative and CANNOT
-  be deleted, wiped, rewritten, or overwritten. To track progress
-  across working sessions, you must preserve the entire history of
-  proposed and remaining work, applying ~~strikethrough~~ to completed
-  phases or tasks and appending new phase plans directly below them.
+  4. The revised document normally keeps the original name (update
+     YAML frontmatter: version number, date, supersedes note). As of
+     2026-07-10 the PRD filename itself carries the version instead
+     (e.g. PRD v1_1.md -> PRD v1-2.md) — if a revision renames the
+     live file this way, that's acceptable; just make sure the
+     frontmatter `supersedes`/`version` fields and any cross-references
+     in other docs are updated to the new filename.
+- SESSION_LOG.md is append-only by design — never rewritten. When it
+  grows large (e.g. quarterly, or every ~50 entries), rotate it: archive
+  the older chunk as archive_YYYY-MM-DD_SESSION_LOG.md in 99 ARCHIVE
+  (with a one-line pointer left at the top of the live file), keep the
+  live file going. Nothing is deleted, just moved.
+- AGENT_HANDOFF.md (revised 2026-07-10): is now a SHORT, fully-rewritten
+  status snapshot — current state + single next action + open decisions.
+  It is REWRITABLE each session (this reverses the prior "never overwrite"
+  rule, which caused unbounded bloat and duplicated what SESSION_LOG.md
+  already tracks). Full history lives only in SESSION_LOG.md now. If
+  AGENT_HANDOFF.md's format changes again in a way that discards prior
+  content, archive the outgoing version first per the revision steps above
+  (this is what happened on 2026-07-10 — see archive_2026-07-10_AGENT_HANDOFF.md).
 
 
