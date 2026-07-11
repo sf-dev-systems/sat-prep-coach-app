@@ -31,5 +31,13 @@ export default async function SessionPage() {
     );
   }
 
-  return <SessionRunner sessionId={plan.sessionId} items={plan.items} />;
+  return (
+    <SessionRunner
+      sessionId={plan.sessionId}
+      items={plan.items}
+      confidenceBuilderPool={plan.confidenceBuilderPool}
+      plannedMinutes={plan.plannedMinutes}
+      composition={plan.composition}
+    />
+  );
 }

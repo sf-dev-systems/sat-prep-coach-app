@@ -22,7 +22,7 @@ Procedures for running, deploying, maintaining, and backing up the **AI SAT Prep
 - **Leaked Key Protocol:**
   1. Revoke and rotate immediately in the respective provider's console (Anthropic Console, Supabase Dashboard → Settings → API → roll `service_role`).
   2. Update local `.env.local` and Vercel project configurations.
-  3. Log the incident in `SESSION_LOG.md`.
+  3. Log the incident in the current session's file under `00 SYSTEM/SESSION_LOG/`.
 
 ---
 
@@ -42,8 +42,13 @@ Procedures for running, deploying, maintaining, and backing up the **AI SAT Prep
 
 ## 3. Database Backups & Recovery
 
-As per the Phase 1 Foundation specifications, scheduled backups are set up to prevent data loss.
-Refer to the comprehensive backup configuration and scripts document in:
+Live mechanism (as of 2026-07-10): `.github/workflows/db-backup.yml` runs a
+nightly `pg_dump`, GPG-encrypts it, and commits it to the repo's `backups`
+branch — chosen because the Supabase org is on the **free** plan, which has
+no native scheduled-backup/PITR feature. Requires two GitHub repo secrets
+(`DB_CONNECTION_STRING`, `BACKUP_GPG_PASSPHRASE`) to be set by the repo
+owner before it will actually produce backups — see `supabase/BACKUPS.md`
+for setup and restore steps.
 - **Backup Guide:** `supabase/BACKUPS.md`
 
 ### To manually perform a database dump via CLI:

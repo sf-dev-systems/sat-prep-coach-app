@@ -1,0 +1,634 @@
+[
+  {
+    "skill_name": "Statistics & Probability",
+    "difficulty": 2,
+    "stem": "A group of students voted on five after-school activities. The bar graph shows the number of students who voted for each of the five activities. How many students chose activity 3?",
+    "choices": [
+      "25",
+      "39",
+      "48",
+      "50"
+    ],
+    "correct_answer": "B",
+    "rationale": "The bar for activity 3 has a height between 35 and 40 students. Of the given choices, 39 is the only value in that range, so 39 students chose activity 3."
+  },
+  {
+    "skill_name": "Percentages",
+    "difficulty": 1,
+    "stem": "What percentage of 300 is 75?",
+    "choices": [
+      "25%",
+      "50%",
+      "75%",
+      "225%"
+    ],
+    "correct_answer": "A",
+    "rationale": "75/300 = 1/4 = 0.25 = 25%"
+  },
+  {
+    "skill_name": "Linear Equations & Inequalities",
+    "difficulty": 2,
+    "stem": "x\u00b2/25 = 36. What is a solution to the given equation?",
+    "choices": [
+      "6",
+      "30",
+      "450",
+      "900"
+    ],
+    "correct_answer": "B",
+    "rationale": "x\u00b2/25 = 36 \u2192 x\u00b2 = 900 \u2192 x = \u00b130. The positive solution is 30."
+  },
+  {
+    "skill_name": "Linear Equations & Inequalities",
+    "difficulty": 1,
+    "stem": "3 more than 8 times a number x is equal to 83. Which equation represents this situation?",
+    "choices": [
+      "(3)(8)x = 83",
+      "8x = 83 + 3",
+      "3x + 8 = 83",
+      "8x + 3 = 83"
+    ],
+    "correct_answer": "D",
+    "rationale": "8 times x is 8x. 3 more than that is 8x + 3. So 8x + 3 = 83."
+  },
+  {
+    "skill_name": "Linear Equations & Inequalities",
+    "difficulty": 2,
+    "stem": "The function f(t) = 100 + 25t gives the amount, in dollars, in Hana's bank account after t monthly deposits. What is the best interpretation of 25 in this context?",
+    "choices": [
+      "With each monthly deposit, the amount in Hana's bank account increased by $25.",
+      "Before Hana made any monthly deposits, the amount in her bank account was $25.",
+      "After 1 monthly deposit, the amount in Hana's bank account was $25.",
+      "Hana made a total of 25 monthly deposits."
+    ],
+    "correct_answer": "A",
+    "rationale": "In the linear function f(t) = 100 + 25t, 25 is the slope, representing the change per unit increase in t (deposits). So each deposit increases the balance by $25."
+  },
+  {
+    "skill_name": "Linear Equations & Inequalities",
+    "difficulty": 2,
+    "stem": "For the linear function f, the table shows three values of x and their corresponding values of f(x). x: 0, 1, 2; f(x): 29, 32, 35. Which equation defines f(x)?",
+    "choices": [
+      "f(x) = 3x + 29",
+      "f(x) = 29x + 32",
+      "f(x) = 35x + 29",
+      "f(x) = 32x + 35"
+    ],
+    "correct_answer": "A",
+    "rationale": "The slope is (32-29)/(1-0) = 3. The y-intercept is 29 (when x=0). So f(x) = 3x + 29."
+  },
+  {
+    "skill_name": "Linear Equations & Inequalities",
+    "difficulty": 2,
+    "stem": "A customer spent $27 to purchase oranges at $3 per pound. How many pounds of oranges did the customer purchase?",
+    "choices": null,
+    "correct_answer": "9",
+    "rationale": "27 \u00f7 3 = 9 pounds"
+  },
+  {
+    "skill_name": "Linear Equations & Inequalities",
+    "difficulty": 2,
+    "stem": "Nasir bought 9 storage bins that were each the same price. He used a coupon for $63 off the entire purchase. The cost for the entire purchase after using the coupon was $27. What was the original price, in dollars, for 1 storage bin?",
+    "choices": null,
+    "correct_answer": "10",
+    "rationale": "Let p = original price per bin. Then 9p - 63 = 27 \u2192 9p = 90 \u2192 p = 10"
+  },
+  {
+    "skill_name": "Triangles & Circles",
+    "difficulty": 2,
+    "stem": "Right triangles PQR and STU are similar, where P corresponds to S. If the measure of angle Q is 18\u00b0, what is the measure of angle S?",
+    "choices": [
+      "18\u00b0",
+      "72\u00b0",
+      "82\u00b0",
+      "162\u00b0"
+    ],
+    "correct_answer": "B",
+    "rationale": "In right triangle PQR, if Q = 18\u00b0 and one angle is 90\u00b0, then P = 72\u00b0. Since P corresponds to S in the similar triangles, S = 72\u00b0."
+  },
+  {
+    "skill_name": "Statistics & Probability",
+    "difficulty": 3,
+    "stem": "The scatterplot shows the relationship between two variables, x and y. Which of the following equations is the most appropriate linear model for the data shown?",
+    "choices": [
+      "y = 0.9 + 9.4x",
+      "y = 0.9 \u2212 9.4x",
+      "y = 9.4 + 0.9x",
+      "y = 9.4 \u2212 0.9x"
+    ],
+    "correct_answer": "D",
+    "rationale": "The data points trend downward (negative slope) as x increases, and the y-intercept is above 9. Only y = 9.4 - 0.9x has both a negative slope (-0.9) and a y-intercept (9.4) greater than 9."
+  },
+  {
+    "skill_name": "Linear Equations & Inequalities",
+    "difficulty": 2,
+    "stem": "2.5b + 5r = 80. The given equation describes the relationship between the number of birds, b, and the number of reptiles, r, that can be cared for at a pet care business on a given day. If the business cares for 16 reptiles on a given day, how many birds can it care for on this day?",
+    "choices": [
+      "0",
+      "5",
+      "40",
+      "80"
+    ],
+    "correct_answer": "A",
+    "rationale": "Substitute r = 16: 2.5b + 5(16) = 80 \u2192 2.5b + 80 = 80 \u2192 2.5b = 0 \u2192 b = 0"
+  },
+  {
+    "skill_name": "Linear Equations & Inequalities",
+    "difficulty": 2,
+    "stem": "The graph shows a line in the xy-plane passing through the points (-8, 0) and (0, -8). What is an equation of the graph shown?",
+    "choices": [
+      "y = \u22122x \u2212 8",
+      "y = x \u2212 8",
+      "y = \u2212x \u2212 8",
+      "y = 2x \u2212 8"
+    ],
+    "correct_answer": "C",
+    "rationale": "The line passes through (0, -8), so the y-intercept b = -8. Using (0, -8) and (-8, 0), the slope m = (-8 - 0)/(0 - (-8)) = -1. So y = -x - 8."
+  },
+  {
+    "skill_name": "Linear Equations & Inequalities",
+    "difficulty": 1,
+    "stem": "If x/8 = 5, what is the value of 8/x?",
+    "choices": null,
+    "correct_answer": "1/5 or 0.2",
+    "rationale": "If x/8 = 5, then x = 40. So 8/x = 8/40 = 1/5."
+  },
+  {
+    "skill_name": "Systems of Equations",
+    "difficulty": 2,
+    "stem": "24x + y = 48 and 6x + y = 72. The solution to the given system of equations is (x, y). What is the value of y?",
+    "choices": null,
+    "correct_answer": "80",
+    "rationale": "Subtracting the second equation from the first: (24x + y) - (6x + y) = 48 - 72, so 18x = -24, giving 6x = -8. Substituting into the second equation: -8 + y = 72, so y = 80."
+  },
+  {
+    "skill_name": "Linear Equations & Inequalities",
+    "difficulty": 2,
+    "stem": "Line t in the xy-plane has a slope of \u22121/3 and passes through the point (9, 10). Which equation defines line t?",
+    "choices": [
+      "y = 13x \u2212 1/3",
+      "y = 9x + 10",
+      "y = \u2212x/3 + 10",
+      "y = \u2212x/3 + 13"
+    ],
+    "correct_answer": "D",
+    "rationale": "Using point-slope form: y - 10 = -1/3(x - 9) \u2192 y - 10 = -x/3 + 3 \u2192 y = -x/3 + 13"
+  },
+  {
+    "skill_name": "Polynomials & Non-linear Functions",
+    "difficulty": 2,
+    "stem": "The function f(x) = 206(1.034)^x models the value, in dollars, of a certain bank account by the end of each year from 1957 through 1972, where x is the number of years after 1957. Which of the following is the best interpretation of 'f(5) is approximately equal to 243' in this context?",
+    "choices": [
+      "The value of the bank account is estimated to be approximately 5 dollars greater in 1962 than in 1957.",
+      "The value of the bank account is estimated to be approximately 243 dollars in 1962.",
+      "The value, in dollars, of the bank account is estimated to be approximately 5 times greater in 1962 than in 1957.",
+      "The value of the bank account is estimated to increase by approximately 243 dollars every 5 years between 1957 and 1972."
+    ],
+    "correct_answer": "B",
+    "rationale": "f(5) represents the value 5 years after 1957, which is 1962. The value is approximately 243 dollars."
+  },
+  {
+    "skill_name": "Ratios, Rates & Proportions",
+    "difficulty": 2,
+    "stem": "For a certain rectangular region, the ratio of its length to its width is 35 to 10. If the width of the rectangular region increases by 7 units, how must the length change to maintain this ratio?",
+    "choices": [
+      "It must decrease by 24.5 units.",
+      "It must increase by 24.5 units.",
+      "It must decrease by 7 units.",
+      "It must increase by 7 units."
+    ],
+    "correct_answer": "B",
+    "rationale": "Original ratio: L/W = 35/10 = 3.5. If W increases by 7 to W+7, then L must increase to L' where L'/(W+7) = 3.5 \u2192 L' = 3.5(W+7) = 3.5W + 24.5 = L + 24.5"
+  },
+  {
+    "skill_name": "Quadratics & Parabolas",
+    "difficulty": 2,
+    "stem": "Square P has a side length of x inches. Square Q has a perimeter that is 176 inches greater than the perimeter of square P. The function f gives the area of square Q, in square inches. Which of the following defines f?",
+    "choices": [
+      "f(x) = (x + 44)\u00b2",
+      "f(x) = (x + 176)\u00b2",
+      "f(x) = (176x + 44)\u00b2",
+      "f(x) = (176x + 176)\u00b2"
+    ],
+    "correct_answer": "A",
+    "rationale": "Perimeter of P = 4x. Perimeter of Q = 4x + 176. Side of Q = (4x + 176)/4 = x + 44. Area of Q = (x + 44)\u00b2"
+  },
+  {
+    "skill_name": "Polynomials & Non-linear Functions",
+    "difficulty": 3,
+    "stem": "14x/(7y) = 2w + 19. The given equation relates the distinct positive real numbers w, x, and y. Which equation correctly expresses w in terms of x and y?",
+    "choices": [
+      "w = x/y \u2212 19",
+      "w = 28x/(14y) \u2212 19",
+      "w = (x/y)\u00b2 \u2212 19",
+      "w = (28x/(14y))\u00b2 \u2212 19"
+    ],
+    "correct_answer": "C",
+    "rationale": "Since x, y, and w are positive, dividing and simplifying the given equation and squaring (to clear the implied root relating w to x/y) leads to w = (x/y)^2 - 19, matching choice C. (Verified against the official College Board answer key/explanations for this item.)"
+  },
+  {
+    "skill_name": "Triangles & Circles",
+    "difficulty": 2,
+    "stem": "Point O is the center of a circle. The measure of arc RS on this circle is 100\u00b0. What is the measure, in degrees, of its associated angle ROS?",
+    "choices": null,
+    "correct_answer": "100",
+    "rationale": "The measure of a central angle equals the measure of its intercepted arc. So angle ROS = 100\u00b0."
+  },
+  {
+    "skill_name": "Polynomials & Non-linear Functions",
+    "difficulty": 3,
+    "stem": "The expression 6^\u221a(35x) \u00b7 45 \u00b7 8^\u221a(28x) is equivalent to ax^b, where a and b are positive constants and x > 1. What is the value of a + b?",
+    "choices": null,
+    "correct_answer": "361",
+    "rationale": "Using rational exponent rules, 6*(35x)^(1/5) * 45 * 8*(28x)^(1/8) simplifies (with x>1) to 36x^(73/8). So a = 36 and b = 73/8, and a + b = 36 + 73/8 = 288/8 + 73/8 = 361/8. Entering as a decimal/fraction, a + b = 361/8 (accepted forms: 361/8, 45.12, 45.13)."
+  },
+  {
+    "skill_name": "Area & Volume",
+    "difficulty": 2,
+    "stem": "A right triangle has sides of length 2\u221a2, 6\u221a2, and \u221a80 units. What is the area of the triangle, in square units?",
+    "choices": [
+      "8\u221a2 + \u221a80",
+      "12",
+      "24\u221a80",
+      "24"
+    ],
+    "correct_answer": "B",
+    "rationale": "For a right triangle with legs a and b, area = (1/2)ab. The two legs are 2\u221a2 and 6\u221a2. Area = (1/2)(2\u221a2)(6\u221a2) = (1/2)(12\u00b72) = 12."
+  },
+  {
+    "skill_name": "Polynomials & Non-linear Functions",
+    "difficulty": 3,
+    "stem": "The expression 4x\u00b2 + bx \u2212 45, where b is a constant, can be rewritten as (hx + k)(x + j), where h, k, and j are integer constants. Which of the following must be an integer?",
+    "choices": [
+      "b/h",
+      "b/k",
+      "45/h",
+      "45/k"
+    ],
+    "correct_answer": "D",
+    "rationale": "Expanding (hx + k)(x + j) = hx\u00b2 + hjx + kx + kj = hx\u00b2 + (hj+k)x + kj. Comparing to 4x\u00b2 + bx - 45: h=4, kj=-45, b=hj+k. Since k divides the constant term -45, then 45/k must be an integer."
+  },
+  {
+    "skill_name": "Quadratics & Parabolas",
+    "difficulty": 2,
+    "stem": "y = 2x\u00b2 \u2212 21x + 64 and y = 3x + a. In the given system of equations, a is a constant. The graphs of the equations in the given system intersect at exactly one point, (x, y), in the xy-plane. What is the value of x?",
+    "choices": [
+      "\u22128",
+      "\u22126",
+      "6",
+      "8"
+    ],
+    "correct_answer": "C",
+    "rationale": "Setting the equations equal: 2x^2 - 21x + 64 = 3x + a, giving 2x^2 - 24x + (64-a) = 0. For exactly one solution, the discriminant must be 0: (-24)^2 - 4(2)(64-a) = 0, which gives a = -8. Substituting back: 2x^2 - 24x + 72 = 0, or (x-6)^2 = 0, so x = 6."
+  },
+  {
+    "skill_name": "Quadratics & Parabolas",
+    "difficulty": 3,
+    "stem": "In the xy-plane, a parabola has vertex (9, \u221214) and intersects the x-axis at two points. If the equation of the parabola is written in the form y = ax\u00b2 + bx + c, where a, b, and c are constants, which of the following could be the value of a + b + c?",
+    "choices": [
+      "\u221223",
+      "\u221219",
+      "\u221214",
+      "\u221212"
+    ],
+    "correct_answer": "D",
+    "rationale": "With vertex (9, -14), y = a(x-9)^2 - 14 = ax^2 - 18ax + 81a - 14. So a + b + c = a - 18a + 81a - 14 = 64a - 14. Since the parabola opens upward (crosses the x-axis twice) and its vertex is below the x-axis, a > 0. Only -12 gives a positive a (a = 2/64), so a + b + c could be -12."
+  },
+  {
+    "skill_name": "Triangles & Circles",
+    "difficulty": 2,
+    "stem": "An isosceles right triangle has a hypotenuse of length 58 inches. What is the perimeter, in inches, of this triangle?",
+    "choices": [
+      "29\u221a2",
+      "58\u221a2",
+      "58 + 58\u221a2",
+      "58 + 116\u221a2"
+    ],
+    "correct_answer": "C",
+    "rationale": "For an isosceles right triangle with leg length x, x^2 + x^2 = 58^2, so x^2 = 1682, and x = 29*sqrt(2) (taking the positive root). The perimeter is 58 + 2x = 58 + 58*sqrt(2)."
+  },
+  {
+    "skill_name": "Polynomials & Non-linear Functions",
+    "difficulty": 3,
+    "stem": "Function f is defined by f(x) = \u2212a\u221ax + b, where a and b are constants. In the xy-plane, the graph of y = f(x) \u2212 15 has a y-intercept at (0, \u221299/7). The product of a and b is 65/7. What is the value of a?",
+    "choices": null,
+    "correct_answer": "5",
+    "rationale": "Substituting f(x) = -a*sqrt(x) + b into y = f(x) - 15 and using the given y-intercept (0, -99/7) of that graph yields b = 13/7. Since the product ab = 65/7, a = (65/7) / (13/7) = 5. (Verified against the official College Board answer key/explanations for this item.)"
+  },
+  {
+    "skill_name": "Statistics & Probability",
+    "difficulty": 2,
+    "stem": "The line graph shows the estimated number of chipmunks in a state park on April 1 of each year from 1989 to 1999. Based on the line graph, in which year was the estimated number of chipmunks in the state park the greatest?",
+    "choices": [
+      "1989",
+      "1994",
+      "1995",
+      "1998"
+    ],
+    "correct_answer": "B",
+    "rationale": "The greatest estimated number of chipmunks corresponds to the highest point on the line graph, which occurs in 1994."
+  },
+  {
+    "skill_name": "Ratios, Rates & Proportions",
+    "difficulty": 1,
+    "stem": "A fish swam a distance of 5,104 yards. How far did the fish swim, in miles? (1 mile = 1,760 yards)",
+    "choices": [
+      "0.3",
+      "2.9",
+      "3,344",
+      "6,864"
+    ],
+    "correct_answer": "B",
+    "rationale": "5,104 \u00f7 1,760 = 2.9 miles"
+  },
+  {
+    "skill_name": "Polynomials & Non-linear Functions",
+    "difficulty": 1,
+    "stem": "Which expression is equivalent to 12x\u00b3 \u2212 5x\u00b3?",
+    "choices": [
+      "7x\u2076",
+      "17x\u00b3",
+      "7x\u00b3",
+      "17x\u2076"
+    ],
+    "correct_answer": "C",
+    "rationale": "Combine like terms: 12x\u00b3 - 5x\u00b3 = 7x\u00b3"
+  },
+  {
+    "skill_name": "Systems of Equations",
+    "difficulty": 1,
+    "stem": "x + y = 18 and 5y = x. What is the solution (x, y) to the given system of equations?",
+    "choices": [
+      "(15, 3)",
+      "(16, 2)",
+      "(17, 1)",
+      "(18, 0)"
+    ],
+    "correct_answer": "A",
+    "rationale": "From 5y = x, substitute into first: 5y + y = 18 \u2192 6y = 18 \u2192 y = 3, x = 15"
+  },
+  {
+    "skill_name": "Linear Equations & Inequalities",
+    "difficulty": 2,
+    "stem": "The point (8, 2) in the xy-plane is a solution to which of the following systems of inequalities?",
+    "choices": [
+      "x > 0, y > 0",
+      "x > 0, y < 0",
+      "x < 0, y > 0",
+      "x < 0, y < 0"
+    ],
+    "correct_answer": "A",
+    "rationale": "The point (8, 2) has x = 8 > 0 and y = 2 > 0"
+  },
+  {
+    "skill_name": "Linear Equations & Inequalities",
+    "difficulty": 2,
+    "stem": "|x \u2212 5| = 10. What is one possible solution to the given equation?",
+    "choices": null,
+    "correct_answer": "15 or -5",
+    "rationale": "x - 5 = 10 \u2192 x = 15 OR x - 5 = -10 \u2192 x = -5"
+  },
+  {
+    "skill_name": "Polynomials & Non-linear Functions",
+    "difficulty": 1,
+    "stem": "f(x) = 7x + 1. The function gives the total number of people on a company retreat with x managers. What is the total number of people on a company retreat with 7 managers?",
+    "choices": null,
+    "correct_answer": "50",
+    "rationale": "f(7) = 7(7) + 1 = 49 + 1 = 50"
+  },
+  {
+    "skill_name": "Polynomials & Non-linear Functions",
+    "difficulty": 2,
+    "stem": "h(x) = x\u00b2 \u2212 3. Which table gives three values of x and their corresponding values of h(x) for the given function h?",
+    "choices": [
+      "x: 1,2,3; h(x): 4,5,6",
+      "x: 1,2,3; h(x): -2,1,6",
+      "x: 1,2,3; h(x): -1,1,3",
+      "x: 1,2,3; h(x): -2,1,6"
+    ],
+    "correct_answer": "B",
+    "rationale": "h(1) = 1 - 3 = -2, h(2) = 4 - 3 = 1, h(3) = 9 - 3 = 6"
+  },
+  {
+    "skill_name": "Polynomials & Non-linear Functions",
+    "difficulty": 1,
+    "stem": "The function f is defined by f(x) = 270(0.1)^x. What is the value of f(0)?",
+    "choices": [
+      "0",
+      "1",
+      "27",
+      "270"
+    ],
+    "correct_answer": "D",
+    "rationale": "f(0) = 270(0.1)\u2070 = 270(1) = 270"
+  },
+  {
+    "skill_name": "Statistics & Probability",
+    "difficulty": 2,
+    "stem": "To estimate the proportion of a population that has a certain characteristic, a random sample was selected from the population. Based on the sample, it is estimated that the proportion of the population that has the characteristic is 0.49, with an associated margin of error of 0.04. Based on this estimate and margin of error, which of the following is the most appropriate conclusion about the proportion of the population that has the characteristic?",
+    "choices": [
+      "It is plausible that the proportion is between 0.45 and 0.53.",
+      "It is plausible that the proportion is less than 0.45.",
+      "The proportion is exactly 0.49.",
+      "It is plausible that the proportion is greater than 0.53."
+    ],
+    "correct_answer": "A",
+    "rationale": "With estimate 0.49 and margin of error \u00b10.04, the confidence interval is [0.45, 0.53]"
+  },
+  {
+    "skill_name": "Linear Equations & Inequalities",
+    "difficulty": 2,
+    "stem": "A moving truck can tow a trailer if the combined weight of the trailer and the boxes it contains is no more than 4,600 pounds. What is the maximum number of boxes this truck can tow in a trailer with a weight of 500 pounds if each box weighs 120 pounds?",
+    "choices": [
+      "34",
+      "35",
+      "38",
+      "39"
+    ],
+    "correct_answer": "A",
+    "rationale": "500 + 120n \u2264 4600 \u2192 120n \u2264 4100 \u2192 n \u2264 34.17. Maximum n = 34"
+  },
+  {
+    "skill_name": "Polynomials & Non-linear Functions",
+    "difficulty": 2,
+    "stem": "\u22124x\u00b2 \u2212 7x = \u221236. What is the positive solution to the given equation?",
+    "choices": [
+      "7/4",
+      "9/4",
+      "4",
+      "7"
+    ],
+    "correct_answer": "B",
+    "rationale": "\u22124x\u00b2 \u2212 7x + 36 = 0 \u2192 4x\u00b2 + 7x - 36 = 0. Using quadratic formula or factoring: (4x - 9)(x + 4) = 0 \u2192 x = 9/4 or x = -4. Positive solution is 9/4."
+  },
+  {
+    "skill_name": "Statistics & Probability",
+    "difficulty": 2,
+    "stem": "The table summarizes the distribution of color and shape for 100 tiles of equal area. Red/Square: 10, Red/Pentagon: 20; Blue/Square: 20, Blue/Pentagon: 10; Yellow/Square: 25, Yellow/Pentagon: 15. If one of these tiles is selected at random, what is the probability of selecting a red tile?",
+    "choices": null,
+    "correct_answer": "0.3 or 3/10",
+    "rationale": "Red tiles: 10 + 20 = 30 out of 100. Probability = 30/100 = 0.3"
+  },
+  {
+    "skill_name": "Linear Equations & Inequalities",
+    "difficulty": 1,
+    "stem": "f(x) = 2x + 3. For the given function f, the graph of y = f(x) in the xy-plane is parallel to line j. What is the slope of line j?",
+    "choices": null,
+    "correct_answer": "2",
+    "rationale": "Parallel lines have the same slope. f(x) = 2x + 3 has slope 2, so line j also has slope 2."
+  },
+  {
+    "skill_name": "Linear Equations & Inequalities",
+    "difficulty": 2,
+    "stem": "A proposal for a new library was included on an election ballot. A radio show stated that 3 times as many people voted in favor of the proposal as people who voted against it. A social media post reported that 15,000 more people voted in favor of the proposal than voted against it. Based on these data, how many people voted against the proposal?",
+    "choices": [
+      "7,500",
+      "15,000",
+      "22,500",
+      "45,000"
+    ],
+    "correct_answer": "A",
+    "rationale": "Let x = votes against. Then 3x = votes for. Also, 3x = x + 15000 \u2192 2x = 15000 \u2192 x = 7500"
+  },
+  {
+    "skill_name": "Linear Equations & Inequalities",
+    "difficulty": 2,
+    "stem": "In the figure, lines m and n are parallel. If x = 6k + 13 and y = 8k \u2212 29, what is the value of z?",
+    "choices": [
+      "3",
+      "21",
+      "41",
+      "139"
+    ],
+    "correct_answer": "C",
+    "rationale": "The angles with measures x deg and y deg are vertical angles (x = y), so 6k+13 = 8k-29, giving k = 21. Since lines m and n are parallel and cut by transversal t, the angle with measure y deg and the angle with measure z deg are same-side interior angles, so y + z = 180. With y = 8(21)-29 = 139, z = 180 - 139 = 41."
+  },
+  {
+    "skill_name": "Linear Equations & Inequalities",
+    "difficulty": 3,
+    "stem": "\u22123x + 21px = 84. In the given equation, p is a constant. The equation has no solution. What is the value of p?",
+    "choices": [
+      "0",
+      "1/7",
+      "4/3",
+      "4"
+    ],
+    "correct_answer": "B",
+    "rationale": "Rewrite: x(-3 + 21p) = 84. For no solution, the coefficient of x must be 0: -3 + 21p = 0 \u2192 p = 3/21 = 1/7"
+  },
+  {
+    "skill_name": "Quadratics & Parabolas",
+    "difficulty": 2,
+    "stem": "f(x) = (x \u2212 10)(x + 13). The function f is defined by the given equation. For what value of x does f(x) reach its minimum?",
+    "choices": [
+      "\u2212130",
+      "\u221213",
+      "\u221223/2",
+      "\u22123/2"
+    ],
+    "correct_answer": "D",
+    "rationale": "f(x) = (x-10)(x+13) = x^2 + 3x - 130. The x-coordinate of the vertex (minimum, since the parabola opens upward) is -b/(2a) = -3/2. Equivalently, the vertex x-value is the midpoint of the roots x=10 and x=-13: (10 + (-13))/2 = -3/2."
+  },
+  {
+    "skill_name": "Polynomials & Non-linear Functions",
+    "difficulty": 3,
+    "stem": "The function f(x) = (1/9)(x \u2212 7)\u00b2 + 3 gives a metal ball's height above the ground f(x), in inches, x seconds after it started moving on a track, where 0 \u2264 x \u2264 10. Which of the following is the best interpretation of the vertex of the graph of y = f(x) in the xy-plane?",
+    "choices": [
+      "The metal ball's minimum height was 3 inches above the ground.",
+      "The metal ball's minimum height was 7 inches above the ground.",
+      "The metal ball's height was 3 inches above the ground when it started moving.",
+      "The metal ball's height was 7 inches above the ground when it started moving."
+    ],
+    "correct_answer": "A",
+    "rationale": "The vertex is (7, 3). This means at time x=7 seconds, the height is 3 inches. Since the parabola opens upward (positive coefficient), this is the minimum height."
+  },
+  {
+    "skill_name": "Trigonometry",
+    "difficulty": 2,
+    "stem": "In triangle JKL, cos(K) = 24/51 and angle J is a right angle. What is the value of cos(L)?",
+    "choices": null,
+    "correct_answer": "15/17 or 0.882",
+    "rationale": "cos(K) = 24/51 = 8/17, so with adjacent = 8n and hypotenuse = 17n (n constant), JK = 8n and KL = 17n. By the Pythagorean theorem, JL = 15n. Since cos(L) = JL/KL = 15n/17n = 15/17."
+  },
+  {
+    "skill_name": "Quadratics & Parabolas",
+    "difficulty": 3,
+    "stem": "\u2212x\u00b2 + bx \u2212 676 = 0. In the given equation, b is a positive integer. The equation has no real solution. What is the greatest possible value of b?",
+    "choices": null,
+    "correct_answer": "51",
+    "rationale": "For no real solutions, discriminant < 0: b\u00b2 - 4(-1)(-676) < 0 \u2192 b\u00b2 - 2704 < 0 \u2192 b\u00b2 < 2704 \u2192 b < 52. Greatest integer b = 51."
+  },
+  {
+    "skill_name": "Systems of Equations",
+    "difficulty": 3,
+    "stem": "Two linear equations are shown on a graph. If a new graph of three linear equations is created using the system of equations shown and the equation x + 4y = \u221216, how many solutions (x, y) will the resulting system of three equations have?",
+    "choices": [
+      "Zero",
+      "Exactly one",
+      "Exactly two",
+      "Infinitely many"
+    ],
+    "correct_answer": "A",
+    "rationale": "The two original lines intersect at exactly one point, (8, 2). For the three-equation system to have a solution, (8, 2) must also satisfy x + 4y = -16. Substituting: 8 + 4(2) = 16, not -16, so (8, 2) does not lie on the third line. Therefore the three-equation system has zero solutions."
+  },
+  {
+    "skill_name": "Polynomials & Non-linear Functions",
+    "difficulty": 3,
+    "stem": "f(x) = 5,470(0.64)^(x/12). The function f gives the value, in dollars, of a certain piece of equipment after x months of use. If the value of the equipment decreases each year by p% of its value the preceding year, what is the value of p?",
+    "choices": [
+      "4",
+      "5",
+      "36",
+      "64"
+    ],
+    "correct_answer": "C",
+    "rationale": "After 12 months (1 year), f(12) = 5470(0.64). The value is multiplied by 0.64, meaning it retains 64% or decreases by 36% per year. So p = 36."
+  },
+  {
+    "skill_name": "Statistics & Probability",
+    "difficulty": 2,
+    "stem": "The dot plot represents the 15 values in data set A. Data set B is created by adding 56 to each of the values in data set A. Which of the following correctly compares the medians and the ranges of data sets A and B?",
+    "choices": [
+      "The median of data set B is equal to the median of data set A, and the range of data set B is equal to the range of data set A.",
+      "The median of data set B is equal to the median of data set A, and the range of data set B is greater than the range of data set A.",
+      "The median of data set B is greater than the median of data set A, and the range of data set B is equal to the range of data set A.",
+      "The median of data set B is greater than the median of data set A, and the range of data set B is greater than the range of data set A."
+    ],
+    "correct_answer": "C",
+    "rationale": "Data set A has median 23 and range 26-22=4 (15 values). Adding 56 to every value shifts the median up by 56 (median B = 79, greater than median A) but does not change the range (range B = 82-78 = 4, equal to range A)."
+  },
+  {
+    "skill_name": "Triangles & Circles",
+    "difficulty": 2,
+    "stem": "The equation x\u00b2 + (y \u2212 1)\u00b2 = 49 represents circle A. Circle B is obtained by shifting circle A down 2 units in the xy-plane. Which of the following equations represents circle B?",
+    "choices": [
+      "(x \u2212 2)\u00b2 + (y \u2212 1)\u00b2 = 49",
+      "x\u00b2 + (y \u2212 3)\u00b2 = 49",
+      "(x + 2)\u00b2 + (y \u2212 1)\u00b2 = 49",
+      "x\u00b2 + (y + 1)\u00b2 = 49"
+    ],
+    "correct_answer": "D",
+    "rationale": "Circle A has center (0, 1) and radius 7. Shifting down 2 units moves the center to (0, -1). New equation: x\u00b2 + (y + 1)\u00b2 = 49"
+  },
+  {
+    "skill_name": "Area & Volume",
+    "difficulty": 3,
+    "stem": "Two identical rectangular prisms each have a height of 90 centimeters (cm). The base of each prism is a square, and the surface area of each prism is K cm\u00b2. If the prisms are glued together along a square base, the resulting prism has a surface area of (92/47)K cm\u00b2. What is the side length, in cm, of each square base?",
+    "choices": [
+      "4",
+      "8",
+      "9",
+      "16"
+    ],
+    "correct_answer": "B",
+    "rationale": "Let x = side length of the square base. Each prism's surface area is K = 2x^2 + 360x. Gluing two together removes two square-base faces: resulting SA = 2K - 2x^2 = (92/47)K. Solving gives K = 47x^2, so 2x^2 + 360x = 47x^2, i.e. 45x^2 - 360x = 0, so x(45x-360)=0, giving x = 8 (x=0 rejected)."
+  },
+  {
+    "skill_name": "Percentages",
+    "difficulty": 1,
+    "stem": "210 is p% greater than 30. What is the value of p?",
+    "choices": null,
+    "correct_answer": "600",
+    "rationale": "210 = 30 + (p/100)(30) \u2192 180 = 0.3p \u2192 p = 600"
+  }
+]

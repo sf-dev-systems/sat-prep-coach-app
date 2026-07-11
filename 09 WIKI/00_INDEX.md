@@ -41,7 +41,7 @@ canonical sources → wiki, never the reverse.
 Wiki pages are updated **as part of completing each build phase**, written
 against the actual code — not ahead of it. Every session that changes
 behavior updates the affected page(s) here, alongside `AGENT_HANDOFF.md`
-and `SESSION_LOG.md`.
+and the new session file in `00 SYSTEM/SESSION_LOG/`.
 
 | Phase | Pages to write / update |
 |-------|-------------------------|

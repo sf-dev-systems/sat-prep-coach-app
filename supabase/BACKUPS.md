@@ -6,6 +6,41 @@ Below are the instructions and scripts to implement and maintain automatic backu
 
 ---
 
+## STATUS (2026-07-10): Option 2 is the live mechanism
+
+Confirmed via Supabase `get_organization`: this project's org plan is **free**,
+so Option 1 (native PITR/scheduled backups) does not exist for this project —
+it is Pro/Enterprise-only, not just unconfigured. Rejected writing to Google
+Sheets as a "backup" (loses schema, relations, RLS policies — a CSV dump of
+rows is not a restorable backup).
+
+**Option 2 is implemented**: `.github/workflows/db-backup.yml` (repo root)
+runs nightly (`0 9 * * *` UTC), `pg_dump`s the full database (plain SQL —
+schema + data + everything `pg_dump` captures, though note RLS *policies*
+and other DDL are schema objects and ARE included in a plain-SQL dump),
+GPG-symmetric-encrypts the output, and commits it to an orphan `backups`
+branch of this same repo (not `main` — keeps binary dump history out of the
+app's commit log). This is free, requires no third-party storage account,
+and is more durable than the original Option 2 draft below (which only
+kept a 7-day GitHub Actions artifact — replaced with permanent branch
+history, pruned to the most recent 30 nightly dumps).
+
+**Action required from the repo owner (cannot be done by the agent — no
+GitHub API access in this session):** add two repository secrets under
+**Settings → Secrets and variables → Actions**:
+- `DB_CONNECTION_STRING` — `postgresql://postgres:[DB-PASSWORD]@db.ckuhtjrnnqjnrgpuurlr.supabase.co:5432/postgres` (get the password from Supabase dashboard → Project Settings → Database if not already in `.env.local`)
+- `BACKUP_GPG_PASSPHRASE` — any strong passphrase, generate once and store it somewhere durable (e.g. a password manager) — **losing this passphrase makes every backup unrecoverable**, so do not store it only in GitHub.
+
+Until both secrets exist, the scheduled workflow will run and fail (visible
+under the repo's **Actions** tab) rather than silently produce no backups.
+
+**Restore procedure:**
+1. Pull the `backups` branch, find the desired `backups/sat_coach_backup_<timestamp>.sql.gpg`.
+2. Decrypt: `gpg --batch --yes --passphrase "<passphrase>" -o restore.sql -d sat_coach_backup_<timestamp>.sql.gpg`
+3. Restore into a target database: `psql "<DB_CONNECTION_STRING>" -f restore.sql` (use a fresh/empty database or a Supabase branch, not `main` production, unless intentionally overwriting).
+
+---
+
 ## Option 1: Supabase Built-in Scheduled Backups (Recommended)
 
 Supabase provides automated daily backups on all **Pro** and **Enterprise** projects natively. 

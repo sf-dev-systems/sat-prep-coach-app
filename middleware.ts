@@ -1,5 +1,8 @@
 import { NextResponse, type NextRequest } from 'next/server';
-import { getSupabaseServerClient } from './lib/db';
+// Edge-safe entry point — see lib/db/edge.ts's doc comment. Do not switch
+// this back to './lib/db': that file imports @supabase/supabase-js, which
+// isn't Edge Runtime-safe and reintroduces the process.version warning.
+import { getSupabaseServerClient } from './lib/db/edge';
 
 // Paths reachable without an authenticated session.
 const PUBLIC_PATHS = ['/login'];

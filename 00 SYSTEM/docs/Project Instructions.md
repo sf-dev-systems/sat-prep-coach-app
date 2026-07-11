@@ -52,8 +52,12 @@ DEFER register instead of building it.
   the PRD already answers.
 - After completing meaningful work, state: what was built, what phase
   we're in, and the single next action.
-- Keep a running SESSION_LOG.md at repo root: date, what changed,
-  decisions made, open items. Update it at the end of every session.
+- ~~Keep a running SESSION_LOG.md at repo root: date, what changed,
+  decisions made, open items. Update it at the end of every session.~~
+  Updated 2026-07-10: session history now lives as one file per session
+  under `00 SYSTEM/SESSION_LOG/` (indexed at
+  `00 SYSTEM/SESSION_LOG/00_INDEX.md`), not one append-only file — see
+  `CLAUDE.md`'s "End-of-session routine" for the current process.
 
 
 

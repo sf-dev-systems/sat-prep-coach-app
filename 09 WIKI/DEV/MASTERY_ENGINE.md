@@ -7,7 +7,7 @@ owner: Sienna (Oni Technologies LLC)
 created: 2026-07-10
 updated: 2026-07-10
 source_of_truth: false
-related: ["PRD v1-2.md", "CLAUDE.md", "00 SYSTEM/SESSION_LOG/2026-07-10_2245_phase2-mastery-engine-dashboard-wiring.md"]
+related: ["PRD v1-2.md", "CLAUDE.md", "00 SYSTEM/SESSION_LOG/2026-07-10_2245_phase2-mastery-engine-dashboard-wiring.md", "DEV/SESSION_ASSEMBLER.md"]
 ---
 
 # Mastery Engine (BKT + FSRS)
@@ -78,11 +78,9 @@ Skipped only when a question has no `skill_id`.
 `computeDashboardData` — predicted score, readiness panel's "Content
 Mastery" figure, and the top-3 focus-skill gap list.
 
-**Not yet wired:** `lib/sessions/index.ts`'s session assembler still uses
-Phase 1's simple selection, not `mastery.next_review`/`p_mastery` for
-priority. That's the next Phase 2 piece — see
-`00 SYSTEM/SESSION_LOG/00_INDEX.md`'s newest entries for status, and once
-it's built, its own page is `DEV/SESSION_ASSEMBLER.md`.
+`lib/sessions/index.ts`'s adaptive session assembler now reads this map
+too (via `fetchMasteryMap`) to select and order questions per PRD F2 —
+see `DEV/SESSION_ASSEMBLER.md` for how.
 
 ## Known limitations (by design, not oversight)
 

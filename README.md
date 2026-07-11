@@ -29,7 +29,7 @@ sat-prep-coach-app/
 ├── .env.example       # safe template
 ├── .gitignore
 ├── CLAUDE.md          # canonical agent operating rules
-├── SESSION_LOG.md     # append-only running log
+├── SESSION_LOG.md     # pointer only — real log lives in 00 SYSTEM/SESSION_LOG/
 ├── AGENT_HANDOFF.md   # proposed/remaining work for the next session
 │
 ├── 00 SYSTEM/         # docs/ (PRD, Charter, Instructions) · AI OUTPUTS/
@@ -62,7 +62,9 @@ Required vars: `NEXT_PUBLIC_SUPABASE_URL`, `NEXT_PUBLIC_SUPABASE_ANON_KEY`,
 ## Session routine (every working session)
 At the end of every session the agent MUST:
 1. Update **AGENT_HANDOFF.md** — proposed/remaining work for the next session.
-2. Append to **SESSION_LOG.md** — completed work, files touched, decisions.
+2. Add a new file to **00 SYSTEM/SESSION_LOG/** (`YYYY-MM-DD_HHMM_slug.md`) —
+   completed work, files touched, decisions — and add a row to
+   `00 SYSTEM/SESSION_LOG/00_INDEX.md`.
 3. Update any affected **09 WIKI/** pages (per the schedule in `09 WIKI/00_INDEX.md`).
 4. **Sign off** as `AI NAME · M/D/YY · h:mm AM/PM` (e.g., `Opus · 7/10/26 · 4:12 PM`).
 

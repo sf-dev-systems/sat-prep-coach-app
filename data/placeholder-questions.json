@@ -1,0 +1,237 @@
+[
+  {
+    "skill_name": "Linear Equations & Inequalities",
+    "difficulty": 1,
+    "stem": "If 3x + 7 = 22, what is the value of x?",
+    "choices": null,
+    "correct_answer": "5",
+    "rationale": "Subtract 7 from both sides: 3x = 15. Divide by 3: x = 5.",
+    "license": "placeholder_test_data",
+    "external_id": "PLACEHOLDER-001"
+  },
+  {
+    "skill_name": "Systems of Equations",
+    "difficulty": 2,
+    "stem": "If 2x + y = 10 and x - y = 2, what is the value of x?",
+    "choices": ["2", "3", "4", "5"],
+    "correct_answer": "C",
+    "rationale": "Adding the two equations eliminates y: 3x = 12, so x = 4.",
+    "license": "placeholder_test_data",
+    "external_id": "PLACEHOLDER-002"
+  },
+  {
+    "skill_name": "Quadratics & Parabolas",
+    "difficulty": 2,
+    "stem": "The function f(x) = x^2 - 6x + 8 has zeros at x = a and x = b, where a < b. What is the value of b - a?",
+    "choices": ["1", "2", "3", "4"],
+    "correct_answer": "B",
+    "rationale": "Factoring gives (x-2)(x-4), so the zeros are 2 and 4. b - a = 4 - 2 = 2.",
+    "license": "placeholder_test_data",
+    "external_id": "PLACEHOLDER-003"
+  },
+  {
+    "skill_name": "Polynomials & Non-linear Functions",
+    "difficulty": 3,
+    "stem": "If (x - 3) is a factor of x^3 - 5x^2 + kx - 6, what is the value of k?",
+    "choices": ["2", "4", "6", "8"],
+    "correct_answer": "D",
+    "rationale": "By the factor theorem, plugging x = 3 must give 0: 27 - 45 + 3k - 6 = 0, so 3k = 24 and k = 8.",
+    "license": "placeholder_test_data",
+    "external_id": "PLACEHOLDER-004"
+  },
+  {
+    "skill_name": "Area & Volume",
+    "difficulty": 1,
+    "stem": "A rectangular prism has length 4, width 3, and height 5. What is its volume?",
+    "choices": ["12", "47", "60", "75"],
+    "correct_answer": "C",
+    "rationale": "Volume = length x width x height = 4 x 3 x 5 = 60.",
+    "license": "placeholder_test_data",
+    "external_id": "PLACEHOLDER-005"
+  },
+  {
+    "skill_name": "Triangles & Circles",
+    "difficulty": 2,
+    "stem": "In a right triangle, the two legs have lengths 6 and 8. What is the length of the hypotenuse?",
+    "choices": ["10", "12", "14", "48"],
+    "correct_answer": "A",
+    "rationale": "By the Pythagorean theorem, 6^2 + 8^2 = 36 + 64 = 100, so the hypotenuse is sqrt(100) = 10.",
+    "license": "placeholder_test_data",
+    "external_id": "PLACEHOLDER-006"
+  },
+  {
+    "skill_name": "Trigonometry",
+    "difficulty": 2,
+    "stem": "In a right triangle, if sin(theta) = 3/5, what is cos(theta), given theta is an acute angle?",
+    "choices": ["3/5", "4/5", "5/3", "5/4"],
+    "correct_answer": "B",
+    "rationale": "This is a 3-4-5 right triangle, so cos(theta) = adjacent/hypotenuse = 4/5.",
+    "license": "placeholder_test_data",
+    "external_id": "PLACEHOLDER-007"
+  },
+  {
+    "skill_name": "Percentages",
+    "difficulty": 1,
+    "stem": "A shirt originally priced at $40 is discounted by 25%. What is the sale price?",
+    "choices": ["$10", "$15", "$30", "$35"],
+    "correct_answer": "C",
+    "rationale": "25% of $40 is $10, so the sale price is $40 - $10 = $30.",
+    "license": "placeholder_test_data",
+    "external_id": "PLACEHOLDER-008"
+  },
+  {
+    "skill_name": "Ratios, Rates & Proportions",
+    "difficulty": 1,
+    "stem": "A recipe calls for 2 cups of flour for every 3 cups of sugar. If a baker uses 9 cups of sugar, how many cups of flour are needed?",
+    "choices": null,
+    "correct_answer": "6",
+    "rationale": "The ratio 2:3 scaled by 3 (since 3 x 3 = 9) gives 2 x 3 = 6 cups of flour.",
+    "license": "placeholder_test_data",
+    "external_id": "PLACEHOLDER-009"
+  },
+  {
+    "skill_name": "Statistics & Probability",
+    "difficulty": 2,
+    "stem": "A bag contains 4 red marbles and 6 blue marbles. If one marble is drawn at random, what is the probability that it is red?",
+    "choices": ["1/4", "2/5", "1/2", "3/5"],
+    "correct_answer": "B",
+    "rationale": "P(red) = 4/10 = 2/5.",
+    "license": "placeholder_test_data",
+    "external_id": "PLACEHOLDER-010"
+  },
+  {
+    "skill_name": "Cross-Text Connections",
+    "difficulty": 2,
+    "stem": "Text 1 argues that urban green spaces primarily benefit wildlife. Text 2 argues that urban green spaces primarily benefit human mental health. Based on both texts, which statement would both authors most likely agree with?",
+    "choices": [
+      "Urban green spaces have no measurable benefits.",
+      "Urban green spaces provide value beyond aesthetics.",
+      "Urban green spaces should be eliminated to save costs.",
+      "Only wildlife benefits from urban green spaces."
+    ],
+    "correct_answer": "B",
+    "rationale": "Both authors identify a concrete, non-aesthetic benefit (wildlife or mental health), so both would agree the spaces provide value beyond aesthetics.",
+    "license": "placeholder_test_data",
+    "external_id": "PLACEHOLDER-011"
+  },
+  {
+    "skill_name": "Text Structure & Purpose",
+    "difficulty": 2,
+    "stem": "A writer opens an essay about coral reef decline with a vivid scene of a once-vibrant reef now bleached white, before transitioning to scientific data on ocean temperatures. What is the most likely purpose of this opening?",
+    "choices": [
+      "To criticize marine biologists for inaction",
+      "To engage readers emotionally before presenting technical evidence",
+      "To argue that coral reefs cannot be saved",
+      "To summarize the entire essay's conclusion in advance"
+    ],
+    "correct_answer": "B",
+    "rationale": "A vivid scene followed by data is a classic hook-then-evidence structure meant to engage readers before the technical content.",
+    "license": "placeholder_test_data",
+    "external_id": "PLACEHOLDER-012"
+  },
+  {
+    "skill_name": "Words in Context",
+    "difficulty": 1,
+    "stem": "The committee's decision to postpone the vote was widely seen as ______, given that three members had openly stated they needed more time to review the proposal. Which choice completes the text with the most logical and precise word?",
+    "choices": ["reckless", "prudent", "irrelevant", "hostile"],
+    "correct_answer": "B",
+    "rationale": "Postponing to allow adequate review time is a careful, sensible act, best described as prudent.",
+    "license": "placeholder_test_data",
+    "external_id": "PLACEHOLDER-013"
+  },
+  {
+    "skill_name": "Rhetorical Synthesis",
+    "difficulty": 2,
+    "stem": "A student has gathered these notes about a chemist: discovered a new catalyst in 1998; the catalyst reduced industrial energy use by 30%; received a national award in 2001. The student wants to emphasize the practical impact of the discovery. Which choice most effectively uses the notes to accomplish this goal?",
+    "choices": [
+      "The chemist, who won a national award in 2001, discovered a new catalyst in 1998.",
+      "In 1998, a chemist discovered a catalyst that reduced industrial energy use by 30%.",
+      "A chemist discovered a new catalyst in 1998 and later received a national award.",
+      "National awards are sometimes given to chemists who make discoveries."
+    ],
+    "correct_answer": "B",
+    "rationale": "Only choice B foregrounds the measurable practical impact (30% energy reduction) rather than the award or timeline alone.",
+    "license": "placeholder_test_data",
+    "external_id": "PLACEHOLDER-014"
+  },
+  {
+    "skill_name": "Transitions",
+    "difficulty": 1,
+    "stem": "The museum's new exhibit features rare manuscripts from the 14th century. ______, it includes an interactive display explaining medieval bookmaking techniques.",
+    "choices": ["However", "Additionally", "Nevertheless", "In contrast"],
+    "correct_answer": "B",
+    "rationale": "The second sentence adds a further feature of the exhibit rather than contrasting with the first, so 'Additionally' is correct.",
+    "license": "placeholder_test_data",
+    "external_id": "PLACEHOLDER-015"
+  },
+  {
+    "skill_name": "Central Ideas & Details",
+    "difficulty": 2,
+    "stem": "Passage: Urban beekeeping has grown rapidly in the last decade, with cities from Paris to New York installing rooftop hives. Advocates argue the practice supports pollinator populations and raises public awareness of ecological issues, even though the honey yield from urban hives is often lower than that of rural ones. Which choice best states the main idea of the passage?",
+    "choices": [
+      "Urban beekeeping produces more honey than rural beekeeping.",
+      "Urban beekeeping has expanded mainly for ecological and educational reasons, not honey production.",
+      "Rooftop hives are illegal in most major cities.",
+      "Paris and New York are the only cities with urban beehives."
+    ],
+    "correct_answer": "B",
+    "rationale": "The passage explicitly attributes growth to ecological/awareness benefits and notes honey yield is secondary (even lower than rural hives).",
+    "license": "placeholder_test_data",
+    "external_id": "PLACEHOLDER-016"
+  },
+  {
+    "skill_name": "Command of Evidence",
+    "difficulty": 3,
+    "stem": "Claim: Regular exercise improves short-term memory in older adults. Which finding, if true, would most directly support this claim?",
+    "choices": [
+      "A study found no correlation between diet and memory in older adults.",
+      "A study found that older adults who walked briskly for 30 minutes daily scored higher on memory tests than those who did not.",
+      "A survey found that older adults prefer walking to swimming.",
+      "A study found that younger adults have better memory than older adults regardless of exercise."
+    ],
+    "correct_answer": "B",
+    "rationale": "Only B directly links exercise (walking) to a memory outcome in the same population (older adults) named in the claim.",
+    "license": "placeholder_test_data",
+    "external_id": "PLACEHOLDER-017"
+  },
+  {
+    "skill_name": "Inferences",
+    "difficulty": 2,
+    "stem": "The scientist double-checked her data three times before submitting the paper, even though her initial results matched her hypothesis exactly. Which inference is best supported by this text?",
+    "choices": [
+      "The scientist was confident her hypothesis was wrong.",
+      "The scientist valued rigor even when results seemed to confirm what she expected.",
+      "The scientist's data was fabricated.",
+      "The scientist's hypothesis was later disproven."
+    ],
+    "correct_answer": "B",
+    "rationale": "Rechecking confirmatory results is a hallmark of valuing rigor over simply accepting a convenient outcome; nothing supports the other choices.",
+    "license": "placeholder_test_data",
+    "external_id": "PLACEHOLDER-018"
+  },
+  {
+    "skill_name": "Boundaries (Punctuation)",
+    "difficulty": 1,
+    "stem": "Choose the option that correctly punctuates the sentence: \"The recipe calls for three ingredients flour sugar and eggs.\"",
+    "choices": [
+      "three ingredients: flour, sugar, and eggs.",
+      "three ingredients, flour sugar, and eggs.",
+      "three ingredients flour, sugar and eggs.",
+      "three, ingredients: flour sugar and eggs."
+    ],
+    "correct_answer": "A",
+    "rationale": "A colon correctly introduces the list, and commas correctly separate the three listed items.",
+    "license": "placeholder_test_data",
+    "external_id": "PLACEHOLDER-019"
+  },
+  {
+    "skill_name": "Form, Structure, & Sense",
+    "difficulty": 2,
+    "stem": "Choose the option that results in a grammatically correct sentence: \"Neither the coach nor the players ______ satisfied with the referee's call.\"",
+    "choices": ["was", "is", "were", "being"],
+    "correct_answer": "C",
+    "rationale": "With 'neither...nor,' the verb agrees with the nearer subject ('the players,' plural), so 'were' is correct.",
+    "license": "placeholder_test_data",
+    "external_id": "PLACEHOLDER-020"
+  }
+]

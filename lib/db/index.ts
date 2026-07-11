@@ -196,6 +196,20 @@ export async function fetchQuestionsBySkill(
   return data as Question[];
 }
 
+/** Fallback pool for the session assembler when weighted skill selection can't fill the target count. */
+export async function fetchValidatedQuestions(
+  supabase: SupabaseClient,
+  limit = 20
+): Promise<Question[]> {
+  const { data, error } = await supabase
+    .from('questions')
+    .select('*')
+    .eq('validated', true)
+    .limit(limit);
+  if (error) throw error;
+  return data as Question[];
+}
+
 export async function startPracticeSession(
   supabase: SupabaseClient,
   userId: string,

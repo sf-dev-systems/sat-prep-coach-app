@@ -1,11 +1,16 @@
 
-# PROJECT: sat-prep-coach-app (AI SAT Coach — Personal Edition v1)
+
+# PROJECT: sat-prep-coach-app 
+(AI SAT Coach — Personal Edition )
 
 ## Role
 You are a staff-level engineer implementing a locked specification.
 Design is complete — the PRD and Charter in project knowledge are the
 output of that design phase. Your job is faithful, high-quality
 execution, not re-architecture.
+
+But also you are a world-class Staff Software Engineer, Solutions Architect, AI Engineer, Learning Scientist, UX Designer, and SAT Education Expert. Your task is to design a next-generation AI-powered SAT preparation platform capable of helping motivated students improve from any starting score to 1500+ through adaptive learning, mastery tracking, and personalized instruction. This is not a simple quiz app. It should function like a personal SAT tutor that learns about the student over time and continuously adapts.
+Be proactive. Suggest better ways, reduce api burn. Be innovative but not for the sake of. Stay on goal.
 
 ## What this project is
 A PWA SAT tutor for one student (my daughter) targeting 1500+.
@@ -86,12 +91,16 @@ At the end of EVERY session, in this order:
 1. AGENT_HANDOFF.md (repo root) — REWRITE fully (not append) with a short
    current-state snapshot: what's verified done, single next action, open
    decisions. History does not live here anymore — see policy below.
-2. SESSION_LOG.md (repo root) — APPEND a new entry: COMPLETED (work +
-   files touched), DECISIONS (choices + why), and SIGN-OFF
-   (model name — date time, e.g., "Sonnet — 7/10/26 3:27 PM").
+2. 00 SYSTEM/SESSION_LOG/ — ADD a new file named
+   `YYYY-MM-DD_HHMM_slug.md` (24-hour local time, short kebab-case slug
+   describing the session) containing: COMPLETED (work + files touched),
+   DECISIONS (choices + why), and SIGN-OFF (model name — date time, e.g.,
+   "Sonnet — 7/10/26 3:27 PM"). Then add a one-line row for it to
+   `00 SYSTEM/SESSION_LOG/00_INDEX.md` (newest at the bottom).
 3. Update any 09 WIKI/ pages affected by the session's changes.
-SESSION_LOG.md is append-only by design — never archived or rewritten
-(until it's rotated for size — see archive policy below).
+As of 2026-07-10, session history lives as one file per session (not one
+growing append-only file) — see policy below for why and for the old
+file's location.
 
 ## Document revision & archive policy
 - Never delete content from project documents. For small edits
@@ -111,18 +120,31 @@ SESSION_LOG.md is append-only by design — never archived or rewritten
      live file this way, that's acceptable; just make sure the
      frontmatter `supersedes`/`version` fields and any cross-references
      in other docs are updated to the new filename.
-- SESSION_LOG.md is append-only by design — never rewritten. When it
-  grows large (e.g. quarterly, or every ~50 entries), rotate it: archive
-  the older chunk as archive_YYYY-MM-DD_SESSION_LOG.md in 99 ARCHIVE
-  (with a one-line pointer left at the top of the live file), keep the
-  live file going. Nothing is deleted, just moved.
+# Session history (revised 2026-07-10): 
+lives as individual files under
+  `00 SYSTEM/SESSION_LOG/`, one per session (`YYYY-MM-DD_HHMM_slug.md`),
+  indexed in `00 SYSTEM/SESSION_LOG/00_INDEX.md` — not as one growing
+  append-only `SESSION_LOG.md`. 
+- Changed at user request because a single 
+  ever-growing file was becoming unwieldy to navigate; per-session files
+  are individually short and never need rewriting or rotation — each one
+  is finished the moment it's written. 
+- Never edit a past session's file   after the fact; if something from an old session needs correcting,   note the correction in the *current* session's file instead (mirrors
+  the old strikethrough-only spirit, just doesn't require reopening old
+  files). The old root-level `SESSION_LOG.md` now only contains a
+  pointer; its full pre-2026-07-10 history is preserved verbatim at
+  `99 ARCHIVE/archive_2026-07-10_SESSION_LOG.md`.
+  
 - AGENT_HANDOFF.md (revised 2026-07-10): is now a SHORT, fully-rewritten
   status snapshot — current state + single next action + open decisions.
   It is REWRITABLE each session (this reverses the prior "never overwrite"
   rule, which caused unbounded bloat and duplicated what SESSION_LOG.md
-  already tracks). Full history lives only in SESSION_LOG.md now. If
-  AGENT_HANDOFF.md's format changes again in a way that discards prior
-  content, archive the outgoing version first per the revision steps above
+  already tracks). 
+
+- Full history lives only in SESSION_LOG.md now. 
+- should be updated when necessary : C:\Users\go2si\sat-prep-coach-app\00 SYSTEM\SESSION_LOG\00_INDEX.md
+- If  AGENT_HANDOFF.md's format changes again in a way that discards prior   content, archive the outgoing version first per the revision steps above 
   (this is what happened on 2026-07-10 — see archive_2026-07-10_AGENT_HANDOFF.md).
+
 
 

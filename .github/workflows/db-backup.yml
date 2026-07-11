@@ -1,0 +1,65 @@
+name: Database Nightly Backup
+
+# Free-tier Supabase has no built-in PITR/scheduled backups (confirmed via
+# Supabase org plan = "free" as of 2026-07-10). This workflow is the real
+# backup mechanism for sat-prep-coach-app: nightly pg_dump, GPG-encrypted,
+# committed to the orphan `backups` branch of this repo (durable, free,
+# versioned — no third-party storage account required). See
+# supabase/BACKUPS.md for restore instructions and rationale.
+
+on:
+  schedule:
+    - cron: '0 9 * * *' # 9:00 AM UTC nightly (~2/5am US time depending on DST)
+  workflow_dispatch: {} # allow manual trigger from GitHub UI
+
+jobs:
+  backup:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Install PostgreSQL client
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y postgresql-client gnupg
+
+      - name: Dump database (plain SQL, schema + data)
+        env:
+          DB_CONNECTION_STRING: ${{ secrets.DB_CONNECTION_STRING }}
+        run: |
+          pg_dump "$DB_CONNECTION_STRING" -F p -b -v -f sat_coach_backup.sql
+
+      - name: Encrypt dump (GPG symmetric)
+        env:
+          BACKUP_GPG_PASSPHRASE: ${{ secrets.BACKUP_GPG_PASSPHRASE }}
+        run: |
+          gpg --batch --yes --symmetric --cipher-algo AES256 \
+            --passphrase "$BACKUP_GPG_PASSPHRASE" \
+            -o sat_coach_backup.sql.gpg sat_coach_backup.sql
+          rm sat_coach_backup.sql
+
+      - name: Commit encrypted dump to backups branch
+        run: |
+          git config user.name "backup-bot"
+          git config user.email "backup-bot@users.noreply.github.com"
+
+          # Fetch or create the orphan backups branch without touching the
+          # working tree used by the dump step above.
+          git fetch origin backups 2>/dev/null || true
+          if git show-ref --verify --quiet refs/remotes/origin/backups; then
+            git checkout -b backups origin/backups
+          else
+            git checkout --orphan backups
+            git rm -rf . 2>/dev/null || true
+          fi
+
+          mkdir -p backups
+          STAMP=$(date -u +%F_%H%M%S)
+          cp sat_coach_backup.sql.gpg "backups/sat_coach_backup_${STAMP}.sql.gpg"
+
+          # Retention: keep the most recent 30 nightly dumps, prune older ones.
+          cd backups
+          ls -1t sat_coach_backup_*.sql.gpg | tail -n +31 | xargs -r rm --
+          cd ..
+
+          git add backups/
+          git commit -m "Nightly backup ${STAMP}" || echo "Nothing to commit"
+          git push origin backups
