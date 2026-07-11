@@ -18,7 +18,7 @@ import {
   type Mastery,
 } from '../db';
 import { updateBkt } from './bkt';
-import { updateFsrs } from './fsrs';
+import { updateFsrs, applyForgettingDecay } from './fsrs';
 
 const DEFAULT_P_MASTERY = 0.3;
 const DEFAULT_STABILITY = 1.0;
@@ -110,4 +110,44 @@ export async function initializeMasteryRows(
 export async function fetchMasteryMap(supabase: SupabaseClient, userId: string): Promise<Map<string, Mastery>> {
   const rows = await fetchMasteryRows(supabase, userId);
   return new Map(rows.map((row) => [row.skill_id, row]));
+}
+
+/**
+ * PRD F4 nightly job's "refresh next_review across all skills" clause.
+ * Applies applyForgettingDecay to every mastery row for this user; rows
+ * that aren't overdue past the grace window are left untouched (returned
+ * count only reflects rows actually decayed). Called from
+ * lib/scoring/nightly.ts's per-user loop — never from a user-facing
+ * request, since it's meant to run once per night, not per page load.
+ */
+export async function refreshMasteryDecayForUser(
+  supabase: SupabaseClient,
+  userId: string,
+  now: Date = new Date()
+): Promise<number> {
+  const rows = await fetchMasteryRows(supabase, userId);
+  let decayedCount = 0;
+
+  for (const row of rows) {
+    const decay = applyForgettingDecay(
+      {
+        pMastery: row.p_mastery,
+        stability: row.stability,
+        nextReview: row.next_review,
+        lastPracticed: row.last_practiced,
+      },
+      now
+    );
+    if (!decay) continue;
+
+    await upsertMasteryRow(supabase, {
+      ...row,
+      p_mastery: decay.pMastery,
+      stability: decay.stability,
+      next_review: decay.nextReview.toISOString(),
+    });
+    decayedCount += 1;
+  }
+
+  return decayedCount;
 }

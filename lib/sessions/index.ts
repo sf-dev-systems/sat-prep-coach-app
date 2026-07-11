@@ -8,8 +8,10 @@ import {
   fetchValidatedQuestions,
   fetchRecentAttempts,
   fetchRecentSessions,
+  fetchBehaviorSignals,
 } from '../db';
 import { fetchMasteryMap } from '../mastery';
+import { averagePace } from '../scoring/behavior-signals';
 
 export type SessionCategory = 'review' | 'priority' | 'mixed' | 'confidence_builder';
 
@@ -78,7 +80,8 @@ export interface SessionBudget {
   targetQuestionCount: number;
   plannedMinutes: number;
   avgSecondsPerQuestion: number;
-  isProvisional: true;
+  /** false once a real behavior_signals row backed this estimate; true when it fell back to the live attempts/sessions proxy. */
+  isProvisional: boolean;
 }
 
 /**
@@ -116,31 +119,50 @@ function calibrationDistance(pMastery: number, difficulty: number): number {
 }
 
 /**
- * Provisional stand-in for `behavior_signals.avg_focus_minutes` /
- * `fatigue_minute` (PRD F2's session-length cap), which don't exist yet —
- * the nightly cron that would populate them hasn't been built (see
- * AGENT_HANDOFF.md's open items). Same pattern as
- * `lib/mastery/dashboard.ts`'s readiness panel: compute a reasonable proxy
- * live from recent attempts/sessions via lib/db, clearly marked
- * provisional, and swap it for a real `behavior_signals` read once that
- * cron ships.
+ * PRD F2's session-length cap: "Reads behavior_signals: cap planned session
+ * length at avg_focus_minutes/fatigue_minute." Now reads the real
+ * `behavior_signals` row (populated nightly by lib/scoring/nightly.ts) when
+ * one exists — the cap is `min(avg_focus_minutes, fatigue_minute)` when
+ * both are present, since fatigue_minute (accuracy drop-off) is the harder
+ * ceiling of the two once accuracy has actually started declining.
+ * `avg_pace_by_difficulty` (averaged across difficulty buckets) replaces
+ * the flat per-question time estimate too.
  *
- * `plannedMinutes` proxies `avg_focus_minutes` as the mean duration of
- * recent completed sessions (clamped to a sane range) — there's no
- * per-minute accuracy curve yet to locate a real `fatigue_minute`
- * drop-off point, so this only approximates the "typical productive
- * length" half of that pair, not fatigue detection itself.
+ * A brand-new student (or one whose first `sessions` row predates the
+ * nightly job's most recent run) has no `behavior_signals` row yet —
+ * same degrade-never-block pattern as `lib/mastery/dashboard.ts`'s
+ * readiness panel: fall back to a live proxy computed directly from
+ * recent `attempts`/`sessions`, flagged via `isProvisional`.
  */
 export async function estimateSessionBudget(supabase: SupabaseClient, userId: string): Promise<SessionBudget> {
+  const signals = await fetchBehaviorSignals(supabase, userId);
+
+  const signalPace = averagePace(signals?.avg_pace_by_difficulty ?? null);
+  const signalFocusCap =
+    signals?.avg_focus_minutes != null || signals?.fatigue_minute != null
+      ? Math.min(...[signals?.avg_focus_minutes, signals?.fatigue_minute].filter((v): v is number => v != null))
+      : null;
+
+  if (signalPace != null && signalFocusCap != null) {
+    const plannedMinutes = Math.round(Math.max(MIN_FOCUS_MINUTES, Math.min(MAX_FOCUS_MINUTES, signalFocusCap)));
+    const rawCount = Math.round((plannedMinutes * 60) / signalPace);
+    const targetQuestionCount = Math.max(MIN_QUESTION_COUNT, Math.min(MAX_QUESTION_COUNT, rawCount));
+    return { targetQuestionCount, plannedMinutes, avgSecondsPerQuestion: signalPace, isProvisional: false };
+  }
+
+  // Provisional fallback — same live-computed proxy this function used
+  // before behavior_signals existed.
   const [attempts, sessions] = await Promise.all([
     fetchRecentAttempts(supabase, userId, 200),
     fetchRecentSessions(supabase, userId, 20),
   ]);
 
   const timedAttempts = attempts.filter((a) => a.time_spent_seconds != null);
-  const avgSecondsPerQuestion = timedAttempts.length
-    ? timedAttempts.reduce((sum, a) => sum + (a.time_spent_seconds as number), 0) / timedAttempts.length
-    : DEFAULT_SECONDS_PER_QUESTION;
+  const avgSecondsPerQuestion =
+    signalPace ??
+    (timedAttempts.length
+      ? timedAttempts.reduce((sum, a) => sum + (a.time_spent_seconds as number), 0) / timedAttempts.length
+      : DEFAULT_SECONDS_PER_QUESTION);
 
   const completed = sessions.filter((s) => s.started_at && s.ended_at);
   const durationsMinutes = completed
@@ -149,7 +171,9 @@ export async function estimateSessionBudget(supabase: SupabaseClient, userId: st
   const avgDuration = durationsMinutes.length
     ? durationsMinutes.reduce((sum, m) => sum + m, 0) / durationsMinutes.length
     : DEFAULT_FOCUS_MINUTES;
-  const plannedMinutes = Math.round(Math.max(MIN_FOCUS_MINUTES, Math.min(MAX_FOCUS_MINUTES, avgDuration)));
+  const plannedMinutes = Math.round(
+    Math.max(MIN_FOCUS_MINUTES, Math.min(MAX_FOCUS_MINUTES, signalFocusCap ?? avgDuration))
+  );
 
   const rawCount = Math.round((plannedMinutes * 60) / avgSecondsPerQuestion);
   const targetQuestionCount = Math.max(MIN_QUESTION_COUNT, Math.min(MAX_QUESTION_COUNT, rawCount));

@@ -9,18 +9,32 @@
  * practice-test actuals. No `practice_tests` rows exist yet in v1 (F7's
  * monthly test-entry flow is a later Phase 2/3 item), so the curve here is
  * a straight 400-1600 linear map with no correction factor applied — that
- * anchor hooks in once /tests exists. Readiness's Timing/Consistency/
- * Calibration figures are computed directly from `attempts`/`sessions`
- * here as a provisional stand-in for the nightly `behavior_signals` cron
- * (also not yet built) — replace with a `behavior_signals` read once that
- * cron ships.
+ * anchor hooks in once /tests exists.
+ *
+ * Readiness's Timing & Pace / Calibration figures now read the real
+ * `behavior_signals` row (populated nightly by lib/scoring/nightly.ts, see
+ * app/api/cron/behavior-signals/route.ts) when one exists. A brand-new
+ * student has no `behavior_signals` row yet — the nightly job only covers
+ * users with `sessions` activity in its lookback window, so day one has
+ * nothing to read — so both metrics fall back to the same live-computed
+ * proxy from `attempts`/`sessions` this file used before the cron existed
+ * (degrade-never-block, same pattern as F11's AI ceiling). Consistency has
+ * no `behavior_signals` field and stays computed live from `sessions` either way.
  *
  * lib/ boundary rule: imports nothing from app/, components/, next, or react.
  */
 import { SupabaseClient } from '@supabase/supabase-js';
-import { fetchSkills, fetchRecentSessions, fetchRecentAttempts, fetchUserProfile, type Skill } from '../db';
+import {
+  fetchSkills,
+  fetchRecentSessions,
+  fetchRecentAttempts,
+  fetchUserProfile,
+  fetchBehaviorSignals,
+  type Skill,
+} from '../db';
 import { fetchMasteryMap } from './index';
 import { calculateBaseMastery, type SkillMastery } from '../scoring/predictive-score';
+import { averagePace } from '../scoring/behavior-signals';
 
 const DEFAULT_P_MASTERY = 0.3;
 const CONSISTENCY_TARGET_DAYS_PER_WEEK = 4;
@@ -75,12 +89,13 @@ function computeStreakDays(sessionStartTimes: string[]): number {
 }
 
 export async function computeDashboardData(supabase: SupabaseClient, userId: string): Promise<DashboardData> {
-  const [skills, masteryMap, profile, sessions, attempts] = await Promise.all([
+  const [skills, masteryMap, profile, sessions, attempts, behaviorSignals] = await Promise.all([
     fetchSkills(supabase),
     fetchMasteryMap(supabase, userId),
     fetchUserProfile(supabase, userId),
     fetchRecentSessions(supabase, userId, 60),
     fetchRecentAttempts(supabase, userId, 300),
+    fetchBehaviorSignals(supabase, userId),
   ]);
 
   const displayName = profile?.display_name || 'there';
@@ -145,11 +160,15 @@ export async function computeDashboardData(supabase: SupabaseClient, userId: str
       priority: reviewDue ? 'Review Due' : p < 0.4 ? 'High Point Leverage' : 'High Weight',
     }));
 
-  // Timing & pace: mean seconds/question across recent timed attempts.
+  // Timing & pace: prefer the nightly-computed behavior_signals figure;
+  // fall back to a live mean over recent timed attempts when no signal row
+  // exists yet (new student, or nightly job hasn't run since first activity).
+  const signalPace = averagePace(behaviorSignals?.avg_pace_by_difficulty ?? null);
   const timedAttempts = attempts.filter((a) => a.time_spent_seconds != null);
-  const avgSeconds = timedAttempts.length
+  const provisionalPace = timedAttempts.length
     ? timedAttempts.reduce((sum, a) => sum + (a.time_spent_seconds as number), 0) / timedAttempts.length
     : null;
+  const avgSeconds = signalPace ?? provisionalPace;
   const paceValue = avgSeconds ? `${(avgSeconds / 60).toFixed(1)}m/q` : 'No data yet';
   const paceStatus: ReadinessMetric['status'] = avgSeconds == null ? 'Warning' : avgSeconds <= 90 ? 'On Track' : 'Warning';
 
@@ -162,18 +181,22 @@ export async function computeDashboardData(supabase: SupabaseClient, userId: str
   const consistencyStatus: ReadinessMetric['status'] =
     daysPracticed >= CONSISTENCY_TARGET_DAYS_PER_WEEK ? 'Excellent' : daysPracticed >= 2 ? 'On Track' : 'Warning';
 
-  // Calibration: % of confidence-tagged attempts where confidence lines up
-  // with correctness (high+correct or low+incorrect count as calibrated).
-  const confidenceTagged = attempts.filter((a) => a.confidence != null && a.is_correct != null);
-  const calibrated = confidenceTagged.filter(
-    (a) =>
-      (a.confidence === 'high' && a.is_correct) ||
-      (a.confidence === 'low' && !a.is_correct) ||
-      a.confidence === 'medium'
-  );
-  const calibrationPercent = confidenceTagged.length
-    ? Math.round((calibrated.length / confidenceTagged.length) * 100)
-    : null;
+  // Calibration: prefer the nightly-computed behavior_signals score; fall
+  // back to a live computation over recent attempts (% of confidence-tagged
+  // attempts where confidence lines up with correctness) when no signal row
+  // exists yet.
+  let calibrationPercent: number | null =
+    behaviorSignals?.calibration_score != null ? Math.round(behaviorSignals.calibration_score * 100) : null;
+  if (calibrationPercent == null) {
+    const confidenceTagged = attempts.filter((a) => a.confidence != null && a.is_correct != null);
+    const calibrated = confidenceTagged.filter(
+      (a) =>
+        (a.confidence === 'high' && a.is_correct) ||
+        (a.confidence === 'low' && !a.is_correct) ||
+        a.confidence === 'medium'
+    );
+    calibrationPercent = confidenceTagged.length ? Math.round((calibrated.length / confidenceTagged.length) * 100) : null;
+  }
   const calibrationStatus: ReadinessMetric['status'] =
     calibrationPercent == null ? 'Warning' : calibrationPercent >= 80 ? 'Excellent' : calibrationPercent >= 60 ? 'On Track' : 'Warning';
 

@@ -174,6 +174,30 @@ export interface EventLog {
   created_at: string;
 }
 
+export interface TimeOfDayBucket {
+  accuracy: number;
+  avg_pace_seconds: number;
+  n: number;
+}
+
+export interface BehaviorSignals {
+  user_id: string;
+  computed_at: string;
+  avg_pace_by_difficulty: Record<string, number> | null;
+  fatigue_minute: number | null;
+  avg_focus_minutes: number | null;
+  time_of_day_performance: Record<string, TimeOfDayBucket> | null;
+  post_miss_accuracy: number | null;
+  calibration_score: number | null;
+}
+
+/** Attempt row joined with its question's difficulty — nightly signals need
+ * difficulty per-attempt (avg_pace_by_difficulty); attempts itself doesn't
+ * store it, only question_id, so this is a join rather than a plain select. */
+export interface AttemptWithDifficulty extends Attempt {
+  difficulty: number | null;
+}
+
 // 3. Database Operations (Stateless & Portable)
 
 export async function fetchSkills(supabase: SupabaseClient): Promise<Skill[]> {
@@ -433,4 +457,73 @@ export async function fetchRecentAttempts(
 
   if (error) throw error;
   return (data as Attempt[]) || [];
+}
+
+// ── behavior_signals (PRD F4 nightly cron) ──
+
+/** All user_ids with at least one session started since `sinceIso` — the
+ * cron's "who to recompute signals for" query. Uses `sessions` rather than
+ * `profiles` because a profile can exist before any real activity does. */
+export async function fetchActiveUserIds(supabase: SupabaseClient, sinceIso: string): Promise<string[]> {
+  const { data, error } = await supabase.from('sessions').select('user_id').gte('started_at', sinceIso);
+  if (error) throw error;
+  const ids = new Set<string>((data || []).map((r: { user_id: string }) => r.user_id));
+  return Array.from(ids);
+}
+
+/** Attempts since `sinceIso`, joined with each attempt's question difficulty,
+ * ascending by time (nightly signal computation walks sessions chronologically). */
+export async function fetchAttemptsSince(
+  supabase: SupabaseClient,
+  userId: string,
+  sinceIso: string
+): Promise<AttemptWithDifficulty[]> {
+  const { data, error } = await supabase
+    .from('attempts')
+    .select('*, questions(difficulty)')
+    .eq('user_id', userId)
+    .gte('created_at', sinceIso)
+    .order('created_at', { ascending: true });
+
+  if (error) throw error;
+  return ((data as any[]) || []).map((row) => ({
+    ...row,
+    difficulty: row.questions?.difficulty ?? null,
+  }));
+}
+
+export async function fetchSessionsSince(
+  supabase: SupabaseClient,
+  userId: string,
+  sinceIso: string
+): Promise<Session[]> {
+  const { data, error } = await supabase
+    .from('sessions')
+    .select('*')
+    .eq('user_id', userId)
+    .gte('started_at', sinceIso)
+    .order('started_at', { ascending: true });
+
+  if (error) throw error;
+  return (data as Session[]) || [];
+}
+
+export async function fetchBehaviorSignals(supabase: SupabaseClient, userId: string): Promise<BehaviorSignals | null> {
+  const { data, error } = await supabase.from('behavior_signals').select('*').eq('user_id', userId).maybeSingle();
+  if (error) throw error;
+  return data as BehaviorSignals | null;
+}
+
+export async function upsertBehaviorSignals(
+  supabase: SupabaseClient,
+  row: Omit<BehaviorSignals, 'computed_at'>
+): Promise<BehaviorSignals> {
+  const { data, error } = await supabase
+    .from('behavior_signals')
+    .upsert({ ...row, computed_at: new Date().toISOString() }, { onConflict: 'user_id' })
+    .select('*')
+    .single();
+
+  if (error) throw error;
+  return data as BehaviorSignals;
 }

@@ -88,9 +88,18 @@ see `DEV/SESSION_ASSEMBLER.md` for how.
   error-type multipliers, stability growth/decay) are first-pass defaults
   grounded in the PRD's qualitative rules — not empirically tuned. There's
   no attempt history yet to tune against at n=1.
-- The dashboard's readiness panel computes Timing/Consistency/Calibration
-  live from `attempts`/`sessions` as a stand-in for the nightly
-  `behavior_signals` cron (also PRD F4), which doesn't exist yet.
+- The dashboard's readiness panel reads Timing & Pace / Calibration from the
+  real nightly `behavior_signals` cron (see `DEV/BEHAVIOR_SIGNALS.md`) when
+  a signal row exists; it falls back to a live `attempts`/`sessions`
+  computation only for students without one yet. Consistency has no
+  `behavior_signals` field and is always computed live.
+- `lib/mastery/index.ts`'s `refreshMasteryDecayForUser` (added with the
+  behavior_signals cron) is a second, nightly-only mastery mutation path
+  alongside `updateMasteryOnAttempt` — it applies FSRS-style forgetting
+  decay (`lib/mastery/fsrs.ts`'s `applyForgettingDecay`) to rows overdue by
+  more than 1 day, so `p_mastery`/`next_review` reflect memory loss even
+  when the student skips a scheduled review entirely. See
+  `DEV/BEHAVIOR_SIGNALS.md`.
 - Predicted score is a plain linear 400-1600 map with no correction
   factor — F7's monthly-test recalibration against `practice_tests`
   doesn't exist until a later phase.

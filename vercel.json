@@ -1,3 +1,9 @@
 {
-  "framework": "nextjs"
+  "framework": "nextjs",
+  "crons": [
+    {
+      "path": "/api/cron/behavior-signals",
+      "schedule": "0 7 * * *"
+    }
+  ]
 }

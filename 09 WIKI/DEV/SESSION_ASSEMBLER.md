@@ -83,15 +83,17 @@ the caller doesn't pass one explicitly:
 - **`targetQuestionCount`** — `plannedMinutes * 60 / avgSecondsPerQuestion`,
   clamped to PRD F2's stated 15–25 range.
 
-This is a **provisional stand-in** for `behavior_signals.avg_focus_minutes`
-/ `fatigue_minute` — that table and its nightly cron don't exist yet (see
-`AGENT_HANDOFF.md`). Same pattern `lib/mastery/dashboard.ts` already uses
-for its readiness panel: compute live from `lib/db` reads, mark it
-provisional in a doc comment, swap for a real `behavior_signals` read once
-the cron ships. `plannedMinutes` only proxies the "typical session length"
-half of that pair — there's no per-minute accuracy curve yet to locate a
-real `fatigue_minute` drop-off point, so this isn't fatigue *detection*,
-just a length proxy.
+**Updated 2026-07-11 (behavior_signals cron session):** `estimateSessionBudget`
+now reads the real `behavior_signals` row (nightly-populated — see
+`DEV/BEHAVIOR_SIGNALS.md`) when one exists: `avgSecondsPerQuestion` comes
+from `avg_pace_by_difficulty` (averaged across buckets), and `plannedMinutes`
+is capped at `min(avg_focus_minutes, fatigue_minute)` — per PRD F2's literal
+"cap planned session length at avg_focus_minutes/fatigue_minute." A student
+with no `behavior_signals` row yet (new student, or the nightly job hasn't
+run since first activity) falls back to the original provisional
+live-computed proxy below, flagged via `SessionBudget.isProvisional`.
+
+Provisional fallback (unchanged from before the cron):
 
 ## Session composition (added 2026-07-11, second session)
 
@@ -134,9 +136,9 @@ is the correct degrade, not a bug.
 - The difficulty <-> expected-success model (`DIFFICULTY_SPREAD = 0.6`) is
   a first-pass heuristic consistent with the BKT model's assumptions, not
   empirically calibrated — there's no attempt history yet to tune against.
-- `plannedMinutes`/`targetQuestionCount` are a provisional proxy, not a
-  real `behavior_signals` read — see "Time-budgeted planning" above.
-  Nightly `behavior_signals` cron is still not built.
+- `plannedMinutes`/`targetQuestionCount` read real `behavior_signals` when
+  available (see "Time-budgeted planning" above and `DEV/BEHAVIOR_SIGNALS.md`);
+  the provisional proxy only fires for students with no signal row yet.
 - Diagnostic flow (F1) does **not** call `assemblePracticeSession` — it
   has its own two-phase assembler (`lib/sessions/diagnostic.ts`), since a
   section's second half can't be chosen until first-half accuracy exists.

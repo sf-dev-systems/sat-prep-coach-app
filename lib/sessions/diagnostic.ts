@@ -25,6 +25,17 @@
  *
  * lib/ boundary rule: imports nothing from app/, components/, next, or
  * react. DB access only via lib/db.
+ *
+ * DECISION (flagged, not silently skipped): this module deliberately does
+ * NOT read `behavior_signals`, unlike `../sessions/index.ts`'s
+ * estimateSessionBudget or `../mastery/dashboard.ts`'s readiness panel. The
+ * diagnostic is by definition a student's first-ever session — the nightly
+ * job (lib/scoring/nightly.ts) only produces a `behavior_signals` row for
+ * users with prior `sessions` activity, so at diagnostic time that row
+ * cannot exist yet. Wiring in a read here would always resolve to the
+ * fallback branch anyway; the ~40-question count and neutral starting
+ * difficulty are fixed by PRD F1 regardless, so there's no live pacing/
+ * fatigue decision for behavior_signals to inform on a student's first run.
  */
 import { SupabaseClient } from '@supabase/supabase-js';
 import {
