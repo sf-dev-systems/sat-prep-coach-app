@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from 'react';
 import { getSupabaseBrowserClient, endPracticeSession, type Attempt } from '@/lib/db';
-import type { CompositionBucket, PlannedSessionItem } from '@/lib/sessions';
+import { checkCorrect, type CompositionBucket, type PlannedSessionItem } from '@/lib/sessions';
 import MissLoop, { type MissLoopResult } from './MissLoop';
 import { useMissLoop } from './useMissLoop';
 
@@ -21,13 +21,6 @@ interface SessionRunnerProps {
   /** PRD F2's time-budgeted plan display, e.g. "~40 min: 15 review / 12 priority / 5 mixed". */
   plannedMinutes?: number;
   composition?: CompositionBucket[];
-}
-
-function checkCorrect(item: PlannedSessionItem, response: string): boolean {
-  const { question } = item;
-  return question.choices
-    ? response.trim().toUpperCase() === question.correct_answer.trim().toUpperCase()
-    : response.trim().toLowerCase() === question.correct_answer.trim().toLowerCase();
 }
 
 export default function SessionRunner({
@@ -97,7 +90,7 @@ export default function SessionRunner({
   const handleSubmit = async () => {
     if (!answer || !confidence) return;
 
-    const correct = checkCorrect(current, answer);
+    const correct = checkCorrect(current.question, answer);
 
     await logAttemptRow({
       sessionId,

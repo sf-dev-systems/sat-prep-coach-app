@@ -33,18 +33,21 @@ export default async function StudentDashboard() {
   const data = await computeDashboardData(supabase, user.id);
 
   if (!data.hasData) {
+    // First run (PRD F1): route into the diagnostic, not straight into a
+    // practice session — the diagnostic is what seeds every mastery row and
+    // gives the dashboard below something to compute a baseline score from.
     return (
       <div className="text-center py-24 space-y-4">
         <h1 className="text-2xl font-bold text-gray-900">Welcome, {data.displayName}</h1>
         <p className="text-sm text-gray-500 max-w-md mx-auto">
-          No mastery data yet — complete a practice session and your predicted score,
-          readiness panel, and focus skills will populate here.
+          Start with the diagnostic — about 40 questions across every section. It seeds your mastery
+          map so your predicted score, readiness panel, and focus skills can populate here.
         </p>
         <a
-          href="/session"
+          href="/diagnostic"
           className="inline-flex items-center gap-2 bg-indigo-900 text-white font-bold px-5 py-2.5 rounded-xl shadow-sm hover:bg-indigo-800 transition-colors text-sm"
         >
-          <span>Start Practice Session</span>
+          <span>Start Diagnostic</span>
           <ArrowRight className="w-4 h-4" />
         </a>
       </div>

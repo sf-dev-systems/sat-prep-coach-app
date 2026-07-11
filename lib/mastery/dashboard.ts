@@ -125,6 +125,9 @@ export async function computeDashboardData(supabase: SupabaseClient, userId: str
   }`;
 
   // Top focus skills: highest point-leverage gaps first (weight * (1 - mastery)).
+  // PRD F1 calls this a "top-5 gap list" on the post-diagnostic dashboard;
+  // this is the same "Top Focus Skills" card used day-to-day (F2), so the
+  // count is raised uniformly to 5 rather than forking a diagnostic-only view.
   const now = new Date();
   const focusSkills: FocusSkill[] = scoreableSkills
     .map((s) => {
@@ -135,7 +138,7 @@ export async function computeDashboardData(supabase: SupabaseClient, userId: str
       return { skill: s, gap, p, reviewDue };
     })
     .sort((a, b) => b.gap - a.gap)
-    .slice(0, 3)
+    .slice(0, 5)
     .map(({ skill, p, reviewDue }) => ({
       section: skill.section,
       name: skill.name,

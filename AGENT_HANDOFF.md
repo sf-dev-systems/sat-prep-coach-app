@@ -6,106 +6,130 @@ session (not append-only) — full history lives in `00 SYSTEM/SESSION_LOG/`
 
 ---
 
-## Where things actually stand (2026-07-11 12:44 AM, Sonnet — Phase 2 in progress)
+## Where things actually stand (2026-07-11 1:30 AM, Sonnet — Phase 2 in progress)
 
-**Phase 1: CLOSED.** **Phase 2 (Intelligence): in progress.** This session
-completed PRD F2 (Daily practice session) end to end, building the two
-clauses last session left open:
+**Phase 1: CLOSED.** **Phase 2 (Intelligence): PRD F1 and F2 are both now
+built.** This session closed the diagnostic flow (F1), the last major gap:
 
-1. **Time-budgeted session length.** New `estimateSessionBudget`
-   (`lib/sessions/index.ts`) is a provisional stand-in for
-   `behavior_signals.avg_focus_minutes`/`fatigue_minute` (that table/cron
-   still doesn't exist) — computes `avgSecondsPerQuestion` from recent
-   `attempts` and a `plannedMinutes` proxy from recent completed
-   `sessions`' durations, clamped 20–60 min. `targetQuestionCount` derives
-   from both, clamped to PRD F2's stated 15–25. `assemblePracticeSession`'s
-   count param is now optional and defaults to this.
-2. **Time-budgeted composition.** Every selected item now carries a
-   `category` (`review`/`priority`/`mixed`) computed from the same
-   due/vulnerability ranking already used for selection — no parallel
-   logic, so it can't drift. `PracticeSessionPlan` returns `plannedMinutes`
-   + a `composition` breakdown; `SessionRunner` shows it as a "Today's
-   plan" banner. Note: PRD F2's "15 review / 12 functions / 8 inference /
-   5 mixed" example uses specific skill-domain names, not a category set
-   the taxonomy actually has — generalized to real domain names within
-   3 structural buckets instead of inventing a 4-category taxonomy. Full
-   reasoning in the 00:44 session log and `09 WIKI/DEV/SESSION_ASSEMBLER.md`.
-3. **Confidence-builder after 2 consecutive misses.** Assembler also
-   returns a `confidenceBuilderPool` (high-mastery ≥0.75 skills, easiest
-   question each). `SessionRunner.tsx` tracks consecutive misses (initial
-   wrong answer = a miss) and splices the next pooled question in right
-   after the 2nd consecutive miss. Empty pool for brand-new students is
-   the correct degrade, not a bug.
+- **`lib/sessions/diagnostic.ts`** — new, two-phase assembler.
+  `assembleDiagnosticFirstHalves` (server-side) creates the diagnostic
+  `sessions` row and every section's first half (~40 questions total by
+  default, split proportional to each section's live leaf-skill count,
+  always neutral difficulty). `assembleDiagnosticSecondHalf` (called
+  **client-side**, no new API route needed — see "Open decisions" below)
+  fetches a section's second half once first-half accuracy is known,
+  conditioning difficulty on it (`>=0.7 -> 3`, `>=0.4 -> 2`, else `1`).
+- **`app/diagnostic/page.tsx` + `components/diagnostic/DiagnosticRunner.tsx`**
+  — same auth/empty-state pattern as `/session`; runner reuses
+  `MissLoop`/`useMissLoop` unchanged, adds section/half state-machine
+  bookkeeping plus a self-heal effect for the sparse-bank edge case (a
+  section's first half assembling to zero items despite a nonzero
+  allocation, which would otherwise strand the runner with nothing to
+  submit and nothing to trigger the next step).
+- **Completion:** `endPracticeSession` → `initializeMasteryRows` (identity
+  from the active client session) → links to `/`, which now has real
+  mastery data. `app/page.tsx`'s "no data yet" empty state now links to
+  `/diagnostic` instead of `/session`, since a first-run student should
+  diagnose before practicing.
+- **Small supporting changes:** extracted `checkCorrect` into
+  `lib/sessions/index.ts` (was duplicated privately in `SessionRunner.tsx`)
+  so both runners can't diverge on scoring; `lib/mastery/dashboard.ts`'s
+  `focusSkills` raised from top-3 to top-5 to match PRD F1's "top-5 gap
+  list" language (same card is reused for both flows — see decisions).
+- Full detail + the design decisions (with reasoning) in
+  `00 SYSTEM/SESSION_LOG/2026-07-11_0130_diagnostic-flow-f1.md` and
+  `09 WIKI/DEV/DIAGNOSTIC.md`.
 
-**PRD F2 is now fully built.** What Phase 2 still needs:
-- Diagnostic flow (F1) — route + UI. `initializeMasteryRows` is ready for
-  it; `assemblePracticeSession` isn't wired for `'diagnostic'` sessions yet
-  (only `'practice'` is called from `/session`).
+**What Phase 2 still needs:**
 - Nightly `behavior_signals` cron (F4's other half). Both the dashboard's
-  readiness panel and the session assembler's time budget are still
-  provisional live-computed stands-in for this — they'd both read real
-  `behavior_signals` rows once it exists.
-- F3's tiered-hints miss loop is scaffolded (`MissLoop.tsx`/`useMissLoop.ts`)
-  but hasn't been re-verified against this session's changes beyond type
-  compatibility (no logic in it changed this session).
+  readiness panel and both session assemblers' pacing are still
+  provisional live-computed stands-in for this.
+- F3's tiered-hints miss loop (`MissLoop.tsx`/`useMissLoop.ts`) is still
+  Phase-1-scope static hints, not yet upgraded to Haiku-generated tiered
+  hints + full explanation/variant flow — unchanged this session.
 
-## Next action (single)
+With F1 and F2 both built, Phase 2's acceptance criteria are close —
+what's left is specifically the nightly cron and the AI-generated (vs.
+static) hint content in F3.
 
-**Build F1's diagnostic flow** — a `/diagnostic` (or similar) route that
-runs `assemblePracticeSession(supabase, userId, 'diagnostic', ~40)`,
-handles the section-adaptive difficulty split PRD F1 describes (second
-half of each section conditioned on first-half performance — not yet
-built anywhere), and on completion calls `initializeMasteryRows` +
-routes into the normal dashboard/goal-tree view. This is the last major
-gap before Phase 2's acceptance criteria ("Diagnostic populates mastery
-for all skills...") can be called met.
+## Next action
 
-## Open decisions
+1. **Get this session's code build-verified on your own machine** —
+   `npm run build` (sandbox attempt hung this session; see "Verification"
+   below). This is the actual next action, ahead of new feature work.
+2. **Confirm (or execute) the still-pending git cleanup** — `.gitignore`
+   still has no entry for `00 SYSTEM/SAT_Practice_Tests_CollegeBoard/` or
+   `Pasted image*.png`, and no follow-up untracking commit exists. This has
+   now been carried over across 2 sessions unconfirmed. Either re-hand the
+   Gemini CLI prompt or do it directly.
+3. **After that:** Phase 2's remaining item is the nightly `behavior_signals`
+   cron (pace-by-difficulty, `fatigue_minute`, `avg_focus_minutes`,
+   `time_of_day_performance`, `post_miss_accuracy`, `calibration_score`) —
+   implement as a Vercel Cron hitting a protected API route per PRD F4. This
+   is the one remaining piece with no provisional stand-in anywhere yet
+   despite being read from in 3 places (dashboard readiness, practice
+   assembler's time budget, and now implicitly relevant to diagnostic
+   pacing too, though the diagnostic doesn't currently read it).
 
-None new this session requiring your input beyond the composition-label
-interpretation already flagged above (built, not blocked — flagging for
-visibility, not asking permission retroactively). Same standing caveat as
-prior sessions: the difficulty <-> expected-success calibration model and
-BKT/FSRS constants are first-pass heuristics, not empirically tuned.
+## Open decisions (flagged this session, not asking retroactively)
 
-## Verification — build CONFIRMED PASSING (user-run, not sandbox)
+1. Diagnostic assembly lives in its own module (`lib/sessions/diagnostic.ts`),
+   not folded into `assemblePracticeSession` — two-phase by nature
+   (second half depends on first-half performance), vs. the practice
+   assembler's single-pass design.
+2. `assembleDiagnosticSecondHalf` runs client-side (browser Supabase
+   client) rather than through a new API route — it only reads
+   authenticated-read-only content tables (`skills`, `questions`), so no
+   privileged server operation was needed.
+3. Diagnostic completion routes to the existing dashboard (`/`), not a new
+   goal-tree view — `/mastery` is explicitly Phase 3 scope in the PRD's
+   build-phase gate; building it now would be scope creep. `focusSkills`
+   was bumped to top-5 on the existing card instead of forking a new view.
 
-**Sandbox `bash` vs. file-tool mismatch was a 3rd consecutive session in a
-row** (confirmed again: `md5sum` on `AGENT_HANDOFF.md` returned the
-empty-file hash while the file-read tool read its real 109-line content in
-the same turn — `app/layout.tsx` hashed fine, so it's inconsistent, not
-universal). Per the standing "flag it on a 3rd occurrence" instruction,
-this was surfaced to the user directly rather than patched around again;
-the user chose to have Claude proceed via the file tools and run
-verification themselves rather than trust sandbox bash.
+Same standing caveat as prior sessions: the difficulty <-> expected-success
+calibration model and BKT/FSRS constants (now also `difficultyForAccuracy`
+for the diagnostic) are first-pass heuristics, not empirically tuned.
 
-**Result: user ran `npm run build` on their own machine and it passed
-clean** — `Compiled successfully`, `Linting and checking validity of
-types` passed, all 4 routes (`/`, `/_not-found`, `/login`, `/session`)
-generated. This session's code (`lib/sessions/index.ts`,
-`SessionRunner.tsx`, `app/session/page.tsx`) is confirmed to compile and
-type-check correctly.
+## Verification — NOT YET CONFIRMED this session (sandbox build hung)
 
-**Follow-up, same session:** that first build had one pre-existing
-warning ("A Node.js API is used (process.version...) which is not
-supported in the Edge Runtime", traced through `lib/db/index.ts`) —
-predated this session, unrelated to what was touched. User asked if it
-was fixable; it was: `middleware.ts` (Edge Runtime, Next 14's only
-middleware runtime) imported `getSupabaseServerClient` from the full
-`lib/db/index.ts`, which also imports `@supabase/supabase-js` for
-Node-only helpers middleware never calls — that package touches
-`process.version` at import time, so the whole module got Edge-bundled.
-Fixed with a new `lib/db/edge.ts` (Edge-safe re-implementation, only
-imports `@supabase/ssr`, `SupabaseClient` as a type-only import so no
-supabase-js runtime code bundles); `middleware.ts` now points at it
-instead. **User re-ran `npm run build`: confirmed clean, warning gone,
-same 4 routes.** Full writeup in the 00:44 session log's addendum.
+Unlike the prior 2 sessions, this session's code has **not** been confirmed
+against a real `npm run build`. The sandbox attempt hung/timed out (bash
+`resume`/`create` RPC errors) rather than returning a stale-but-readable
+result, so there's nothing to report either way yet — **please run
+`npm run build` on your own machine before trusting this session's code is
+wired correctly**, same as the standing instruction for git.
 
-The sandbox bash/file-tool mount issue itself is still unresolved and
-worth raising with whoever provisions this environment if a 4th session
-hits it — see carried-over items below — but it's no longer blocking this
-handoff; all code from this session is independently confirmed compiling
-on the user's own machine, twice.
+**Sandbox Edit/Read mismatch — new symptom this session.** Previously
+(3 consecutive prior sessions) the mismatch was bash vs. Read/Write/Edit.
+This session, a system-reminder diff showed `SessionRunner.tsx` and
+`lib/sessions/index.ts` as NOT reflecting an edit immediately after the
+Edit tool reported success; re-reading via the Read tool confirmed the
+edit genuinely hadn't landed on the first attempt. A second, identical
+Edit call was needed before a Read confirmed it had stuck. This happened
+on 3 separate edits in this session (SessionRunner.tsx's import line,
+its local-function removal, and the SESSION_LOG index row). Per the
+standing "don't re-investigate, use the established mitigation" instruction:
+every file touched this session was re-read in full after writing/editing
+to confirm the actual on-disk state, and all now read back correctly. This
+is a new data point for whoever tracks the infra-layer issue (it's not
+just bash anymore) — not something to re-diagnose in-session again.
+
+## Git — still pending cleanup, unconfirmed 2 sessions running
+
+Same status as last handoff: `.gitignore` has no entry for the ~59MB of
+College Board PDFs (`00 SYSTEM/SAT_Practice_Tests_CollegeBoard/`) or the
+two stray `Pasted image *.png` screenshots at repo root, and no
+follow-up untracking commit exists in `00 SYSTEM/SESSION_LOG/00_INDEX.md`'s
+history. **This session did not attempt to fix it** — sandbox git is still
+presumed corrupted per the prior session's findings (not re-verified this
+session, per the "don't re-investigate" instruction — if a fresh check is
+wanted, that itself would be the re-investigation to avoid; just proceed
+straight to the mitigation: hand exact commands to the user).
+
+This session's own code changes (listed above) have **not** been committed
+or pushed — same as prior sessions, hand exact `git add`/`commit`/`push`
+commands to the user to run on their own machine rather than running them
+through this sandbox's bash.
 
 ## Carried-over open items (not blocking, still unresolved)
 
@@ -118,29 +142,21 @@ on the user's own machine, twice.
 - Taxonomy count conflict: PRD prose still says "~18 RW / ~18 Math / ~8
   Strategy"; seeded/locked taxonomy is actually 10 Math / 10 RW / 9
   Strategy = 29 leaf skills. PRD prose should be corrected to match the seed.
+  (Diagnostic's section allocation reads the live seed, not the prose
+  count, so this doesn't block F1 — just still worth fixing in the doc.)
 - `raw notes sf.md` has two unreviewed files: `OPUS REVIEW.md`,
   `prd and what i need _this.md`.
 - Route-group reorg (`(student)/(parent)/(admin)`) deferred to Phase 3/4.
-- Sandbox bash/file-tool filesystem mismatch — confirmed 3 sessions in a
-  row (identical symptom: bash reads stale/empty content for a file the
-  file-read tool reads correctly; selective, not universal — not
-  correlated with which tool last wrote the file). This is an
-  infrastructure-layer bug outside any agent's tool access — it cannot be
-  fixed by re-diagnosing it again. **Next session: don't re-investigate
-  it.** If it recurs, skip straight to the established mitigation (treat
-  bash as untrustworthy for file content, Read/Write/Edit as source of
-  truth, user runs `npm run build` for real verification) and tell the
-  user it's the same known issue rather than re-running the md5sum/Read
-  comparison from scratch. It needs a human to report it through
-  product feedback — no amount of in-session workaround resolves it.
-  **New evidence, same session:** `git status` via bash showed phantom
-  deletions of files that demonstrably exist and work (`tailwind.config.ts`,
-  `tsconfig.json`, `vercel.json`, the schema migration), and `git` itself
-  threw `error: cache entry has null sha1` plus an unremovable stale
-  `.git/index.lock`. **Never run `git add`/`commit`/`push` from this
-  sandbox's bash tool** — always hand exact commands to the user to run on
-  their own machine instead, where the real (correct) file state lives.
+- Nightly `behavior_signals` cron — see "Next action" above; this is now
+  the most consequential remaining Phase 2 gap.
+- F3's tiered-hints (Haiku-generated) miss loop upgrade — still Phase-1
+  static hints.
+- Sandbox filesystem/tooling reliability — see "Verification" above for
+  this session's new symptom. Standing mitigation unchanged: treat
+  Read/Write/Edit as source of truth, re-read after writing to confirm,
+  hand off real build/git verification to the user's own machine. Never
+  run `git add`/`commit`/`push` from this sandbox's bash tool.
 
 ---
 
-**SIGN-OFF:** Claude (Sonnet) — 7/11/26 12:44 AM
+**SIGN-OFF:** Claude (Sonnet) — 7/11/26 1:30 AM

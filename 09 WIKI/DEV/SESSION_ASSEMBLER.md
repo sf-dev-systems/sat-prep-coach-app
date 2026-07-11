@@ -137,5 +137,8 @@ is the correct degrade, not a bug.
 - `plannedMinutes`/`targetQuestionCount` are a provisional proxy, not a
   real `behavior_signals` read — see "Time-budgeted planning" above.
   Nightly `behavior_signals` cron is still not built.
-- Diagnostic flow (F1) doesn't call `assemblePracticeSession` yet — only
-  `'practice'` sessions are wired through `/session`.
+- Diagnostic flow (F1) does **not** call `assemblePracticeSession` — it
+  has its own two-phase assembler (`lib/sessions/diagnostic.ts`), since a
+  section's second half can't be chosen until first-half accuracy exists.
+  See `DEV/DIAGNOSTIC.md`. `assemblePracticeSession` itself is unchanged
+  and still only serves `'practice'` sessions via `/session`.

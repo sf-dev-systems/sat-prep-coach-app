@@ -46,6 +46,6 @@ and the new session file in `00 SYSTEM/SESSION_LOG/`.
 | Phase | Pages to write / update |
 |-------|-------------------------|
 | Phase 1 (Foundation) | DEV/SETUP, OPERATIONS_MANUAL, GLOSSARY, TAXONOMY |
-| Phase 2 (Intelligence) | DEV/MASTERY_ENGINE, DEV/SESSION_ASSEMBLER |
+| Phase 2 (Intelligence) | DEV/MASTERY_ENGINE, DEV/SESSION_ASSEMBLER, DEV/DIAGNOSTIC |
 | Phase 3 (Visibility) | USER/STUDENT_MANUAL, DEV/SCORING |
 | Phase 4 (Polish) | USER/PARENT_MANUAL, DEV/DEPLOY, OPERATIONS_MANUAL |

@@ -81,6 +81,18 @@ export interface SessionBudget {
   isProvisional: true;
 }
 
+/**
+ * Shared correctness check for both the practice session and diagnostic
+ * runners (components/session/SessionRunner.tsx,
+ * components/diagnostic/DiagnosticRunner.tsx) — kept in one place so the
+ * two flows can't silently diverge on how an answer is scored.
+ */
+export function checkCorrect(question: Question, response: string): boolean {
+  return question.choices
+    ? response.trim().toUpperCase() === question.correct_answer.trim().toUpperCase()
+    : response.trim().toLowerCase() === question.correct_answer.trim().toLowerCase();
+}
+
 /** Map the 1..3 difficulty scale onto 0..1, mirroring lib/mastery/bkt.ts's normalizeDifficulty. */
 function normalizeDifficulty(difficulty: number): number {
   return Math.max(0, Math.min(1, (difficulty - 1) / 2));
