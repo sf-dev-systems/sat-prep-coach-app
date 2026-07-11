@@ -34,3 +34,4 @@ yarn-error.log*
 
 # project-specific exclusions
 99 ARCHIVE/
+00 SYSTEM/SAT_Practice_Tests_CollegeBoard/
