@@ -1,0 +1,82 @@
+[
+  {
+    "section": "math",
+    "domain": "math",
+    "skill_name": "Algebra",
+    "difficulty": 1,
+    "stem": "If 3x + 7 = 22, what is the value of x?",
+    "choices": ["3", "5", "7", "10"],
+    "correct_answer": "B",
+    "rationale": "Subtract 7 from both sides to get 3x = 15, then divide by 3 to get x = 5.",
+    "distractor_notes": {
+      "A": "Incorrect. 3(3) + 7 = 16.",
+      "C": "Incorrect. 3(7) + 7 = 28.",
+      "D": "Incorrect. 3(10) + 7 = 37."
+    },
+    "trap_type": "Calculation Error"
+  },
+  {
+    "section": "math",
+    "domain": "math",
+    "skill_name": "Algebra",
+    "difficulty": 1,
+    "stem": "A line in the xy-plane passes through the points (0, 2) and (2, 6). What is the slope of the line?",
+    "choices": ["1", "2", "3", "4"],
+    "correct_answer": "B",
+    "rationale": "Slope (m) = (y2 - y1) / (x2 - x1) = (6 - 2) / (2 - 0) = 4 / 2 = 2.",
+    "distractor_notes": {
+      "A": "Incorrect. Calculation error (4-2).",
+      "C": "Incorrect. Calculation error (6/2).",
+      "D": "Incorrect. Used only y-values."
+    },
+    "trap_type": "Slope Formula Error"
+  },
+  {
+    "section": "math",
+    "domain": "math",
+    "skill_name": "Advanced Math",
+    "difficulty": 2,
+    "stem": "Which of the following is equivalent to (x^2 - 9)?",
+    "choices": ["(x - 3)(x - 3)", "(x + 3)(x - 3)", "(x + 9)(x - 1)", "(x - 9)(x + 1)"],
+    "correct_answer": "B",
+    "rationale": "This is a difference of squares: a^2 - b^2 = (a + b)(a - b). Here, x^2 - 3^2 = (x + 3)(x - 3).",
+    "distractor_notes": {
+      "A": "Incorrect. (x - 3)(x - 3) = x^2 - 6x + 9.",
+      "C": "Incorrect. (x + 9)(x - 1) = x^2 + 8x - 9.",
+      "D": "Incorrect. (x - 9)(x + 1) = x^2 - 8x - 9."
+    },
+    "trap_type": "Factoring Error"
+  },
+  {
+    "section": "math",
+    "domain": "math",
+    "skill_name": "Geometry & Trigonometry",
+    "difficulty": 2,
+    "stem": "In a right triangle, one angle measures 30 degrees. What is the measure of the third angle in degrees?",
+    "choices": ["30", "45", "60", "90"],
+    "correct_answer": "C",
+    "rationale": "The sum of angles in a triangle is 180 degrees. 180 - 90 (right angle) - 30 = 60.",
+    "distractor_notes": {
+      "A": "Incorrect. Confused 30 degrees for the answer.",
+      "B": "Incorrect. Confused for 45-45-90 triangle.",
+      "D": "Incorrect. Used the right angle measure."
+    },
+    "trap_type": "Triangle Sum Theorem Confusion"
+  },
+  {
+    "section": "math",
+    "domain": "math",
+    "skill_name": "Advanced Math",
+    "difficulty": 2,
+    "stem": "If f(x) = 2x + 5, what is f(3)?",
+    "choices": ["8", "10", "11", "13"],
+    "correct_answer": "C",
+    "rationale": "f(3) = 2(3) + 5 = 6 + 5 = 11.",
+    "distractor_notes": {
+      "A": "Incorrect. Just added 5 to 3.",
+      "B": "Incorrect. Just doubled 5.",
+      "D": "Incorrect. Doubled 3, then added 5 is 11, so D is wrong."
+    },
+    "trap_type": "Function Notation Error"
+  }
+]

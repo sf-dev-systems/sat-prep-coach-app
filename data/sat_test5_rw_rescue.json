@@ -1,0 +1,34 @@
+[
+  {
+    "section": "reading_writing",
+    "domain": "Standard English Conventions",
+    "skill_name": "Sentence Boundaries",
+    "difficulty": 2,
+    "stem": "Researchers studying the acoustic properties of ancient Mayan pyramids have discovered a fascinating phenomenon: when a person claps at the base of the El Castillo pyramid, the echo sounds remarkably like the chirp of a quetzal ______ a bird considered sacred in Mayan culture.",
+    "choices": ["bird;", "bird,", "bird:", "bird"],
+    "correct_answer": "B",
+    "rationale": "The phrase 'a bird considered sacred in Mayan culture' is an appositive phrase that describes the quetzal. It must be separated from the rest of the sentence by a comma.",
+    "distractor_notes": {
+      "A": "Incorrect. A semicolon must separate two independent clauses, but the phrase after the punctuation is not a complete sentence.",
+      "C": "Incorrect. While a colon can introduce an appositive, it's typically used for emphasis or lists at the end of an independent clause. A comma is the standard and most appropriate punctuation here to smoothly attach the modifier.",
+      "D": "Incorrect. Omitting punctuation creates a run-on error and confuses the structure of the appositive."
+    },
+    "trap_type": "Semicolon vs Comma Confusion"
+  },
+  {
+    "section": "reading_writing",
+    "domain": "Standard English Conventions",
+    "skill_name": "Form, Structure, and Sense",
+    "difficulty": 2,
+    "stem": "Despite the proliferation of digital streaming platforms over the last decade, the sales of vinyl records ______ steadily increased, driven by audiophiles and younger collectors who prefer physical media with tangible artwork.",
+    "choices": ["has", "have", "is having", "was"],
+    "correct_answer": "B",
+    "rationale": "The subject of the verb is the plural noun 'sales' (not 'platforms' or 'records', which are part of prepositional phrases). Therefore, the plural verb 'have' is required to maintain subject-verb agreement.",
+    "distractor_notes": {
+      "A": "Incorrect. 'Has' is a singular verb, which does not agree with the plural subject 'sales'.",
+      "C": "Incorrect. 'Is having' is singular and uses the wrong tense/aspect for a continuous historical trend.",
+      "D": "Incorrect. 'Was' is a singular past-tense verb."
+    },
+    "trap_type": "Subject-Verb Agreement (Intervening Phrase)"
+  }
+]

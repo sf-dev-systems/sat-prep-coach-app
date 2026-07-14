@@ -1,0 +1,194 @@
+[
+  {
+    "section": "reading_writing",
+    "domain": "Expression of Ideas",
+    "skill_name": "Rhetorical Synthesis",
+    "difficulty": 3,
+    "stem": "A student is writing an essay about the impact of artificial light on nocturnal ecosystems. They have the following notes:\n- Artificial light at night (ALAN) disrupts the circadian rhythms of nocturnal animals.\n- Many moths and other insects are attracted to artificial lights, which can lead to exhaustion or predation.\n- Some cities have started implementing 'dark sky' initiatives, such as motion-sensor lights and lower-intensity LEDs, to mitigate light pollution.\n- Research shows that dark sky initiatives can significantly reduce insect mortality while maintaining public safety.\n\nThe student wants to present a solution to the problem of insect mortality caused by ALAN. Which choice most effectively uses relevant information to accomplish this goal?",
+    "choices": ["While ALAN disrupts circadian rhythms and attracts insects to their deaths, cities are mitigating this via 'dark sky' initiatives that prioritize both insect survival and public safety.", "Artificial light at night is a serious problem for insects, causing exhaustion and predation, which is why cities should use more LEDs.", "Dark sky initiatives involve motion-sensor lights and lower-intensity LEDs to make cities safer at night.", "Because ALAN attracts insects, it is important to understand how light pollution affects circadian rhythms in nocturnal ecosystems."],
+    "correct_answer": "A",
+    "rationale": "Choice A effectively synthesizes the problem (ALAN/insect mortality) with the proposed solution ('dark sky' initiatives) while noting the benefit of balancing that solution with safety.",
+    "distractor_notes": {
+      "B": "Incorrect. This omits the specific solution ('dark sky' initiatives).",
+      "C": "Incorrect. This describes the initiatives but fails to connect them to the primary issue of insect mortality.",
+      "D": "Incorrect. This focuses on the nature of light pollution but ignores the actionable solution requested."
+    },
+    "trap_type": "Synthesis Failure"
+  },
+  {
+    "section": "reading_writing",
+    "domain": "Standard English Conventions",
+    "skill_name": "Form, Structure, & Sense",
+    "difficulty": 2,
+    "stem": "The gallery's latest exhibition, which features a collection of minimalist sculptures, ______ critics who argue that the work lacks the depth and emotional resonance characteristic of traditional portraiture.",
+    "choices": ["have divided", "has divided", "were divided", "are divided"],
+    "correct_answer": "B",
+    "rationale": "The subject is 'exhibition' (singular). Therefore, we need the singular verb 'has divided'. The relative clause 'which features...' does not change the number of the subject.",
+    "distractor_notes": {
+      "A": "Incorrect. 'Have' is plural, but the subject 'exhibition' is singular.",
+      "C": "Incorrect. 'Were' is plural and past tense.",
+      "D": "Incorrect. 'Are' is plural."
+    },
+    "trap_type": "Subject-Verb Agreement (Relative Clause)"
+  },
+  {
+    "section": "reading_writing",
+    "domain": "Information & Ideas",
+    "skill_name": "Inferences",
+    "difficulty": 3,
+    "stem": "In the early 20th century, the 'Golden Age of Radio' transformed American home life, bringing news, music, and dramatic serials directly into the living room. However, some cultural critics of the time expressed anxiety that the constant stream of broadcasted content would erode the tradition of families reading aloud to each other. They argued that the passive act of listening to a radio program lacked the intellectual engagement inherent in communal reading.\n\nWhich conclusion is most strongly supported by the text?",
+    "choices": ["Critics believed that radio would eventually lead to the complete elimination of libraries.", "The cultural impact of radio was seen by some as potentially detrimental to existing social and intellectual customs.", "The radio was widely rejected by the public because it required too much intellectual effort.", "Broadcast content in the 1920s was specifically designed to be less educational than books."],
+    "correct_answer": "B",
+    "rationale": "The text states that critics feared radio would 'erode the tradition of families reading' and argued it 'lacked the intellectual engagement' of reading. This directly supports the conclusion that radio was seen as detrimental to existing customs.",
+    "distractor_notes": {
+      "A": "Incorrect. The text mentions eroding the tradition of communal reading, not the elimination of libraries.",
+      "C": "Incorrect. The text does not say the public rejected radio, only that critics were concerned.",
+      "D": "Incorrect. The critics viewed the content as less *engaging* (passive vs active), not necessarily less *educational*."
+    },
+    "trap_type": "Unsupported Generalization"
+  },
+  {
+    "section": "reading_writing",
+    "domain": "Expression of Ideas",
+    "skill_name": "Transitions",
+    "difficulty": 2,
+    "stem": "Many ancient civilizations constructed elaborate drainage systems to manage urban sanitation. ________, the inhabitants of Mohenjo-daro, part of the Indus Valley Civilization, built sophisticated brick-lined sewers and wastewater channels that were well-integrated into their city planning.",
+    "choices": ["Consequently,", "For example,", "Furthermore,", "In contrast,"],
+    "correct_answer": "B",
+    "rationale": "The first sentence makes a general claim about 'many ancient civilizations.' The second sentence introduces a specific civilization (Mohenjo-daro) as evidence of that general claim. 'For example' is the appropriate transition.",
+    "distractor_notes": {
+      "A": "Incorrect. 'Consequently' indicates a result, not an example.",
+      "C": "Incorrect. 'Furthermore' would add more information about the systems, rather than giving a specific instance.",
+      "D": "Incorrect. 'In contrast' would imply the second sentence refutes the first."
+    },
+    "trap_type": "General to Specific Misidentification"
+  },
+  {
+    "section": "reading_writing",
+    "domain": "Standard English Conventions",
+    "skill_name": "Boundaries (Punctuation)",
+    "difficulty": 2,
+    "stem": "The architect's vision for the new library focused on the integration of natural light and sustainable materials; ________, she insisted on using locally sourced reclaimed wood for the main structural beams.",
+    "choices": ["however", "furthermore", "consequently", "nevertheless"],
+    "correct_answer": "B",
+    "rationale": "The first clause establishes the architect's vision for natural light and sustainable materials. The second clause provides a specific application of that vision (reclaimed wood). 'Furthermore' adds supporting information, which is logically consistent here.",
+    "distractor_notes": {
+      "A": "Incorrect. 'However' implies a conflict, but the use of reclaimed wood supports the sustainable vision.",
+      "C": "Incorrect. 'Consequently' implies the wood choice was a direct result of the natural light, which is not supported.",
+      "D": "Incorrect. 'Nevertheless' implies a surprising result, but this choice is expected."
+    },
+    "trap_type": "Logical Connector Error"
+  },
+  {
+    "section": "reading_writing",
+    "domain": "Craft & Structure",
+    "skill_name": "Words in Context",
+    "difficulty": 3,
+    "stem": "Though many of her contemporaries focused on painting idealized portraits of nobility, the artist chose to depict the harsh, unglamorous realities of urban life. Her work, characterized by gritty textures and somber palettes, offers a ______ perspective that demands the viewer acknowledge the struggles of the working class.",
+    "choices": ["superficial", "sentimental", "poignant", "trivial"],
+    "correct_answer": "C",
+    "rationale": "The artist is focusing on the 'harsh' realities and wants the viewer to 'acknowledge the struggles.' 'Poignant' means evoking a keen sense of sadness or regret, which fits perfectly with a perspective that captures working-class struggle.",
+    "distractor_notes": {
+      "A": "Incorrect. Superficial means lacking depth, which contradicts her focus on the struggles of life.",
+      "B": "Incorrect. Sentimental implies an idealized, romantic view, which she specifically rejects.",
+      "D": "Incorrect. Trivial means unimportant."
+    },
+    "trap_type": "Thematic Antonym"
+  },
+  {
+    "section": "reading_writing",
+    "domain": "Expression of Ideas",
+    "skill_name": "Rhetorical Synthesis",
+    "difficulty": 3,
+    "stem": "A researcher is studying the efficacy of different urban heat island mitigation strategies. They have the following notes:\n- Urban heat islands occur when cities are significantly warmer than surrounding rural areas due to human activity.\n- Green roofs, which involve planting vegetation on top of buildings, can reduce rooftop temperatures by up to 50 degrees Fahrenheit.\n- Cool roofs, which use reflective materials to bounce sunlight, are often cheaper to install than green roofs.\n- Both strategies are effective, but green roofs also provide additional benefits like rainwater retention and biodiversity support.\n\nThe researcher wants to argue that green roofs are a superior investment for cities despite higher costs. Which choice most effectively uses relevant information to accomplish this goal?",
+    "choices": ["While cool roofs are cheaper to install, green roofs offer benefits like rainwater retention and biodiversity support in addition to significant temperature reduction.", "Green roofs can lower rooftop temperatures by 50 degrees, making them better than cool roofs.", "Cities should prioritize temperature reduction above all other concerns, making green roofs the logical choice.", "Cool roofs are less effective than green roofs because they do not support biodiversity."],
+    "correct_answer": "A",
+    "rationale": "The goal is to argue for green roofs *despite* higher costs. Choice A acknowledges the cost (implicitly) by comparing it to the cheaper option, while emphasizing the extra value provided by green roofs.",
+    "distractor_notes": {
+      "B": "Incorrect. This focuses on temperature alone and ignores the 'despite higher costs' goal.",
+      "C": "Incorrect. This makes an assumption not supported by the notes.",
+      "D": "Incorrect. This compares the effectiveness of the two but doesn't address the cost trade-off."
+    },
+    "trap_type": "Insufficient Argument Strength"
+  },
+  {
+    "section": "reading_writing",
+    "domain": "Standard English Conventions",
+    "skill_name": "Form, Structure, & Sense",
+    "difficulty": 2,
+    "stem": "The increase in global trade during the late 20th century ______ profound changes in consumer culture, as goods that were once considered luxury items became accessible to a wider demographic.",
+    "choices": ["has facilitated", "have facilitated", "facilitated", "is facilitating"],
+    "correct_answer": "C",
+    "rationale": "The subject is 'increase' (singular). 'Facilitated' works because the event is in the past (late 20th century). Choice C is the most direct and grammatically correct simple past construction.",
+    "distractor_notes": {
+      "A": "Incorrect. Present perfect ('has facilitated') is less appropriate for a defined past time period.",
+      "B": "Incorrect. 'Have' is plural and does not agree with 'increase'.",
+      "D": "Incorrect. Present continuous ('is facilitating') does not fit the historical time frame."
+    },
+    "trap_type": "Tense Inconsistency"
+  },
+  {
+    "section": "reading_writing",
+    "domain": "Craft & Structure",
+    "skill_name": "Text Structure & Purpose",
+    "difficulty": 2,
+    "stem": "The following text is adapted from a recent study on cognitive performance.\n\nResearchers found that participants who engaged in brief, high-intensity aerobic exercise performed significantly better on memory-based tests than those who remained sedentary. Interestingly, this performance boost was observed regardless of the participants' baseline fitness level, suggesting that even short bursts of activity can be beneficial for cognitive function.\n\nWhich choice best describes the main purpose of the text?",
+    "choices": ["To report on a finding that aerobic exercise may benefit memory, regardless of baseline fitness.", "To argue that individuals who remain sedentary will eventually suffer from memory loss.", "To explain the biological mechanisms behind how exercise affects memory function.", "To criticize previous studies that failed to account for baseline fitness levels."],
+    "correct_answer": "A",
+    "rationale": "The text clearly summarizes the study's finding: exercise improves memory, and the fitness level didn't matter. This is the main point of the passage.",
+    "distractor_notes": {
+      "B": "Incorrect. This is an over-extrapolation not supported by the text.",
+      "C": "Incorrect. The text reports a *finding* but does not explain the *biological mechanism*.",
+      "D": "Incorrect. No criticism of previous studies is mentioned."
+    },
+    "trap_type": "Mechanism vs Outcome Confusion"
+  },
+  {
+    "section": "reading_writing",
+    "domain": "Information & Ideas",
+    "skill_name": "Central Ideas & Details",
+    "difficulty": 2,
+    "stem": "Although solar energy technology has advanced rapidly, the primary barrier to widespread adoption remains the intermittency of sunlight. Because solar panels cannot generate electricity at night or during heavy cloud cover, energy storage solutions, such as high-capacity batteries, are essential to ensure a reliable power supply. The integration of these storage systems is currently the main focus of research to make solar power a consistent baseload energy source.\n\nWhich choice best states the main idea of the text?",
+    "choices": ["Battery technology is currently more advanced than solar panel efficiency.", "Energy storage is necessary to overcome the intermittency problem associated with solar power.", "Solar power is unlikely to ever be a reliable source of energy.", "The cost of solar energy has dropped significantly due to new research."],
+    "correct_answer": "B",
+    "rationale": "The text states that intermittency is the primary barrier and that storage solutions (batteries) are essential to overcome this barrier to make it a reliable source.",
+    "distractor_notes": {
+      "A": "Incorrect. No comparison of advancement between panels and batteries is made.",
+      "C": "Incorrect. The text claims it *can* be a reliable source if storage is integrated.",
+      "D": "Incorrect. Cost is not mentioned in the text."
+    },
+    "trap_type": "Information Not in Passage"
+  },
+  {
+    "section": "reading_writing",
+    "domain": "Standard English Conventions",
+    "skill_name": "Boundaries (Punctuation)",
+    "difficulty": 2,
+    "stem": "The committee's proposal includes three key recommendations: increasing public funding for arts programs, establishing community-based workshops, and ________.",
+    "choices": ["to hire professional artists as instructors.", "hiring professional artists as instructors.", "they should hire professional artists as instructors.", "professional artists would be hired as instructors."],
+    "correct_answer": "B",
+    "rationale": "This question requires parallel structure. The previous two items in the list ('increasing', 'establishing') are gerund phrases. Therefore, the final item must also be a gerund phrase ('hiring...').",
+    "distractor_notes": {
+      "A": "Incorrect. 'To hire' is an infinitive, breaking the parallelism.",
+      "C": "Incorrect. 'They should hire' is a clause, breaking the parallelism.",
+      "D": "Incorrect. 'Professional artists would be' is a passive clause, breaking the parallelism."
+    },
+    "trap_type": "Parallel Structure Violation"
+  },
+  {
+    "section": "reading_writing",
+    "domain": "Standard English Conventions",
+    "skill_name": "Form, Structure, & Sense",
+    "difficulty": 3,
+    "stem": "Not only ______ the participants aware of the study's purpose, but they also signed detailed informed consent forms before beginning the experiment.",
+    "choices": ["were", "was", "are", "is"],
+    "correct_answer": "A",
+    "rationale": "The sentence uses 'Not only... but also' inversion. Because the subject 'participants' is plural, the verb must be the plural past tense 'were'.",
+    "distractor_notes": {
+      "B": "Incorrect. 'Was' is singular.",
+      "C": "Incorrect. 'Are' is present tense, but the context ('signed') is past tense.",
+      "D": "Incorrect. 'Is' is singular and present tense."
+    },
+    "trap_type": "Inversion and Tense Mismatch"
+  }
+]
