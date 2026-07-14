@@ -37,14 +37,32 @@ needed.
   bypass automatically (prefix match on `/api/cron`), so it doesn't need
   updating again per route — flagged here in case that's ever a surprise.
 
+## PUSHED + VERIFIED
+
+Commit `9a9ce5f` — pushed to `origin/main` (`2258841..9a9ce5f`), Vercel
+redeployed, and the manual test against production
+(`https://sat-prep-coach-app-wheat.vercel.app/api/cron/behavior-signals`)
+returned a clean `200`:
+
+```
+{"usersProcessed":1,"usersFailed":0,"masteryRowsDecayed":0,"errors":[]}
+```
+
+`usersProcessed: 1` confirms the fix worked end-to-end — the route ran for
+the one active user, computed signals, and completed without error.
+`masteryRowsDecayed: 0` is expected: forgetting decay only fires for
+mastery rows overdue by more than 1 day (see `lib/mastery/fsrs.ts`'s
+`applyForgettingDecay`), and there's no aged-enough practice history yet
+for that branch to trigger. Should be spot-checked against Supabase's
+`behavior_signals` table next time there's reason to look (not required to
+close this out — the 200 + zero errors is sufficient confirmation the
+pipeline runs correctly).
+
 ## OPEN ITEMS
 
-- User needs to push this fix (`middleware.ts`) and re-run the manual cron
-  test against the production domain
-  (`sat-prep-coach-app-wheat.vercel.app`) — not yet confirmed working
-  end-to-end as of this log entry.
-- Everything else from the `0230` session log (F3 tiered-hints upgrade is
-  the last Phase 2 item) is unchanged.
+- None from this fix specifically — fully closed out.
+- Carried from the `0230` session: F3's tiered-hints upgrade is now the
+  **last** remaining item before Phase 2's acceptance criteria are fully met.
 
 ## SIGN-OFF
 

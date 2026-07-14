@@ -77,8 +77,10 @@ export default function DiagnosticRunner({ sessionId, sections, leafSkillIds }: 
     new Set(sections.flatMap((s) => s.firstHalf.map((i) => i.question.id)))
   );
 
+  // Miss-loop-internal timing (retry/confirm/variant) is owned by MissLoop
+  // itself now, since it also owns logging those attempts — see
+  // components/session/MissLoop.tsx's phaseStartRef.
   const questionStartRef = useRef<number>(Date.now());
-  const retryStartRef = useRef<number>(Date.now());
   const elapsedSeconds = (start: number) => Math.round((Date.now() - start) / 1000);
 
   const current = queue[itemIdx];
@@ -220,20 +222,9 @@ export default function DiagnosticRunner({ sessionId, sections, leafSkillIds }: 
   const handleMissLoopResolved = async (result: MissLoopResult) => {
     if (!current) return;
 
-    await logAttemptRow({
-      sessionId,
-      questionId: current.question.id,
-      skillId: current.question.skill_id,
-      difficulty: current.question.difficulty,
-      answer: result.retryAnswer,
-      isCorrect: result.finalCorrect,
-      confidence: null,
-      errorType: result.errorType,
-      hintsUsed: result.hintsUsed,
-      wasRetry: true,
-      timeSpentSeconds: elapsedSeconds(retryStartRef.current),
-    });
-
+    // MissLoop now owns logging every attempt it produces (retry, optional
+    // confirm question, variant) via the logAttempt prop passed below — this
+    // just reflects the loop's final outcome in the diagnostic's running state.
     const correctTotal = questionsCorrect + (result.finalCorrect ? 1 : 0);
     setQuestionsCorrect(correctTotal);
     if (result.finalCorrect) sectionCorrectRef.current += 1;
@@ -358,7 +349,18 @@ export default function DiagnosticRunner({ sessionId, sections, leafSkillIds }: 
         )}
       </div>
 
-      {showMissLoop && <MissLoop question={current.question} onResolved={handleMissLoopResolved} onExit={handleExitSession} />}
+      {showMissLoop && (
+        <MissLoop
+          question={current.question}
+          skillName={current.skillName}
+          sessionId={sessionId}
+          originalAnswer={answer}
+          originalConfidence={confidence}
+          logAttempt={logAttemptRow}
+          onResolved={handleMissLoopResolved}
+          onExit={handleExitSession}
+        />
+      )}
     </div>
   );
 }

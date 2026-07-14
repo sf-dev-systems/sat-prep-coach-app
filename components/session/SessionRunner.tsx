@@ -50,11 +50,11 @@ export default function SessionRunner({
 
   const current = queue[index];
 
-  // Wall-clock timing for attempts.time_spent_seconds — reset whenever a
-  // fresh question is shown, and again when the miss loop's retry step
-  // starts, so the retry's timer only covers the retry, not the hints.
+  // Wall-clock timing for the initial submission's attempts.time_spent_seconds
+  // — reset whenever a fresh question is shown. Miss-loop-internal timing
+  // (retry/confirm/variant) is now owned by MissLoop itself, since it also
+  // owns logging those attempts (see MissLoop.tsx's phaseStartRef).
   const questionStartRef = useRef<number>(Date.now());
-  const retryStartRef = useRef<number>(Date.now());
 
   // Per-question final outcomes, accumulated as the session progresses, so
   // the end-of-session Summary screen can report which skills were touched
@@ -66,10 +66,6 @@ export default function SessionRunner({
   useEffect(() => {
     questionStartRef.current = Date.now();
   }, [index]);
-
-  useEffect(() => {
-    if (showMissLoop) retryStartRef.current = Date.now();
-  }, [showMissLoop]);
 
   const elapsedSeconds = (start: number) => Math.round((Date.now() - start) / 1000);
 
@@ -138,22 +134,9 @@ export default function SessionRunner({
   };
 
   const handleMissLoopResolved = async (result: MissLoopResult) => {
-    await logAttemptRow({
-      sessionId,
-      questionId: current.question.id,
-      skillId: current.question.skill_id,
-      difficulty: current.question.difficulty,
-      answer: result.retryAnswer,
-      isCorrect: result.finalCorrect,
-      confidence: null,
-      errorType: result.errorType,
-      hintsUsed: result.hintsUsed,
-      wasRetry: true,
-      timeSpentSeconds: elapsedSeconds(retryStartRef.current),
-    });
-
-    // Retry success now moves mastery via lib/mastery (called inside
-    // logAttemptRow) — this just reflects it in the session's running count.
+    // MissLoop now owns logging every attempt it produces (retry, optional
+    // confirm question, variant) via the logAttempt prop passed below — this
+    // just reflects the loop's final outcome in the session's running state.
     const correctTotal = questionsCorrect + (result.finalCorrect ? 1 : 0);
     setQuestionsCorrect(correctTotal);
     skillResultsRef.current.push({ skillName: current.skillName, correct: result.finalCorrect });
@@ -354,7 +337,18 @@ export default function SessionRunner({
         )}
       </div>
 
-      {showMissLoop && <MissLoop question={current.question} onResolved={handleMissLoopResolved} onExit={handleExitSession} />}
+      {showMissLoop && (
+        <MissLoop
+          question={current.question}
+          skillName={current.skillName}
+          sessionId={sessionId}
+          originalAnswer={answer}
+          originalConfidence={confidence}
+          logAttempt={logAttemptRow}
+          onResolved={handleMissLoopResolved}
+          onExit={handleExitSession}
+        />
+      )}
     </div>
   );
 }

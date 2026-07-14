@@ -1,0 +1,167 @@
+import { NextRequest, NextResponse } from 'next/server';
+import { cookies } from 'next/headers';
+import { getSupabaseServerClient, fetchQuestionById, fetchLatestCoachMemory, type Question } from '@/lib/db';
+import { callAnthropicWithCeiling } from '@/lib/ai';
+import { classifyAttemptError } from '@/lib/ai/classifier';
+import { getHintPrompt } from '@/prompts/hint';
+import { getTutorPrompt } from '@/prompts/tutor';
+import { VARK_PROFILE } from '@/lib/constants';
+
+/**
+ * app/api/miss-loop/route.ts
+ *
+ * Architecture decision (flagged per AGENT_HANDOFF.md's open item, not
+ * silently picked): a single action-discriminated route, not four separate
+ * route files. `ANTHROPIC_API_KEY` is server-only (locked invariant), but
+ * `MissLoop.tsx` runs client-side, so every Anthropic-calling step of PRD
+ * F3 needs a server hop. The three call types that actually reach Sonnet/
+ * Haiku here are `hint`, `explanation`, and `classify` — sharing one route
+ * avoids re-deriving the same session-auth + question-fetch boilerplate
+ * three times. `variant` (F3.3's structural-variant step) deliberately has
+ * NO action here: it's a read against the shared, RLS-readable `questions`
+ * table with no Anthropic call in Phase 2 scope (live AI-generated variants
+ * are PRD F9's admin pipeline, Phase 4, which also needs blind-solve
+ * validation this route doesn't do) — MissLoop.tsx calls
+ * `fetchVariantQuestion` from `lib/db` directly from the browser client.
+ *
+ * Identity: derived from the request's session cookies via
+ * getSupabaseServerClient, same as every other authenticated route/page in
+ * this app (schema invariant #5 — no hardcoded user ID). Every Anthropic
+ * call still routes through lib/ai's single chokepoint, which logs to
+ * ai_log and enforces the daily ceiling with a static-rationale fallback —
+ * this route does not duplicate that logic, only supplies the prompt.
+ */
+export const dynamic = 'force-dynamic';
+
+type MissLoopAction = 'hint' | 'explanation' | 'classify';
+
+interface HintRequestBody {
+  action: 'hint';
+  questionId: string;
+  hintNumber: 1 | 2 | 3;
+}
+
+interface ExplanationRequestBody {
+  action: 'explanation';
+  questionId: string;
+  studentAnswer: string;
+  confidence?: 'high' | 'medium' | 'low';
+}
+
+interface ClassifyRequestBody {
+  action: 'classify';
+  questionId: string;
+  studentAnswer: string;
+  studentErrorTag: 'concept' | 'calculation' | 'misread' | 'careless' | 'timing' | 'guess';
+}
+
+type MissLoopRequestBody = HintRequestBody | ExplanationRequestBody | ClassifyRequestBody;
+
+function questionRationaleFallback(question: Question): string {
+  return question.rationale || 'Review the question rationale and try again — no AI guidance available right now.';
+}
+
+export async function POST(request: NextRequest) {
+  const cookieStore = cookies();
+  const supabase = getSupabaseServerClient({ getAll: () => cookieStore.getAll() });
+
+  const {
+    data: { user },
+  } = await supabase.auth.getUser();
+
+  if (!user) {
+    return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
+  }
+
+  let body: MissLoopRequestBody;
+  try {
+    body = await request.json();
+  } catch {
+    return NextResponse.json({ error: 'Invalid JSON body' }, { status: 400 });
+  }
+
+  const action = body?.action as MissLoopAction | undefined;
+  if (!action || !['hint', 'explanation', 'classify'].includes(action)) {
+    return NextResponse.json({ error: 'Unknown or missing action' }, { status: 400 });
+  }
+
+  const question = await fetchQuestionById(supabase, (body as any).questionId);
+  if (!question) {
+    return NextResponse.json({ error: 'Question not found' }, { status: 404 });
+  }
+
+  try {
+    if (action === 'hint') {
+      const { hintNumber } = body as HintRequestBody;
+      const { systemPrompt, userMessage } = getHintPrompt({
+        stem: question.stem,
+        choices: question.choices,
+        correctAnswer: question.correct_answer,
+        hintNumber,
+        varkProfile: VARK_PROFILE,
+      });
+
+      const result = await callAnthropicWithCeiling(supabase, {
+        userId: user.id,
+        callType: 'hint',
+        systemPrompt,
+        userMessage,
+        fallbackRationale: questionRationaleFallback(question),
+        temperature: 0.3,
+        maxTokens: 300,
+      });
+
+      return NextResponse.json({ hint: result.content, overCeiling: result.overCeiling });
+    }
+
+    if (action === 'explanation') {
+      const { studentAnswer, confidence } = body as ExplanationRequestBody;
+      const coachMemory = await fetchLatestCoachMemory(supabase, user.id);
+      const chosenDistractorNote =
+        question.distractor_notes && studentAnswer ? question.distractor_notes[studentAnswer] ?? null : null;
+
+      const { systemPrompt, userMessage } = getTutorPrompt({
+        stem: question.stem,
+        choices: question.choices,
+        studentAnswer,
+        correctAnswer: question.correct_answer,
+        rationale: question.rationale,
+        confidence: confidence ?? 'medium',
+        coachMemory: coachMemory || 'No prior coaching history yet — this is early in the student\'s practice.',
+        varkProfile: VARK_PROFILE,
+        trapType: question.trap_type,
+        chosenDistractorNote,
+      });
+
+      const result = await callAnthropicWithCeiling(supabase, {
+        userId: user.id,
+        callType: 'explanation',
+        systemPrompt,
+        userMessage,
+        fallbackRationale: questionRationaleFallback(question),
+        temperature: 0.3,
+        maxTokens: 400,
+      });
+
+      return NextResponse.json({ explanation: result.content, overCeiling: result.overCeiling });
+    }
+
+    // action === 'classify'
+    const { studentAnswer, studentErrorTag } = body as ClassifyRequestBody;
+    const classification = await classifyAttemptError(supabase, user.id, {
+      stem: question.stem,
+      choices: question.choices,
+      correctAnswer: question.correct_answer,
+      studentAnswer,
+      rationale: question.rationale,
+      studentErrorTag,
+    });
+
+    return NextResponse.json(classification);
+  } catch (err: any) {
+    console.error(`miss-loop route failed (action=${action}):`, err);
+    // Degrade, never block: the client-side caller falls back to static
+    // question.rationale / skips classification on a non-200 here.
+    return NextResponse.json({ error: 'AI call failed', fallback: questionRationaleFallback(question) }, { status: 502 });
+  }
+}

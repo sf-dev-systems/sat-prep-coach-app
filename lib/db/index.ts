@@ -376,6 +376,106 @@ export async function insertQuestions(supabase: SupabaseClient, questions: Omit<
   if (error) throw error;
 }
 
+/** Single question by id — used by app/api/miss-loop/route.ts to build hint/
+ * explanation prompts server-side from the canonical row rather than trusting
+ * a client-supplied question payload. */
+export async function fetchQuestionById(supabase: SupabaseClient, questionId: string): Promise<Question | null> {
+  const { data, error } = await supabase.from('questions').select('*').eq('id', questionId).maybeSingle();
+  if (error) throw error;
+  return data as Question | null;
+}
+
+/** Distinct question_ids this user has ever attempted for a skill — the
+ * "not already served" exclusion set for PRD F3.3's structural-variant step. */
+export async function fetchAttemptedQuestionIdsForSkill(
+  supabase: SupabaseClient,
+  userId: string,
+  skillId: string
+): Promise<string[]> {
+  const { data, error } = await supabase
+    .from('attempts')
+    .select('question_id')
+    .eq('user_id', userId)
+    .eq('skill_id', skillId);
+  if (error) throw error;
+  const ids = new Set<string>((data || []).map((r: { question_id: string | null }) => r.question_id).filter(Boolean) as string[]);
+  return Array.from(ids);
+}
+
+/** PRD F3.3 structural variant: same skill, same trap_type, validated, not
+ * already served to this user. Read-only against the shared `questions`
+ * table (RLS: authenticated read-only) so this can be called directly from
+ * the browser client inside MissLoop.tsx — no server route needed since no
+ * Anthropic call is involved (Phase 2 scope: pull from the existing bank
+ * only; live AI generation of new variants is PRD F9's admin pipeline,
+ * Phase 4). Returns null if the bank has nothing left to serve — the miss
+ * loop treats that as "skip this step, never block."
+ */
+export async function fetchVariantQuestion(
+  supabase: SupabaseClient,
+  skillId: string,
+  trapType: string | null,
+  excludeQuestionIds: string[]
+): Promise<Question | null> {
+  let query = supabase
+    .from('questions')
+    .select('*')
+    .eq('skill_id', skillId)
+    .eq('validated', true)
+    .limit(5);
+
+  query = trapType ? query.eq('trap_type', trapType) : query.is('trap_type', null);
+
+  const { data, error } = await query;
+  if (error) throw error;
+
+  const exclude = new Set(excludeQuestionIds);
+  const candidates = ((data as Question[]) || []).filter((q) => !exclude.has(q.id));
+  return candidates[0] ?? null;
+}
+
+/** Newest `coach_memory` row's narrative for a user (append-only table —
+ * newest row is the active narrative per schema invariant #9). Full F6
+ * (weekly Sonnet-authored refresh) is Phase 3 scope and not built yet; this
+ * read-only accessor exists now because the AI integration rules ("every
+ * tutoring prompt includes... the active coach-memory narrative") apply to
+ * F3's explanation calls today, not just F6's own build phase. Returns null
+ * when the student has no coach_memory history yet (always true pre-Phase 3) —
+ * callers should degrade to a neutral placeholder string, not fail.
+ */
+export async function fetchLatestCoachMemory(supabase: SupabaseClient, userId: string): Promise<string | null> {
+  const { data, error } = await supabase
+    .from('coach_memory')
+    .select('narrative')
+    .eq('user_id', userId)
+    .order('updated_at', { ascending: false })
+    .limit(1)
+    .maybeSingle();
+  if (error) throw error;
+  return (data as { narrative: string } | null)?.narrative ?? null;
+}
+
+export interface ErrorJournalEntry {
+  user_id: string;
+  skill_id: string | null;
+  ai_observation: string;
+  student_note?: string | null;
+}
+
+/** PRD F3.5: "always written into error_journal" — one row per resolved
+ * miss loop, regardless of whether the student ever taps to view the
+ * distractor breakdown. `student_note` is left unset here; F5 (Phase 3)
+ * owns prompting the student to restate the rule and updating it. */
+export async function insertErrorJournalEntry(supabase: SupabaseClient, entry: ErrorJournalEntry): Promise<void> {
+  const { error } = await supabase.from('error_journal').insert({
+    user_id: entry.user_id,
+    skill_id: entry.skill_id,
+    ai_observation: entry.ai_observation,
+    student_note: entry.student_note ?? null,
+  });
+  if (error) throw error;
+}
+
 // ── mastery (lib/mastery is the orchestration layer; all raw table access
 // for it lives here per the "DB access only via lib/db" invariant) ──
 
