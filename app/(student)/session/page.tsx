@@ -4,7 +4,13 @@ import { getSupabaseServerClient } from '@/lib/db';
 import { assemblePracticeSession } from '@/lib/sessions';
 import SessionRunner from '@/components/session/SessionRunner';
 
-export default async function SessionPage() {
+interface SessionPageProps {
+  searchParams: {
+    skill?: string;
+  };
+}
+
+export default async function SessionPage({ searchParams }: SessionPageProps) {
   const cookieStore = cookies();
   const supabase = getSupabaseServerClient({ getAll: () => cookieStore.getAll() });
 
@@ -18,7 +24,9 @@ export default async function SessionPage() {
     redirect('/login');
   }
 
-  const plan = await assemblePracticeSession(supabase, user.id, 'practice');
+  // Handle drill-this-skill requests from /mastery by assembling a targeted practice session
+  const targetSkillId = searchParams?.skill || undefined;
+  const plan = await assemblePracticeSession(supabase, user.id, 'practice', targetSkillId);
 
   if (plan.items.length === 0) {
     return (

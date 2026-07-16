@@ -6,20 +6,8 @@
  *
  * Score prediction follows PRD "Score prediction & readiness": predicted =
  * f(sum(p_mastery * weight)) mapped through a curve anchored to
- * practice-test actuals. No `practice_tests` rows exist yet in v1 (F7's
- * monthly test-entry flow is a later Phase 2/3 item), so the curve here is
- * a straight 400-1600 linear map with no correction factor applied — that
- * anchor hooks in once /tests exists.
- *
- * Readiness's Timing & Pace / Calibration figures now read the real
- * `behavior_signals` row (populated nightly by lib/scoring/nightly.ts, see
- * app/api/cron/behavior-signals/route.ts) when one exists. A brand-new
- * student has no `behavior_signals` row yet — the nightly job only covers
- * users with `sessions` activity in its lookback window, so day one has
- * nothing to read — so both metrics fall back to the same live-computed
- * proxy from `attempts`/`sessions` this file used before the cron existed
- * (degrade-never-block, same pattern as F11's AI ceiling). Consistency has
- * no `behavior_signals` field and stays computed live from `sessions` either way.
+ * practice-test actuals. Practice test recalibration correction factors
+ * are calculated based on the latest entry in practice_tests.
  *
  * lib/ boundary rule: imports nothing from app/, components/, next, or react.
  */
@@ -30,10 +18,17 @@ import {
   fetchRecentAttempts,
   fetchUserProfile,
   fetchBehaviorSignals,
+  fetchPracticeTests,
   type Skill,
 } from '../db';
 import { fetchMasteryMap } from './index';
-import { calculateBaseMastery, type SkillMastery } from '../scoring/predictive-score';
+import {
+  calculateBaseMastery,
+  calculateStrategyMultiplier,
+  calculateCorrectionFactor,
+  calculateSectionScore,
+  type SkillMastery,
+} from '../scoring/predictive-score';
 import { averagePace } from '../scoring/behavior-signals';
 
 const DEFAULT_P_MASTERY = 0.3;
@@ -66,9 +61,11 @@ export interface DashboardData {
 
 function isScoreable(skill: Skill): boolean {
   // Leaf skills carry a non-null weight; domain/section nodes are null.
-  // Strategy skills are tracked in mastery but excluded from score
-  // prediction (PRD skill-taxonomy note), so only math/rw count here.
   return skill.weight !== null && (skill.section === 'math' || skill.section === 'rw');
+}
+
+function isStrategy(skill: Skill): boolean {
+  return skill.weight !== null && skill.section === 'strategy';
 }
 
 function dayKey(iso: string): string {
@@ -89,13 +86,14 @@ function computeStreakDays(sessionStartTimes: string[]): number {
 }
 
 export async function computeDashboardData(supabase: SupabaseClient, userId: string): Promise<DashboardData> {
-  const [skills, masteryMap, profile, sessions, attempts, behaviorSignals] = await Promise.all([
+  const [skills, masteryMap, profile, sessions, attempts, behaviorSignals, practiceTests] = await Promise.all([
     fetchSkills(supabase),
     fetchMasteryMap(supabase, userId),
     fetchUserProfile(supabase, userId),
     fetchRecentSessions(supabase, userId, 60),
     fetchRecentAttempts(supabase, userId, 300),
     fetchBehaviorSignals(supabase, userId),
+    fetchPracticeTests(supabase, userId),
   ]);
 
   const displayName = profile?.display_name || 'there';
@@ -116,34 +114,108 @@ export async function computeDashboardData(supabase: SupabaseClient, userId: str
     };
   }
 
-  const scoreableSkills = skills.filter(isScoreable);
+  // Split skills into RW, Math, and Strategy
+  const mathSkills = skills.filter((s) => isScoreable(s) && s.section === 'math');
+  const rwSkills = skills.filter((s) => isScoreable(s) && s.section === 'rw');
+  const strategySkills = skills.filter(isStrategy);
 
-  const skillMasteries: SkillMastery[] = scoreableSkills.map((s) => ({
+  const mathMasteries: SkillMastery[] = mathSkills.map((s) => ({
     skill_id: s.id,
     mastery_level: masteryMap.get(s.id)?.p_mastery ?? DEFAULT_P_MASTERY,
     weight: s.weight as number,
   }));
 
-  const masteryRatio = calculateBaseMastery(skillMasteries); // 0..1
-  const predictedScore = Math.round((400 + masteryRatio * 1200) / 10) * 10;
+  const rwMasteries: SkillMastery[] = rwSkills.map((s) => ({
+    skill_id: s.id,
+    mastery_level: masteryMap.get(s.id)?.p_mastery ?? DEFAULT_P_MASTERY,
+    weight: s.weight as number,
+  }));
 
+  const strategyMasteries: SkillMastery[] = strategySkills.map((s) => ({
+    skill_id: s.id,
+    mastery_level: masteryMap.get(s.id)?.p_mastery ?? DEFAULT_P_MASTERY,
+    weight: s.weight as number,
+  }));
+
+  const mathBaseMastery = calculateBaseMastery(mathMasteries);
+  const rwBaseMastery = calculateBaseMastery(rwMasteries);
+  const strategyMastery = calculateBaseMastery(strategyMasteries);
+
+  const currentStrategyMultiplier = calculateStrategyMultiplier(strategyMastery);
+
+  // Default correction factors
+  let mathCorrectionFactor = 1.0;
+  let rwCorrectionFactor = 1.0;
+  let bandWidth = 100;
+
+  const scoreableSkills = skills.filter(isScoreable);
   const totalAttemptsAcrossScoreableSkills = scoreableSkills.reduce(
     (sum, s) => sum + (masteryMap.get(s.id)?.attempts_count ?? 0),
     0
   );
-  // Band widens with fewer attempts logged (more uncertainty), narrows as
-  // evidence accumulates — no practice-test recalibration exists yet (F7),
-  // so this is attempt-count-driven rather than days-since-last-test.
-  const bandWidth = Math.max(40, Math.min(160, 160 - totalAttemptsAcrossScoreableSkills * 1.5));
+
+  const now = new Date();
+
+  if (practiceTests && practiceTests.length > 0) {
+    const latestTest = practiceTests[0];
+    const mathMasteryAtTest = latestTest.domain_breakdown?.math_mastery_at_test ?? mathBaseMastery;
+    const rwMasteryAtTest = latestTest.domain_breakdown?.rw_mastery_at_test ?? rwBaseMastery;
+    const strategyMasteryAtTest = latestTest.domain_breakdown?.strategy_mastery_at_test ?? strategyMastery;
+
+    const mathStrategyMultiplierAtTest = calculateStrategyMultiplier(strategyMasteryAtTest);
+    const rwStrategyMultiplierAtTest = calculateStrategyMultiplier(strategyMasteryAtTest);
+
+    mathCorrectionFactor = calculateCorrectionFactor(
+      latestTest.math_score,
+      mathMasteryAtTest,
+      mathStrategyMultiplierAtTest
+    );
+    rwCorrectionFactor = calculateCorrectionFactor(
+      latestTest.rw_score,
+      rwMasteryAtTest,
+      rwStrategyMultiplierAtTest
+    );
+
+    // Band widens with days since the last test to represent decay/increasing uncertainty
+    const daysSinceLastTest = Math.max(
+      0,
+      (now.getTime() - new Date(latestTest.taken_at).getTime()) / (1000 * 60 * 60 * 24)
+    );
+    bandWidth = Math.max(30, Math.min(150, 40 + daysSinceLastTest * 2.5));
+  } else {
+    // Attempt-count-driven fallback
+    bandWidth = Math.max(40, Math.min(160, 160 - totalAttemptsAcrossScoreableSkills * 1.5));
+  }
+
+  // Calculate calibrated final scores
+  const mathScore = calculateSectionScore({
+    baseMastery: mathBaseMastery,
+    strategyMultiplier: currentStrategyMultiplier,
+    correctionFactor: mathCorrectionFactor,
+  });
+
+  const rwScore = calculateSectionScore({
+    baseMastery: rwBaseMastery,
+    strategyMultiplier: currentStrategyMultiplier,
+    correctionFactor: rwCorrectionFactor,
+  });
+
+  const predictedScore = mathScore + rwScore;
+
   const confidenceInterval = `${Math.round((predictedScore - bandWidth / 2) / 10) * 10} - ${
     Math.round((predictedScore + bandWidth / 2) / 10) * 10
   }`;
 
+  // Average content mastery percentage
+  const totalContentWeight = scoreableSkills.reduce((acc, s) => acc + (s.weight as number), 0);
+  const weightedContentMastery =
+    (mathBaseMastery * mathSkills.reduce((acc, s) => acc + (s.weight as number), 0) +
+      rwBaseMastery * rwSkills.reduce((acc, s) => acc + (s.weight as number), 0)) /
+    totalContentWeight;
+
+  const contentMasteryPercent = Math.round(weightedContentMastery * 100);
+
   // Top focus skills: highest point-leverage gaps first (weight * (1 - mastery)).
-  // PRD F1 calls this a "top-5 gap list" on the post-diagnostic dashboard;
-  // this is the same "Top Focus Skills" card used day-to-day (F2), so the
-  // count is raised uniformly to 5 rather than forking a diagnostic-only view.
-  const now = new Date();
   const focusSkills: FocusSkill[] = scoreableSkills
     .map((s) => {
       const m = masteryMap.get(s.id);
@@ -162,7 +234,7 @@ export async function computeDashboardData(supabase: SupabaseClient, userId: str
 
   // Timing & pace: prefer the nightly-computed behavior_signals figure;
   // fall back to a live mean over recent timed attempts when no signal row
-  // exists yet (new student, or nightly job hasn't run since first activity).
+  // exists yet.
   const signalPace = averagePace(behaviorSignals?.avg_pace_by_difficulty ?? null);
   const timedAttempts = attempts.filter((a) => a.time_spent_seconds != null);
   const provisionalPace = timedAttempts.length
@@ -181,10 +253,7 @@ export async function computeDashboardData(supabase: SupabaseClient, userId: str
   const consistencyStatus: ReadinessMetric['status'] =
     daysPracticed >= CONSISTENCY_TARGET_DAYS_PER_WEEK ? 'Excellent' : daysPracticed >= 2 ? 'On Track' : 'Warning';
 
-  // Calibration: prefer the nightly-computed behavior_signals score; fall
-  // back to a live computation over recent attempts (% of confidence-tagged
-  // attempts where confidence lines up with correctness) when no signal row
-  // exists yet.
+  // Calibration: prefer nightly signals, fallback to live calculation
   let calibrationPercent: number | null =
     behaviorSignals?.calibration_score != null ? Math.round(behaviorSignals.calibration_score * 100) : null;
   if (calibrationPercent == null) {
@@ -203,8 +272,8 @@ export async function computeDashboardData(supabase: SupabaseClient, userId: str
   const readinessMetrics: ReadinessMetric[] = [
     {
       name: 'Content Mastery',
-      value: `${Math.round(masteryRatio * 100)}%`,
-      status: masteryRatio >= 0.7 ? 'Excellent' : masteryRatio >= 0.5 ? 'On Track' : 'Warning',
+      value: `${contentMasteryPercent}%`,
+      status: contentMasteryPercent >= 70 ? 'Excellent' : contentMasteryPercent >= 50 ? 'On Track' : 'Warning',
     },
     { name: 'Timing & Pace', value: paceValue, status: paceStatus },
     { name: 'Consistency', value: `${daysPracticed}/${CONSISTENCY_TARGET_DAYS_PER_WEEK} days`, status: consistencyStatus },
@@ -230,7 +299,7 @@ export async function computeDashboardData(supabase: SupabaseClient, userId: str
     displayName,
     predictedScore,
     confidenceInterval,
-    contentMasteryPercent: Math.round(masteryRatio * 100),
+    contentMasteryPercent,
     streakDays: computeStreakDays(sessions.filter((s) => s.started_at).map((s) => s.started_at as string)),
     minutesToday: Math.round(minutesToday),
     questionsToday,
