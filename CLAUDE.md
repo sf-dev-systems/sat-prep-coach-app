@@ -111,6 +111,7 @@ At the end of EVERY session, in this order:
    "Sonnet — 7/10/26 3:27 PM"). Then add a one-line row for it to
    `02 SESSION_LOG/00_INDEX.md` (newest at the bottom).
 3. Update any 09 WIKI/ pages affected by the session's changes.
+4. **Next-session prompt** — output a ready-to-paste prompt block at the end of your summary. It must include: current phase + status of all phases, the single next action, and any first-action prerequisite (e.g., commit pending changes). Format it as a fenced code block so Sienna can copy it directly.
 As of 2026-07-10, session history lives as one file per session (not one
 growing append-only file) — see policy below for why and for the old
 file's location.

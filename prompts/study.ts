@@ -21,6 +21,8 @@ export interface StudyPromptContext {
     correct_answer: string
     rationale: string
   } | null
+  /** Injected when the skill's inherent modality conflicts with Ava's VARK profile. */
+  modalityNote?: string
 }
 
 import { AVA_LEARNER_PROFILE } from '../lib/learner-profile'
@@ -58,12 +60,16 @@ const OUTPUT_SHAPE = `{
 }`
 
 export function getStudyLessonPrompt(context: StudyPromptContext): { system: string; user: string } {
-  const { skill, masterySnapshot, recentErrors, existingNote, sampleQuestion } = context
+  const { skill, masterySnapshot, recentErrors, existingNote, sampleQuestion, modalityNote } = context
+
+  const modalityBlock = modalityNote
+    ? `\nMODALITY OVERRIDE (mandatory — takes precedence over generic VARK directive for this skill):\n${modalityNote}`
+    : ''
 
   const system = `You are a world-class AI SAT Coach building a personalized study lesson for one student, Ava.
 
 VARK DIRECTIVE (mandatory — apply to every element of the lesson):
-${VARK_DIRECTIVE}
+${VARK_DIRECTIVE}${modalityBlock}
 
 You must respond with ONLY valid JSON — no markdown, no prose outside the JSON, no code fences. The JSON must exactly match this shape:
 ${OUTPUT_SHAPE}

@@ -11,6 +11,7 @@ import {
 import { callAnthropicWithCeiling } from '@/lib/ai';
 import { StudyLessonRequestSchema, StudyLessonResponseSchema, type StudyLessonResponse } from '@/lib/validation/study';
 import { getStudyLessonPrompt, type StudyPromptContext } from '@/prompts/study';
+import { AVA_LEARNER_PROFILE } from '@/lib/learner-profile';
 
 export const dynamic = 'force-dynamic';
 
@@ -107,6 +108,7 @@ export async function POST(req: NextRequest) {
   const sampleQ = sampleQuestions[0] ?? null;
 
   // 5. Build prompt context
+  const overrides = AVA_LEARNER_PROFILE.skillModalityOverrides as Record<string, string>;
   const promptContext: StudyPromptContext = {
     skill: {
       id: skill.id,
@@ -134,6 +136,7 @@ export async function POST(req: NextRequest) {
           rationale: sampleQ.rationale ?? '',
         }
       : null,
+    modalityNote: overrides[skill.name],
   };
 
   // 6. Build prompts

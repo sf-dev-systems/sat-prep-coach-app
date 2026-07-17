@@ -1,6 +1,6 @@
 import { cookies } from 'next/headers';
 import { redirect } from 'next/navigation';
-import { BookOpen, Award, Flame, Calendar, ArrowRight, TrendingUp, Settings } from 'lucide-react';
+import { BookOpen, Award, Flame, Calendar, ArrowRight, TrendingUp, Settings, RotateCcw } from 'lucide-react';
 import { getSupabaseServerClient } from '@/lib/db';
 import { computeDashboardData } from '@/lib/mastery/dashboard';
 import type { StudentSetupState } from '@/lib/mastery/dashboard';
@@ -196,22 +196,37 @@ export default async function StudentDashboard() {
         <div className="md:col-span-2 space-y-3">
           <h2 className="text-lg font-bold tracking-tight text-gray-900">Top Focus Skills for {data.displayName}</h2>
 
-          {/* Study CTA card */}
-          {focusSkills.length > 0 && (
-            <div className="bg-indigo-50 border border-indigo-100 rounded-xl p-4 flex items-center justify-between">
+          {/* Action cards: Study + Review */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            {focusSkills.length > 0 && (
+              <div className="bg-indigo-50 border border-indigo-100 rounded-xl p-4 flex items-center justify-between">
+                <div className="space-y-0.5">
+                  <span className="text-[10px] font-bold uppercase tracking-wider text-indigo-500">Study Today&apos;s Top Skill</span>
+                  <p className="text-sm font-semibold text-indigo-900">{focusSkills[0].name}</p>
+                </div>
+                <a
+                  href={`/study/${focusSkills[0].id}`}
+                  className="inline-flex items-center gap-2 bg-indigo-900 text-white font-bold px-4 py-2 rounded-xl text-xs hover:bg-indigo-800 transition-colors shrink-0"
+                >
+                  <BookOpen className="w-3.5 h-3.5" />
+                  <span>Study</span>
+                </a>
+              </div>
+            )}
+            <div className={`bg-amber-50 border border-amber-200 rounded-xl p-4 flex items-center justify-between${focusSkills.length === 0 ? ' sm:col-span-2' : ''}`}>
               <div className="space-y-0.5">
-                <span className="text-[10px] font-bold uppercase tracking-wider text-indigo-500">Study Today&apos;s Top Skill</span>
-                <p className="text-sm font-semibold text-indigo-900">{focusSkills[0].name}</p>
+                <span className="text-[10px] font-bold uppercase tracking-wider text-amber-600">Spaced Repetition Review</span>
+                <p className="text-sm font-semibold text-amber-900">Confront your missed questions</p>
               </div>
               <a
-                href={`/study/${focusSkills[0].id}`}
-                className="inline-flex items-center gap-2 bg-indigo-900 text-white font-bold px-4 py-2 rounded-xl text-xs hover:bg-indigo-800 transition-colors shrink-0"
+                href="/miss-loop"
+                className="inline-flex items-center gap-2 bg-amber-600 text-white font-bold px-4 py-2 rounded-xl text-xs hover:bg-amber-700 transition-colors shrink-0"
               >
-                <BookOpen className="w-3.5 h-3.5" />
-                <span>Study</span>
+                <RotateCcw className="w-3.5 h-3.5" />
+                <span>Review</span>
               </a>
             </div>
-          )}
+          </div>
 
           <div className="space-y-2.5">
             {focusSkills.length === 0 && (

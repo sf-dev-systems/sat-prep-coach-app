@@ -1,17 +1,22 @@
-# PRD: SAT App— MVP Enhancement Roadmap
 
-## Version
-**PRD v1.0 — Enhancement + Study Mode Roadmap**
+1. **Highest-Value Enhancements**
+2. **Product/UX Enhancements**
+3. **Engineering Enhancements**
+4. **Study Mode / Ava VARK MVP**
+5. **Code-quality / security / reliability improvements**
+6. **Future gap-analysis structure**
+    
 
-## Status
-Draft for review.
+---
 
+# PRD| SAT APP: Enhancement and Study Mode Roadmap
+
+## Version 1
+**PRD | SAT App Enhancement + Study Mode Roadmap**
 ## Product
-**SAT Prep Coach App — Personal Edition for Ava**
-
+**SAT Prep  App — Personal Edition for Ava**
 ## Primary Student
-Ava
-
+Ava 
 ## Primary Parent / Owner
 Sienna
 
@@ -26,7 +31,6 @@ This PRD covers:
 5. **Engineering reliability improvements**
 6. **Testing and production-hardening requirements**
 7. **Future gap-analysis framework**
-    
 
 ---
 # 1. Executive Summary
@@ -50,7 +54,6 @@ However, several important gaps remain before the app feels like a complete priv
 The largest product gap is that Ava currently has **practice mode**, **drill mode**, and **miss remediation**, but not a dedicated **Study Mode**.
 
 The largest engineering gaps are:
-
 1. client-side attempt logging and mastery updates,
 2. weak runtime API validation,
 3. lack of test coverage,
@@ -58,19 +61,15 @@ The largest engineering gaps are:
 5. missing CI/typecheck/test scripts,
 6. limited user-facing error recovery around save failures.
     
-
 The MVP roadmap should focus on:
-
 1. **server-side trust boundaries,**
 2. **Study Mode for Ava,**
 3. **VARK-personalized lesson behavior,**
 4. **better dashboard and mastery UX,**
 5. **tests and CI,**
 6. **question-bank quality tooling.**
-    
 
 ---
-
 # 2. Current State Summary
 
 ## 2.1 VARK support exists but is limited
@@ -81,82 +80,65 @@ The current app stores Ava’s VARK profile as a static constant:
 Read/Write 13, Kinesthetic 14, Aural 9, Visual 7
 ```
 
-This is currently a raw string intended for the single-student MVP. 
+This is currently a raw string intended for the single-student MVP.
 
-The miss-loop API imports this VARK profile and passes it into hint and explanation prompts. 
+The miss-loop API imports this VARK profile and passes it into hint and explanation prompts.
 
-The hint prompt instructs the AI to align with the VARK profile. 
+The hint prompt instructs the AI to align with the VARK profile.
 
-The tutor prompt also references the VARK profile and already pushes written structure and correction-by-doing. 
+The tutor prompt also references the VARK profile and already pushes written structure and correction-by-doing.
 
 ## 2.2 Adaptive practice exists
-
-The `/session` page creates a session plan and passes it to `SessionRunner`. 
+The `/session` page creates a session plan and passes it to `SessionRunner`.
 
 The session assembler chooses questions based on:
 
 1. spaced-repetition review,
-    
 2. low mastery / high vulnerability,
-    
-3. difficulty calibrated around expected success. 
+3. difficulty calibrated around expected success.
     
 
 ## 2.3 Targeted drill exists
-
 The app supports targeted drill using:
 
 ```
 /session?skill=[skillId]
 ```
 
-The session page reads the `skill` query parameter. 
+The session page reads the `skill` query parameter.
 
-The session assembler narrows the active skill list when `targetSkillId` is present. 
+The session assembler narrows the active skill list when `targetSkillId` is present.
 
-The mastery page already links selected skills to targeted drill. 
+The mastery page already links selected skills to targeted drill.
 
 ## 2.4 Mastery review tools exist
-
 The mastery page includes:
-
 - goal tree / flat list,
-    
 - mastery percentages,
-    
 - persistent error journal,
-    
 - skill notes,
-    
 - self-correction strategy,
-    
 - drill button.
-    
 
-The error journal UI exists per selected skill. 
+The error journal UI exists per selected skill.
 
-The self-correction note UI exists and saves student notes. 
+The self-correction note UI exists and saves student notes.
 
 ## 2.5 AI chokepoint exists
-
-Anthropic calls go through `callAnthropicWithCeiling`. This function resolves the daily ceiling, checks current AI usage, chooses the model, makes the Anthropic call, and logs successful usage. 
+Anthropic calls go through `callAnthropicWithCeiling`. This function resolves the daily ceiling, checks current AI usage, chooses the model, makes the Anthropic call, and logs successful usage.
 
 ## 2.6 API validation is not yet strong enough
+The miss-loop API parses JSON and checks action names, but then uses TypeScript casts and broad body access.
 
-The miss-loop API parses JSON and checks action names, but then uses TypeScript casts and broad body access. 
-
-For example, the route reads `questionId` through `(body as any).questionId`. 
+For example, the route reads `questionId` through `(body as any).questionId`.
 
 ## 2.7 Attempt logging and mastery updates happen client-side
+The `useMissLoop` hook logs attempts and updates mastery directly from the browser client.
 
-The `useMissLoop` hook logs attempts and updates mastery directly from the browser client. 
-
-This means the client supplies values that affect persistent learning state, including correctness, difficulty, error type, retry status, hints used, and time spent. 
+This means the client supplies values that affect persistent learning state, including correctness, difficulty, error type, retry status, hints used, and time spent.
 
 ---
-
 # 3. Product Vision
-
 The app should become Ava’s private SAT tutor.
 
 It should not merely ask:
@@ -193,7 +175,7 @@ These are the top improvements that should be prioritized because they directly 
 
 ### Problem
 
-The miss-loop API currently relies on TypeScript interfaces and casts after JSON parsing. 
+The miss-loop API currently relies on TypeScript interfaces and casts after JSON parsing.
 
 This does not protect the runtime from malformed requests.
 
@@ -224,13 +206,9 @@ Then apply the same pattern to future study APIs.
 ### Acceptance criteria
 
 - invalid body returns `400`,
-    
 - invalid action returns `400`,
-    
 - invalid enum returns `400`,
-    
 - missing `questionId` returns `400`,
-    
 - no prompt builder runs until validation passes.
     
 
@@ -244,10 +222,8 @@ Then apply the same pattern to future study APIs.
 
 ### Problem
 
-The browser currently logs attempts and updates mastery through `useMissLoop`. 
-
-The client supplies mastery-impacting fields. 
-
+The browser currently logs attempts and updates mastery through `useMissLoop`.
+The client supplies mastery-impacting fields.
 This is risky because correctness and mastery should be trusted server-side.
 
 ### Requirement
@@ -269,17 +245,11 @@ server action: logAttemptAndUpdateMastery
 The server should:
 
 1. authenticate user,
-    
 2. validate body,
-    
 3. fetch question by ID,
-    
 4. recompute correctness,
-    
 5. write attempt,
-    
 6. update mastery,
-    
 7. return success/failure.
     
 
@@ -310,13 +280,9 @@ isCorrect
 ### Acceptance criteria
 
 - browser no longer determines `isCorrect`,
-    
 - browser no longer determines `difficulty`,
-    
 - browser no longer directly updates mastery,
-    
 - all attempt writes use authenticated server user,
-    
 - existing RLS remains intact.
     
 
@@ -329,15 +295,11 @@ isCorrect
 ## HVE-3: Log AI fallback events
 
 ### Problem
-
-Successful Anthropic calls are logged. 
-
-But over-ceiling fallback returns static content without logging an `ai_log` row. 
-
-API-error fallback also returns fallback content without logging fallback usage. 
+Successful Anthropic calls are logged.
+But over-ceiling fallback returns static content without logging an `ai_log` row.
+API-error fallback also returns fallback content without logging fallback usage.
 
 ### Requirement
-
 Log AI fallback events with models such as:
 
 ```
@@ -348,31 +310,20 @@ fallback-error
 ### Why this matters
 
 This allows the app owner to know:
-
 - how often Ava hits the AI ceiling,
-    
 - whether Anthropic failures are happening,
-    
 - which AI features are most expensive,
-    
 - whether static fallbacks are being used too often.
     
 
 ### Acceptance criteria
-
 - over-ceiling fallback writes an `ai_log` row,
-    
 - API-error fallback writes an `ai_log` row,
-    
 - fallback rows include call type,
-    
 - fallback rows include model label,
-    
 - token counts can be zero.
-    
 
 ### Priority
-
 **P0**
 
 ---
@@ -380,37 +331,24 @@ This allows the app owner to know:
 ## HVE-4: Add unit tests for scoring, diagnostic assembly, and mastery
 
 ### Problem
-
-The project has scripts for dev/build/start/lint and data imports, but no visible test script. 
-
+The project has scripts for dev/build/start/lint and data imports, but no visible test script.
 Important learning logic currently lacks automated test coverage.
 
 ### Requirement
-
 Add a test framework such as Vitest.
 
 ### Initial test targets
 
 Test:
-
 - `difficultyForAccuracy`,
-    
 - `checkCorrect`,
-    
 - diagnostic allocation,
-    
 - no duplicate diagnostic questions,
-    
 - BKT updates,
-    
 - FSRS scheduling,
-    
 - score prediction,
-    
 - confidence interval clamping,
-    
 - behavior signal calculations,
-    
 - targeted skill session assembly.
     
 
@@ -435,7 +373,7 @@ Test:
 
 ### Problem
 
-The dashboard builds the confidence interval around `predictedScore`. 
+The dashboard builds the confidence interval around `predictedScore`.
 
 The displayed interval should never exceed SAT score boundaries.
 
@@ -467,7 +405,7 @@ section SAT: 200–800
 
 ### Problem
 
-The dashboard treats `masteryMap.size === 0` as no data and sends Ava to diagnostic. 
+The dashboard treats `masteryMap.size === 0` as no data and sends Ava to diagnostic.
 
 But real users can have partial states:
 
@@ -546,7 +484,7 @@ Move daily goals into profile/settings/config.
 
 ### Problem
 
-`useMissLoop` has `isSaving`, but failed persistence currently logs to console and rethrows. 
+`useMissLoop` has `isSaving`, but failed persistence currently logs to console and rethrows.
 
 ### Requirement
 
@@ -573,7 +511,7 @@ Show visible error states and retry actions when attempt save fails.
 
 ### Problem
 
-The session and diagnostic assemblers include fallback behavior for sparse question banks. 
+The session and diagnostic assemblers include fallback behavior for sparse question banks.
 
 But coverage gaps should be caught before Ava hits them.
 
@@ -623,7 +561,7 @@ scripts/audit-question-bank.ts
 
 ### Problem
 
-AI model names are hardcoded in `callAnthropicWithCeiling`. 
+AI model names are hardcoded in `callAnthropicWithCeiling`.
 
 ### Requirement
 
@@ -700,7 +638,7 @@ Continue to drill
 
 ### Problem
 
-The dashboard shows predicted score, confidence band, readiness metrics, and focus skills, but Ava may not understand why the numbers changed. 
+The dashboard shows predicted score, confidence band, readiness metrics, and focus skills, but Ava may not understand why the numbers changed.
 
 ### Requirement
 
@@ -730,7 +668,7 @@ AI-generated narrative using coach memory.
 
 ### Problem
 
-The session plan knows categories like review, priority, mixed, and confidence-builder. 
+The session plan knows categories like review, priority, mixed, and confidence-builder.
 
 But Ava may not understand why a specific question appears.
 
@@ -748,7 +686,7 @@ Calibration
 
 ### Existing source
 
-`PlannedSessionItem.category` already exists. 
+`PlannedSessionItem.category` already exists.
 
 ### Priority
 
@@ -760,7 +698,7 @@ Calibration
 
 ### Problem
 
-The dashboard has a weekly report placeholder for Phase 4. 
+The dashboard has a weekly report placeholder for Phase 4.
 
 ### Requirement
 
@@ -791,7 +729,7 @@ Show:
 
 ### Problem
 
-Daily goals are visible, but there is no low-friction recovery option when Ava is busy. 
+Daily goals are visible, but there is no low-friction recovery option when Ava is busy.
 
 ### Requirement
 
@@ -1066,7 +1004,7 @@ npm run build
 
 ### Current state
 
-`package.json` has no `typecheck` script. 
+`package.json` has no `typecheck` script.
 
 ### Requirement
 
@@ -1127,11 +1065,11 @@ Add script/check to verify:
 
 ### Examples
 
-Miss-loop body access uses `any`. 
+Miss-loop body access uses `any`.
 
-Middleware cookie options cast as `any`. 
+Middleware cookie options cast as `any`.
 
-Route catch uses `err: any`. 
+Route catch uses `err: any`.
 
 ### Requirement
 
@@ -1375,4 +1313,4 @@ This gives you a clean path from the current app to a more complete tutor experi
 
 ## Commands Used
 
-No new commands were executed for this response, per your earlier instruction not to execute. This expanded PRD is based on the previously reviewed files and the prior recommendations.
+No new commands were executed for this response, per your earlier instruction not to execute. This expanded PRD is based on the previously reviewed files and the prior recommendation
