@@ -4,7 +4,7 @@ type: session-log-index
 status: active
 owner: Sienna (Oni Technologies LLC)
 created: 2026-07-10
-updated: 2026-07-10
+updated: 2026-07-16
 source_of_truth: false
 related: ["AGENT_HANDOFF.md", "CLAUDE.md"]
 ---
@@ -44,3 +44,6 @@ reconstruction for chronological sorting, not a verified timestamp.
 | [2026-07-11_0300_middleware-cron-bypass-fix.md](2026-07-11_0300_middleware-cron-bypass-fix.md) | Claude (Sonnet) | Fixed middleware.ts blocking /api/cron/* (no session cookies on cron requests) — added /api/cron to PUBLIC_PATHS. Discovered via manual test of the behavior_signals cron; user diagnosed root cause, agent verified against actual file and applied a smaller one-line fix. Not yet confirmed working end-to-end. |
 | [2026-07-11_0400_miss-loop-tiered-hints-f3.md](2026-07-11_0400_miss-loop-tiered-hints-f3.md) | Claude (Sonnet) | Built PRD F3's full miss-loop state machine (tiered AI hints, written explanation, structural variant, Haiku cross-classify) — the last item for Phase 2. New app/api/miss-loop/route.ts, rewrote lib/ai/classifier.ts + MissLoop.tsx, tightened prompts/tutor.ts, added zod dependency. Also fixed DiagnosticRunner.tsx (shared MissLoop contract, wasn't in the prior handoff's scope note). Build verification handed to user's own machine, not yet confirmed. |
 | [2026-07-14_0110_v1-review-psat-plan.md](2026-07-14_0110_v1-review-psat-plan.md) | Claude (Fable) | Full-repo review vs PRD/Charter + live DB audit (74 questions, 0 mastery, 0 ai_log) triggered by Ava's PSAT results (1110: M500/RW610, Advanced Math weakest). Produced 00 SYSTEM/AI OUTPUTS/2026-07-14_v1-completion-plan.md: Steps 0–4 to working v1, content-import priorities keyed to her score profile. No code written; Phase 3 gate awaits approval. |
+| [2026-07-16_1612_phase3-visibility-route-groups-scoring-tests-mastery.md](2026-07-16_1612_phase3-visibility-route-groups-scoring-tests-mastery.md) | Gemini | Reorganized Route Groups ((student), (parent), (admin)), wrote calibrated Section Score calculations with practice test correction factors, built /tests practice test log & calibration entry, built /mastery hierarchical Goal Tree, and wired targeted skill drilling. |
+| [2026-07-16_1701_fix-session-assembler-syntax-error.md](2026-07-16_1701_fix-session-assembler-syntax-error.md) | Gemini | Resolved SWC malformed unicode escape syntax error in the comments of lib/sessions/index.ts, enabling successful clean Next.js production compiles locally on user's machine. |
+| [2026-07-16_1709_fix-database-exports-syntax-error.md](2026-07-16_1709_fix-database-exports-syntax-error.md) | Gemini | Resolved SWC malformed unicode escape syntax error in the database queries of lib/db/index.ts, resolving all webpack import and export failures during npm run build. |
