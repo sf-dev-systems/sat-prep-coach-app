@@ -1,4 +1,4 @@
-﻿---
+---
 title: Session Log Index
 type: session-log-index
 status: active
@@ -56,3 +56,8 @@ reconstruction for chronological sorting, not a verified timestamp.
 | [2026-07-17_0405_phase5-eng-quality.md](2026-07-17_0405_phase5-eng-quality.md) | Claude (Sonnet 4.6) | Phase 5 complete: typecheck script, Vitest (22/22 tests), audit-question-bank.ts, lib/learner-profile.ts (typed VARK), constants.ts cleaned, VARK directives derived from profile, no as-any in api/. |
 | [2026-07-17_miss-loop-dashboard-integration.md](2026-07-17_miss-loop-dashboard-integration.md) | Claude (Sonnet 4.6) | Wired orphaned miss-loop UI into dashboard: Review card (amber, /miss-loop) now sits alongside Study card in a 2-column grid. typecheck clean. |
 | [2026-07-17_vark-overrides-image-ingestion-plan.md](2026-07-17_vark-overrides-image-ingestion-plan.md) | Claude (Sonnet 4.6) | VARK modality overrides for 4 visual-conflict skills; image ingestion architecture decided (media_urls JSONB + question-assets bucket); Test 4 RW extraction queued as next action. |
+| [2026-07-17_0447_test4-rw-import.md](2026-07-17_0447_test4-rw-import.md) | Claude (Sonnet 4.6) | media_urls migration applied, question-assets bucket created, 66 Test 4 RW questions extracted and imported (0 SEVERE in audit). Total bank: ~195 questions. |
+| [2026-07-17_0600_test5-rw-import.md](2026-07-17_0600_test5-rw-import.md) | Claude (Sonnet 4.6) | T4-RW: 66 rationales patched + 2 charts uploaded. T5-RW: 66 questions imported (66 rationales, 2 chart images M1-Q16 + M2-Q12). Bank: 261 questions, 0 SEVERE. |
+| [2026-07-17_0730_test6-rw-import.md](2026-07-17_0730_test6-rw-import.md) | Claude (Sonnet 4.6) | T6-RW: 66 questions imported (66 rationales, 3 chart images M1-Q14/Q15 + M2-Q13). Bank: 327 questions, 0 SEVERE. |
+| [2026-07-17_0919_test7-rw-import.md](2026-07-17_0919_test7-rw-import.md) | Claude (Sonnet 4.6) | T7-RW: 66 questions imported (66 rationales, 3 chart PNGs Q12/Q15/Q16). New boundary-detection algorithm for T7's out-of-order PDF layout. Bank: 393 questions, 0 SEVERE. |
+

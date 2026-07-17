@@ -1,0 +1,216 @@
+{
+  "_instructions": "Config for SAT Test 9 RW pipeline. Fill in any '?' answers from the scoring guide. stem_overrides and choice_overrides are keyed by external_id (e.g. 'T8-RW-M1-Q14'). missing_qnum_injections: set inject_line to the correct line number from recon output. If multi-track, change scoring_track_index (0-based) and re-run recon to swap keys.",
+  "test_num": 9,
+  "layout": "unknown",
+  "m1_line_start": 25,
+  "m2_line_start": 855,
+  "math_line_start": 1692,
+  "scoring_track_index": 1,
+  "scoring_track_options": [
+    {
+      "page": 2,
+      "m1_q1": "A",
+      "m2_q1": "B"
+    },
+    {
+      "page": 4,
+      "m1_q1": "A",
+      "m2_q1": "B"
+    }
+  ],
+  "m1_answers": {
+    "1": "A",
+    "2": "D",
+    "3": "C",
+    "4": "C",
+    "5": "B",
+    "6": "C",
+    "7": "A",
+    "8": "A",
+    "9": "C",
+    "10": "A",
+    "11": "D",
+    "12": "C",
+    "13": "D",
+    "14": "C",
+    "15": "A",
+    "16": "D",
+    "17": "B",
+    "18": "A",
+    "19": "A",
+    "20": "A",
+    "21": "B",
+    "22": "C",
+    "23": "C",
+    "24": "C",
+    "25": "A",
+    "26": "B",
+    "27": "A",
+    "28": "B",
+    "29": "D",
+    "30": "B",
+    "31": "B",
+    "32": "A",
+    "33": "C"
+  },
+  "m2_answers": {
+    "1": "B",
+    "2": "C",
+    "3": "B",
+    "4": "B",
+    "5": "C",
+    "6": "D",
+    "7": "D",
+    "8": "D",
+    "9": "A",
+    "10": "A",
+    "11": "D",
+    "12": "A",
+    "13": "D",
+    "14": "C",
+    "15": "C",
+    "16": "D",
+    "17": "B",
+    "18": "D",
+    "19": "C",
+    "20": "D",
+    "21": "C",
+    "22": "C",
+    "23": "B",
+    "24": "D",
+    "25": "C",
+    "26": "C",
+    "27": "C",
+    "28": "A",
+    "29": "B",
+    "30": "C",
+    "31": "D",
+    "32": "C",
+    "33": "B"
+  },
+  "missing_qnum_injections": {
+    "m2_q1": {
+      "qnum": 1, "module": "m2", "inject_line": 880,
+      "note": "Q1 uses '. 1 ,' format in PDF — regex miss. Line 880 is the question number line."
+    },
+    "m2_q2": {
+      "qnum": 2, "module": "m2", "inject_line": 901,
+      "note": "Q2 uses '. 2 ,' format in PDF — regex miss. Line 901 is the question number line."
+    }
+  },
+  "qnum_line_overrides": {
+    "m1": {
+      "25": 635
+    }
+  },
+  "choices_overrides": {
+    "T9-RW-M1-Q02": ["A) accidental", "B) confident", "C) expensive", "D) consistent"]
+  },
+  "chart_pages": [
+    {
+      "pdf_page": 1,
+      "column": "left",
+      "drawing_count": 224,
+      "text_snippet": "07\n6WSL03\nThe SAT® \nPractice\nTest# 9\n \nt:J \nMake time to take the practice test. \nIt is one of the best ways to get ready \nfor the SAT. \nAfter you have taken the practice test, score it \nright away at sat.org/digital-practice. \nThis version of the SAT Practice Test is for students who will be taking"
+    },
+    {
+      "pdf_page": 8,
+      "column": "left",
+      "drawing_count": 39,
+      "text_snippet": "3\nMetal Content of Plants with \nand without Kanamycin \nExposure \nMany plants lose their leaf color when exposed to\nkanamycin, an antibiotic produced by some soil\nmicroorganisms. Spelman College biologist\nMentewab Ayalew and her colleagues hypothesized\nthat plants’ response to kanamycin exposure invo"
+    },
+    {
+      "pdf_page": 10,
+      "column": "left",
+      "drawing_count": 53,
+      "text_snippet": "5\nPercentage ofNonhexagonal Cells in \nHives of Three Honeybee Species \nHoneybee hives consist mainly of hexagonal\n(six-sided) units called cells, in which queens lay\neggs. Hexagonal cells for eggs that develop into\nnonreproductive workers are smaller than those for\neggs that develop into reproductiv"
+    },
+    {
+      "pdf_page": 34,
+      "column": "left",
+      "drawing_count": 18,
+      "text_snippet": "2\nB) 8\nC) 10\nD) 24\n2\nx\n16 + 30 = 190\nWhich equation has the same solution as the given\nequation?\nA)\nx\n16\n= 30\nB)\nx\n16\n= 130\nC)\nx\n16\n= 160\nD)\nx\n16\n= 190\n3\nTy set a goal to walk at least 24 kilometers every day\nto prepare for a multiday hike. On a certain day, Ty\nplans to walk at an average speed of 4"
+    },
+    {
+      "pdf_page": 35,
+      "column": "right",
+      "drawing_count": 24,
+      "text_snippet": "20\n( )\nto\ndetermine their profit p x\n( ), in dollars, for selling\nx school posters. In order to earn a profit of $900,\nhow many school posters must they sell?\n8\nJay walks at a speed of 3 miles per hour and runs at a\nspeed of 5 miles per hour. He walks for w hours and\nruns for r hours for a combined"
+    },
+    {
+      "pdf_page": 36,
+      "column": "left",
+      "drawing_count": 55,
+      "text_snippet": "1\nA company opens an account with an initial balance\nof $36,100.00. The account earns interest, and no\nadditional deposits or withdrawals are made. The\naccount balance is given by an exponential\nfunction A, where A t( ) is the account balance, in\ndollars, t years after the account is opened. The\nacc"
+    },
+    {
+      "pdf_page": 37,
+      "column": "left",
+      "drawing_count": 54,
+      "text_snippet": "6\nA wire with a length of 106 inches is cut into\ntwo parts. One part has a length of x inches, and the\nother part has a length of y inches. The value of x is\n6 more than 4 times the value of y. What is the value\nof x ?\nA) 25\nB) 28\nC) 56\nD) 86\n17\nf x\nx\nx\nx\n=\n+ 6\n+ 5\n−4\n( )\n(\n)(\n)(\n)\nThe function f is"
+    },
+    {
+      "pdf_page": 38,
+      "column": "left",
+      "drawing_count": 35,
+      "text_snippet": "1\nx\nx\n( −2)\n=\n3 + 34\n2\nWhat is the smallest solution to the given equation?\n22\nFunction f is defined by\nf x\nx\nx\nx\n=\n+ 6\n+ 5\n+ 1\n( )\n(\n)(\n)(\n). Function g is defined\nby g x\nf x\n=\n−1\n( )\n(\n). The graph of y\ng x\n=\n( ) in the\nxy-plane has x-intercepts at a, 0\n(\n), b, 0\n(\n), and c, 0\n(\n),\nwhere a, b, and"
+    },
+    {
+      "pdf_page": 39,
+      "column": "right",
+      "drawing_count": 8,
+      "text_snippet": "6\nPoll Results\nAngel Cruz\n483\nTerry Smith 320\nThe table shows the results of a poll. A total of\n803 voters selected at random were asked which\ncandidate they would vote for in the upcoming\nelection. According to the poll, if 6,424 people vote in\nthe election, by how many votes would Angel Cruz\nbe ex"
+    },
+    {
+      "pdf_page": 42,
+      "column": "right",
+      "drawing_count": 24,
+      "text_snippet": "57\nWhat value of w is the solution to the given\nequation?\nA) 51\nB) 350\nC) 364\nD) 3,577\n2\nWhich expression is equivalent to\nx\n16( + 15) ?\nA)\nx\n16 + 31\nB)\nx\n16 + 240\nC)\nx\n16 + 1\nD)\nx\n16 + 15\n3\nLive east\nof the river\nLive west\nof the river Total\nLess than\n40 years old\n17\n11\n28\nAt least\n40 years old\n18"
+    },
+    {
+      "pdf_page": 43,
+      "column": "left",
+      "drawing_count": 25,
+      "text_snippet": "1\n9 and passes\nthrough the point (0, 14). Which equation represents\nthis line?\nA) y\nx\n= −1\n9\n−14\nB)\ny\nx\n= −1\n9\n+ 14\nC) y\nx\n= 1\n9\n−14\nD) y\nx\n= 1\n9\n+ 14\n6\nIn the figure shown, line c intersects parallel lines s\nand t. What is the value of x ?\n7\nf x\nx\n( ) =\n+ 8\n11\nThe function f is defined by the given"
+    },
+    {
+      "pdf_page": 44,
+      "column": "left",
+      "drawing_count": 28,
+      "text_snippet": "10\nx\ny\n+ 7\n=\n2\n(\n)\nWhich ordered pair x y\n,\n(\n) is a solution to the given\nsystem of equations?\nA)\n3, 100\n(\n)\nB)\n3, 3\n(\n)\nC)\n3, 10\n(\n)\nD)\n3, 70\n(\n)\n10\nThe function f is defined by f x\nx\n= 7 −84\n( )\n. What is\nthe x-intercept of the graph of y\nf x\n= ( ) in the\nxy-plane?\nA) (−12, 0)\nB) (−7, 0)\nC) (7, 0"
+    },
+    {
+      "pdf_page": 45,
+      "column": "right",
+      "drawing_count": 31,
+      "text_snippet": "3\nh x\nx\nb\n=\n+\n( )\nFor the linear function h, b is a constant and\nh 0 = 45\n( )\n. What is the value of b ?\n14\nz\nz\n+ 10 −24 = 0\n2\nWhat is one of the solutions to the given equation?\n15\nTriangle FGH is similar to triangle JKL, where\nangle F corresponds to angle J and angles G and K\nare right angles. If"
+    },
+    {
+      "pdf_page": 46,
+      "column": "left",
+      "drawing_count": 34,
+      "text_snippet": "8\nm t\nt\nt\n= –0.0274 7\n+ 7.3873 7\n+ 75.032\n2\n( )\n\n\n\n\n\n\n\n\nThe function m gives the predicted body mass m t( ),\nin kilograms (kg), of a certain animal t days after it\nwas born in a wildlife reserve, where t ≤390. Which\nof the following is the best interpretation of the\nstatement “m(33"
+    },
+    {
+      "pdf_page": 47,
+      "column": "right",
+      "drawing_count": 25,
+      "text_snippet": "2\ny\nx\n> 13 −18\nFor which of the following tables are all the values of\nx and their corresponding values of y solutions to the\ngiven inequality?\nA)\nx\ny\n3\n21\n5\n47\n8\n86\nB)\nx\ny\n3\n26\n5\n42\n8\n86\nC)\nx\ny\n3\n16\n5\n42\n8\n81\nD)\nx\ny\n3\n26\n5\n52\n8\n91\n23\nA certain town has an area of 4.36 square miles.\nWhat is the area"
+    },
+    {
+      "pdf_page": 48,
+      "column": "left",
+      "drawing_count": 8,
+      "text_snippet": "6\nThe function f is defined by f x\na\n( ) =\n2.2 + 2.2\nx\nb\n(\n),\nwhere a and b are integer constants and\na\nb\n0 <\n<\n.\nThe functions g and h are equivalent to function f,\nwhere k and m are constants. Which of the\nfollowing equations displays the y-coordinate of the\ny-intercept of the graph of y\nf x\n= ( )"
+    },
+    {
+      "pdf_page": 56,
+      "column": "left",
+      "drawing_count": 582,
+      "text_snippet": "© 2025 College Board. College Board, SAT, and the acorn logo are registered trademarks of College Board.\nThe SAT. \nGENERAL DIRECTIONS \n• You may work on only one module at a time. \n• If you finish a module before time is called, check your work on that module only. \nYou may NOT turn to any other mod"
+    }
+  ],
+  "stem_overrides": {},
+  "choice_d_overrides": {},
+  "license": "© 2025 College Board. For educational use only."
+}

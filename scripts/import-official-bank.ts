@@ -48,6 +48,7 @@ interface InputQuestionFormat {
   distractor_notes?: Record<string, string>;
   trap_type?: string;
   license?: string;
+  media_urls?: string[] | null;
   external_id?: string;
 }
 
@@ -125,6 +126,7 @@ async function main() {
       trap_type: q.trap_type || null,
       license: q.license || null,
       external_id: q.external_id || null,
+      media_urls: q.media_urls || null,
       validated: true, // Official questions are validated by default
     });
   }
@@ -134,10 +136,10 @@ async function main() {
     process.exit(0);
   }
 
-  console.log(`Inserting ${mappedQuestions.length} questions into questions table...`);
+  console.log(`Upserting ${mappedQuestions.length} questions into questions table...`);
   const { error: insertError } = await supabase
     .from('questions')
-    .insert(mappedQuestions);
+    .upsert(mappedQuestions, { onConflict: 'external_id', ignoreDuplicates: false });
 
   if (insertError) {
     console.error('Error importing questions:', insertError);

@@ -1,0 +1,180 @@
+{
+  "_instructions": "Config for SAT Test 8 RW pipeline. Fill in any '?' answers from the scoring guide. stem_overrides and choice_overrides are keyed by external_id (e.g. 'T8-RW-M1-Q14'). missing_qnum_injections: set inject_line to the correct line number from recon output.",
+  "test_num": 8,
+  "layout": "q1_before_header",
+  "m1_line_start": 24,
+  "m2_line_start": 840,
+  "math_line_start": 1685,
+  "m1_answers": {
+    "1": "A",
+    "2": "D",
+    "3": "B",
+    "4": "B",
+    "5": "A",
+    "6": "A",
+    "7": "A",
+    "8": "C",
+    "9": "A",
+    "10": "A",
+    "11": "D",
+    "12": "D",
+    "13": "A",
+    "14": "B",
+    "15": "A",
+    "16": "B",
+    "17": "C",
+    "18": "D",
+    "19": "A",
+    "20": "D",
+    "21": "D",
+    "22": "C",
+    "23": "C",
+    "24": "A",
+    "25": "D",
+    "26": "D",
+    "27": "A",
+    "28": "D",
+    "29": "A",
+    "30": "C",
+    "31": "B",
+    "32": "C",
+    "33": "D"
+  },
+  "m2_answers": {
+    "1": "C",
+    "2": "D",
+    "3": "C",
+    "4": "D",
+    "5": "B",
+    "6": "A",
+    "7": "B",
+    "8": "B",
+    "9": "D",
+    "10": "B",
+    "11": "B",
+    "12": "D",
+    "13": "C",
+    "14": "C",
+    "15": "D",
+    "16": "D",
+    "17": "B",
+    "18": "B",
+    "19": "D",
+    "20": "D",
+    "21": "C",
+    "22": "C",
+    "23": "C",
+    "24": "A",
+    "25": "B",
+    "26": "D",
+    "27": "B",
+    "28": "D",
+    "29": "A",
+    "30": "D",
+    "31": "C",
+    "32": "A",
+    "33": "C"
+  },
+  "missing_qnum_injections": {},
+  "chart_pages": [
+    {
+      "pdf_page": 1,
+      "column": "left",
+      "drawing_count": 224,
+      "text_snippet": "01\n6WSL02\nThe SAT® \nPractice\nTest# 8\n \ntJ \nMake time to take the practice test. \nIt is one of the best ways to get ready \nfor the SAT. \nAfter you have taken the practice test, score it \nright away at sat.org/digital-practice. \nThis version of the SAT Practice Test is for students who will be taking"
+    },
+    {
+      "pdf_page": 34,
+      "column": "right",
+      "drawing_count": 86,
+      "text_snippet": "30\nB) 32\nC) 60\nD) 90\n2\nFor a particular machine that produces beads, 29 out\nof every 100 beads it produces have a defect. A bead\nproduced by the machine will be selected at random.\nWhat is the probability of selecting a bead that has a\ndefect?\nA)\n1\n2,900\nB)\n1\n29\nC)\n29\n100\nD) 29\n10\n3\nWhat is the y-in"
+    },
+    {
+      "pdf_page": 35,
+      "column": "right",
+      "drawing_count": 32,
+      "text_snippet": "6\nx\n2.6 +\n= 2.8\nWhat value of x is the solution to the given\nequation?\n7\nOut of 300 seeds that were planted, 80% sprouted.\nHow many of these seeds sprouted?\n8\nf x\nx\nb\n= 4 +\n( )\nFor the linear function f, b is a constant\nand f 7 = 28\n( )\n. What is the value of b ?\nA) 0\nB) 1\nC) 4\nD) 7\n9\nRight triangle"
+    },
+    {
+      "pdf_page": 36,
+      "column": "left",
+      "drawing_count": 92,
+      "text_snippet": "1\nWhich of the following equations is the most\nappropriate linear model for the data shown in the\nscatterplot?\nA) y\nx\n= −1.9 −10.1\nB)\ny\nx\n= −1.9 + 10.1\nC) y\nx\n= 1.9 −10.1\nD) y\nx\n= 1.9 + 10.1\n12\nA model predicts that the population of Bergen was\n15,000 in 2005. The model also predicts that each\nyear"
+    },
+    {
+      "pdf_page": 37,
+      "column": "left",
+      "drawing_count": 109,
+      "text_snippet": "5\nThe graph of y\nf x\n= ( ) is shown, where the\nfunction f is defined by f x\nax\nbx\ncx\nd\n( ) =\n+\n+\n+\n3\n2\nand a, b, c, and d are constants. For how many\nvalues of x does f x = 0\n( )\n?\nA) One\nB) Two\nC) Three\nD) Four\n16\nThe area A, in square centimeters, of a rectangular\ncutting board can be represented"
+    },
+    {
+      "pdf_page": 38,
+      "column": "right",
+      "drawing_count": 14,
+      "text_snippet": "9\nThe measure of angle R is\nπ\n2\n3 radians. The measure\nof angle T is\nπ\n5\n12 radians greater than the measure of\nangle R. What is the measure of angle T, in Start referenced Content:degrees End referenced Content?\nA) 75\nB) 120\nC) 195\nD) 390\n20\ny\nx\nx\n=\n−14 + 22\n2\nThe given equation relates the variabl"
+    },
+    {
+      "pdf_page": 39,
+      "column": "right",
+      "drawing_count": 20,
+      "text_snippet": "3\nWeight (pounds) Frequency\n13\n12\n14\n8\n15\n5\n16\n7\n17\n9\n18\n10\n19\n13\n20\n7\nThe frequency table summarizes a data set of the\nweights, rounded to the nearest pound, of\n71 tortoises. A weight of 39 pounds is added to the\noriginal data set, creating a new data set of the\nweights, rounded to the nearest poun"
+    },
+    {
+      "pdf_page": 40,
+      "column": "left",
+      "drawing_count": 8,
+      "text_snippet": "6\nThe functions f and g are defined by the given\nequations, where x ≥0. Which of the following\nequations displays, as a constant or coefficient, the\nmaximum value of the function it defines, where\nx ≥0 ?\nI. f x = 18 1.25\n+ 41\nx\n( )\n(\n)\nII. g x = 9 0.73 x\n( )\n(\n)\nA) I only\nB) II only\nC) I and II\nD) N"
+    },
+    {
+      "pdf_page": 44,
+      "column": "left",
+      "drawing_count": 57,
+      "text_snippet": "2\nAverage number of\nType of store\nemployees\nWarehouse store\n365\nDepartment store\n213\nSupermarket\n130\nFor a certain region, the table shows the average\nnumber of store employees in 2016 by type of store.\nBased on the table, how much greater was the\naverage number of store employees in warehouse\nstore"
+    },
+    {
+      "pdf_page": 45,
+      "column": "left",
+      "drawing_count": 40,
+      "text_snippet": "5\nB)\n(4)(5)\nC)\n4 + 5\nD)\n4 + 5\n2\n2\n6\nThe function g is defined by g x\nx\n( ) = 6 . For what\nvalue of x is g x = 54\n( )\n?\n7\nThe function f is defined by f x\nx\n( ) = 8\n+ 4\n3\n. What is\nthe value of f (2) ?\n8\nThe function f is defined by f x\nx\n= 1\n10\n−2\n( )\n. What\nis the y-intercept of the graph of y\nf x"
+    },
+    {
+      "pdf_page": 46,
+      "column": "right",
+      "drawing_count": 28,
+      "text_snippet": "0\nThe function f is defined by f x\nx\n( ) = 7 3. In the\nxy-plane, the graph of y\ng x\n=\n( ) is the result of\nshifting the graph of y\nf x\n= ( ) down 2 units. Which\nequation defines function g ?\nA) g x\nx\n( ) = 7\n2\n3\nB)\ng x\nx\n( ) = 7\n3\n2\nC) g x\nx\n( ) = 7\n+ 2\n3\nD) g x\nx\n( ) = 7\n−2\n3\n11\ny\nx\n= −3\nx\ny\n4 +\n="
+    },
+    {
+      "pdf_page": 47,
+      "column": "right",
+      "drawing_count": 20,
+      "text_snippet": "4\nIf x\ny = 4 and\nx\nny\n24\n= 4, what is the value of n ?\n15\nA bowl contains 20 ounces of water. When the bowl\nis uncovered, the amount of water in the bowl\ndecreases by 1 ounce every 4 days. If 9 ounces of\nwater remain in this bowl, for how many days has it\nbeen uncovered? \nA) 3\nB) 7\nC) 36\nD) 44\n16\nIf"
+    },
+    {
+      "pdf_page": 48,
+      "column": "left",
+      "drawing_count": 56,
+      "text_snippet": "9\nThe dot plots represent the distributions of values in\ndata sets A and B.\nWhich of the following statements must be true?\nI. The median of data set A is equal to the\nmedian of data set B.\nII. The standard deviation of data set A\nis equal to the standard deviation of\ndata set B.\nA) I only\nB) II onl"
+    },
+    {
+      "pdf_page": 49,
+      "column": "left",
+      "drawing_count": 44,
+      "text_snippet": "3\ny\nx\n= 6 + 18\nOne of the equations in a system of two linear\nequations is given. The system has no solution.\nWhich equation could be the second equation in the\nsystem?\nA)\nx\ny\n−6 +\n= 18\nB)\nx\ny\n−6 +\n= 22\nC)\nx\ny\n−12 +\n= 36\nD)\nx\ny\n−12 +\n= 18\n24\nTriangles PQR and LMN are graphed in the\nxy-plane. Triangl"
+    },
+    {
+      "pdf_page": 50,
+      "column": "left",
+      "drawing_count": 12,
+      "text_snippet": "6\nx\nx\nc\nc\nx\nc\n−\n=\n−\n+ 39\n2\n2\n2\n2\n2\n2\nIn the given equation, c is a positive constant. Which\nof the following is one of the solutions to the given\nequation?\nA)\nc\n−\nB)\nc\n−\n−39\n2\n2\nC)\nc\n−39 −\n2\n2\nD)\nc\n−\n+ 39\n2\n2\n27\nThe quadratic function g models the depth, in\nmeters, below the surface of the water of"
+    },
+    {
+      "pdf_page": 56,
+      "column": "left",
+      "drawing_count": 582,
+      "text_snippet": "© 2025 College Board. College Board, SAT, and the acorn logo are registered trademarks of College Board.\nThe SAT. \nGENERAL DIRECTIONS \n• You may work on only one module at a time. \n• If you finish a module before time is called, check your work on that module only. \nYou may NOT turn to any other mod"
+    }
+  ],
+  "stem_overrides": {},
+  "choice_d_overrides": {},
+  "license": "© 2025 College Board. For educational use only."
+}
