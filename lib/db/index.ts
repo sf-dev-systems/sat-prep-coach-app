@@ -49,7 +49,7 @@ export function getSupabaseBrowserClient(): SupabaseClient {
  * Cookie adapter shape required by @supabase/ssr's createServerClient.
  * The caller (middleware.ts, or a Server Component/Route Handler under
  * app/) is responsible for supplying this from next/headers or the
- * request/response objects — this file stays free of any `next` import,
+ * request/response objects — this file stays free of any next import,
  * per the lib/ boundary rule.
  */
 export interface ServerCookieMethods {
@@ -222,9 +222,11 @@ export interface BehaviorSignals {
   calibration_score: number | null;
 }
 
-/** Attempt row joined with its question's difficulty — nightly signals need
+/** 
+ * Attempt row joined with its question's difficulty — nightly signals need
  * difficulty per-attempt (avg_pace_by_difficulty); attempts itself doesn't
- * store it, only question_id, so this is a join rather than a plain select. */
+ * store it, only question_id, so this is a join rather than a plain select.
+ */
 export interface AttemptWithDifficulty extends Attempt {
   difficulty: number | null;
 }
@@ -434,7 +436,7 @@ export async function fetchAttemptedQuestionIdsForSkill(
 }
 
 /** PRD F3.3 structural variant: same skill, same trap_type, validated, not
- * already served to this user. Read-only against the shared `questions`
+ * already served to this user. Read-only against the shared questions
  * table (RLS: authenticated read-only) so this can be called directly from
  * the browser client inside MissLoop.tsx — no server route needed since no
  * Anthropic call is involved (Phase 2 scope: pull from the existing bank
@@ -465,7 +467,7 @@ export async function fetchVariantQuestion(
   return candidates[0] ?? null;
 }
 
-/** Newest `coach_memory` row's narrative for a user (append-only table —
+/** Newest coach_memory row's narrative for a user (append-only table —
  * newest row is the active narrative per schema invariant #9). Full F6
  * (weekly Sonnet-authored refresh) is Phase 3 scope and not built yet; this
  * read-only accessor exists now because the AI integration rules ("every
@@ -495,7 +497,7 @@ export interface ErrorJournalEntry {
 
 /** PRD F3.5: "always written into error_journal" — one row per resolved
  * miss loop, regardless of whether the student ever taps to view the
- * distractor breakdown. `student_note` is left unset here; F5 (Phase 3)
+ * distractor breakdown. student_note is left unset here; F5 (Phase 3)
  * owns prompting the student to restate the rule and updating it. */
 export async function insertErrorJournalEntry(supabase: SupabaseClient, entry: ErrorJournalEntry): Promise<void> {
   const { error } = await supabase.from('error_journal').insert({
@@ -657,9 +659,9 @@ export async function upsertSkillNote(supabase: SupabaseClient, note: SkillNote)
 
 // ── behavior_signals (PRD F4 nightly cron) ──
 
-/** All user_ids with at least one session started since `sinceIso` — the
- * cron's "who to recompute signals for" query. Uses `sessions` rather than
- * `profiles` because a profile can exist before any real activity does. */
+/** All user_ids with at least one session started since sinceIso — the
+ * cron's "who to recompute signals for" query. Uses sessions rather than
+ * profiles because a profile can exist before any real activity does. */
 export async function fetchActiveUserIds(supabase: SupabaseClient, sinceIso: string): Promise<string[]> {
   const { data, error } = await supabase.from('sessions').select('user_id').gte('started_at', sinceIso);
   if (error) throw error;
@@ -667,7 +669,7 @@ export async function fetchActiveUserIds(supabase: SupabaseClient, sinceIso: str
   return Array.from(ids);
 }
 
-/** Attempts since `sinceIso`, joined with each attempt's question difficulty,
+/** Attempts since sinceIso, joined with each attempt's question difficulty,
  * ascending by time (nightly signal computation walks sessions chronologically). */
 export async function fetchAttemptsSince(
   supabase: SupabaseClient,

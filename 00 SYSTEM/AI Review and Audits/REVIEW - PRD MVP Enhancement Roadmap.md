@@ -1,4 +1,4 @@
-# PRD: SAT Prep Coach App — MVP Enhancement Roadmap
+# PRD: SAT App— MVP Enhancement Roadmap
 
 ## Version
 **PRD v1.0 — Enhancement + Study Mode Roadmap**
