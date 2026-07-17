@@ -22,8 +22,8 @@ Do not load the full v1.5 PRD. The phase docs contain everything needed to execu
 
 | Doc | Phase | Status |
 |-----|-------|--------|
-| `01 DOCS/02_phase1-contracts.md` | Validation, Types & Backend Safety | **COMPLETE** |
-| `01 DOCS/03_Phase2-scoring-ai.md` | Study Lesson AI Engine | NOT STARTED |
+| `01 DOCS/02_phase1-contracts.md` | Validation, Types & Backend Safety | **COMPLETE** (5a2d81d) |
+| `01 DOCS/03_Phase2-scoring-ai.md` | Study Lesson AI Engine | **COMPLETE** (dc12458) |
 | `01 DOCS/04_phase3-study-ui.md` | Study Routes & UI | NOT STARTED |
 | `01 DOCS/05_phase4-integration.md` | Entry Points & Dashboard Integration | NOT STARTED |
 | `01 DOCS/06_phase5-eng-quality.md` | Engineering Quality & Observability | NOT STARTED |
@@ -34,26 +34,32 @@ Do not load the full v1.5 PRD. The phase docs contain everything needed to execu
 
 **Prior phases (v1 foundation → Phase 3 Visibility): CODE-COMPLETE AND PUSHED.**
 
-What's built: Supabase schema + RLS, skill seed, diagnostic flow, practice session loop, miss-loop with tiered hints, BKT + FSRS mastery updates, behavior signals, score prediction, `/mastery` goal tree, `/tests` practice test journal, route groups `(student)/(parent)/(admin)`.
+**Phase 1 + Phase 2: COMPLETE AND COMMITTED.**
 
-**Phase 1 (contracts): COMPLETE.** `lib/validation/miss-loop.ts`, `lib/validation/study.ts` created. `lib/ai/index.ts` and `lib/db/index.ts` updated with `study_lesson` call type and fallback logging. `app/api/miss-loop/route.ts` fully Zod-validated. `tsc --noEmit` passes clean.
+What's now built in addition to the v1 foundation:
+- `lib/validation/miss-loop.ts` + `lib/validation/study.ts` — Zod schemas for both APIs
+- `lib/ai/index.ts` — `study_lesson` call type; fallback logging on over-ceiling + error paths
+- `lib/db/index.ts` — 4 study context fetch helpers
+- `app/api/miss-loop/route.ts` — fully Zod-validated, zero `as any` casts
+- `prompts/study.ts` — VARK-directive study lesson prompt with full context injection
+- `app/api/study/lesson/route.ts` — POST endpoint with parallel fetch, AI call, schema validation, three-path static fallback
 
-**What's not built:** Study Mode (SM-1 through SM-13), engineering hardening (ENG-1 through ENG-9), structured learner profile (ARCH-1). Phases 2–5.
-
----
-
-## Active phase: Phase 2 — `01 DOCS/03_Phase2-scoring-ai.md`
-
-Phase 1 is complete. The next action is to **begin Phase 2** per `01 DOCS/03_Phase2-scoring-ai.md`.
-
-Start next session by reading the 3 orientation files, then `03_Phase2-scoring-ai.md` as the phase doc.
+**What's not built:** Study Mode UI (SM-1 through SM-13), entry points & dashboard integration, engineering hardening (ENG-1 through ENG-9). Phases 3–5.
 
 ---
 
-## Open items (not blocking Phase 2)
+## Active phase: Phase 3 — `01 DOCS/04_phase3-study-ui.md`
 
-- Git: Phase 1 files are untracked/modified. Commit: `git add lib/validation/ lib/ai/index.ts lib/db/index.ts app/api/miss-loop/route.ts 02\ SESSION_LOG/ AGENT_HANDOFF.md && git commit -m "feat: Phase 1 — Zod validation contracts, study_lesson type, fallback logging"`
+Phase 2 is complete. The next action is to **begin Phase 3** per `01 DOCS/04_phase3-study-ui.md`.
+
+Start next session by reading the 3 orientation files, then `04_phase3-study-ui.md` as the phase doc.
+
+---
+
+## Open items (not blocking Phase 3)
+
 - Tailwind styling regression: cleared `.next` cache this session. Verify styles are restored at `localhost:3000` after `npm run dev`.
+- Session log + handoff updated but not yet committed — commit: `git add "02 SESSION_LOG/" AGENT_HANDOFF.md && git commit -m "docs: Phase 2 session log and handoff update"`
 - GitHub secrets for DB backup workflow not set; workflow has never run.
 - Next.js major-version CVEs unpatched (`next@16.2.10` — affects `cookies()`/`headers()` in 3 files).
 - Untracked junk: `test_write_check.tmp`, `supabase/.temp/test_b64.txt`, `ss ux*.png` — add to `.gitignore` or delete.
@@ -71,4 +77,4 @@ Start next session by reading the 3 orientation files, then `03_Phase2-scoring-a
 
 ---
 
-**SIGN-OFF:** Phase 1 complete — all 5 backend contracts locked, tsc clean. Next: Phase 2 (`03_Phase2-scoring-ai.md`). — Claude (Sonnet 4.6) 7/17/26
+**SIGN-OFF:** Phases 1 + 2 complete — all backend contracts + AI engine locked, tsc clean. Next: Phase 3 (`04_phase3-study-ui.md`). — Claude (Sonnet 4.6) 7/17/26
