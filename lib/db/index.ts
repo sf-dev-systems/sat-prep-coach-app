@@ -190,7 +190,7 @@ export interface Profile {
 export interface AiLog {
   id: string;
   user_id: string;
-  call_type: 'hint' | 'explanation' | 'variant' | 'classify' | 'report' | 'coach_update';
+  call_type: 'hint' | 'explanation' | 'variant' | 'classify' | 'report' | 'coach_update' | 'study_lesson';
   model: string;
   input_tokens: number | null;
   output_tokens: number | null;
@@ -710,6 +710,61 @@ export async function fetchBehaviorSignals(supabase: SupabaseClient, userId: str
   const { data, error } = await supabase.from('behavior_signals').select('*').eq('user_id', userId).maybeSingle();
   if (error) throw error;
   return data as BehaviorSignals | null;
+}
+
+// ── study mode context helpers (Phase 1 contracts) ──
+
+export async function fetchSkillById(supabase: SupabaseClient, skillId: string): Promise<Skill | null> {
+  const { data, error } = await supabase.from('skills').select('*').eq('id', skillId).maybeSingle();
+  if (error) throw error;
+  return data as Skill | null;
+}
+
+export async function fetchErrorJournalForSkill(
+  supabase: SupabaseClient,
+  userId: string,
+  skillId: string,
+  limit = 5
+): Promise<ErrorJournal[]> {
+  const { data, error } = await supabase
+    .from('error_journal')
+    .select('*')
+    .eq('user_id', userId)
+    .eq('skill_id', skillId)
+    .order('created_at', { ascending: false })
+    .limit(limit);
+  if (error) throw error;
+  return (data as ErrorJournal[]) || [];
+}
+
+export async function fetchSkillNoteForSkill(
+  supabase: SupabaseClient,
+  userId: string,
+  skillId: string
+): Promise<SkillNote | null> {
+  const { data, error } = await supabase
+    .from('skill_notes')
+    .select('*')
+    .eq('user_id', userId)
+    .eq('skill_id', skillId)
+    .maybeSingle();
+  if (error) throw error;
+  return data as SkillNote | null;
+}
+
+export async function fetchValidatedQuestionsBySkill(
+  supabase: SupabaseClient,
+  skillId: string,
+  limit = 2
+): Promise<Question[]> {
+  const { data, error } = await supabase
+    .from('questions')
+    .select('*')
+    .eq('skill_id', skillId)
+    .eq('validated', true)
+    .limit(limit);
+  if (error) throw error;
+  return (data as Question[]) || [];
 }
 
 export async function upsertBehaviorSignals(

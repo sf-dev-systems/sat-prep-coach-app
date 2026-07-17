@@ -17,7 +17,7 @@ function getAnthropicClient(): Anthropic {
 
 export interface AiCallConfig {
   userId: string;
-  callType: 'hint' | 'explanation' | 'variant' | 'classify' | 'report' | 'coach_update';
+  callType: 'hint' | 'explanation' | 'variant' | 'classify' | 'report' | 'coach_update' | 'study_lesson';
   systemPrompt: string;
   userMessage: string;
   fallbackRationale?: string; // Optional static fallback text
@@ -74,6 +74,11 @@ export async function callAnthropicWithCeiling(
 
   if (todayCalls >= ceiling) {
     console.warn(`User ${userId} is over the daily AI ceiling of ${ceiling} (completed today: ${todayCalls}). Falling back.`);
+    try {
+      await logAiCall(supabase, userId, callType, 'fallback-static', 0, 0);
+    } catch (logErr) {
+      console.warn('ai_log write failed (over-ceiling):', logErr);
+    }
     return {
       content: fallbackRationale || 'You have reached your daily AI limit. Please refer to your question rationale for guidance.',
       model: 'fallback-static',
@@ -118,6 +123,11 @@ export async function callAnthropicWithCeiling(
     };
   } catch (err: any) {
     console.error('Anthropic API Call Failed:', err);
+    try {
+      await logAiCall(supabase, userId, callType, 'fallback-error', 0, 0);
+    } catch (logErr) {
+      console.warn('ai_log write failed (error path):', logErr);
+    }
     // On hard error, fallback to static rationale to ensure "degrade, never block"
     if (fallbackRationale) {
       return {

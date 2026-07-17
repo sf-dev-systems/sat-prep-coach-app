@@ -6,6 +6,7 @@ import { classifyAttemptError } from '@/lib/ai/classifier';
 import { getHintPrompt } from '@/prompts/hint';
 import { getTutorPrompt } from '@/prompts/tutor';
 import { VARK_PROFILE } from '@/lib/constants';
+import { MissLoopRequestSchema } from '@/lib/validation/miss-loop';
 
 /**
  * app/api/miss-loop/route.ts
@@ -33,30 +34,6 @@ import { VARK_PROFILE } from '@/lib/constants';
  */
 export const dynamic = 'force-dynamic';
 
-type MissLoopAction = 'hint' | 'explanation' | 'classify';
-
-interface HintRequestBody {
-  action: 'hint';
-  questionId: string;
-  hintNumber: 1 | 2 | 3;
-}
-
-interface ExplanationRequestBody {
-  action: 'explanation';
-  questionId: string;
-  studentAnswer: string;
-  confidence?: 'high' | 'medium' | 'low';
-}
-
-interface ClassifyRequestBody {
-  action: 'classify';
-  questionId: string;
-  studentAnswer: string;
-  studentErrorTag: 'concept' | 'calculation' | 'misread' | 'careless' | 'timing' | 'guess';
-}
-
-type MissLoopRequestBody = HintRequestBody | ExplanationRequestBody | ClassifyRequestBody;
-
 function questionRationaleFallback(question: Question): string {
   return question.rationale || 'Review the question rationale and try again — no AI guidance available right now.';
 }
@@ -73,31 +50,32 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
   }
 
-  let body: MissLoopRequestBody;
+  let rawBody: unknown;
   try {
-    body = await request.json();
+    rawBody = await request.json();
   } catch {
     return NextResponse.json({ error: 'Invalid JSON body' }, { status: 400 });
   }
 
-  const action = body?.action as MissLoopAction | undefined;
-  if (!action || !['hint', 'explanation', 'classify'].includes(action)) {
-    return NextResponse.json({ error: 'Unknown or missing action' }, { status: 400 });
+  const parsed = MissLoopRequestSchema.safeParse(rawBody);
+  if (!parsed.success) {
+    return NextResponse.json({ error: parsed.error.flatten() }, { status: 400 });
   }
 
-  const question = await fetchQuestionById(supabase, (body as any).questionId);
+  const body = parsed.data;
+
+  const question = await fetchQuestionById(supabase, body.questionId);
   if (!question) {
     return NextResponse.json({ error: 'Question not found' }, { status: 404 });
   }
 
   try {
-    if (action === 'hint') {
-      const { hintNumber } = body as HintRequestBody;
+    if (body.action === 'hint') {
       const { systemPrompt, userMessage } = getHintPrompt({
         stem: question.stem,
         choices: question.choices,
         correctAnswer: question.correct_answer,
-        hintNumber,
+        hintNumber: body.hintNumber as 1 | 2 | 3,
         varkProfile: VARK_PROFILE,
       });
 
@@ -114,20 +92,21 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ hint: result.content, overCeiling: result.overCeiling });
     }
 
-    if (action === 'explanation') {
-      const { studentAnswer, confidence } = body as ExplanationRequestBody;
+    if (body.action === 'explanation') {
       const coachMemory = await fetchLatestCoachMemory(supabase, user.id);
       const chosenDistractorNote =
-        question.distractor_notes && studentAnswer ? question.distractor_notes[studentAnswer] ?? null : null;
+        question.distractor_notes && body.studentAnswer
+          ? question.distractor_notes[body.studentAnswer] ?? null
+          : null;
 
       const { systemPrompt, userMessage } = getTutorPrompt({
         stem: question.stem,
         choices: question.choices,
-        studentAnswer,
+        studentAnswer: body.studentAnswer,
         correctAnswer: question.correct_answer,
         rationale: question.rationale,
-        confidence: confidence ?? 'medium',
-        coachMemory: coachMemory || 'No prior coaching history yet — this is early in the student\'s practice.',
+        confidence: body.confidence,
+        coachMemory: coachMemory || "No prior coaching history yet — this is early in the student's practice.",
         varkProfile: VARK_PROFILE,
         trapType: question.trap_type,
         chosenDistractorNote,
@@ -146,20 +125,23 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ explanation: result.content, overCeiling: result.overCeiling });
     }
 
-    // action === 'classify'
-    const { studentAnswer, studentErrorTag } = body as ClassifyRequestBody;
-    const classification = await classifyAttemptError(supabase, user.id, {
-      stem: question.stem,
-      choices: question.choices,
-      correctAnswer: question.correct_answer,
-      studentAnswer,
-      rationale: question.rationale,
-      studentErrorTag,
-    });
+    if (body.action === 'classify') {
+      const classification = await classifyAttemptError(supabase, user.id, {
+        stem: question.stem,
+        choices: question.choices,
+        correctAnswer: question.correct_answer,
+        studentAnswer: body.studentAnswer,
+        rationale: question.rationale,
+        studentErrorTag: body.studentErrorTag,
+      });
 
-    return NextResponse.json(classification);
+      return NextResponse.json(classification);
+    }
+
+    // body.action === 'EXPLAIN_NOW' — Phase 2 scope
+    return NextResponse.json({ error: 'EXPLAIN_NOW not yet implemented' }, { status: 501 });
   } catch (err: any) {
-    console.error(`miss-loop route failed (action=${action}):`, err);
+    console.error(`miss-loop route failed (action=${body.action}):`, err);
     // Degrade, never block: the client-side caller falls back to static
     // question.rationale / skips classification on a non-200 here.
     return NextResponse.json({ error: 'AI call failed', fallback: questionRationaleFallback(question) }, { status: 502 });
