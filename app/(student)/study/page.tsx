@@ -21,7 +21,7 @@ export default async function StudyLandingPage() {
 
   const data = await computeDashboardData(supabase, user.id);
 
-  if (!data.hasData) {
+  if (data.setupState !== 'ready') {
     return (
       <div className="text-center py-24 space-y-4">
         <BookOpen className="w-10 h-10 text-gray-300 mx-auto" />

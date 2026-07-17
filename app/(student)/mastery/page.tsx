@@ -20,6 +20,7 @@ export default function MasteryPage() {
   const [noteContent, setNoteContent] = useState('');
   const [savingNote, setSavingNote] = useState(false);
   const [successMsg, setSuccessMsg] = useState<string | null>(null);
+  const [errorMsg, setErrorMsg] = useState<string | null>(null);
 
   useEffect(() => {
     fetchMasteryData();
@@ -64,12 +65,14 @@ export default function MasteryPage() {
     const existingNote = notes.find(n => n.skill_id === skill.id);
     setNoteContent(existingNote?.content || '');
     setSuccessMsg(null);
+    setErrorMsg(null);
   };
 
   const handleSaveNote = async () => {
     if (!selectedSkill) return;
     setSavingNote(true);
     setSuccessMsg(null);
+    setErrorMsg(null);
 
     try {
       const { data: { user } } = await supabase.auth.getUser();
@@ -97,6 +100,7 @@ export default function MasteryPage() {
       setSuccessMsg('Self-correction strategy recorded successfully!');
     } catch (err) {
       console.error('Error saving skill note:', err);
+      setErrorMsg("Couldn't save your note — tap to retry.");
     } finally {
       setSavingNote(false);
     }
@@ -311,6 +315,16 @@ export default function MasteryPage() {
                   </div>
                 )}
 
+                {errorMsg && (
+                  <button
+                    onClick={handleSaveNote}
+                    className="w-full p-3 bg-rose-50 border border-rose-100 text-rose-800 rounded-xl text-xs flex items-center gap-2 text-left hover:bg-rose-100 transition-colors"
+                  >
+                    <AlertCircle className="w-4 h-4 shrink-0" />
+                    <span>{errorMsg}</span>
+                  </button>
+                )}
+
                 <button
                   onClick={handleSaveNote}
                   disabled={savingNote}
@@ -320,11 +334,18 @@ export default function MasteryPage() {
                 </button>
               </div>
 
-              {/* Start drill button */}
-              <div className="pt-2">
+              {/* Study + Drill actions */}
+              <div className="pt-2 flex gap-2">
+                <a
+                  href={`/study/${selectedSkill.id}`}
+                  className="flex-1 inline-flex items-center justify-center gap-2 bg-indigo-900 hover:bg-indigo-800 text-white font-bold rounded-xl py-2.5 text-xs transition-colors"
+                >
+                  <BookOpen className="w-3.5 h-3.5" />
+                  <span>Study This Skill</span>
+                </a>
                 <a
                   href={`/session?skill=${selectedSkill.id}`}
-                  className="w-full inline-flex items-center justify-center gap-2 border border-indigo-100 bg-indigo-50 hover:bg-indigo-100 text-indigo-900 font-bold rounded-xl py-2.5 text-xs transition-colors"
+                  className="flex-1 inline-flex items-center justify-center gap-2 border border-indigo-100 bg-indigo-50 hover:bg-indigo-100 text-indigo-900 font-bold rounded-xl py-2.5 text-xs transition-colors"
                 >
                   <span>Drill This Skill</span>
                   <ArrowRight className="w-3.5 h-3.5" />

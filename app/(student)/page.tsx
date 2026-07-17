@@ -3,6 +3,44 @@ import { redirect } from 'next/navigation';
 import { BookOpen, Award, Flame, Calendar, ArrowRight, TrendingUp, Settings } from 'lucide-react';
 import { getSupabaseServerClient } from '@/lib/db';
 import { computeDashboardData } from '@/lib/mastery/dashboard';
+import type { StudentSetupState } from '@/lib/mastery/dashboard';
+
+function SetupGate({ setupState, displayName }: { setupState: StudentSetupState; displayName: string }) {
+  const isDiagnosticStarted = setupState === 'diagnostic_incomplete';
+  return (
+    <div className="text-center py-24 space-y-4">
+      <h1 className="text-2xl font-bold text-gray-900">Welcome, {displayName}</h1>
+      {isDiagnosticStarted ? (
+        <>
+          <p className="text-sm text-gray-500 max-w-md mx-auto">
+            Your diagnostic is in progress — finish it to unlock your predicted score, readiness panel, and focus skills.
+          </p>
+          <a
+            href="/diagnostic"
+            className="inline-flex items-center gap-2 bg-indigo-900 text-white font-bold px-5 py-2.5 rounded-xl shadow-sm hover:bg-indigo-800 transition-colors text-sm"
+          >
+            <span>Resume Diagnostic</span>
+            <ArrowRight className="w-4 h-4" />
+          </a>
+        </>
+      ) : (
+        <>
+          <p className="text-sm text-gray-500 max-w-md mx-auto">
+            Start with the diagnostic — about 40 questions across every section. It seeds your mastery
+            map so your predicted score, readiness panel, and focus skills can populate here.
+          </p>
+          <a
+            href="/diagnostic"
+            className="inline-flex items-center gap-2 bg-indigo-900 text-white font-bold px-5 py-2.5 rounded-xl shadow-sm hover:bg-indigo-800 transition-colors text-sm"
+          >
+            <span>Start Diagnostic</span>
+            <ArrowRight className="w-4 h-4" />
+          </a>
+        </>
+      )}
+    </div>
+  );
+}
 
 const STATUS_COLORS: Record<string, string> = {
   Excellent: 'text-green-600 bg-green-50 border-green-200',
@@ -32,26 +70,8 @@ export default async function StudentDashboard() {
 
   const data = await computeDashboardData(supabase, user.id);
 
-  if (!data.hasData) {
-    // First run (PRD F1): route into the diagnostic, not straight into a
-    // practice session — the diagnostic is what seeds every mastery row and
-    // gives the dashboard below something to compute a baseline score from.
-    return (
-      <div className="text-center py-24 space-y-4">
-        <h1 className="text-2xl font-bold text-gray-900">Welcome, {data.displayName}</h1>
-        <p className="text-sm text-gray-500 max-w-md mx-auto">
-          Start with the diagnostic — about 40 questions across every section. It seeds your mastery
-          map so your predicted score, readiness panel, and focus skills can populate here.
-        </p>
-        <a
-          href="/diagnostic"
-          className="inline-flex items-center gap-2 bg-indigo-900 text-white font-bold px-5 py-2.5 rounded-xl shadow-sm hover:bg-indigo-800 transition-colors text-sm"
-        >
-          <span>Start Diagnostic</span>
-          <ArrowRight className="w-4 h-4" />
-        </a>
-      </div>
-    );
+  if (data.setupState !== 'ready') {
+    return <SetupGate setupState={data.setupState} displayName={data.displayName} />;
   }
 
   const {
@@ -175,6 +195,24 @@ export default async function StudentDashboard() {
         {/* Top Focus Skills */}
         <div className="md:col-span-2 space-y-3">
           <h2 className="text-lg font-bold tracking-tight text-gray-900">Top Focus Skills for {data.displayName}</h2>
+
+          {/* Study CTA card */}
+          {focusSkills.length > 0 && (
+            <div className="bg-indigo-50 border border-indigo-100 rounded-xl p-4 flex items-center justify-between">
+              <div className="space-y-0.5">
+                <span className="text-[10px] font-bold uppercase tracking-wider text-indigo-500">Study Today&apos;s Top Skill</span>
+                <p className="text-sm font-semibold text-indigo-900">{focusSkills[0].name}</p>
+              </div>
+              <a
+                href={`/study/${focusSkills[0].id}`}
+                className="inline-flex items-center gap-2 bg-indigo-900 text-white font-bold px-4 py-2 rounded-xl text-xs hover:bg-indigo-800 transition-colors shrink-0"
+              >
+                <BookOpen className="w-3.5 h-3.5" />
+                <span>Study</span>
+              </a>
+            </div>
+          )}
+
           <div className="space-y-2.5">
             {focusSkills.length === 0 && (
               <p className="text-sm text-gray-500">Keep practicing — focus skills populate once mastery gaps emerge.</p>

@@ -34,6 +34,8 @@ import { averagePace } from '../scoring/behavior-signals';
 const DEFAULT_P_MASTERY = 0.3;
 const CONSISTENCY_TARGET_DAYS_PER_WEEK = 4;
 
+export type StudentSetupState = 'no_diagnostic' | 'diagnostic_incomplete' | 'ready';
+
 export interface ReadinessMetric {
   name: string;
   value: string;
@@ -48,7 +50,7 @@ export interface FocusSkill {
 }
 
 export interface DashboardData {
-  hasData: boolean;
+  setupState: StudentSetupState;
   displayName: string;
   predictedScore: number;
   confidenceInterval: string;
@@ -100,9 +102,10 @@ export async function computeDashboardData(supabase: SupabaseClient, userId: str
   const displayName = profile?.display_name || 'there';
 
   if (masteryMap.size === 0) {
-    // No attempts logged yet for this student — nothing to score.
+    // No mastery data yet — determine how far setup has progressed.
+    const setupState: StudentSetupState = sessions.length > 0 ? 'diagnostic_incomplete' : 'no_diagnostic';
     return {
-      hasData: false,
+      setupState,
       displayName,
       predictedScore: 0,
       confidenceInterval: '',
@@ -203,9 +206,9 @@ export async function computeDashboardData(supabase: SupabaseClient, userId: str
 
   const predictedScore = mathScore + rwScore;
 
-  const confidenceInterval = `${Math.round((predictedScore - bandWidth / 2) / 10) * 10} - ${
-    Math.round((predictedScore + bandWidth / 2) / 10) * 10
-  }`;
+  const rawLow = Math.round((predictedScore - bandWidth / 2) / 10) * 10;
+  const rawHigh = Math.round((predictedScore + bandWidth / 2) / 10) * 10;
+  const confidenceInterval = `${Math.max(400, Math.min(1600, rawLow))} - ${Math.max(400, Math.min(1600, rawHigh))}`;
 
   // Average content mastery percentage
   const totalContentWeight = scoreableSkills.reduce((acc, s) => acc + (s.weight as number), 0);
@@ -297,7 +300,7 @@ export async function computeDashboardData(supabase: SupabaseClient, userId: str
   }, 0);
 
   return {
-    hasData: true,
+    setupState: 'ready',
     displayName,
     predictedScore,
     confidenceInterval,
