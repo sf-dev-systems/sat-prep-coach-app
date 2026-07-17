@@ -5,7 +5,9 @@ import { callAnthropicWithCeiling } from '@/lib/ai';
 import { classifyAttemptError } from '@/lib/ai/classifier';
 import { getHintPrompt } from '@/prompts/hint';
 import { getTutorPrompt } from '@/prompts/tutor';
-import { VARK_PROFILE } from '@/lib/constants';
+import { AVA_LEARNER_PROFILE } from '@/lib/learner-profile';
+
+const VARK_PROFILE = `Read/Write ${AVA_LEARNER_PROFILE.vark.readWrite}, Kinesthetic ${AVA_LEARNER_PROFILE.vark.kinesthetic}, Aural ${AVA_LEARNER_PROFILE.vark.aural}, Visual ${AVA_LEARNER_PROFILE.vark.visual}`;
 import { MissLoopRequestSchema } from '@/lib/validation/miss-loop';
 
 /**

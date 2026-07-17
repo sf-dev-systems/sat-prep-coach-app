@@ -23,7 +23,10 @@ export interface StudyPromptContext {
   } | null
 }
 
-const VARK_DIRECTIVE = `Ava learns by doing and writing (Kinesthetic 14, Read/Write 13). Every lesson must: give one short rule she can write down, a checklist of steps, a worked example with explicit steps, an active 'do this now' prompt, a retrieval prompt to test memory, and a teach-back prompt asking her to restate the rule in her own words. No passive lecture blocks longer than one short paragraph. No video. No pure diagram explanations.`
+import { AVA_LEARNER_PROFILE } from '../lib/learner-profile'
+
+const { vark, instructionalStyle, avoidances, lessonConstraints } = AVA_LEARNER_PROFILE
+const VARK_DIRECTIVE = `Ava learns by doing and writing (Kinesthetic ${vark.kinesthetic}, Read/Write ${vark.readWrite}; style: ${instructionalStyle}). Every lesson must: give one short rule she can write down, a checklist of steps, a worked example with explicit steps, an active 'do this now' prompt, a retrieval prompt to test memory, and a teach-back prompt asking her to restate the rule in her own words. No passive lecture blocks longer than ${lessonConstraints.maxPassiveParagraphs} short paragraph. No ${avoidances.join('. No ')}.`
 
 const OUTPUT_SHAPE = `{
   "skill": {
