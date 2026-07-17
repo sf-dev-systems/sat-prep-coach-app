@@ -60,4 +60,5 @@ reconstruction for chronological sorting, not a verified timestamp.
 | [2026-07-17_0600_test5-rw-import.md](2026-07-17_0600_test5-rw-import.md) | Claude (Sonnet 4.6) | T4-RW: 66 rationales patched + 2 charts uploaded. T5-RW: 66 questions imported (66 rationales, 2 chart images M1-Q16 + M2-Q12). Bank: 261 questions, 0 SEVERE. |
 | [2026-07-17_0730_test6-rw-import.md](2026-07-17_0730_test6-rw-import.md) | Claude (Sonnet 4.6) | T6-RW: 66 questions imported (66 rationales, 3 chart images M1-Q14/Q15 + M2-Q13). Bank: 327 questions, 0 SEVERE. |
 | [2026-07-17_0919_test7-rw-import.md](2026-07-17_0919_test7-rw-import.md) | Claude (Sonnet 4.6) | T7-RW: 66 questions imported (66 rationales, 3 chart PNGs Q12/Q15/Q16). New boundary-detection algorithm for T7's out-of-order PDF layout. Bank: 393 questions, 0 SEVERE. |
+| [2026-07-17_1200_t8-fix-t9-pipeline-hardening.md](2026-07-17_1200_t8-fix-t9-pipeline-hardening.md) | Claude (Sonnet 4.6) | T8: fixed 52/66 wrong answers (wrong scoring guide track). T9: 66 questions imported. Pipeline hardened: multi-track detection, qnum_line_overrides, choices_overrides, upsert. Bank: 525q. |
 

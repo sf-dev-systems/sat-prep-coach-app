@@ -1,100 +1,86 @@
-v58
-# AGENT HANDOFF
+# AGENT HANDOFF — v59
+_Rewritten each session. Full history in `02 SESSION_LOG/`._
 
-> The sandbox Write tool has a FUSE mount issue — use PowerShell to write this file.
+## Status: Content Import — Tests 4–9 RW Complete
 
----
+### Question Bank
+| Source | Questions | Status |
+|---|---|---|
+| T4 Math | 54 | imported |
+| T4 RW | 66 | imported |
+| T5 RW | 66 | imported |
+| T6 RW | 66 | imported |
+| T7 RW | 66 | imported |
+| T8 RW | 66 | imported (52 answers corrected this session) |
+| T9 RW | 66 | imported (this session) |
+| **TOTAL** | **525** | 0 SEVERE in audit |
 
-## How to pick up a session (3 files, then ask)
+### What Was Fixed This Session
+- **T8 answer key bug**: SAT scoring guides have 2 complete answer key pages (one per Module 2 difficulty track). The parser was always grabbing page 1. T8 needed page 2 — 52/66 answers were wrong. Fixed and re-imported.
+- **Pipeline**: `recon_rw.py` now parses keys page-by-page (not flat text), detects multi-track tests, reports both options with Q1 values, supports `--track N` override flag.
+- **Pipeline**: `pipeline_rw.py` has two new config fields: `qnum_line_overrides` (force a Q# to a specific line when table values cause false detections) and `choices_overrides` (supply all 4 choices when PDF column order puts them before the stem).
+- **Import script**: Changed INSERT to upsert on `external_id`. Added UNIQUE constraint on `questions.external_id` via migration `20260717100000`.
+- **T9 quirks handled**: M2-Q1/Q2 decorative format (`. 1 ,`), M2-Q3 before module header, M1-Q25 false detection from table value "25", M1-Q2 choices preceding stem.
 
-1. Read this file (`AGENT_HANDOFF.md`) — current state, what's next.
-2. Read `01 DOCS/01_sys-context.md` — always-on: invariants, VARK, folder layout, secrets rules.
-3. Read the current phase doc (see Phase doc index below).
+## Single Next Action
+**Run T10 RW extraction:**
+```
+python scripts/recon_rw.py 10
+```
+Inspect the recon output for:
+1. Multi-track: compare `scoring_track_options` — pick the track whose M1-Q1 answer matches the actual question in practice.txt semantically
+2. Missing Q#s: check if any are in the `q1_before_header` or decorative-format pattern
+3. Chart pages: only flag RW section pages (before Math line start)
 
----
+Then run:
+```
+python scripts/pipeline_rw.py 10
+```
 
-## Phase doc index
+After T10: T11, then Math sections (T5–T11).
 
-| Doc | Phase | Status |
-|-----|-------|--------|
-| `01 DOCS/02_phase1-contracts.md` | Validation, Types & Backend Safety | COMPLETE (5a2d81d) |
-| `01 DOCS/03_Phase2-scoring-ai.md` | Study Lesson AI Engine | COMPLETE (dc12458) |
-| `01 DOCS/04_phase3-study-ui.md` | Study Routes & UI | COMPLETE (6fda198) |
-| `01 DOCS/05_phase4-integration.md` | Entry Points & Dashboard Integration | COMPLETE (d81c81b) |
-| `01 DOCS/06_phase5-eng-quality.md` | Engineering Quality & Observability | COMPLETE (bfe85c9) |
+## Open Decisions
+- **T8 rationales stale**: 52 questions have `[Answer corrected to X. Rationale needs regeneration.]` prefix in rationale field. Correct answer is stored; rationale text explains the wrong answer. Use `scripts/patch-rw-rationales.ts` to regenerate when API budget allows (low priority — app falls back to static rationales).
+- **GitHub secrets for DB backup workflow** not set (non-blocking).
+- **next@14.2.35 CVEs** — upgrade when convenient.
+- **Full end-to-end study flow** never manually tested in browser.
 
-All 5 phases COMPLETE AND COMMITTED.
+## Pipeline Reference (for next agent)
 
----
+### Standard run (new test):
+```
+python scripts/recon_rw.py <N>          # generates scripts/testN_rw_config.json
+# inspect output, fix config if needed (see below)
+python scripts/pipeline_rw.py <N>       # steps 1-6: parse > JSON > charts > upload > import > audit
+python scripts/pipeline_rw.py <N> --step 3  # restart from step 3 if needed
+```
 
-## Active phase: Content Ingestion Pipeline (post-Phase-5)
+### Config fields that often need manual editing:
+```
+m2_line_start: 855           -- set LOWER if M2 Q1/Q2/Q3 are before the module header
+scoring_track_index: 1       -- 0 or 1, check scoring_track_options to verify which Q1 is semantically correct
+missing_qnum_injections:     -- when Q# uses decorative format ('. 1 ,') or is before module header
+  m2_q1: {qnum:1, module:m2, inject_line:880}
+qnum_line_overrides:         -- force Q# to correct line when table values cause false detection
+  m1: {"25": 635}
+choices_overrides:           -- supply all 4 choices when PDF columns put them before the stem
+  T9-RW-M1-Q02: ["A) ...", "B) ...", "C) ...", "D) ..."]
+```
 
-### Question bank status (as of 2026-07-17)
+### Multi-track scoring guide verification:
+- recon reports: `Track 0 (page 2): M1-Q1=A` / `Track 1 (page 4): M1-Q1=B`
+- Find M1-Q1 stem in practice.txt (line ~34). Read the question. Pick the track whose answer letter makes grammatical sense for that question.
+- If both tracks have same Q1 (like T9) — keep default (Track 1, last page).
+- To override: `python scripts/recon_rw.py <N> --track 0`
 
-| Source | Section | Questions | Status |
-|---|---|---|---|
-| SAT Test 4 | Math | ~129 | Imported |
-| SAT Test 4 | Reading & Writing | 66 | Imported (rationales + 2 chart images) |
-| SAT Test 5 | Reading & Writing | 66 | Imported (rationales + 2 chart images) |
-| SAT Test 6 | Reading & Writing | 66 | Imported (rationales + 3 chart images) |
-| SAT Test 7 | Reading & Writing | 66 | Imported this session (rationales + 3 chart images) |
-| SAT Tests 1-3, 8-11 | All | 0 | Not yet extracted |
-| PSAT Tests | All | 0 | Not yet extracted |
+### Known PDF layout patterns:
+| Pattern | Tests | Config fix |
+|---|---|---|
+| Standard (Q1 after module header) | T4, T5, T6 | none |
+| Q1/Q2 before module header | T7, T8 | m2_line_start = Q3s line |
+| Q1/Q2/Q3 before header + decorative format | T9 | m2_line_start = Q3s line + injections for Q1/Q2 |
+| Table value collides with Q# | T9 (Q25) | qnum_line_overrides |
+| Choices before stem (column layout) | T9 (Q2) | choices_overrides |
 
-Total DB: **393 questions** (0 SEVERE, 22 WARN = pre-existing PLACEHOLDERs).
-
-### Completed this session
-- T7-RW: 66 questions extracted from `SAT_Test_7_PracticeTest.pdf` via PyMuPDF
-  - **PDF quirk discovered:** T7 places Q1-Q2 for each module BEFORE the module header page.
-    Fixed with new boundary-detection algorithm using valid Q1 line positions.
-  - **M2-Q23:** number missing from PDF text; injected manually at correct line.
-  - **Right-column chart:** M1-Q12 chart is in RIGHT column (unlike T4-T6 left-column pattern).
-    Extractor updated with `left_col=False` support.
-- T7-RW: 66 rationales (33/33 per module) parsed from explanations PDF
-- T7-RW: 3 chart images extracted and uploaded to `question-assets/charts/`:
-  - M1-Q12: Single-use plastic factors bar chart (right column)
-  - M1-Q15: Urban land expansion ULE meta-analysis (left column)
-  - M1-Q16: Chinese trade liberalization imports graph (left column)
-- T7-RW: imported via `npx tsx scripts/import-official-bank.ts scripts/test7_rw_questions.json`
-- `npm run audit:question-bank` → 393 questions, 0 SEVERE, 22 WARN (unchanged)
-
-### Parser fixes / notes to carry forward for T8-T11
-1. T7's Q1-Q2 pages come BEFORE the module header — the new boundary algorithm uses valid Q1
-   line positions (not header lines). Verify whether T8-T11 share this layout or revert to
-   the T6 structure (sequential search from header works if Q3 appears first).
-2. `two_back != 'Module'` fix (from T6) is still in the T7 parser — carry forward.
-3. Q23 manual injection (M2): check if this recurs in other tests before copying blindly.
-4. When chart is in right column instead of left, use `left_col=False` in extractor.
-
-### Single next action
-Begin Test 8 RW extraction. PDFs: `SAT_Test_8_PracticeTest.pdf` + Explanations + ScoringGuide.
-Start with the new boundary-detection algorithm (Q1 position based), verify module structure.
-
----
-
-## Open items
-
-- T8+ RW extraction (8, 9, 10, 11): priority — more RW variety for Ava
-- Math content: T5-T11 Math not yet extracted
-- Tailwind styling regression: verify at localhost:3000 after signing in
-- GitHub secrets for DB backup workflow not set
-- `next@14.2.35` CVEs — upgrade to 14.x latest or 15.x
-- Untracked junk: `test_write_check.tmp`, `supabase/.temp/test_b64.txt`, `ss ux.png`, `ss ux_1.png`
-- Full end-to-end study flow never manually tested in browser
-- Study/miss-loop UIs need `<Image/>` for `media_urls` after first chart upload
-- `scripts/test6_rw_questions.json`, `scripts/test7_rw_questions.json` committed in repo (fine — no secrets)
-
----
-
-## Standing notes
-
-- End every session with a next-session prompt (fenced code block)
-- Two AI agents have push access: Gemini (local) and Claude (sandbox)
-- Sandbox cannot delete/rename files — overwrite in place
-- `middleware.ts` — new no-session endpoints need path in `PUBLIC_PATHS`
-- Ava PSAT baseline: Math 500 / RW 610 (1110). Log at /tests to activate predictive scoring
-- Supabase project ID: `ckuhtjrnnqjnrgpuurlr`
-
----
-
-SIGN-OFF: T7-RW 66q imported (66 rationales, 3 chart PNGs). Bank: 393q, 0 SEVERE. — Claude (Sonnet 4.6) 7/17/26
+## Commit
+57e323a -- feat: T8 answer key fix, T9 RW import, pipeline hardening
