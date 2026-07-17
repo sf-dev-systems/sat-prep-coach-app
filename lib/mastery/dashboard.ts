@@ -41,6 +41,7 @@ export interface ReadinessMetric {
 }
 
 export interface FocusSkill {
+  id: string;
   section: Skill['section'];
   name: string;
   priority: string;
@@ -227,6 +228,7 @@ export async function computeDashboardData(supabase: SupabaseClient, userId: str
     .sort((a, b) => b.gap - a.gap)
     .slice(0, 5)
     .map(({ skill, p, reviewDue }) => ({
+      id: skill.id,
       section: skill.section,
       name: skill.name,
       priority: reviewDue ? 'Review Due' : p < 0.4 ? 'High Point Leverage' : 'High Weight',
