@@ -1,5 +1,32 @@
 # sat-prep-coach-app
 
+> ⚠️ **Sandbox environment note (read before trusting a weird error):** the
+> Claude sandbox's Linux shell (`mcp__workspace__bash`) reads/writes this
+> repo through a FUSE mount that has proven unreliable — confirmed across
+> two separate projects on 2026-07-16 (this one, and `FIN-finance-ops`).
+> It can silently truncate file reads/writes and cause phantom `tsc`/build
+> errors on files that are actually fine on disk.
+>
+> **Workaround (what to actually do):**
+> 1. Never trust a bare sandbox `cat` / `git show` / `tsc` / build error by
+>    itself. Re-check the same file with the host-side `Read` tool (a
+>    different code path than the Linux FUSE mount) before concluding the
+>    code is actually broken.
+> 2. If `Read` and sandbox bash disagree, `Read` (or the file as it looks
+>    on your own machine) wins.
+> 3. Do all edits with `Read`/`Edit`/`Write` (host-side tools), not shell
+>    redirection (`>`, `sed -i`, etc.) — those write through the same
+>    unreliable mount.
+> 4. This mount also can't delete or rename files (`rm`/`git mv`/
+>    `git checkout` all fail with "Operation not permitted") — expect to
+>    overwrite file content in place instead of deleting, unless deletion
+>    is explicitly approved via the delete-permission prompt.
+> 5. Never run `git add`/`commit`/`push` from the sandbox at all — hand
+>    the exact commands to your own machine and run them there.
+>
+> Full writeup: `AGENT_HANDOFF.md` and
+> `02 SESSION_LOG/2026-07-16_2115_local-tree-repair-and-docs-relocation.md`.
+
 AI SAT Coach — **Personal Edition (v1)**. A PWA SAT tutor for one student
 targeting **1500+**. It models a student's knowledge, memory, behavior,
 confidence, and test-taking strategy over time, and drives every practice

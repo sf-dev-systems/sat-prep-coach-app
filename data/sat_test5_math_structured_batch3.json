@@ -1,0 +1,74 @@
+[
+  {
+    "section": "math",
+    "domain": "Algebra",
+    "skill_name": "Linear Equations & Inequalities",
+    "difficulty": 1,
+    "stem": "For a snowstorm in a certain town, the minimum rate of snowfall recorded was 0.6 inches per hour, and the maximum rate of snowfall recorded was 1.8 inches per hour. Which inequality is true for all values of s, where s represents a rate of snowfall, in inches per hour, recorded for this snowstorm?",
+    "choices": ["s >= 2.4", "s >= 1.8", "0 <= s <= 0.6", "0.6 <= s <= 1.8"],
+    "correct_answer": "D",
+    "rationale": "The rate of snowfall, s, must be greater than or equal to the minimum (0.6) and less than or equal to the maximum (1.8). This is represented by the compound inequality 0.6 <= s <= 1.8.",
+    "distractor_notes": {
+      "A": "Incorrect. This represents values greater than the sum of the minimum and maximum.",
+      "B": "Incorrect. This represents values greater than the maximum only.",
+      "C": "Incorrect. This represents values between zero and the minimum."
+    },
+    "trap_type": "Boundary Misinterpretation"
+  },
+  {
+    "section": "math",
+    "domain": "Advanced Math",
+    "skill_name": "Quadratics & Parabolas",
+    "difficulty": 2,
+    "stem": "Consider the system of equations: y = 4x and y = x^2 - 12. A solution to the given system of equations is (x, y), where x > 0. What is the value of x?",
+    "choices": null,
+    "correct_answer": "6",
+    "rationale": "Substitute the expression for y from the first equation into the second equation: 4x = x^2 - 12. Rearranging gives a quadratic equation: x^2 - 4x - 12 = 0. Factoring yields (x - 6)(x + 2) = 0. The solutions are x = 6 and x = -2. Since the question specifies x > 0, the correct value is 6.",
+    "distractor_notes": {},
+    "trap_type": null
+  },
+  {
+    "section": "math",
+    "domain": "Algebra",
+    "skill_name": "Linear Equations & Inequalities",
+    "difficulty": 1,
+    "stem": "A store sells two different-sized containers of blueberries. The store's sales of these blueberries totaled 896.86 dollars last month. The equation 4.51x + 6.07y = 896.86 represents this situation, where x is the number of smaller containers sold and y is the number of larger containers sold. According to the equation, what is the price, in dollars, of each smaller container?",
+    "choices": null,
+    "correct_answer": "4.51",
+    "rationale": "In the standard linear equation representing total cost, the coefficient attached to x (the number of smaller containers) represents the price of that container. Therefore, the price of the smaller container is 4.51.",
+    "distractor_notes": {},
+    "trap_type": null
+  },
+  {
+    "section": "math",
+    "domain": "Geometry & Trigonometry",
+    "skill_name": "Area & Volume",
+    "difficulty": 1,
+    "stem": "A right circular cylinder has a base diameter of 22 centimeters and a height of 6 centimeters. What is the volume, in cubic centimeters, of the cylinder?",
+    "choices": ["132p", "264p", "726p", "2,904p"],
+    "correct_answer": "C",
+    "rationale": "The formula for the volume of a right circular cylinder is V = pr^2h. The radius r is half the diameter, so r = 22 / 2 = 11. Substituting the values gives V = p(11)^2(6) = p(121)(6) = 726p.",
+    "distractor_notes": {
+      "A": "Incorrect. This uses the diameter instead of the squared radius (22 * 6 = 132).",
+      "B": "Incorrect. This multiplies the diameter by the radius and height.",
+      "D": "Incorrect. This squares the diameter instead of the radius (22^2 * 6 = 2904)."
+    },
+    "trap_type": "Diameter vs Radius Confusion"
+  },
+  {
+    "section": "math",
+    "domain": "Problem-Solving & Data Analysis",
+    "skill_name": "Ratios, Rates & Proportions",
+    "difficulty": 1,
+    "stem": "At a particular track meet, the ratio of coaches to athletes is 1 to 26. If there are x coaches at the track meet, which of the following expressions represents the number of athletes at the track meet?",
+    "choices": ["x / 26", "26x", "x + 26", "26 / x"],
+    "correct_answer": "B",
+    "rationale": "A ratio of 1 coach for every 26 athletes means there are 26 times as many athletes as coaches. If there are x coaches, the number of athletes is 26 * x, or 26x.",
+    "distractor_notes": {
+      "A": "Incorrect. This would be used to find the number of coaches if x were the number of athletes.",
+      "C": "Incorrect. This adds 26 rather than multiplying.",
+      "D": "Incorrect. This inverts the relationship entirely."
+    },
+    "trap_type": "Inverse Operation"
+  }
+]

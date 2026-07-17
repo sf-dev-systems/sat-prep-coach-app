@@ -1,0 +1,82 @@
+[
+  {
+    "section": "reading_writing",
+    "domain": "Expression of Ideas",
+    "skill_name": "Transitions",
+    "difficulty": 1,
+    "stem": "Early Mars rover missions, such as Sojourner, relied primarily on pre-programmed instructions sent from Earth to navigate the rocky Martian terrain. ________ modern rovers like Perseverance are equipped with autonomous navigation software, allowing them to map routes and avoid hazards in real time without waiting for human input.",
+    "choices": ["Consequently,", "Additionally,", "By contrast,", "Indeed,"],
+    "correct_answer": "C",
+    "rationale": "The first sentence describes the limitations of early rovers (relying on pre-programmed instructions). The second sentence describes the advanced capabilities of modern rovers (autonomous navigation). The relationship between these two ideas is one of contrast.",
+    "distractor_notes": {
+      "A": "Incorrect. 'Consequently' implies cause and effect, but the early rovers did not cause the modern rovers to have autonomous software in the context of this sentence.",
+      "B": "Incorrect. 'Additionally' implies adding similar information, but these are opposing capabilities.",
+      "D": "Incorrect. 'Indeed' is used to emphasize a preceding point, not to introduce a contrasting one."
+    },
+    "trap_type": "False Cause/Effect"
+  },
+  {
+    "section": "reading_writing",
+    "domain": "Standard English Conventions",
+    "skill_name": "Boundaries",
+    "difficulty": 2,
+    "stem": "Researchers studying the acoustic properties of ancient Mayan pyramids have discovered a fascinating phenomenon: when a person claps at the base of the El Castillo pyramid, the echo sounds remarkably like the chirp of a quetzal ______ a bird considered sacred in Mayan culture.",
+    "choices": ["bird;", "bird,", "bird:", "bird"],
+    "correct_answer": "B",
+    "rationale": "The phrase 'a bird considered sacred in Mayan culture' is an appositive phrase that describes the quetzal. It must be separated from the rest of the sentence by a comma.",
+    "distractor_notes": {
+      "A": "Incorrect. A semicolon must separate two independent clauses, but the phrase after the punctuation is not a complete sentence.",
+      "C": "Incorrect. While a colon can introduce an appositive, it's typically used for emphasis or lists at the end of an independent clause. A comma is the standard and most appropriate punctuation here to smoothly attach the modifier.",
+      "D": "Incorrect. Omitting punctuation creates a run-on error and confuses the structure of the appositive."
+    },
+    "trap_type": "Semicolon vs Comma Confusion"
+  },
+  {
+    "section": "reading_writing",
+    "domain": "Standard English Conventions",
+    "skill_name": "Form, Structure & Sense",
+    "difficulty": 2,
+    "stem": "Despite the proliferation of digital streaming platforms over the last decade, the sales of vinyl records ______ steadily increased, driven by audiophiles and younger collectors who prefer physical media with tangible artwork.",
+    "choices": ["has", "have", "is having", "was"],
+    "correct_answer": "B",
+    "rationale": "The subject of the verb is the plural noun 'sales' (not 'platforms' or 'records', which are part of prepositional phrases). Therefore, the plural verb 'have' is required to maintain subject-verb agreement.",
+    "distractor_notes": {
+      "A": "Incorrect. 'Has' is a singular verb, which does not agree with the plural subject 'sales'.",
+      "C": "Incorrect. 'Is having' is singular and uses the wrong tense/aspect for a continuous historical trend.",
+      "D": "Incorrect. 'Was' is a singular past-tense verb."
+    },
+    "trap_type": "Subject-Verb Agreement (Intervening Phrase)"
+  },
+  {
+    "section": "reading_writing",
+    "domain": "Expression of Ideas",
+    "skill_name": "Rhetorical Synthesis",
+    "difficulty": 2,
+    "stem": "While researching a topic, a student has taken the following notes:\n- The Mariana Trench is the deepest oceanic trench on Earth.\n- It is located in the western Pacific Ocean.\n- Its maximum known depth is Challenger Deep, at approximately 36,000 feet.\n- Very few human expeditions have reached Challenger Deep due to extreme pressure.\n\nThe student wants to emphasize the extreme conditions of the trench's deepest point. Which choice most effectively uses relevant information from the notes to accomplish this goal?",
+    "choices": ["Located in the Pacific Ocean, the Mariana Trench is the deepest oceanic trench on Earth.", "The Mariana Trench's maximum depth is Challenger Deep, which is located in the western Pacific Ocean.", "Due to extreme pressure, very few human expeditions have successfully reached Challenger Deep, the Mariana Trench's maximum depth of approximately 36,000 feet.", "Challenger Deep is approximately 36,000 feet deep and is the deepest point of the Mariana Trench."],
+    "correct_answer": "C",
+    "rationale": "The goal is to emphasize the 'extreme conditions' of the deepest point. Choice C is the only option that explicitly mentions the 'extreme pressure' and the fact that it prevents human expeditions, successfully fulfilling the prompt's specific rhetorical goal.",
+    "distractor_notes": {
+      "A": "Incorrect. This states facts about the trench's location and general depth but ignores the extreme conditions.",
+      "B": "Incorrect. This focuses on geographic location rather than extreme conditions.",
+      "D": "Incorrect. This provides depth statistics but leaves out the details about the extreme pressure."
+    },
+    "trap_type": "Ignoring the Prompt's Goal"
+  },
+  {
+    "section": "reading_writing",
+    "domain": "Expression of Ideas",
+    "skill_name": "Transitions",
+    "difficulty": 2,
+    "stem": "In the 19th century, the bicycle underwent numerous design changes to improve stability and speed. ________ the introduction of the 'safety bicycle' in the 1880s, which featured two wheels of equal size and a chain drive, revolutionized personal transport and made riding accessible to a much broader public.",
+    "choices": ["Specifically,", "In contrast,", "Previously,", "However,"],
+    "correct_answer": "A",
+    "rationale": "The first sentence introduces a general idea: the bicycle underwent design changes. The second sentence provides a highly specific example of one of those changes (the safety bicycle). 'Specifically' correctly signals this shift from general to specific.",
+    "distractor_notes": {
+      "B": "Incorrect. The second sentence is an example of the first, not a contrast to it.",
+      "C": "Incorrect. The safety bicycle in the 1880s represents the culmination of these changes, not something that happened previously.",
+      "D": "Incorrect. 'However' implies a contradiction, which is not present here."
+    },
+    "trap_type": "General to Specific Misidentification"
+  }
+]

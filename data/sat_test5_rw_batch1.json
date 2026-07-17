@@ -1,0 +1,82 @@
+[
+  {
+    "section": "reading_writing",
+    "domain": "Craft & Structure",
+    "skill_name": "Words in Context",
+    "difficulty": 1,
+    "stem": "The Cambrian explosion gets its name from the sudden appearance and rapid diversification of animal remains in the fossil record about 541 million years ago, during the Cambrian period. Some scientists argue that this ______ change in the fossil record might be because animals during the Cambrian period had hard body parts that preserved well, rather than because of a true spike in the number of species.",
+    "choices": ["catastrophic", "abrupt", "imminent", "understated"],
+    "correct_answer": "B",
+    "rationale": "The text states that the Cambrian explosion gets its name from the \"sudden appearance and rapid diversification\" of animal remains. The word \"abrupt\" means sudden or unexpected, which perfectly matches the description of the change in the fossil record.",
+    "distractor_notes": {
+      "A": "Incorrect. Catastrophic implies a disaster, which is not supported by the text.",
+      "C": "Incorrect. Imminent means about to happen, but the text discusses an event in the past.",
+      "D": "Incorrect. Understated means presented in a subtle way, which contradicts \"sudden appearance and rapid diversification.\""
+    },
+    "trap_type": "Vocabulary Confusion"
+  },
+  {
+    "section": "reading_writing",
+    "domain": "Craft & Structure",
+    "skill_name": "Words in Context",
+    "difficulty": 1,
+    "stem": "During a 2021 launch, engineers at the National Aeronautics and Space Administration (NASA) faced a ______: should they continue the mission or abort it due to a potential system failure? Ultimately, they decided to proceed, a decision that proved successful when the spacecraft reached its orbit without incident.",
+    "choices": ["conundrum", "resolution", "breakthrough", "concession"],
+    "correct_answer": "A",
+    "rationale": "The text describes a situation where engineers had to choose between continuing or aborting a mission due to a potential failure. This difficult choice constitutes a problem or dilemma, which is the definition of a conundrum.",
+    "distractor_notes": {
+      "B": "Incorrect. A resolution is a solution to a problem, but the blank refers to the problem itself.",
+      "C": "Incorrect. A breakthrough is a sudden discovery, which doesn't fit the context of choosing between two difficult options.",
+      "D": "Incorrect. A concession involves yielding or compromising, which doesn't fit the description of a difficult choice."
+    },
+    "trap_type": "Contextual Antonym"
+  },
+  {
+    "section": "reading_writing",
+    "domain": "Craft & Structure",
+    "skill_name": "Words in Context",
+    "difficulty": 2,
+    "stem": "In her poetry collection *Averno*, Louise Glück explores themes of mortality and isolation with a ______ that is both striking and disconcerting. Her precise, unornamented language leaves no room for sentimentality, forcing the reader to confront the stark realities she presents.",
+    "choices": ["frivolity", "lucidity", "redundancy", "complexity"],
+    "correct_answer": "B",
+    "rationale": "The text describes Glück's language as \"precise\" and \"unornamented,\" forcing readers to confront \"stark realities.\" This suggests a clarity of expression. \"Lucidity\" means clarity of expression or intelligibility, perfectly capturing this description.",
+    "distractor_notes": {
+      "A": "Incorrect. Frivolity means lack of seriousness, contradicting the themes of mortality and isolation.",
+      "C": "Incorrect. Redundancy means being no longer needed or useful, which doesn't fit the description of her \"striking\" poetry.",
+      "D": "Incorrect. While her themes might be complex, the text emphasizes her \"precise, unornamented\" language, pointing towards clarity rather than complexity of style."
+    },
+    "trap_type": "Thematic Distraction"
+  },
+  {
+    "section": "reading_writing",
+    "domain": "Craft & Structure",
+    "skill_name": "Text Structure & Purpose",
+    "difficulty": 2,
+    "stem": "The following text is adapted from William Wordsworth's 1807 poem \"I Wandered Lonely as a Cloud.\"\n\nI wandered lonely as a cloud\nThat floats on high o'er vales and hills,\nWhen all at once I saw a crowd,\nA host, of golden daffodils;\nBeside the lake, beneath the trees,\nFluttering and dancing in the breeze.\n\nWhich choice best describes the overall structure of the text?",
+    "choices": ["It shifts from a description of a solitary state to a description of an abundant and active scene.", "It transitions from an observation of nature to a philosophical reflection on the passage of time.", "It moves from a specific location to a generalized memory of a past event.", "It begins with a feeling of joy and ends with a sense of melancholic longing."],
+    "correct_answer": "A",
+    "rationale": "The poem begins by describing the speaker \"lonely as a cloud,\" establishing a solitary state. It then immediately shifts to describing a \"crowd\" and a \"host\" of daffodils \"fluttering and dancing,\" presenting an abundant and active scene.",
+    "distractor_notes": {
+      "B": "Incorrect. The text does not include a philosophical reflection on time.",
+      "C": "Incorrect. The text stays focused on the immediate observation of the daffodils.",
+      "D": "Incorrect. The text begins with a feeling of loneliness, not joy."
+    },
+    "trap_type": "False Thematic Shift"
+  },
+  {
+    "section": "reading_writing",
+    "domain": "Craft & Structure",
+    "skill_name": "Text Structure & Purpose",
+    "difficulty": 2,
+    "stem": "Many historians attribute the fall of the Roman Empire primarily to external pressures, such as invasions by Germanic tribes. However, recent scholarship has increasingly emphasized internal factors, including political instability, economic stagnation, and the overextension of the military. By re-evaluating the archaeological and textual evidence, these scholars argue that the empire was already fundamentally weakened from within long before the final external blows were struck.\n\nWhich choice best describes the main purpose of the text?",
+    "choices": ["To summarize a traditional historical view and then present a contrasting modern perspective.", "To argue that external invasions were the sole cause of the Roman Empire's collapse.", "To detail the specific economic challenges faced by the Roman Empire in its final years.", "To criticize modern historians for ignoring the impact of Germanic tribes on the Roman Empire."],
+    "correct_answer": "A",
+    "rationale": "The text begins by stating a traditional view (\"Many historians attribute...\"). It then introduces a contrasting modern perspective using the transition \"However, recent scholarship...\", and proceeds to elaborate on this new view.",
+    "distractor_notes": {
+      "B": "Incorrect. This is the traditional view that the text contrasts with the modern perspective.",
+      "C": "Incorrect. Economic challenges are mentioned, but detailing them is not the main purpose; presenting the shift in scholarship is.",
+      "D": "Incorrect. The text does not criticize modern historians; it presents their viewpoint."
+    },
+    "trap_type": "Detail vs Purpose Confusion"
+  }
+]

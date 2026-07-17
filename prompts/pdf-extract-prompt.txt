@@ -1,0 +1,38 @@
+You are a technical data extraction specialist. Extract ALL the questions from "Math Module 2" of the attached official SAT Test PDF. 
+Format them into a perfectly valid JSON array. 
+
+Map each question to one of these exact "skill_name" categories:
+- "Linear Equations & Inequalities"
+- "Systems of Equations"
+- "Quadratics & Parabolas"
+- "Polynomials & Non-linear Functions"
+- "Ratios, Rates & Proportions"
+- "Percentages"
+- "Statistics & Probability"
+- "Area & Volume"
+- "Triangles & Circles"
+- "Trigonometry"
+
+Use this exact schema:
+[
+  {
+    "section": "math",
+    "domain": "Algebra", // Or "Advanced Math", "Problem-Solving & Data Analysis", "Geometry & Trigonometry"
+    "skill_name": "One of the exact skill names listed above",
+    "difficulty": 2, // 1 for early questions, 2 for middle, 3 for late questions
+    "stem": "The question prompt/passage and question itself...",
+    "choices": ["Choice A", "Choice B", "Choice C", "Choice D"], // Use null if it is a free-response grid-in
+    "correct_answer": "A", // Or the exact numeric value string for grid-ins
+    "rationale": "Clear educational explanation of why the correct answer is right...",
+    "distractor_notes": {
+      "A": "Why this choice is correct/incorrect...",
+      "B": "Why this choice is incorrect..."
+    },
+    "trap_type": "The specific distractor trap pattern used"
+  }
+]
+
+CRITICAL RULES:
+1. Output ONLY the raw JSON array. Do NOT wrap it in markdown codeblocks (no ```json). 
+2. Do not include any conversational text.
+3. Ensure all quotes inside the stems are properly escaped so the JSON is valid.

@@ -1,0 +1,82 @@
+[
+  {
+    "section": "reading_writing",
+    "domain": "Information & Ideas",
+    "skill_name": "Central Ideas & Details",
+    "difficulty": 2,
+    "stem": "Ecologist Suzanne Simard has spent decades researching how trees communicate. Her work demonstrates that trees in a forest are not isolated entities competing for resources, but rather are connected by a vast underground network of mycorrhizal fungi. Through this \"wood wide web,\" trees share nutrients, water, and even chemical warning signals about impending threats like drought or insect attacks. Older, more established trees—which Simard calls \"hub trees\" or \"mother trees\"—play a crucial role in redistributing these resources to younger, struggling saplings.\n\nWhich choice best states the main idea of the text?",
+    "choices": ["Fungi are the primary source of nutrients for younger trees in a forest ecosystem.", "Trees utilize a complex fungal network to share resources and information with one another.", "Older trees are more susceptible to insect attacks and droughts than younger saplings.", "The concept of competition for resources is entirely inaccurate in forest ecosystems."],
+    "correct_answer": "B",
+    "rationale": "The text focuses on Simard's research showing that trees are connected by a fungal network through which they share nutrients, water, and warning signals. Choice B accurately summarizes this core concept.",
+    "distractor_notes": {
+      "A": "Incorrect. The text says fungi connect the trees, but it's the trees themselves (especially older ones) sharing the resources.",
+      "C": "Incorrect. The text states trees share warnings about threats, not that older trees are more susceptible to them.",
+      "D": "Incorrect. The text says trees are not *just* isolated entities competing for resources, but it doesn't claim competition is entirely inaccurate."
+    },
+    "trap_type": "Overstatement / Extreme Language"
+  },
+  {
+    "section": "reading_writing",
+    "domain": "Information & Ideas",
+    "skill_name": "Command of Evidence",
+    "difficulty": 2,
+    "stem": "In the 1920s, astronomer Edwin Hubble made the groundbreaking discovery that the universe is expanding. He observed that galaxies are moving away from us, and more importantly, that the further away a galaxy is, the faster it is receding. This relationship, now known as Hubble's Law, provided the first major observational support for the Big Bang theory, fundamentally altering humanity's understanding of the cosmos.\n\nWhich finding, if true, would most directly support Hubble's Law?",
+    "choices": ["Observations reveal that a galaxy 100 million light-years away is receding at twice the speed of a galaxy 50 million light-years away.", "Spectroscopic analysis indicates that most galaxies have a similar chemical composition to our Milky Way.", "Telescope data shows that some nearby galaxies are actually moving toward our solar system due to localized gravitational pull.", "Theoretical models suggest the expansion of the universe is accelerating over time."],
+    "correct_answer": "A",
+    "rationale": "Hubble's Law posits that the further away a galaxy is, the faster it is receding. Choice A provides direct evidence of this proportional relationship (twice the distance equals twice the speed).",
+    "distractor_notes": {
+      "B": "Incorrect. Chemical composition does not relate to the speed or distance of galactic recession.",
+      "C": "Incorrect. Localized movement toward us is an exception to the general expansion and does not support Hubble's Law.",
+      "D": "Incorrect. While true (dark energy), cosmic acceleration is a later discovery and does not directly prove the basic proportional relationship of Hubble's Law itself."
+    },
+    "trap_type": "Irrelevant / Tangential Fact"
+  },
+  {
+    "section": "reading_writing",
+    "domain": "Information & Ideas",
+    "skill_name": "Inferences",
+    "difficulty": 3,
+    "stem": "In studying the economic impact of invasive species, researchers analyzed the spread of the zebra mussel in North American waterways. Because zebra mussels attach to solid surfaces in massive clusters, they frequently clog water intake pipes for power plants and municipal water systems. Facilities are forced to spend millions of dollars annually on physical removal and chemical treatments to keep the pipes clear. However, the researchers noted that in lakes where a specific native predator fish population has been successfully reintroduced, the density of zebra mussel clusters on infrastructure has noticeably decreased.\n\nWhich conclusion is most strongly supported by the text?",
+    "choices": ["Zebra mussels cause more ecological damage than economic damage.", "The use of chemical treatments to clear pipes has proven entirely ineffective.", "Reintroducing native predators may offer a cost-saving alternative to physical and chemical mussel removal.", "The native predator fish relies exclusively on the zebra mussel as its food source."],
+    "correct_answer": "C",
+    "rationale": "The text states that facilities spend millions on removal/treatments, but also notes that reintroducing a native predator decreases mussel density on infrastructure. It can be logically inferred that this biological control could reduce the need for expensive physical/chemical treatments.",
+    "distractor_notes": {
+      "A": "Incorrect. The text focuses on economic damage (clogged pipes, millions of dollars) and does not compare it to ecological damage.",
+      "B": "Incorrect. The text says facilities spend money on treatments; it does not claim they are completely ineffective.",
+      "D": "Incorrect. The text states the fish eats the mussels, but does not suggest it is the fish's *exclusive* food source."
+    },
+    "trap_type": "Unsupported Comparison"
+  },
+  {
+    "section": "reading_writing",
+    "domain": "Information & Ideas",
+    "skill_name": "Command of Evidence",
+    "difficulty": 2,
+    "stem": "While analyzing a collection of 18th-century personal letters, historian Dr. Aris Thorne noticed a distinct shift in the vocabulary used by merchant-class authors compared to aristocratic authors. Thorne hypothesizes that the rise of global trade during this period caused merchant-class individuals to adopt significantly more loanwords from foreign languages into their daily correspondence than their aristocratic counterparts did.\n\nWhich finding from the letters, if true, would most directly support Thorne's hypothesis?",
+    "choices": ["Both merchant and aristocratic letters from the late 18th century are significantly longer than those from the early 18th century.", "Merchant-class letters frequently feature terms originating in Arabic and Hindi, whereas aristocratic letters primarily rely on traditional Latin and French terminology.", "Aristocratic authors frequently wrote about political events, while merchants primarily discussed the logistics of shipping goods.", "The merchant-class letters contain numerous spelling variations of standard English words."],
+    "correct_answer": "B",
+    "rationale": "Thorne's hypothesis is that merchants adopted more foreign loanwords due to global trade than aristocrats did. Choice B directly supports this by contrasting the merchants' use of Arabic and Hindi terms with the aristocrats' reliance on traditional European terminology.",
+    "distractor_notes": {
+      "A": "Incorrect. Letter length does not address the specific use of foreign loanwords.",
+      "C": "Incorrect. Subject matter (politics vs. logistics) is different from the specific vocabulary (loanwords) being used.",
+      "D": "Incorrect. Spelling variations do not indicate the adoption of foreign loanwords."
+    },
+    "trap_type": "Right Topic, Wrong Metric"
+  },
+  {
+    "section": "reading_writing",
+    "domain": "Craft & Structure",
+    "skill_name": "Cross-Text Connections",
+    "difficulty": 3,
+    "stem": "Text 1\nAdvocates of universal basic income (UBI) argue that providing a guaranteed minimum stipend to all citizens would eradicate extreme poverty and stimulate local economies. By ensuring basic survival needs are met, they suggest, UBI frees individuals to pursue higher education, start small businesses, or engage in creative endeavors without the paralyzing fear of destitution.\n\nText 2\nCritics of UBI point to the massive fiscal burden such a program would place on national governments, arguing it would inevitably lead to crippling tax hikes or severe inflation. Furthermore, some economists warn that decoupling income from employment might disincentivize labor force participation, particularly in crucial entry-level sectors, thereby damaging overall economic productivity.\n\nBased on the texts, how would the authors of Text 2 most likely respond to the claim in Text 1 that UBI would \"stimulate local economies\"?",
+    "choices": ["By arguing that any local economic stimulation would be offset by severe inflation and reduced overall economic productivity.", "By agreeing that local economies would benefit, but asserting that the cost to the national government is still too high.", "By pointing out that small businesses are generally not the primary drivers of local economic growth.", "By suggesting that individuals would be more likely to save the stipend rather than spend it in their local communities."],
+    "correct_answer": "A",
+    "rationale": "Text 1 claims UBI stimulates economies. Text 2 counters that UBI leads to \"severe inflation\" and damages \"overall economic productivity\" by disincentivizing labor. Therefore, the author of Text 2 would argue the negative macroeconomic effects would negate the positive local effects claimed in Text 1.",
+    "distractor_notes": {
+      "B": "Incorrect. Text 2 explicitly warns of damaged economic productivity, meaning they would not agree that the local economy would ultimately benefit.",
+      "C": "Incorrect. Text 2 focuses on inflation, taxation, and labor participation, not the specific role of small businesses.",
+      "D": "Incorrect. Neither text discusses the saving habits of individuals."
+    },
+    "trap_type": "Partial Agreement Trap"
+  }
+]

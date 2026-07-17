@@ -1,0 +1,78 @@
+[
+  {
+    "section": "math",
+    "domain": "Problem-Solving & Data Analysis",
+    "skill_name": "Statistics & Probability",
+    "difficulty": 1,
+    "stem": "23, 27, 27, 32, 35, 36, 52\n\nWhat is the range of the 7 scores shown?",
+    "choices": null,
+    "correct_answer": "29",
+    "rationale": "The range of a data set is calculated by subtracting the minimum value from the maximum value. The maximum score is 52 and the minimum is 23, so 52 - 23 = 29.",
+    "distractor_notes": {},
+    "trap_type": null
+  },
+  {
+    "section": "math",
+    "domain": "Geometry & Trigonometry",
+    "skill_name": "Triangles & Circles",
+    "difficulty": 1,
+    "stem": "In the figure, line m is parallel to line n, and line k intersects both lines. Vertical angles x° and 145° are formed at the intersection of lines n and k. Which of the following statements is true?",
+    "choices": ["The value of x is less than 145.", "The value of x is greater than 145.", "The value of x is equal to 145.", "The value of x cannot be determined."],
+    "correct_answer": "C",
+    "rationale": "When two lines intersect, vertically opposite angles are equal. Since the angle measuring x degrees and the angle measuring 145 degrees are vertical angles, x must equal 145.",
+    "distractor_notes": {
+      "A": "Incorrect. Vertical angles are equal, not supplementary or smaller.",
+      "B": "Incorrect. Vertical angles are equal, not larger.",
+      "D": "Incorrect. The exact value can be determined because they are vertical angles."
+    },
+    "trap_type": "Misinterpretation of Angle Properties"
+  },
+  {
+    "section": "math",
+    "domain": "Algebra",
+    "skill_name": "Linear Equations & Inequalities",
+    "difficulty": 1,
+    "stem": "The equation x + y = 1,440 represents the number of minutes of daylight (between sunrise and sunset), x, and the number of minutes of non-daylight, y, on a particular day in Oak Park, Illinois. If this day has 670 minutes of daylight, how many minutes of non-daylight does it have?",
+    "choices": ["670", "770", "1,373", "1,440"],
+    "correct_answer": "B",
+    "rationale": "Substitute x = 670 into the equation: 670 + y = 1440. Subtracting 670 from both sides yields y = 770.",
+    "distractor_notes": {
+      "A": "Incorrect. This is the amount of daylight, not non-daylight.",
+      "C": "Incorrect. This is the result of an arithmetic subtraction error.",
+      "D": "Incorrect. This is the total number of minutes in a day (24 hours * 60 minutes), not the non-daylight minutes."
+    },
+    "trap_type": "Variable Confusion"
+  },
+  {
+    "section": "math",
+    "domain": "Problem-Solving & Data Analysis",
+    "skill_name": "Statistics & Probability",
+    "difficulty": 1,
+    "stem": "Scott selected 20 employees at random from all 400 employees at a company. He found that 16 of the employees in this sample are enrolled in exactly three professional development courses this year. Based on Scott's findings, which of the following is the best estimate of the number of employees at the company who are enrolled in exactly three professional development courses this year?",
+    "choices": ["4", "320", "380", "384"],
+    "correct_answer": "B",
+    "rationale": "In the sample, 16 out of 20 employees are enrolled, which is a fraction of 16/20 or 4/5. To estimate the total number for the entire company, multiply this fraction by the total number of employees: (4/5) * 400 = 320.",
+    "distractor_notes": {
+      "A": "Incorrect. This is the number of employees in the sample who are NOT enrolled.",
+      "C": "Incorrect. This subtracts the sample size from the total company size.",
+      "D": "Incorrect. This subtracts the enrolled sample count from the total company size."
+    },
+    "trap_type": "Proportional Miscalculation"
+  },
+  {
+    "section": "math",
+    "domain": "Algebra",
+    "skill_name": "Linear Equations & Inequalities",
+    "difficulty": 1,
+    "stem": "If 4x - 28 = -24, what is the value of x - 7?",
+    "choices": ["-24", "-22", "-6", "-1"],
+    "correct_answer": "C",
+    "rationale": "We can find the value of x - 7 by dividing both sides of the given equation by 4. (4x - 28) / 4 = -24 / 4, which simplifies to x - 7 = -6.",
+    "distractor_notes": {
+      "A": "Incorrect. This is the value of 4x - 28, not x - 7.",
+      "B": "Incorrect. This is an arithmetic error.",
+      "D": "Incorrect. This is the value of x, but the question asks for x - 7 (-1 - 7 = -8, wait, actually if x=1, then 1-7=-6. If 4x = 4, x = 1. The choice -1 is a sign error on x)."
+    },
+    "trap_type": "Solving for Wrong Target"
+  }
+]

@@ -21,10 +21,11 @@ Stack: Next.js (App Router, TypeScript) + Tailwind + Supabase
 Local path: C:\Users\go2si\sat-prep-coach-app
 
 ## Source of truth
-Canonical documents (in 00 SYSTEM\docs\):
+Canonical documents (in 01 DOCS\ — moved 2026-07-16 from 00 SYSTEM\docs\;
+see note under File locations below):
 1. PRD v1-2.md (v1.2) — governs WHAT to build and HOW (schema, flows, layout).
    NOTE: the PRD's filename now carries its version number and changes on
-   each revision (e.g. v1_1.md -> v1-2.md); check 00 SYSTEM\docs\ for the
+   each revision (e.g. v1_1.md -> v1-2.md); check 01 DOCS\ for the
    current filename rather than assuming — the frontmatter `version:` field
    is the real source of truth for which revision you're reading.
 2. Project Charter — governs WHEN (version gates, LOCK/STUB/DEFER register)
@@ -52,7 +53,7 @@ DEFER register instead of building it.
 - Secrets in .env.local (gitignored) and Vercel env only; service-role
   key and Anthropic key server-side only
 - coach_memory is append-only; timestamptz everywhere
-- Pedagogical Weighting Model: 3 sections (Math, RW, Strategy); 11 domains; 29 leaf skills; strategy skills weighted 0; weight values are mathematically fixed per leaf skill (Algebra/Advanced: 10-12, Geometry/Ideas: 5-8, Strategy: 0.05-0.12). Ref: 00 SYSTEM/docs/SYSTEM_ARCHITECTURE.md.
+- Pedagogical Weighting Model: 3 sections (Math, RW, Strategy); 11 domains; 29 leaf skills; strategy skills weighted 0; weight values are mathematically fixed per leaf skill (Algebra/Advanced: 10-12, Geometry/Ideas: 5-8, Strategy: 0.05-0.12). Ref: 01 DOCS/SYSTEM_ARCHITECTURE.md.
 
 ## Working rules
 - Lead with the answer or the code. No preamble, no filler.
@@ -71,11 +72,23 @@ DEFER register instead of building it.
 - Code goes ONLY in the lowercase code tree: app/, lib/, prompts/,
   components/, supabase/, scripts/, public/. No numbers, no spaces —
   Next.js requires these exact names.
-- Numbered folders (00 SYSTEM, 09 WIKI, 99 ARCHIVE) are the docs/vault
-  and coexist with the code; the build ignores them.
+- Numbered folders (00 SYSTEM, 01 DOCS, 02 SESSION_LOG, 09 WIKI,
+  99 ARCHIVE) are the docs/vault and coexist with the code; the build
+  ignores them.
+- Canonical docs live in 01 DOCS\ (PRD, Charter, Project Instructions,
+  System Architecture, AVA PSAT Results). Session logs live in
+  02 SESSION_LOG\, indexed by 02 SESSION_LOG\00_INDEX.md.
 - All non-code AI deliverables (reports, analyses, plans) go in:
-  00 SYSTEM\AI OUTPUTS\ — never outside the project tree.
-- Never place code in AI OUTPUTS; never place documents in the code tree.
+  00 SYSTEM\AI Review and Audits\ — never outside the project tree.
+- Never place code in AI Review and Audits; never place documents in
+  the code tree.
+- NOTE (2026-07-16): docs/session-logs were relocated from
+  00 SYSTEM\docs\ and 00 SYSTEM\SESSION_LOG\ (and AI outputs from
+  00 SYSTEM\AI OUTPUTS\) to the paths above. The old 00 SYSTEM\docs\,
+  00 SYSTEM\SESSION_LOG\, and 00 SYSTEM\AI OUTPUTS\ folders were left
+  in place, untouched, as superseded-in-place legacy copies (not
+  deleted, not kept in sync) — do not treat their contents as current;
+  read/write only the new paths going forward.
 
 ## Docs & wiki (one-directional)
 - Canonical sources: PRD (what/how), Charter (when/scope), this file
@@ -91,12 +104,12 @@ At the end of EVERY session, in this order:
 1. AGENT_HANDOFF.md (repo root) — REWRITE fully (not append) with a short
    current-state snapshot: what's verified done, single next action, open
    decisions. History does not live here anymore — see policy below.
-2. 00 SYSTEM/SESSION_LOG/ — ADD a new file named
+2. 02 SESSION_LOG/ — ADD a new file named
    `YYYY-MM-DD_HHMM_slug.md` (24-hour local time, short kebab-case slug
    describing the session) containing: COMPLETED (work + files touched),
    DECISIONS (choices + why), and SIGN-OFF (model name — date time, e.g.,
    "Sonnet — 7/10/26 3:27 PM"). Then add a one-line row for it to
-   `00 SYSTEM/SESSION_LOG/00_INDEX.md` (newest at the bottom).
+   `02 SESSION_LOG/00_INDEX.md` (newest at the bottom).
 3. Update any 09 WIKI/ pages affected by the session's changes.
 As of 2026-07-10, session history lives as one file per session (not one
 growing append-only file) — see policy below for why and for the old
@@ -120,10 +133,10 @@ file's location.
      live file this way, that's acceptable; just make sure the
      frontmatter `supersedes`/`version` fields and any cross-references
      in other docs are updated to the new filename.
-# Session history (revised 2026-07-10): 
+# Session history (revised 2026-07-10; path updated 2026-07-16): 
 lives as individual files under
-  `00 SYSTEM/SESSION_LOG/`, one per session (`YYYY-MM-DD_HHMM_slug.md`),
-  indexed in `00 SYSTEM/SESSION_LOG/00_INDEX.md` — not as one growing
+  `02 SESSION_LOG/`, one per session (`YYYY-MM-DD_HHMM_slug.md`),
+  indexed in `02 SESSION_LOG/00_INDEX.md` — not as one growing
   append-only `SESSION_LOG.md`. 
 - Changed at user request because a single 
   ever-growing file was becoming unwieldy to navigate; per-session files
@@ -142,7 +155,7 @@ lives as individual files under
   already tracks). 
 
 - Full history lives only in SESSION_LOG.md now. 
-- should be updated when necessary : C:\Users\go2si\sat-prep-coach-app\00 SYSTEM\SESSION_LOG\00_INDEX.md
+- should be updated when necessary : C:\Users\go2si\sat-prep-coach-app\02 SESSION_LOG\00_INDEX.md
 - If  AGENT_HANDOFF.md's format changes again in a way that discards prior   content, archive the outgoing version first per the revision steps above 
   (this is what happened on 2026-07-10 — see archive_2026-07-10_AGENT_HANDOFF.md).
 

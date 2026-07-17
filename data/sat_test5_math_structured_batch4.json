@@ -1,0 +1,78 @@
+[
+  {
+    "section": "math",
+    "domain": "Geometry & Trigonometry",
+    "skill_name": "Trigonometry",
+    "difficulty": 2,
+    "stem": "What is the value of tan(92p/3)?",
+    "choices": ["-v3", "-v3/3", "v3/3", "v3"],
+    "correct_answer": "A",
+    "rationale": "To find the tangent of 92p/3, we can find a coterminal angle by subtracting multiples of 2p. 92p/3 = 30p + 2p/3. Since 30p represents 15 full revolutions, the angle is coterminal with 2p/3. The tangent of 2p/3 in the second quadrant is -v3.",
+    "distractor_notes": {
+      "B": "Incorrect. This is tan(5p/6).",
+      "C": "Incorrect. This is tan(p/6).",
+      "D": "Incorrect. This is tan(p/3), missing the negative sign for the second quadrant."
+    },
+    "trap_type": "Reference Angle / Sign Error"
+  },
+  {
+    "section": "math",
+    "domain": "Algebra",
+    "skill_name": "Linear Equations & Inequalities",
+    "difficulty": 2,
+    "stem": "Kaylani used fabric measuring 5 yards in length to make each suit for a men's choir. The relationship between the number of suits that Kaylani made, x, and the total length of fabric that she purchased y, in yards, is represented by the equation y - 5x = 6. What is the best interpretation of 6 in this context?",
+    "choices": ["Kaylani made 6 suits.", "Kaylani purchased a total of 6 yards of fabric.", "Kaylani used a total of 6 yards of fabric to make the suits.", "Kaylani purchased 6 yards more fabric than she used to make the suits."],
+    "correct_answer": "D",
+    "rationale": "In the equation y - 5x = 6, y is the total fabric purchased and 5x represents the total fabric used (5 yards times x suits). The difference between what she bought and what she used equals 6, meaning she purchased 6 yards more than she actually used.",
+    "distractor_notes": {
+      "A": "Incorrect. The variable x represents the number of suits.",
+      "B": "Incorrect. The variable y represents the total yards of fabric purchased.",
+      "C": "Incorrect. The term 5x represents the total fabric used."
+    },
+    "trap_type": "Contextual Misinterpretation"
+  },
+  {
+    "section": "math",
+    "domain": "Advanced Math",
+    "skill_name": "Quadratics & Parabolas",
+    "difficulty": 2,
+    "stem": "The function g is defined by g(x) = (x + 14)(t - x), where t is a constant. In the xy-plane, the graph of y = g(x) passes through the point (24, 0). What is the value of g(0)?",
+    "choices": null,
+    "correct_answer": "336",
+    "rationale": "Since the graph passes through (24, 0), substituting x = 24 must yield g(24) = 0. So, (24 + 14)(t - 24) = 0. This gives 38(t - 24) = 0, which means t = 24. The function is g(x) = (x + 14)(24 - x). To find g(0), substitute x = 0: g(0) = (0 + 14)(24 - 0) = 14 * 24 = 336.",
+    "distractor_notes": {},
+    "trap_type": null
+  },
+  {
+    "section": "math",
+    "domain": "Geometry & Trigonometry",
+    "skill_name": "Triangles & Circles",
+    "difficulty": 2,
+    "stem": "The equation (x + 4)^2 + (y - 19)^2 = 121 represents a circle in the xy-plane. The point (a, b) lies on the circle. Which of the following is a possible value for a?",
+    "choices": ["-16", "-14", "11", "19"],
+    "correct_answer": "B",
+    "rationale": "The circle's equation (x - h)^2 + (y - k)^2 = r^2 reveals a center at (-4, 19) and a radius of v121 = 11. The minimum and maximum x-coordinates (a) on this circle are found by subtracting and adding the radius to the center's x-coordinate: -4 - 11 = -15 and -4 + 11 = 7. Thus, 'a' must be between -15 and 7, inclusive. Only -14 falls within this range.",
+    "distractor_notes": {
+      "A": "Incorrect. -16 is outside the left boundary of -15.",
+      "C": "Incorrect. 11 is outside the right boundary of 7.",
+      "D": "Incorrect. 19 is the y-coordinate of the center, not a valid x-coordinate."
+    },
+    "trap_type": "Radius and Boundary Confusion"
+  },
+  {
+    "section": "math",
+    "domain": "Geometry & Trigonometry",
+    "skill_name": "Area & Volume",
+    "difficulty": 2,
+    "stem": "A right rectangular prism has a height of 9 inches. The length of the prism's base is x inches, which is 7 inches more than the width of the prism's base. Which function V gives the volume of the prism, in cubic inches, in terms of the length of the prism's base?",
+    "choices": ["V(x) = x(x + 9)(x + 7)", "V(x) = x(x + 9)(x - 7)", "V(x) = 9x(x + 7)", "V(x) = 9x(x - 7)"],
+    "correct_answer": "D",
+    "rationale": "The volume of a rectangular prism is V = length * width * height. The height is 9, and the length is x. Because the length x is 7 inches more than the width, the width is x - 7. Multiplying these together gives V(x) = x * (x - 7) * 9, or V(x) = 9x(x - 7).",
+    "distractor_notes": {
+      "A": "Incorrect. This wrongly assumes the height is x+9 and adds 7 to the width.",
+      "B": "Incorrect. This wrongly assumes the height is x+9.",
+      "C": "Incorrect. This adds 7 to the width rather than subtracting it."
+    },
+    "trap_type": "Variable Expression Setup Error"
+  }
+]

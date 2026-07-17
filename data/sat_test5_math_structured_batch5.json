@@ -1,0 +1,74 @@
+[
+  {
+    "section": "math",
+    "domain": "Geometry & Trigonometry",
+    "skill_name": "Trigonometry",
+    "difficulty": 2,
+    "stem": "In a right triangle, the hypotenuse has length 28 and one leg has length 11. Let x° be the measure of the angle adjacent to the leg of length 11. What is the value of cos(x°)?",
+    "choices": null,
+    "correct_answer": "11/28",
+    "rationale": "The cosine of an angle in a right triangle is the ratio of the length of the adjacent side to the length of the hypotenuse. The side adjacent to angle x° is 11, and the hypotenuse is 28. Therefore, cos(x°) = 11/28.",
+    "distractor_notes": {},
+    "trap_type": null
+  },
+  {
+    "section": "math",
+    "domain": "Advanced Math",
+    "skill_name": "Polynomials & Non-linear Functions",
+    "difficulty": 3,
+    "stem": "Which of the following functions has(have) a minimum value at -3?\nI. f(x) = -6(3)^x - 3\nII. g(x) = -3(6)^x",
+    "choices": ["I only", "II only", "I and II", "Neither I nor II"],
+    "correct_answer": "D",
+    "rationale": "An exponential function of the form y = a(b)^x + c with a < 0 is strictly decreasing and its range is (-8, c). Function I, f(x) = -6(3)^x - 3, approaches -3 as an upper bound (horizontal asymptote) but decreases indefinitely, so it has no minimum value. Function II, g(x) = -3(6)^x, approaches 0 as an upper bound and decreases indefinitely. Neither function has a minimum value.",
+    "distractor_notes": {
+      "A": "Incorrect. Function I approaches -3 as an asymptote but never reaches it, and it goes to negative infinity so it has no minimum.",
+      "B": "Incorrect. Function II has no minimum.",
+      "C": "Incorrect. Neither function has a minimum."
+    },
+    "trap_type": "Asymptote / Minimum Confusion"
+  },
+  {
+    "section": "math",
+    "domain": "Problem-Solving & Data Analysis",
+    "skill_name": "Percentages",
+    "difficulty": 2,
+    "stem": "The result of increasing the quantity x by 400% is 60. What is the value of x?",
+    "choices": ["12", "15", "240", "340"],
+    "correct_answer": "A",
+    "rationale": "Increasing a quantity x by 400% means adding 4.00x to x, resulting in x + 4x = 5x. Setting this equal to 60 gives 5x = 60, so x = 12.",
+    "distractor_notes": {
+      "B": "Incorrect. This assumes increasing by 400% means the new value is 400% of x (4x = 60). However, increasing BY 400% means the new value is 500% of x.",
+      "C": "Incorrect. This is the result of multiplying 60 by 4.",
+      "D": "Incorrect. This is a miscalculation."
+    },
+    "trap_type": "Percent Increase Misinterpretation"
+  },
+  {
+    "section": "math",
+    "domain": "Advanced Math",
+    "skill_name": "Quadratics & Parabolas",
+    "difficulty": 3,
+    "stem": "The function f is defined by f(x) = ax^2 + bx + c, where a, b, and c are constants. The graph of y = f(x) in the xy-plane passes through the points (7, 0) and (-3, 0). If a is an integer greater than 1, which of the following could be the value of a + b?",
+    "choices": ["-6", "-3", "4", "5"],
+    "correct_answer": "A",
+    "rationale": "Because the graph passes through (7, 0) and (-3, 0), the quadratic can be written in factored form as f(x) = a(x - 7)(x + 3). Expanding this gives f(x) = a(x^2 - 4x - 21) = ax^2 - 4ax - 21a. Matching coefficients to the standard form ax^2 + bx + c gives b = -4a. We are looking for a + b, which equals a + (-4a) = -3a. Since a is an integer greater than 1, a >= 2. If a = 2, then -3a = -6. This matches choice A.",
+    "distractor_notes": {
+      "B": "Incorrect. This would occur if a = 1, but the question states a is strictly greater than 1.",
+      "C": "Incorrect. This does not fit the requirement that a + b = -3a.",
+      "D": "Incorrect. This does not fit the requirement that a + b = -3a."
+    },
+    "trap_type": "Constraint Ignorance"
+  },
+  {
+    "section": "math",
+    "domain": "Advanced Math",
+    "skill_name": "Polynomials & Non-linear Functions",
+    "difficulty": 3,
+    "stem": "The function g is defined by g(x) = x(x - 2)(x + 6)^2. The value of g(7 - w) is 0, where w is a constant. What is the sum of all possible values of w?",
+    "choices": null,
+    "correct_answer": "25",
+    "rationale": "The roots of g(x) = 0 occur when x = 0, x = 2, and x = -6. The problem states g(7 - w) = 0, meaning (7 - w) must equal one of these roots. Solving 7 - w = 0 gives w = 7. Solving 7 - w = 2 gives w = 5. Solving 7 - w = -6 gives w = 13. The sum of these possible values for w is 7 + 5 + 13 = 25.",
+    "distractor_notes": {},
+    "trap_type": null
+  }
+]

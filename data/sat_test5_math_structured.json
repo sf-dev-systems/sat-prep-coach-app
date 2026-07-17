@@ -1,0 +1,82 @@
+[
+  {
+    "section": "math",
+    "domain": "Advanced Math",
+    "skill_name": "Polynomials & Non-linear Functions",
+    "difficulty": 2,
+    "stem": "The graph of a system of a linear equation and a nonlinear equation is shown. What is the solution (x, y) to this system?",
+    "choices": ["(0, 0)", "(0, 4)", "(4, 5)", "(5, 0)"],
+    "correct_answer": "C",
+    "rationale": "The solution to a system of equations corresponds to the point where the graphs of the equations intersect. The linear and nonlinear graphs intersect exactly at the point (4, 5).",
+    "distractor_notes": {
+      "A": "Incorrect. This is the origin, where the axes intersect, not the two equations.",
+      "B": "Incorrect. This is the y-intercept of the nonlinear function, not the intersection point.",
+      "D": "Incorrect. This is the x-intercept of the linear function, not the intersection point."
+    },
+    "trap_type": "Misinterpretation of Graphic Intercepts"
+  },
+  {
+    "section": "math",
+    "domain": "Algebra",
+    "skill_name": "Linear Equations & Inequalities",
+    "difficulty": 1,
+    "stem": "On the first day of a semester, a film club has 90 members. Each day after the first day of the semester, 10 new members join the film club. If no members leave the film club, how many total members will the film club have 4 days after the first day of the semester?",
+    "choices": ["400", "130", "94", "90"],
+    "correct_answer": "B",
+    "rationale": "The club starts with 90 members. With 10 new members joining each day for 4 days, an additional 40 members join (4 * 10 = 40). Adding these to the initial group yields 90 + 40 = 130 total members.",
+    "distractor_notes": {
+      "A": "Incorrect. This would occur if 100 members joined each day instead of 10.",
+      "C": "Incorrect. This occurs if only 1 member joined per day instead of 10.",
+      "D": "Incorrect. This is simply the baseline number of members on the first day."
+    },
+    "trap_type": "Calculation Error / Scale Misinterpretation"
+  },
+  {
+    "section": "math",
+    "domain": "Algebra",
+    "skill_name": "Linear Equations & Inequalities",
+    "difficulty": 1,
+    "stem": "The graph of the linear function f is shown, where y = f(x). What is the y-intercept of the graph of f?",
+    "choices": ["(0, 0)", "(0, -16/11)", "(0, -8)", "(0, 8)"],
+    "correct_answer": "D",
+    "rationale": "The y-intercept of a graph is the point where the line crosses the vertical y-axis. Looking at the provided graph, the line intersects the y-axis at a value of 8, which corresponds to the coordinates (0, 8).",
+    "distractor_notes": {
+      "A": "Incorrect. This is the origin point.",
+      "B": "Incorrect. This is an incorrect fractional coordinate value.",
+      "C": "Incorrect. This uses the negative value of the correct coordinate intercept."
+    },
+    "trap_type": "Sign Error"
+  },
+  {
+    "section": "math",
+    "domain": "Algebra",
+    "skill_name": "Systems of Equations",
+    "difficulty": 1,
+    "stem": "Consider the system of equations:\ns + 7r = 27\nr = 3\n\nWhat is the solution (r, s) to the given system of equations?",
+    "choices": ["(6, 3)", "(3, 6)", "(3, 27)", "(27, 3)"],
+    "correct_answer": "B",
+    "rationale": "Since it is given that r = 3, substitute 3 into the first equation: s + 7(3) = 27, which simplifies to s + 21 = 27. Subtracting 21 from both sides gives s = 6. The ordered pair solution structured as (r, s) is therefore (3, 6).",
+    "distractor_notes": {
+      "A": "Incorrect. This is the solution ordered as (s, r) instead of the requested (r, s).",
+      "C": "Incorrect. This leaves the constant 27 in place of the calculated value.",
+      "D": "Incorrect. This misorders the variables and fails to substitute properly."
+    },
+    "trap_type": "Ordered Pair Coordinate Reversal"
+  },
+  {
+    "section": "math",
+    "domain": "Algebra",
+    "skill_name": "Linear Equations & Inequalities",
+    "difficulty": 2,
+    "stem": "A table shows selected values from function f:\nx = [-1, 0, 1, 2]\nf(x) = [16, 17, 18, 19]\n\nWhich of the following is the best description of function f?",
+    "choices": ["Decreasing linear", "Increasing linear", "Decreasing exponential", "Increasing exponential"],
+    "correct_answer": "B",
+    "rationale": "As x increases, f(x) also increases, meaning the function is increasing. Furthermore, f(x) grows by a constant addition of exactly 1 unit for every 1 unit increase in x. A function with a constant rate of additive change is linear.",
+    "distractor_notes": {
+      "A": "Incorrect. For a decreasing function, f(x) would go down as x goes up.",
+      "C": "Incorrect. This describes a function that decays by a fixed percentage rate.",
+      "D": "Incorrect. This describes a function that multiplies by a fixed percentage rate instead of adding a constant amount."
+    },
+    "trap_type": "Linear vs Exponential Growth Confusion"
+  }
+]

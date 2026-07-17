@@ -1,0 +1,38 @@
+You are a technical data extraction specialist. Extract ALL the questions from the "Reading and Writing" modules of the attached official SAT Test PDFs. 
+Format them into a perfectly valid JSON array. 
+
+Map each question to one of these exact "skill_name" categories:
+- "Central Ideas & Details"
+- "Command of Evidence"
+- "Inferences"
+- "Words in Context"
+- "Text Structure & Purpose"
+- "Cross-Text Connections"
+- "Transitions"
+- "Rhetorical Synthesis"
+- "Boundaries"
+- "Form, Structure & Sense"
+
+Use this exact schema:
+[
+  {
+    "section": "reading_writing",
+    "domain": "Information & Ideas", // Or "Craft & Structure", "Expression of Ideas", "Standard English Conventions"
+    "skill_name": "One of the exact skill names listed above",
+    "difficulty": 2, // 1 for early questions, 2 for middle, 3 for late questions
+    "stem": "The passage text and the actual question...",
+    "choices": ["Choice A", "Choice B", "Choice C", "Choice D"],
+    "correct_answer": "A",
+    "rationale": "Clear educational explanation of why the correct answer is right...",
+    "distractor_notes": {
+      "A": "Why this choice is correct/incorrect...",
+      "B": "Why this choice is incorrect..."
+    },
+    "trap_type": "The specific distractor trap pattern used"
+  }
+]
+
+CRITICAL RULES:
+1. Output ONLY the raw JSON array. Do NOT wrap it in markdown codeblocks (no ```json). 
+2. Do not include any conversational text.
+3. Ensure all quotes inside the stems are properly escaped so the JSON is valid.
