@@ -3,7 +3,7 @@ title: Working-Tree Recovery + T10/T11 RW Import + Footer-Collision Bug Fix
 date: 2026-07-26
 agent: Claude Sonnet 5
 phase: Content Import (ongoing)
-commit: (pending — see note in AGENT_HANDOFF.md)
+commit: a31cfef
 ---
 
 ## COMPLETED

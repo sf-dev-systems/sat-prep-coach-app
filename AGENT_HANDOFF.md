@@ -132,5 +132,5 @@ choices_overrides:           -- supply all 4 choices when PDF column order puts 
 | **Footer page-number collides with real Q#** | T11 (M1-Q3, M2-Q17–26) | Fixed at the root in `is_valid_qnum()` — should no longer occur on new tests, but verify with the "no `Unauthorized copying` prev-line" audit shown in the 2026-07-26 session log if something looks off |
 
 ## Commit
-Pending — this session's changes (docs + T10/T11 import + pipeline fix) not yet committed.
-Last committed work: 802ab9c
+a31cfef -- feat: T10/T11 RW import, footer-collision bug fix, working-tree recovery
+(2 commits ahead of origin/main, not yet pushed)
