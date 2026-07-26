@@ -1,0 +1,228 @@
+{
+  "_instructions": "Config for SAT Test 10 RW pipeline. Fill in any '?' answers from the scoring guide. stem_overrides and choice_overrides are keyed by external_id (e.g. 'T8-RW-M1-Q14'). missing_qnum_injections: set inject_line to the correct line number from recon output. If multi-track, change scoring_track_index (0-based) and re-run recon to swap keys.",
+  "test_num": 10,
+  "layout": "q1_before_header",
+  "m1_line_start": 25,
+  "m2_line_start": 877,
+  "math_line_start": 1761,
+  "scoring_track_index": 1,
+  "scoring_track_options": [
+    {
+      "page": 2,
+      "m1_q1": "A",
+      "m2_q1": "A"
+    },
+    {
+      "page": 4,
+      "m1_q1": "A",
+      "m2_q1": "A"
+    }
+  ],
+  "m1_answers": {
+    "1": "A",
+    "2": "B",
+    "3": "B",
+    "4": "A",
+    "5": "C",
+    "6": "B",
+    "7": "D",
+    "8": "D",
+    "9": "C",
+    "10": "C",
+    "11": "C",
+    "12": "B",
+    "13": "A",
+    "14": "A",
+    "15": "A",
+    "16": "A",
+    "17": "C",
+    "18": "D",
+    "19": "C",
+    "20": "B",
+    "21": "A",
+    "22": "C",
+    "23": "C",
+    "24": "C",
+    "25": "C",
+    "26": "C",
+    "27": "A",
+    "28": "B",
+    "29": "B",
+    "30": "B",
+    "31": "B",
+    "32": "C",
+    "33": "C"
+  },
+  "m2_answers": {
+    "1": "A",
+    "2": "A",
+    "3": "D",
+    "4": "A",
+    "5": "A",
+    "6": "D",
+    "7": "B",
+    "8": "B",
+    "9": "D",
+    "10": "D",
+    "11": "D",
+    "12": "A",
+    "13": "B",
+    "14": "A",
+    "15": "D",
+    "16": "A",
+    "17": "A",
+    "18": "A",
+    "19": "D",
+    "20": "B",
+    "21": "D",
+    "22": "C",
+    "23": "A",
+    "24": "D",
+    "25": "A",
+    "26": "A",
+    "27": "B",
+    "28": "D",
+    "29": "A",
+    "30": "D",
+    "31": "D",
+    "32": "A",
+    "33": "C"
+  },
+  "missing_qnum_injections": {},
+  "choices_overrides": {
+    "T10-RW-M1-Q30": ["A) That said,", "B) Hence,", "C) For example,", "D) Likewise,"],
+    "T10-RW-M2-Q12": ["A) at each depth below the surface in the cave, the difference in the numbers of tools of each type suggests that shells were easier to collect from the beach than to harvest from the seafloor.", "B) the highest number of tools were at a depth of 3–4 meters below the surface, which suggests that the Neanderthal population at the site was highest during the related period of time.", "C) at each depth below the surface in the cave, the difference in the numbers of tools of each type suggests that Neanderthals preferred to use clamshells from the beach because of their durability.", "D) the higher number of tools at depths of 5–6 meters below the surface in the cave than at depths of 4–5 meters below the surface suggests that the size of clam populations changed over time."],
+    "T10-RW-M2-Q33": ["A) Monkman, a Cree artist, finished his painting in 2019; Leutze, a German American artist, completed his in 1851.", "B) Although Monkman's painting was inspired by Leutze's, the people and actions the two paintings portray are very different.", "C) Leutze's and Monkman's paintings are both huge, measuring 149 × 255 inches and 132 × 264 inches, respectively.", "D) Leutze's painting depicts Revolutionary War soldiers, while Monkman's depicts Indigenous people and refugees."]
+  },
+  "chart_pages": [
+    {
+      "pdf_page": 1,
+      "column": "left",
+      "drawing_count": 217,
+      "text_snippet": "13\n6WSL04\nThe SAT® \nPractice \nTest# \ntJ \nMake time to take the practice test. \nIt is one of the best ways to get ready \nfor the SAT. \nAfter you have taken the practice test, score it \nright away at sat.org/digital-practice. \nThis version of the SAT Practice Test is for students who will be taking \nt"
+    },
+    {
+      "pdf_page": 11,
+      "column": "left",
+      "drawing_count": 66,
+      "text_snippet": "7\ntype A flies\ntype AB flies\ntype B flies\nIn a study of the evolution of DptA and\nDptB—Diptericin genes encoding antimicrobial\npeptides that combat pathogens and foster beneficial\nmicrobes in fruit flies (Drosophila)—researchers\nassessed Drosophila melanogaster resistance to\npathogenic infections by"
+    },
+    {
+      "pdf_page": 22,
+      "column": "right",
+      "drawing_count": 35,
+      "text_snippet": "0\nThe following text is adapted from Lewis Carroll’s\n1889 satirical novel Sylvie and Bruno. A crowd has\ngathered outside a room belonging to the Warden,\nan official who reports to the Lord Chancellor.\nOne man, who was more excited than the rest,\nflung his hat high into the air, and shouted (as\nwell"
+    },
+    {
+      "pdf_page": 24,
+      "column": "left",
+      "drawing_count": 44,
+      "text_snippet": "3\nPerovskite solar cells convert light into electricity\nmore efficiently than earlier kinds of solar cells, and\nmanufacturing advances have recently made them\ncommercially attractive. One limitation of the cells,\nhowever, has to do with their electron transport layer\n(ETL), through which absorbed el"
+    },
+    {
+      "pdf_page": 34,
+      "column": "right",
+      "drawing_count": 87,
+      "text_snippet": "12\nB) 2013\nC) 2014\nD) 2015\n2\nThe graph of a system of linear equations is shown.\nWhat is the solution x y\n,\n(\n) to the system?\nA)\n4, −5\n(\n)\nB)\n0, 3\n(\n)\nC)\n0, −2\n(\n)\nD)\n−2, 3\n(\n)\n.........................................................................................................................."
+    },
+    {
+      "pdf_page": 35,
+      "column": "left",
+      "drawing_count": 14,
+      "text_snippet": "75\nB)\nt\n10 + 25 ≤75\nC)\nt\n25 ≤75\nD)\nt\n25 + 10 ≤75\n..........................................................................................................................................................................................................................................................."
+    },
+    {
+      "pdf_page": 36,
+      "column": "left",
+      "drawing_count": 79,
+      "text_snippet": "34\nModule \n1 \n- -----\ny \n4\\ \nI \nI, \nI \n~ \n\\ \nj \n\\ \nI \n6 -4 -2 IU , 2 \n4 \n6 \n8 \n10 \nX \nf \n\\.) \n~ \n~ \nI \nk"
+    },
+    {
+      "pdf_page": 37,
+      "column": "left",
+      "drawing_count": 169,
+      "text_snippet": "35\nModule \n1 \ny \ny \nI \n' \nI \n~ \\ \nI \nI , \ni \n\\.) \n6 -4 -2 IU \n2 \n4 \n6 \n8 \n10 \nX \n\\ \nI \n6 -4 -2 \nL1 \n2 \n, I \n6 \n8 \n10 \nX \n2 \n2 \nI \nI \n\\ \n• \n~ \nI \n~ \\ \nI \nI \n1 \nI \nI \nF \nI \n\\. ) \nF \n$ \n$ \ny \ny \nI \n. \n\\ \n~ I \n, \nI \nI \n~ \n\\ \nI \nI \nI \nI \ni \ni \n\\ \n• \n\\ \nj \n\\ \nI \n6 -4 -2 µ \n2 \n4 \n6 \n8 \n10 \nX \n\\ \nI \n6 -4 -2"
+    },
+    {
+      "pdf_page": 38,
+      "column": "right",
+      "drawing_count": 24,
+      "text_snippet": "3\nThe equation gives the speed s, in miles per hour, of\na certain car t seconds after it began to accelerate.\nWhat is the speed, in miles per hour, of the car\n5 seconds after it began to accelerate?\nA) 40\nB) 43\nC) 45\nD) 55\n6\nThe function f is defined by f x\nx\nx\n=\n+\n+ 71\n2\n( )\n.\nWhat is the value of"
+    },
+    {
+      "pdf_page": 39,
+      "column": "right",
+      "drawing_count": 24,
+      "text_snippet": "0\nIf x\n4 + 2 = 12, what is the value of\nx\n16 + 8 ?\nA) 40\nB) 48\nC) 56\nD) 60\n11\nWhich expression is equivalent to m q z\nmq z\n4 4 −1\n5 3\n(\n)(\n),\nwhere m, q, and z are positive?\nA) m q\nz\n4 20 −3\nB) m q z\n5 9 2\nC) m q z\n6 8 −1\nD) m\nq z\n20 12 −2\n12\nAn airplane descends from an altitude of 9,500 feet to\n5,"
+    },
+    {
+      "pdf_page": 40,
+      "column": "left",
+      "drawing_count": 24,
+      "text_snippet": "6\nThe number of bacteria in a liquid medium doubles\nevery day. There are 44,000 bacteria in the liquid\nmedium at the start of an observation. Which of the\nfollowing represents the number of bacteria, y, in the\nliquid medium t days after the start of the\nobservation? \nA) y = 1\n2 44,000 t\n(\n)\nB)\ny = 2"
+    },
+    {
+      "pdf_page": 41,
+      "column": "right",
+      "drawing_count": 32,
+      "text_snippet": "0\ny\nx\ny\nx\n= 4 + 1\n4\n= 15 −8\nThe solution to the given system of equations is\nx y\n( , ). What is the value of x\ny\n−\n?\n21\nA right triangle has legs with lengths of\n24 centimeters and 21 centimeters. If the length of\nthis triangle’s hypotenuse, in centimeters, can be\nwritten in the form\nd\n3\n, where d i"
+    },
+    {
+      "pdf_page": 42,
+      "column": "left",
+      "drawing_count": 12,
+      "text_snippet": "6\nA window repair specialist charges $220 for the first\ntwo hours of repair plus an hourly fee for each\nadditional hour. The total cost for 5 hours of repair is\n$400. Which function f gives the total cost, in\ndollars, for x hours of repair, where x ≥2 ?\nA)\nf x\nx\n= 60 + 100\n( )\nB)\nf x\nx\n= 60 + 220\n("
+    },
+    {
+      "pdf_page": 46,
+      "column": "right",
+      "drawing_count": 103,
+      "text_snippet": "61\nB) 67\nC) 94\nD) 192\n2\nThe scatterplot shows the relationship between\ntwo variables, x and y. A line of best fit is also\nshown.\nWhich of the following equations best represents the\nline of best fit shown?\nA) y\nx\n=\n+ 3.4\nB)\ny\nx\n=\n−3.4\nC) y\nx\n= −+ 3.4\nD) y\nx\n= −−3.4\n3\nThe graph shows the linear relat"
+    },
+    {
+      "pdf_page": 47,
+      "column": "right",
+      "drawing_count": 16,
+      "text_snippet": "13\nB) 17\nC) 22\nD) 26\n5\nm\nn\np\n7\n= 2\n+\n(\n)\nThe given equation relates the positive numbers m,\nn, and p. Which equation correctly gives m in terms\nof n and p ?\nA) m\nn\np\n= 2(\n+ )\n7\nB) m\nn\np\n= 2(\n+ )\nC) m\nn\np\n= 2(\n+ ) −7\nD) m\nn\np\n= 2 −\n−\n−7\n6\n73, 74, 75, 77, 79, 82, 84, 85, 91\nWhat is the median of the d"
+    },
+    {
+      "pdf_page": 48,
+      "column": "left",
+      "drawing_count": 20,
+      "text_snippet": "0\ny\ny\nx\n= 76\n=\n−5\n2\nThe graphs of the given equations in the xy-plane\nintersect at the point x y\n( , ). What is a possible value\nof x ?\nA) −76\n5\nB) −9\nC) 5\nD) 76\n11\nEach side of equilateral triangle S is multiplied by a\nscale factor of k to create equilateral triangle T. The\nlength of each side of t"
+    },
+    {
+      "pdf_page": 49,
+      "column": "right",
+      "drawing_count": 98,
+      "text_snippet": "5\nIn right triangle RST, the sum of the measures of\nangle R and angle S is 90 degrees. The value of\nR\nsin( ) is\n15\n4 . What is the value of\nS\ncos( ) ?\nA)\n15\n15\nB)\n15\n4\nC) 4 15\n15\nD)\n15\n16\nThe graph shows the relationship between the\nnumber of shares of stock from Company A, x, and\nthe number of shar"
+    },
+    {
+      "pdf_page": 50,
+      "column": "left",
+      "drawing_count": 30,
+      "text_snippet": "7\nWhich expression is equivalent to\nx x\nx\nx\n8 ( −7) −3( −7)\n2 −14\n, where x > 7 ?\nA) x −7\n5\nB)\nx\n8 −3\n2\nC)\nx\nx\nx\n8\n−3 −14\n2 −14\n2\nD)\nx\nx\nx\n8\n−3 −77\n2 −14\n2\n18\nThe function f is defined by f x = −8 2\n+ 22\nx\n( )\n(\n)( )\n.\nWhat is the y-intercept of the graph of y\nf x\n= ( ) in\nthe xy-plane?\nA)\n0, 14\n(\n)"
+    },
+    {
+      "pdf_page": 51,
+      "column": "left",
+      "drawing_count": 20,
+      "text_snippet": "2\nx\n–5 + 13 = 73\nWhat is the sum of the solutions to the given\nequation?\nA) −146\n5\nB) −12\nC) 0\nD) 26\n5\n23\nFor the exponential function f, the value of f (1) is k,\nwhere k is a constant. Which of the following\nequivalent forms of the function f shows the value of\nk as the coefficient or the base?\nA)"
+    },
+    {
+      "pdf_page": 52,
+      "column": "left",
+      "drawing_count": 72,
+      "text_snippet": "6\nTwo data sets of 23 integers each are summarized in\nthe histograms shown. For each of the histograms,\nthe first interval represents the frequency of integers\ngreater than or equal to 10, but less than 20. The\nsecond interval represents the frequency of integers\ngreater than or equal to 20, but les"
+    },
+    {
+      "pdf_page": 56,
+      "column": "left",
+      "drawing_count": 582,
+      "text_snippet": "© 2025 College Board. College Board, SAT, and the acorn logo are registered trademarks of College Board.\nThe SAT. \nGENERAL DIRECTIONS \n• You may work on only one module at a time. \n• If you finish a module before time is called, check your work on that module only. \nYou may NOT turn to any other mod"
+    }
+  ],
+  "stem_overrides": {},
+  "choice_d_overrides": {},
+  "license": "© 2025 College Board. For educational use only."
+}

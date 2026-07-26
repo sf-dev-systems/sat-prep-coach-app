@@ -1,0 +1,209 @@
+{
+  "_instructions": "Config for SAT Test 11 RW pipeline. Fill in any '?' answers from the scoring guide. stem_overrides and choice_overrides are keyed by external_id (e.g. 'T8-RW-M1-Q14'). missing_qnum_injections: set inject_line to the correct line number from recon output. If multi-track, change scoring_track_index (0-based) and re-run recon to swap keys.",
+  "test_num": 11,
+  "layout": "q1_before_header",
+  "m1_line_start": 25,
+  "m2_line_start": 875,
+  "math_line_start": 1692,
+  "scoring_track_index": 1,
+  "scoring_track_options": [
+    {
+      "page": 2,
+      "m1_q1": "A",
+      "m2_q1": "C"
+    },
+    {
+      "page": 4,
+      "m1_q1": "A",
+      "m2_q1": "C"
+    }
+  ],
+  "m1_answers": {
+    "1": "A",
+    "2": "C",
+    "3": "D",
+    "4": "D",
+    "5": "A",
+    "6": "B",
+    "7": "B",
+    "8": "D",
+    "9": "D",
+    "10": "C",
+    "11": "B",
+    "12": "D",
+    "13": "A",
+    "14": "D",
+    "15": "B",
+    "16": "A",
+    "17": "D",
+    "18": "D",
+    "19": "D",
+    "20": "D",
+    "21": "A",
+    "22": "B",
+    "23": "B",
+    "24": "A",
+    "25": "D",
+    "26": "D",
+    "27": "D",
+    "28": "A",
+    "29": "A",
+    "30": "C",
+    "31": "A",
+    "32": "D",
+    "33": "B"
+  },
+  "m2_answers": {
+    "1": "C",
+    "2": "C",
+    "3": "C",
+    "4": "D",
+    "5": "B",
+    "6": "B",
+    "7": "B",
+    "8": "A",
+    "9": "B",
+    "10": "C",
+    "11": "B",
+    "12": "D",
+    "13": "C",
+    "14": "B",
+    "15": "C",
+    "16": "C",
+    "17": "A",
+    "18": "A",
+    "19": "B",
+    "20": "B",
+    "21": "B",
+    "22": "B",
+    "23": "B",
+    "24": "B",
+    "25": "A",
+    "26": "B",
+    "27": "D",
+    "28": "B",
+    "29": "C",
+    "30": "B",
+    "31": "C",
+    "32": "A",
+    "33": "A"
+  },
+  "missing_qnum_injections": {},
+  "qnum_line_overrides": {
+    "m1": {"3": 69},
+    "m2": {"17": 1300, "18": 1326, "19": 1368, "20": 1384, "21": 1395, "22": 1406, "23": 1431, "24": 1445, "25": 1464, "26": 1491}
+  },
+  "chart_pages": [
+    {
+      "pdf_page": 1,
+      "column": "right",
+      "drawing_count": 116,
+      "text_snippet": "01\nPractice  \nTest #11"
+    },
+    {
+      "pdf_page": 22,
+      "column": "left",
+      "drawing_count": 61,
+      "text_snippet": "20\nCONTINUE\n1\nModule \n2\n11\nThe first national census in Canada was conducted \nin 1871. The graph shows the population sizes of \nsome of the largest Canadian cities from each of the \nfirst four national censuses, which occurred every \nten years.\nAccording to the graph, which city had the largest \npop"
+    },
+    {
+      "pdf_page": 23,
+      "column": "left",
+      "drawing_count": 50,
+      "text_snippet": "21\nCONTINUE\n1\n1\nModule \n2\n13\nPercentage of US Congress Members Who\nSelf-Identified as Veterans, 1953–2023\nYear\nHouse of Representatives\nSenate\nSince the nation’s earliest days, both houses of the \nUnited States Congress have counted many military \nveterans among their elected officials, including \nH"
+    },
+    {
+      "pdf_page": 32,
+      "column": "right",
+      "drawing_count": 105,
+      "text_snippet": "30\n2\n2\nCONTINUE\nDIRECTIONS\nThe questions in this section address a number of important math skills.\nUse of a calculator is permitted for all questions.\nNOTES\nUnless otherwise indicated: \n\t\n▪All variables and expressions represent real numbers.\n\t\n▪Figures provided are drawn to scale.\n\t\n▪All figures l"
+    },
+    {
+      "pdf_page": 34,
+      "column": "left",
+      "drawing_count": 19,
+      "text_snippet": "32\n2\n2\nCONTINUE\nModule \n1\n1\nIn the triangle shown, PQ\nQR\n=\n. What is the value \nof x?\nA)\t \t156\nB)\t \t66\nC)\t \t48\nD)\t\t24\n2\nx\n4\n1\n33\n+\n=\nWhich equation has the same solution as the given \nequation?\nA)\t \t x\n4\n32\n=\nB)\t \t x\n4\n5\n=\nC)\t \t x\n4\n1\n=\nD)\t\t x\n4\n32\n= -\n3\nFor the linear function f , the graph of  y\nf"
+    },
+    {
+      "pdf_page": 35,
+      "column": "left",
+      "drawing_count": 19,
+      "text_snippet": "33\nCONTINUE\n2\n2\nModule \n1\n5\nA total of 50  children attended a summer camp and \nwere offered 4  types of sandwiches. The table shows \nthe number of children who chose each type of \nsandwich.\nType of sandwich\nNumber of children\nTurkey\n15\nChicken\n23\nHam\n3\nVegetarian\n9\nTotal\n50\nIf one of these children"
+    },
+    {
+      "pdf_page": 37,
+      "column": "left",
+      "drawing_count": 41,
+      "text_snippet": "35\nCONTINUE\n2\n2\nModule \n1\n14\nThe population of the town of Smithville doubled \nevery 75  years from 1659  to 1959. The population of \nthis town was \n,\n240 000  in 1959. What was the \npopulation of this town in 1659?\n15\nThe scatterplot shows the relationship between x  \nand y. A line of best fit is a"
+    },
+    {
+      "pdf_page": 38,
+      "column": "left",
+      "drawing_count": 24,
+      "text_snippet": "36\n2\n2\nCONTINUE\nModule \n1\nA)\t  \nB)\t  \n10\n20\n30\n40\n50\n60\n70\n80\nx\n10\n20\n30\n40\n50\n60\n70\n80\ny\nO\n10\n20\n30\n40\n50\n60\n70\n80\nx\n10\n20\n30\n40\n50\n60\n70\n80\ny\nO\nC)\t  \nD)\t \n10\n20\n30\n40\n50\n60\n70\n80\nx\n10\n20\n30\n40\n50\n60\n70\n80\ny\nO\n10\n20\n30\n40\n50\n60\n70\n80\nx\n10\n20\n30\n40\n50\n60\n70\n80\ny\nO\n18\nx\ny\n53\n+\n=\nx\ny\n11\n18\n730\n+\n=\nThe"
+    },
+    {
+      "pdf_page": 39,
+      "column": "left",
+      "drawing_count": 16,
+      "text_snippet": "37\nCONTINUE\n2\n2\nModule \n1\n19\nIn triangle QRS  shown, QR\nRS\n<\n. Which expression \nrepresents the length of QS ?\nA)\t \t\ncosQ\n18\nB)\t \t\nsinQ\n18\nC)\t \tcosQ\n18\nD)\t\tsinQ\n18\n20\nCircle A in the xy-plane has the equation \nx\ny\n5\n5\n25\n2\n2\n+\n+\n-\n=\n^\n^\nh\nh\n. Circle B has the same \ncenter as circle A. The radius of"
+    },
+    {
+      "pdf_page": 40,
+      "column": "left",
+      "drawing_count": 24,
+      "text_snippet": "38\n2\n2\nCONTINUE\nModule \n1\n23\n‒1\n1\n2\n3\n4\n5\nx\n‒4\n‒2\n2\n4\n6\n8\n10\ny\nO\nThe graph of y\nf x\n4\n=\n+\n^ h\n is shown. Which \nequation defines function f ?\nA)\t \t f x\n3\n1\nx\n= -\n+\n^ h\nB)\t \t f x\n3\n5\nx\n= -\n+\n^ h\nC)\t \t f x\n3\n8\nx\n= -\n+\n^ h\nD)\t\t f x\n3\n9\nx\n= -\n+\n^ h\n24\nTwo lines intersect at exactly one point, forming tw"
+    },
+    {
+      "pdf_page": 42,
+      "column": "right",
+      "drawing_count": 105,
+      "text_snippet": "40\n2\n2\nCONTINUE\nDIRECTIONS\nThe questions in this section address a number of important math skills.\nUse of a calculator is permitted for all questions.\nNOTES\nUnless otherwise indicated: \n\t\n▪All variables and expressions represent real numbers.\n\t\n▪Figures provided are drawn to scale.\n\t\n▪All figures l"
+    },
+    {
+      "pdf_page": 44,
+      "column": "left",
+      "drawing_count": 23,
+      "text_snippet": "42\n2\n2\nCONTINUE\nModule \n2\n1\nWhich expression is equivalent to  x\nx\ny\n6\n5\n4\n+\n+\n?\nA)\t \t\nx\n15\nB)\t \t\ny\n15\nC)\t \t\nx\ny\n11\n4\n+\nD)\t\t\nx\ny\n30\n4\n+\n2\nTo study the characteristics of sea stars in a group of \ntide pools, researchers measured the diameter of the \nsea stars within the tide pools. The dot plot gives"
+    },
+    {
+      "pdf_page": 45,
+      "column": "right",
+      "drawing_count": 31,
+      "text_snippet": "43\nCONTINUE\n2\n2\nModule \n2\n5\nThe function f  is defined by f x\nx\n9 2\n3\n=\n+\n^\n^\nh\nh. For \nwhat value of x  does f x\n63\n=\n^ h\n?\nA)\t \t2\nB)\t \t5\nC)\t \t7\nD)\t\t30\n6\nx\n10\n86\n=\nWhat value of x  is the solution to the given \nequation?\n7\n,\n( )\ny\na\n3 600\nx\n=\nThe given equation, where a  is a positive constant, \ngi"
+    },
+    {
+      "pdf_page": 46,
+      "column": "left",
+      "drawing_count": 48,
+      "text_snippet": "44\n2\n2\nCONTINUE\nModule \n2\n10\n‒15\n‒10\n‒5\n5\n10\n15\nx\n5\n10\n15\n20\n25\n30\n35\n40\n45\n50\n55\n60\ny\n35\n40\n45\n50\n55\n60\nO\nThe shaded region shown in the graph represents all \nthe solutions to which inequality?\nA)\t \tx\n36\n#\nB)\t \tx\n36\n$\nC)\t \ty\n36\n#\nD)\t\ty\n36\n$\n11\nThere are 240  players in a tennis competition that \nin"
+    },
+    {
+      "pdf_page": 47,
+      "column": "left",
+      "drawing_count": 15,
+      "text_snippet": "45\nCONTINUE\n2\n2\nModule \n2\n13\nIn the triangle shown, what is the value of x?\n14\nWhat is the radius of the circle in the xy-plane \ndefined by x\ny\n2\n5\n169\n2\n2\n+\n+\n+\n=\n^\n^\nh\nh\n?  \n15\n50\n100\n150\n200\n250\nx\n‒200\n‒150\n‒100\n‒50\n50\n100\n150\n200\n250\n300\n350\ny\nO\nThe graph shows the estimated boiling point y, in"
+    },
+    {
+      "pdf_page": 48,
+      "column": "left",
+      "drawing_count": 16,
+      "text_snippet": "46\n2\n2\nCONTINUE\nModule \n2\n16\nFor the polynomial function f , the graph of \ny\nf x\n= ^ h in the xy-plane passes through the points \n,5 0\n-\n^\nh, \n,1 0\n^\nh, and \n,4 0\n^\nh. Which of the following \nmust be a factor of f x\n^ h?\nA)\t \tx\n1\n+\nB)\t \tx\n4\n+\nC)\t \tx\n1\n-\nD)\t\tx\n5\n-\n17\nx\ng x\n^ h\n1\n32\n2\n28\n3\n24\n4\n20\nFor"
+    },
+    {
+      "pdf_page": 49,
+      "column": "left",
+      "drawing_count": 112,
+      "text_snippet": "47\nCONTINUE\n2\n2\nModule \n2\n19\nA certain open star cluster contains M-type stars \nand K-type stars. The estimated total mass of \nM-type and K-type stars in this open star cluster \nis \n,\n127 882 quettagrams. The graph shown models \nthe possible combinations of the number of M-type \nstars, x, and K-type"
+    },
+    {
+      "pdf_page": 50,
+      "column": "right",
+      "drawing_count": 40,
+      "text_snippet": "48\n2\n2\nCONTINUE\nModule \n2\n23\nIn the figure shown, WZ  and XY  intersect at \npoint Q, YQ\n21\n=\n, WQ\n70\n=\n, WX\n60\n=\n, and \nXQ\n120\n=\n. What is the length of YZ ?\nA)\t \t18\nB)\t \t36\nC)\t \t120\nD)\t\t200\n24\nx\nx\n52\n64\n81\n0\n3\n4\n+\n-\n=\n^\n^h\nh\nHow many distinct real solutions does the given \nequation have?\nA)\t Exactl"
+    }
+  ],
+  "stem_overrides": {},
+  "choice_d_overrides": {},
+  "license": "© 2025 College Board. For educational use only."
+}

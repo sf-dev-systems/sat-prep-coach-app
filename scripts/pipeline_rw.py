@@ -97,6 +97,7 @@ def is_valid_qnum(i, lines):
     two_back = lines[i-2].strip() if i > 1 else ''
     if prev == 'Module': return False
     if prev == 'CONTINUE': return False
+    if prev.startswith('Unauthorized copying'): return False
     if (re.match(r'^\d+$', prev) and re.match(r'^\d+$', next_l)
             and len(prev) <= 4 and len(next_l) <= 4
             and two_back != 'Module'):

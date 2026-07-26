@@ -4,7 +4,7 @@ type: session-log-index
 status: active
 owner: Sienna (Oni Technologies LLC)
 created: 2026-07-10
-updated: 2026-07-16
+updated: 2026-07-26
 source_of_truth: false
 related: ["AGENT_HANDOFF.md", "CLAUDE.md"]
 ---
@@ -61,4 +61,5 @@ reconstruction for chronological sorting, not a verified timestamp.
 | [2026-07-17_0730_test6-rw-import.md](2026-07-17_0730_test6-rw-import.md) | Claude (Sonnet 4.6) | T6-RW: 66 questions imported (66 rationales, 3 chart images M1-Q14/Q15 + M2-Q13). Bank: 327 questions, 0 SEVERE. |
 | [2026-07-17_0919_test7-rw-import.md](2026-07-17_0919_test7-rw-import.md) | Claude (Sonnet 4.6) | T7-RW: 66 questions imported (66 rationales, 3 chart PNGs Q12/Q15/Q16). New boundary-detection algorithm for T7's out-of-order PDF layout. Bank: 393 questions, 0 SEVERE. |
 | [2026-07-17_1200_t8-fix-t9-pipeline-hardening.md](2026-07-17_1200_t8-fix-t9-pipeline-hardening.md) | Claude (Sonnet 4.6) | T8: fixed 52/66 wrong answers (wrong scoring guide track). T9: 66 questions imported. Pipeline hardened: multi-track detection, qnum_line_overrides, choices_overrides, upsert. Bank: 525q. |
+| [2026-07-26_1950_t10-t11-rw-import-footer-bug-fix.md](2026-07-26_1950_t10-t11-rw-import-footer-bug-fix.md) | Claude (Sonnet 5) | Recovered 9-day-old uncommitted working-tree deletions (session logs, docs). T10: 66q imported. T11: new paper-format PDF layout broke boundary detection + silently mis-bound 9 questions to footer page-numbers; fixed root cause in `is_valid_qnum()`. Bank: 657q, 0 SEVERE. |
 
