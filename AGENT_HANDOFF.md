@@ -78,8 +78,7 @@ the bank so far).
 - **GitHub secrets for DB backup workflow** not set (non-blocking).
 - **next@14.2.35 CVEs** — upgrade when convenient.
 - **Full end-to-end study flow** never manually tested in browser.
-- **2 local commits ahead of origin/main, not yet pushed** (including this session's work once
-  committed) — push when the user is ready.
+- **4 local commits ahead of origin/main, not yet pushed** — push when the user is ready.
 
 ## Pipeline Reference (for next agent)
 
@@ -132,5 +131,5 @@ choices_overrides:           -- supply all 4 choices when PDF column order puts 
 | **Footer page-number collides with real Q#** | T11 (M1-Q3, M2-Q17–26) | Fixed at the root in `is_valid_qnum()` — should no longer occur on new tests, but verify with the "no `Unauthorized copying` prev-line" audit shown in the 2026-07-26 session log if something looks off |
 
 ## Commit
-a31cfef -- feat: T10/T11 RW import, footer-collision bug fix, working-tree recovery
-(2 commits ahead of origin/main, not yet pushed)
+5388837 -- docs: backfill commit hash in handoff/session log
+(4 commits ahead of origin/main, not yet pushed)
