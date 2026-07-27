@@ -1,0 +1,742 @@
+[
+  {
+    "external_id": "T10-MATH-M1-Q01",
+    "skill_name": "Statistics & Probability",
+    "difficulty": 1,
+    "stem": "The line graph shows the percent of cars for sale at a used car lot on a given day by model year. For what model year is the percent of cars for sale the smallest?",
+    "choices": [
+      "A) 2012",
+      "B) 2013",
+      "C) 2014",
+      "D) 2015"
+    ],
+    "correct_answer": "C",
+    "rationale": "For the given line graph, the percent of cars for sale at a used car lot on a given day is represented on the vertical axis. The percent of cars for sale is smallest when the height of the line graph is lowest. The lowest height of the line graph occurs for cars with a model year of 2014.",
+    "needs_visual_review": false
+  },
+  {
+    "external_id": "T10-MATH-M1-Q02",
+    "skill_name": "Systems of Equations",
+    "difficulty": 1,
+    "stem": "The graph of a system of linear equations is shown. What is the solution (x, y) to the system?",
+    "choices": [
+      "A) (4, −5)",
+      "B) (0, 3)",
+      "C) (0, −2)",
+      "D) (−2, 3)"
+    ],
+    "correct_answer": "A",
+    "rationale": "The solution to a system of linear equations is represented by the point that lies on both lines shown, or their point of intersection. According to the graph, the point of intersection occurs when x = 4 and y = −5, so the solution (x, y) to the system is (4, −5).",
+    "needs_visual_review": false
+  },
+  {
+    "external_id": "T10-MATH-M1-Q03",
+    "skill_name": "Linear Equations & Inequalities",
+    "difficulty": 2,
+    "stem": "The total cost, in dollars, to rent a surfboard consists of a $25 service fee and a $10 per hour rental fee. A person rents a surfboard for t hours and intends to spend a maximum of $75 to rent the surfboard. Which inequality represents this situation?",
+    "choices": [
+      "A) 10t ≤ 75",
+      "B) 10 + 25t ≤ 75",
+      "C) 25t ≤ 75",
+      "D) 25 + 10t ≤ 75"
+    ],
+    "correct_answer": "D",
+    "rationale": "Multiplying t hours by $10 per hour yields a rental fee of 10t dollars. The total cost consists of the rental fee plus the $25 service fee, giving a total cost of 25 + 10t dollars. Since the person intends to spend at most $75, the total cost must be at most $75, so the inequality 25 + 10t ≤ 75 represents this situation.",
+    "needs_visual_review": false
+  },
+  {
+    "external_id": "T10-MATH-M1-Q04",
+    "skill_name": "Polynomials & Non-linear Functions",
+    "difficulty": 2,
+    "stem": "The graph shown will be translated up 4 units. Which of the following will be the resulting graph? (Each answer choice is a separate graph image.)",
+    "choices": [
+      "A) Graph shown in figure A",
+      "B) Graph shown in figure B",
+      "C) Graph shown in figure C",
+      "D) Graph shown in figure D"
+    ],
+    "correct_answer": "A",
+    "rationale": "When a graph is translated up 4 units, the y-value of each point on the graph increases by 4. The original graph passes through the points (1, −1), (2, −2), and (3, −1); after the translation these become (1, 3), (2, 2), and (3, 3). Of the given choices, only the graph in choice A passes through these translated points.",
+    "needs_visual_review": false
+  },
+  {
+    "external_id": "T10-MATH-M1-Q05",
+    "skill_name": "Linear Equations & Inequalities",
+    "difficulty": 1,
+    "stem": "s = 40 + 3t\nThe equation gives the speed s, in miles per hour, of a certain car t seconds after it began to accelerate. What is the speed, in miles per hour, of the car 5 seconds after it began to accelerate?",
+    "choices": [
+      "A) 40",
+      "B) 43",
+      "C) 45",
+      "D) 55"
+    ],
+    "correct_answer": "D",
+    "rationale": "Substituting 5 for t in the given equation yields s = 40 + 3(5) = 55. Thus, the speed of the car 5 seconds after it began to accelerate is 55 miles per hour.",
+    "needs_visual_review": false
+  },
+  {
+    "external_id": "T10-MATH-M1-Q06",
+    "skill_name": "Polynomials & Non-linear Functions",
+    "difficulty": 1,
+    "stem": "The function f is defined by f(x) = x² + x + 71. What is the value of f(2)?",
+    "choices": null,
+    "correct_answer": "77",
+    "rationale": "Substituting 2 for x in function f yields f(2) = 2² + 2 + 71 = 4 + 2 + 71 = 77.",
+    "needs_visual_review": false
+  },
+  {
+    "external_id": "T10-MATH-M1-Q07",
+    "skill_name": "Linear Equations & Inequalities",
+    "difficulty": 2,
+    "stem": "An event planner is planning a party. It costs the event planner a onetime fee of $35 to rent the venue and $10.25 per attendee. The event planner has a budget of $300. What is the greatest number of attendees possible without exceeding the budget?",
+    "choices": null,
+    "correct_answer": "25",
+    "rationale": "Let x be the number of attendees. The total cost is 35 + 10.25x, so the situation is represented by 35 + 10.25x ≤ 300. Subtracting 35 from both sides gives 10.25x ≤ 265. Dividing both sides by 10.25 gives x ≤ 25.854. Rounding down to the greatest whole number gives the greatest number of attendees possible, 25.",
+    "needs_visual_review": false
+  },
+  {
+    "external_id": "T10-MATH-M1-Q08",
+    "skill_name": "Statistics & Probability",
+    "difficulty": 1,
+    "stem": "The table gives the distribution of votes for a new school mascot and grade level for 80 students.\n\nMascot | Sixth | Seventh | Eighth | Total\nBadger | 4 | 9 | 9 | 22\nLion | 9 | 2 | 9 | 20\nLonghorn | 4 | 6 | 4 | 14\nTiger | 6 | 9 | 9 | 24\nTotal | 23 | 26 | 31 | 80\n\nIf one of these students is selected at random, what is the probability of selecting a student whose vote for new mascot was for a lion?",
+    "choices": [
+      "A) 1/9",
+      "B) 1/5",
+      "C) 1/4",
+      "D) 2/3"
+    ],
+    "correct_answer": "C",
+    "rationale": "The probability of selecting a student who voted for a lion is the number of votes for a lion divided by the total number of votes: 20/80, or 1/4.",
+    "needs_visual_review": false
+  },
+  {
+    "external_id": "T10-MATH-M1-Q09",
+    "skill_name": "Triangles & Circles",
+    "difficulty": 2,
+    "stem": "Triangles ABC and DEF are congruent, where A corresponds to D, and B and E are right angles. The measure of angle A is 18°. What is the measure of angle F?",
+    "choices": [
+      "A) 18°",
+      "B) 72°",
+      "C) 90°",
+      "D) 162°"
+    ],
+    "correct_answer": "B",
+    "rationale": "Since angle A corresponds to angle D (18°) and angles B and E (both 90°) have equal measure, they are corresponding angles, so angle C corresponds to angle F. Since the interior angles of a triangle sum to 180°, angle C measures 180° − 18° − 90° = 72°. Since angle C corresponds to angle F, the measure of angle F is also 72°.",
+    "needs_visual_review": false
+  },
+  {
+    "external_id": "T10-MATH-M1-Q10",
+    "skill_name": "Linear Equations & Inequalities",
+    "difficulty": 2,
+    "stem": "If 4x + 2 = 12, what is the value of 16x + 8?",
+    "choices": [
+      "A) 40",
+      "B) 48",
+      "C) 56",
+      "D) 60"
+    ],
+    "correct_answer": "B",
+    "rationale": "Multiplying both sides of the given equation by 4 yields (4x)(4) + (2)(4) = (12)(4), or 16x + 8 = 48. Therefore, the value of 16x + 8 is 48.",
+    "needs_visual_review": false
+  },
+  {
+    "external_id": "T10-MATH-M1-Q11",
+    "skill_name": "Polynomials & Non-linear Functions",
+    "difficulty": 2,
+    "stem": "Which expression is equivalent to (m⁴q⁴z⁻¹)(mq⁵z³), where m, q, and z are positive?",
+    "choices": [
+      "A) m⁴q²⁰z⁻³",
+      "B) m⁵q⁹z²",
+      "C) m⁶q⁸z⁻¹",
+      "D) m²⁰q¹²z⁻²"
+    ],
+    "correct_answer": "B",
+    "rationale": "Applying the commutative property of multiplication, the expression can be rewritten as (m⁴·m)(q⁴·q⁵)(z⁻¹·z³). For positive values, xᵃ·xᵇ = xᵃ⁺ᵇ, so this becomes m⁴⁺¹q⁴⁺⁵z⁻¹⁺³, or m⁵q⁹z².",
+    "needs_visual_review": false
+  },
+  {
+    "external_id": "T10-MATH-M1-Q12",
+    "skill_name": "Linear Equations & Inequalities",
+    "difficulty": 1,
+    "stem": "An airplane descends from an altitude of 9,500 feet to 5,000 feet at a constant rate of 400 feet per minute. What type of function best models the relationship between the descending airplane's altitude and time?",
+    "choices": [
+      "A) Decreasing exponential",
+      "B) Decreasing linear",
+      "C) Increasing exponential",
+      "D) Increasing linear"
+    ],
+    "correct_answer": "B",
+    "rationale": "Since the altitude decreases by a constant amount during each fixed time period, the relationship between the airplane's altitude and time is linear. Since the airplane descends from 9,500 feet to 5,000 feet, the altitude is decreasing with time, so the relationship is best modeled by a decreasing linear function.",
+    "needs_visual_review": false
+  },
+  {
+    "external_id": "T10-MATH-M1-Q13",
+    "skill_name": "Systems of Equations",
+    "difficulty": 1,
+    "stem": "3x + 6y = 4\n3x + 4y = 2\nThe solution to the given system of equations is (x, y). What is the value of y?",
+    "choices": null,
+    "correct_answer": "1",
+    "rationale": "Subtracting the second equation from the first yields (3x − 3x) + (6y − 4y) = 4 − 2, which simplifies to 2y = 2. Dividing each side by 2 yields y = 1.",
+    "needs_visual_review": false
+  },
+  {
+    "external_id": "T10-MATH-M1-Q14",
+    "skill_name": "Polynomials & Non-linear Functions",
+    "difficulty": 2,
+    "stem": "The function f is defined by f(x) = (x−6)(x−2)(x+6). In the xy-plane, the graph of y = g(x) is the result of translating the graph of y = f(x) up 4 units. What is the value of g(0)?",
+    "choices": null,
+    "correct_answer": "76",
+    "rationale": "Since the graph of y = g(x) is the graph of y = f(x) translated up 4 units, g(x) = f(x) + 4. Substituting 0 for x yields g(0) = (0−6)(0−2)(0+6) + 4 = (−6)(−2)(6) + 4 = 72 + 4 = 76.",
+    "needs_visual_review": false
+  },
+  {
+    "external_id": "T10-MATH-M1-Q15",
+    "skill_name": "Polynomials & Non-linear Functions",
+    "difficulty": 1,
+    "stem": "The function f(w) = 6w² gives the area of a rectangle, in square feet (ft²), if its width is w ft and its length is 6 times its width. Which of the following is the best interpretation of f(14) = 1,176?",
+    "choices": [
+      "A) If the width of the rectangle is 14 ft, then the area of the rectangle is 1,176 ft².",
+      "B) If the width of the rectangle is 14 ft, then the length of the rectangle is 1,176 ft.",
+      "C) If the width of the rectangle is 1,176 ft, then the length of the rectangle is 14 ft.",
+      "D) If the width of the rectangle is 1,176 ft, then the area of the rectangle is 14 ft²."
+    ],
+    "correct_answer": "A",
+    "rationale": "Since f(w) gives the area, in ft², of the rectangle when its width is w ft, f(14) = 1,176 means that if the width of the rectangle is 14 ft, then the area of the rectangle is 1,176 ft².",
+    "needs_visual_review": false
+  },
+  {
+    "external_id": "T10-MATH-M1-Q16",
+    "skill_name": "Polynomials & Non-linear Functions",
+    "difficulty": 1,
+    "stem": "The number of bacteria in a liquid medium doubles every day. There are 44,000 bacteria in the liquid medium at the start of an observation. Which of the following represents the number of bacteria, y, in the liquid medium t days after the start of the observation?",
+    "choices": [
+      "A) y = (1/2)(44,000)ᵗ",
+      "B) y = 2(44,000)ᵗ",
+      "C) y = 44,000(1/2)ᵗ",
+      "D) y = 44,000(2)ᵗ"
+    ],
+    "correct_answer": "D",
+    "rationale": "Since the number of bacteria doubles every day, the relationship can be represented by y = a(b)ᵗ, where a is the number of bacteria at the start and b is the daily growth factor. Since there are 44,000 bacteria at the start, a = 44,000, and since the population doubles each day, b = 2. Substituting gives y = 44,000(2)ᵗ.",
+    "needs_visual_review": false
+  },
+  {
+    "external_id": "T10-MATH-M1-Q17",
+    "skill_name": "Polynomials & Non-linear Functions",
+    "difficulty": 2,
+    "stem": "x | h(x)\n0 | 1.23\n2 | 1.54\n4 | 1.94\nThe table shows the exponential relationship between the number of years, x, since Hana started training in pole vault, and the estimated height h(x), in meters, of her best pole vault for that year. Which of the following functions best represents this relationship, where x ≤ 4?",
+    "choices": [
+      "A) h(x) = 1.12(0.23)ˣ",
+      "B) h(x) = 1.12(1.23)ˣ",
+      "C) h(x) = 1.23(0.12)ˣ",
+      "D) h(x) = 1.23(1.12)ˣ"
+    ],
+    "correct_answer": "D",
+    "rationale": "The relationship can be written as h(x) = C·aˣ. Since h(0) = 1.23, C = 1.23. Since h(2) = 1.54, 1.23·a² = 1.54, so a² ≈ 1.252, and since a is positive, a ≈ 1.12. Substituting gives h(x) = 1.23(1.12)ˣ.",
+    "needs_visual_review": false
+  },
+  {
+    "external_id": "T10-MATH-M1-Q18",
+    "skill_name": "Linear Equations & Inequalities",
+    "difficulty": 1,
+    "stem": "The function h is defined by h(x) = 4x + 28. The graph of y = h(x) in the xy-plane has an x-intercept at (a, 0) and a y-intercept at (0, b), where a and b are constants. What is the value of a + b?",
+    "choices": [
+      "A) 21",
+      "B) 28",
+      "C) 32",
+      "D) 35"
+    ],
+    "correct_answer": "A",
+    "rationale": "Setting y = 0 in y = 4x + 28 and solving gives x = −7, so a = −7. Setting x = 0 gives y = 28, so b = 28. Therefore, a + b = −7 + 28 = 21.",
+    "needs_visual_review": false
+  },
+  {
+    "external_id": "T10-MATH-M1-Q19",
+    "skill_name": "Linear Equations & Inequalities",
+    "difficulty": 2,
+    "stem": "y < 5x + 6\nFor which of the following tables are all the values of x and their corresponding values of y solutions to the given inequality?",
+    "choices": [
+      "A) x=3,y=17; x=5,y=27; x=7,y=37",
+      "B) x=3,y=17; x=5,y=35; x=7,y=37",
+      "C) x=3,y=25; x=5,y=35; x=7,y=45",
+      "D) x=3,y=21; x=5,y=31; x=7,y=41"
+    ],
+    "correct_answer": "A",
+    "rationale": "Substituting x = 3, 5, and 7 into the inequality gives y < 21, y < 31, and y < 41, respectively. Only the table in choice A gives corresponding y-values (17, 27, 37) that are all less than these bounds.",
+    "needs_visual_review": false
+  },
+  {
+    "external_id": "T10-MATH-M1-Q20",
+    "skill_name": "Systems of Equations",
+    "difficulty": 2,
+    "stem": "y = 4x + 1\n4y = 15x − 8\nThe solution to the given system of equations is (x, y). What is the value of x − y?",
+    "choices": null,
+    "correct_answer": "35",
+    "rationale": "Substituting 4x + 1 for y in the second equation yields 4(4x + 1) = 15x − 8, or 16x + 4 = 15x − 8. Subtracting 15x from each side gives x + 4 = −8, so x = −12. Substituting −12 for x in the first equation gives y = 4(−12) + 1 = −47. Therefore, x − y = −12 − (−47) = 35.",
+    "needs_visual_review": false
+  },
+  {
+    "external_id": "T10-MATH-M1-Q21",
+    "skill_name": "Triangles & Circles",
+    "difficulty": 2,
+    "stem": "A right triangle has legs with lengths of 24 centimeters and 21 centimeters. If the length of this triangle's hypotenuse, in centimeters, can be written in the form 3√d, where d is an integer, what is the value of d?",
+    "choices": null,
+    "correct_answer": "113",
+    "rationale": "By the Pythagorean theorem, h² = 24² + 21² = 576 + 441 = 1,017, so h = √1,017. Since 1,017 = 9·113, h = √9·√113 = 3√113. Since the hypotenuse is given in the form 3√d, the value of d is 113.",
+    "needs_visual_review": false
+  },
+  {
+    "external_id": "T10-MATH-M1-Q22",
+    "skill_name": "Area & Volume",
+    "difficulty": 2,
+    "stem": "The floor of a ballroom has an area of 600 square meters. An architect creates a scale model of the floor of the ballroom, where the length of each side of the model is 1/10 times the length of the corresponding side of the actual floor of the ballroom. What is the area, in square meters, of the scale model?",
+    "choices": [
+      "A) 6",
+      "B) 10",
+      "C) 60",
+      "D) 150"
+    ],
+    "correct_answer": "A",
+    "rationale": "Since each side of the scale model is 1/10 the length of the actual floor's corresponding side, the area of the scale model is (1/10)² = 1/100 times the area of the actual floor. Since the actual floor's area is 600 square meters, the area of the scale model is 600(1/100) = 6 square meters.",
+    "needs_visual_review": false
+  },
+  {
+    "external_id": "T10-MATH-M1-Q23",
+    "skill_name": "Triangles & Circles",
+    "difficulty": 2,
+    "stem": "Which of the following equations represents a circle in the xy-plane that intersects the y-axis at exactly one point?",
+    "choices": [
+      "A) (x−8)² + (y−8)² = 16",
+      "B) (x−8)² + (y−4)² = 16",
+      "C) (x−4)² + (y−9)² = 16",
+      "D) x² + (y−9)² = 16"
+    ],
+    "correct_answer": "C",
+    "rationale": "A circle (x−h)² + (y−k)² = r² intersects the y-axis at exactly one point when the perpendicular distance from the center to the y-axis equals the radius, i.e., when h = r. The equation in choice C, (x−4)² + (y−9)² = 16, has center (4, 9) and radius 4, and since h = 4 = r, this circle intersects the y-axis at exactly one point.",
+    "needs_visual_review": false
+  },
+  {
+    "external_id": "T10-MATH-M1-Q24",
+    "skill_name": "Triangles & Circles",
+    "difficulty": 2,
+    "stem": "In triangles ABC and DEF, angles B and E each have measure 27° and angles C and F each have measure 41°. Which additional piece of information is sufficient to determine whether triangle ABC is congruent to triangle DEF?",
+    "choices": [
+      "A) The measure of angle A",
+      "B) The length of side AB",
+      "C) The lengths of sides BC and EF",
+      "D) No additional information is necessary."
+    ],
+    "correct_answer": "C",
+    "rationale": "Since angles B and E have equal measure and angles C and F have equal measure, triangles ABC and DEF are similar, with side BC corresponding to side EF. To determine whether two similar triangles are congruent, it is sufficient to know that one pair of corresponding sides are congruent, so the lengths of BC and EF are sufficient to determine congruence.",
+    "needs_visual_review": false
+  },
+  {
+    "external_id": "T10-MATH-M1-Q25",
+    "skill_name": "Percentages",
+    "difficulty": 1,
+    "stem": "The result of increasing the quantity x by 1,800% is 684. What is the value of x?",
+    "choices": [
+      "A) 12,996",
+      "B) 12,312",
+      "C) 38",
+      "D) 36"
+    ],
+    "correct_answer": "D",
+    "rationale": "Increasing x by 1,800% gives x + 18x = 19x = 684. Dividing both sides by 19 gives x = 36.",
+    "needs_visual_review": false
+  },
+  {
+    "external_id": "T10-MATH-M1-Q26",
+    "skill_name": "Linear Equations & Inequalities",
+    "difficulty": 2,
+    "stem": "A window repair specialist charges $220 for the first two hours of repair plus an hourly fee for each additional hour. The total cost for 5 hours of repair is $400. Which function f gives the total cost, in dollars, for x hours of repair, where x ≥ 2?",
+    "choices": [
+      "A) f(x) = 60x + 100",
+      "B) f(x) = 60x + 220",
+      "C) f(x) = 80x",
+      "D) f(x) = 80x + 220"
+    ],
+    "correct_answer": "A",
+    "rationale": "Let n be the hourly fee after the first two hours, so f(x) = 220 + n(x−2). Since f(5) = 400, 400 = 220 + n(3), so n = 60. Substituting gives f(x) = 220 + 60(x−2) = 60x + 100.",
+    "needs_visual_review": false
+  },
+  {
+    "external_id": "T10-MATH-M1-Q27",
+    "skill_name": "Quadratics & Parabolas",
+    "difficulty": 3,
+    "stem": "x(x+1) − 56 = 4x(x−7)\nWhat is the sum of the solutions to the given equation?",
+    "choices": null,
+    "correct_answer": "29/3",
+    "rationale": "Expanding both sides gives x² + x − 56 = 4x² − 28x. Combining like terms gives 3x² − 29x + 56 = 0. By Vieta's formulas, the sum of the solutions of a quadratic ax² + bx + c = 0 is −b/a, so the sum of the solutions here is 29/3.",
+    "needs_visual_review": false
+  },
+  {
+    "external_id": "T10-MATH-M2-Q01",
+    "skill_name": "Ratios, Rates & Proportions",
+    "difficulty": 1,
+    "stem": "An object's speed is 64 yards per second. What is the object's speed, in feet per second? (1 yard = 3 feet)",
+    "choices": [
+      "A) 61",
+      "B) 67",
+      "C) 94",
+      "D) 192"
+    ],
+    "correct_answer": "D",
+    "rationale": "Since 1 yard = 3 feet, 64 yards = 64(3) = 192 feet. Therefore, 64 yards per second is equivalent to 192 feet per second.",
+    "needs_visual_review": false
+  },
+  {
+    "external_id": "T10-MATH-M2-Q02",
+    "skill_name": "Statistics & Probability",
+    "difficulty": 1,
+    "stem": "The scatterplot shows the relationship between two variables, x and y. A line of best fit is also shown. Which of the following equations best represents the line of best fit shown?",
+    "choices": [
+      "A) y = x + 3.4",
+      "B) y = x − 3.4",
+      "C) y = −x + 3.4",
+      "D) y = −x − 3.4"
+    ],
+    "correct_answer": "A",
+    "rationale": "The line of best fit has a positive slope and intersects the y-axis at a positive y-value. Of the given choices, only y = x + 3.4 has a positive slope (1) and a positive y-intercept (3.4).",
+    "needs_visual_review": false
+  },
+  {
+    "external_id": "T10-MATH-M2-Q03",
+    "skill_name": "Linear Equations & Inequalities",
+    "difficulty": 1,
+    "stem": "The graph shows the linear relationship between x and y. Which table gives three values of x and their corresponding values of y for this relationship?",
+    "choices": [
+      "A) x=0,y=0; x=1,y=−7; x=2,y=−9",
+      "B) x=0,y=0; x=1,y=−3; x=2,y=−1",
+      "C) x=0,y=−5; x=1,y=−7; x=2,y=−9",
+      "D) x=0,y=−5; x=1,y=−3; x=2,y=−1"
+    ],
+    "correct_answer": "D",
+    "rationale": "The given graph passes through the points (0, −5), (1, −3), and (2, −1). Of the given choices, only the table in choice D gives these three values of x and their corresponding values of y.",
+    "needs_visual_review": false
+  },
+  {
+    "external_id": "T10-MATH-M2-Q04",
+    "skill_name": "Area & Volume",
+    "difficulty": 1,
+    "stem": "What is the perimeter, in inches, of a rectangle with a length of 4 inches and a width of 9 inches?",
+    "choices": [
+      "A) 13",
+      "B) 17",
+      "C) 22",
+      "D) 26"
+    ],
+    "correct_answer": "D",
+    "rationale": "The perimeter of a rectangle is the sum of the lengths of its four sides: 4 + 4 + 9 + 9 = 26 inches.",
+    "needs_visual_review": false
+  },
+  {
+    "external_id": "T10-MATH-M2-Q05",
+    "skill_name": "Linear Equations & Inequalities",
+    "difficulty": 2,
+    "stem": "7m = 2(n + p)\nThe given equation relates the positive numbers m, n, and p. Which equation correctly gives m in terms of n and p?",
+    "choices": [
+      "A) m = 2(n+p)/7",
+      "B) m = 2(n+p)",
+      "C) m = 2(n+p) − 7",
+      "D) m = 2 − n − p − 7"
+    ],
+    "correct_answer": "A",
+    "rationale": "Dividing each side of the given equation by 7 yields m = 2(n+p)/7.",
+    "needs_visual_review": false
+  },
+  {
+    "external_id": "T10-MATH-M2-Q06",
+    "skill_name": "Statistics & Probability",
+    "difficulty": 1,
+    "stem": "73, 74, 75, 77, 79, 82, 84, 85, 91\nWhat is the median of the data shown?",
+    "choices": null,
+    "correct_answer": "79",
+    "rationale": "The median of a data set with an odd number of values, ordered from least to greatest, is the middle value. Since this data set has nine ordered values, the median is the fifth value, 79.",
+    "needs_visual_review": false
+  },
+  {
+    "external_id": "T10-MATH-M2-Q07",
+    "skill_name": "Linear Equations & Inequalities",
+    "difficulty": 1,
+    "stem": "The function f is defined by f(x) = 4x. For what value of x does f(x) = 8?",
+    "choices": null,
+    "correct_answer": "2",
+    "rationale": "Substituting 8 for f(x) in the given equation yields 4x = 8. Dividing both sides by 4 gives x = 2.",
+    "needs_visual_review": false
+  },
+  {
+    "external_id": "T10-MATH-M2-Q08",
+    "skill_name": "Percentages",
+    "difficulty": 1,
+    "stem": "Of 300,000 paper clips, 234,000 are size large. What percentage of the paper clips are size large?",
+    "choices": [
+      "A) 22%",
+      "B) 33%",
+      "C) 66%",
+      "D) 78%"
+    ],
+    "correct_answer": "D",
+    "rationale": "The proportion of paper clips that are size large is 234,000/300,000 = 0.78. Therefore, the percentage of paper clips that are size large is 0.78(100) = 78%.",
+    "needs_visual_review": false
+  },
+  {
+    "external_id": "T10-MATH-M2-Q09",
+    "skill_name": "Linear Equations & Inequalities",
+    "difficulty": 1,
+    "stem": "f(x) = 8x + 4\nThe function f gives the estimated height, in feet, of a willow tree x years after its height was first measured. Which statement is the best interpretation of 4 in this context?",
+    "choices": [
+      "A) The tree will be measured each year for 4 years.",
+      "B) The tree is estimated to grow to a maximum height of 4 feet.",
+      "C) The estimated height of the tree increased by 4 feet each year.",
+      "D) The estimated height of the tree was 4 feet when it was first measured."
+    ],
+    "correct_answer": "D",
+    "rationale": "For a function f(x) = mx + b, b represents the value of f(x) when x = 0. In the given function, 4 represents the value of f(x) when x = 0, so the best interpretation is that the estimated height of the tree was 4 feet when it was first measured.",
+    "needs_visual_review": false
+  },
+  {
+    "external_id": "T10-MATH-M2-Q10",
+    "skill_name": "Quadratics & Parabolas",
+    "difficulty": 2,
+    "stem": "y = 76\ny = x² − 5\nThe graphs of the given equations in the xy-plane intersect at the point (x, y). What is a possible value of x?",
+    "choices": [
+      "A) −76/5",
+      "B) −9",
+      "C) 5",
+      "D) 76"
+    ],
+    "correct_answer": "B",
+    "rationale": "Substituting 76 for y in the second equation yields x² − 5 = 76, so x² = 81. Taking the square root of both sides gives x = 9 or x = −9. Of these, only −9 is given as a choice.",
+    "needs_visual_review": false
+  },
+  {
+    "external_id": "T10-MATH-M2-Q11",
+    "skill_name": "Triangles & Circles",
+    "difficulty": 1,
+    "stem": "Each side of equilateral triangle S is multiplied by a scale factor of k to create equilateral triangle T. The length of each side of triangle T is greater than the length of each side of triangle S. Which of the following could be the value of k?",
+    "choices": [
+      "A) 29/28",
+      "B) 1",
+      "C) 28/29",
+      "D) 0"
+    ],
+    "correct_answer": "A",
+    "rationale": "Since the sides of triangle T are longer than those of triangle S, the scale factor k must be greater than 1. Of the given choices, only 29/28 is greater than 1.",
+    "needs_visual_review": false
+  },
+  {
+    "external_id": "T10-MATH-M2-Q12",
+    "skill_name": "Linear Equations & Inequalities",
+    "difficulty": 1,
+    "stem": "66x = 66x\nHow many solutions does the given equation have?",
+    "choices": [
+      "A) Exactly one",
+      "B) Exactly two",
+      "C) Infinitely many",
+      "D) Zero"
+    ],
+    "correct_answer": "C",
+    "rationale": "Since the two sides of the given equation are identical, the equation is true for any value of x, so it has infinitely many solutions.",
+    "needs_visual_review": false
+  },
+  {
+    "external_id": "T10-MATH-M2-Q13",
+    "skill_name": "Linear Equations & Inequalities",
+    "difficulty": 1,
+    "stem": "Vivian bought party hats and cupcakes for $71. Each package of party hats cost $3, and each cupcake cost $1. If Vivian bought 10 packages of party hats, how many cupcakes did she buy?",
+    "choices": null,
+    "correct_answer": "41",
+    "rationale": "The amount spent on party hats was 3(10) = $30. Subtracting this from the total, $71 − $30 = $41 was spent on cupcakes. Since each cupcake cost $1, Vivian bought 41 cupcakes.",
+    "needs_visual_review": false
+  },
+  {
+    "external_id": "T10-MATH-M2-Q14",
+    "skill_name": "Polynomials & Non-linear Functions",
+    "difficulty": 2,
+    "stem": "The exponential function g is defined by g(x) = 19·aˣ, where a is a positive constant. If g(3) = 2,375, what is the value of g(4)?",
+    "choices": null,
+    "correct_answer": "11875",
+    "rationale": "Substituting 3 for x and 2,375 for g(x) yields 2,375 = 19·a³. Dividing both sides by 19 gives a³ = 125, so a = 5. Substituting 4 for x and 5 for a gives g(4) = 19·5⁴ = 19(625) = 11,875.",
+    "needs_visual_review": false
+  },
+  {
+    "external_id": "T10-MATH-M2-Q15",
+    "skill_name": "Trigonometry",
+    "difficulty": 2,
+    "stem": "In right triangle RST, the sum of the measures of angle R and angle S is 90 degrees. The value of sin(R) is √15/4. What is the value of cos(S)?",
+    "choices": [
+      "A) √15/15",
+      "B) √15/4",
+      "C) 4√15/15",
+      "D) √15"
+    ],
+    "correct_answer": "B",
+    "rationale": "The sine of any acute angle equals the cosine of its complement. Since angle R and angle S are complementary (they sum to 90°), sin(R) = cos(S). Since sin(R) = √15/4, cos(S) is also √15/4.",
+    "needs_visual_review": false
+  },
+  {
+    "external_id": "T10-MATH-M2-Q16",
+    "skill_name": "Linear Equations & Inequalities",
+    "difficulty": 2,
+    "stem": "The graph shows the relationship between the number of shares of stock from Company A, x, and the number of shares of stock from Company B, y, that Simone can purchase. Which equation could represent this relationship?",
+    "choices": [
+      "A) y = 8x + 12",
+      "B) 8x + 12y = 480",
+      "C) y = 12x + 8",
+      "D) 12x + 8y = 480"
+    ],
+    "correct_answer": "B",
+    "rationale": "The graph is a line passing through (0, 40) and (60, 0). Substituting these points into 8x + 12y = 480 gives 8(0) + 12(40) = 480 and 8(60) + 12(0) = 480, both true. Therefore, 8x + 12y = 480 represents the relationship.",
+    "needs_visual_review": false
+  },
+  {
+    "external_id": "T10-MATH-M2-Q17",
+    "skill_name": "Polynomials & Non-linear Functions",
+    "difficulty": 3,
+    "stem": "Which expression is equivalent to [8x(x−7) − 3(x−7)] / (2x−14), where x > 7?",
+    "choices": [
+      "A) (x−7)/5",
+      "B) (8x−3)/2",
+      "C) (8x²−3x−14)/(2x−14)",
+      "D) (8x²−3x−77)/(2x−14)"
+    ],
+    "correct_answer": "B",
+    "rationale": "The denominator has a common factor of 2, so the expression can be rewritten as [8x(x−7) − 3(x−7)] / [2(x−7)]. Since x > 7, x − 7 ≠ 0, so each term can be divided by (x−7), giving (8x−3)/2.",
+    "needs_visual_review": false
+  },
+  {
+    "external_id": "T10-MATH-M2-Q18",
+    "skill_name": "Polynomials & Non-linear Functions",
+    "difficulty": 1,
+    "stem": "The function f is defined by f(x) = −8(2)ˣ + 22. What is the y-intercept of the graph of y = f(x) in the xy-plane?",
+    "choices": [
+      "A) (0, 14)",
+      "B) (0, 2)",
+      "C) (0, 22)",
+      "D) (0, −8)"
+    ],
+    "correct_answer": "A",
+    "rationale": "The y-intercept occurs where x = 0. Substituting 0 for x gives f(0) = −8(2⁰) + 22 = −8(1) + 22 = 14. Therefore, the y-intercept is (0, 14).",
+    "needs_visual_review": false
+  },
+  {
+    "external_id": "T10-MATH-M2-Q19",
+    "skill_name": "Linear Equations & Inequalities",
+    "difficulty": 1,
+    "stem": "Keenan made 32 cups of vegetable broth. Keenan then filled x small jars and y large jars with all the vegetable broth he made. The equation x/3 + y/5 = 32 represents this situation. Which is the best interpretation of y/5 in this context?",
+    "choices": [
+      "A) The number of large jars Keenan filled",
+      "B) The number of small jars Keenan filled",
+      "C) The total number of cups of vegetable broth in the large jars",
+      "D) The total number of cups of vegetable broth in the small jars"
+    ],
+    "correct_answer": "C",
+    "rationale": "In the equation, x/3 represents the total number of cups of broth in the small jars and y/5 represents the total number of cups of broth in the large jars.",
+    "needs_visual_review": false
+  },
+  {
+    "external_id": "T10-MATH-M2-Q20",
+    "skill_name": "Triangles & Circles",
+    "difficulty": 2,
+    "stem": "A circle in the xy-plane has a diameter with endpoints (2, 4) and (2, 14). An equation of this circle is (x−2)² + (y−9)² = r², where r is a positive constant. What is the value of r?",
+    "choices": null,
+    "correct_answer": "5",
+    "rationale": "The center of the circle is (2, 9). The radius is the distance from the center to an endpoint of the diameter, (2, 4): √[(2−2)² + (9−4)²] = √25 = 5. Therefore, r = 5.",
+    "needs_visual_review": false
+  },
+  {
+    "external_id": "T10-MATH-M2-Q21",
+    "skill_name": "Linear Equations & Inequalities",
+    "difficulty": 2,
+    "stem": "Line ℓ is defined by 3y + 12x = 5. Line n is perpendicular to line ℓ in the xy-plane. What is the slope of line n?",
+    "choices": null,
+    "correct_answer": "1/4",
+    "rationale": "Rewriting the given equation in slope-intercept form: 3y = −12x + 5, so y = −4x + 5/3. The slope of line ℓ is −4. Since line n is perpendicular to line ℓ, its slope is the negative reciprocal of −4, which is 1/4.",
+    "needs_visual_review": false
+  },
+  {
+    "external_id": "T10-MATH-M2-Q22",
+    "skill_name": "Linear Equations & Inequalities",
+    "difficulty": 2,
+    "stem": "|−5x + 13| = 73\nWhat is the sum of the solutions to the given equation?",
+    "choices": [
+      "A) −146/5",
+      "B) −12",
+      "C) 0",
+      "D) 26/5"
+    ],
+    "correct_answer": "D",
+    "rationale": "By the definition of absolute value, −5x + 13 = 73 or −5x + 13 = −73. Solving the first equation gives x = −12. Solving the second gives x = 86/5. The sum of the solutions is −12 + 86/5 = 26/5.",
+    "needs_visual_review": false
+  },
+  {
+    "external_id": "T10-MATH-M2-Q23",
+    "skill_name": "Polynomials & Non-linear Functions",
+    "difficulty": 2,
+    "stem": "For the exponential function f, the value of f(1) is k, where k is a constant. Which of the following equivalent forms of the function f shows the value of k as the coefficient or the base?",
+    "choices": [
+      "A) f(x) = 50(1.6)^(x+1)",
+      "B) f(x) = 80(1.6)ˣ",
+      "C) f(x) = 128(1.6)^(x−1)",
+      "D) f(x) = 204.8(1.6)^(x−2)"
+    ],
+    "correct_answer": "C",
+    "rationale": "For the function in choice C, f(1) = 128(1.6)^(1−1) = 128(1.6)⁰ = 128. Therefore, k = 128, which appears as the coefficient in f(x) = 128(1.6)^(x−1).",
+    "needs_visual_review": false
+  },
+  {
+    "external_id": "T10-MATH-M2-Q24",
+    "skill_name": "Quadratics & Parabolas",
+    "difficulty": 2,
+    "stem": "−9x² + 30x + c = 0\nIn the given equation, c is a constant. The equation has exactly one solution. What is the value of c?",
+    "choices": [
+      "A) 3",
+      "B) 0",
+      "C) −25",
+      "D) −53"
+    ],
+    "correct_answer": "C",
+    "rationale": "A quadratic equation ax² + bx + c = 0 has exactly one solution when its discriminant, b² − 4ac, equals zero. Here a = −9 and b = 30, so 30² − 4(−9)(c) = 0, or 900 + 36c = 0. Solving gives c = −25.",
+    "needs_visual_review": false
+  },
+  {
+    "external_id": "T10-MATH-M2-Q25",
+    "skill_name": "Polynomials & Non-linear Functions",
+    "difficulty": 3,
+    "stem": "Which of the following expressions has a factor of x + 2b, where b is a positive integer constant?",
+    "choices": [
+      "A) 3x² + 7x + 14b²",
+      "B) 3x² + 28x + 14b²",
+      "C) 3x² + 42x + 14b²",
+      "D) 3x² + 49x + 14b²"
+    ],
+    "correct_answer": "D",
+    "rationale": "Each expression has the form 3x² + (coefficient)x + 14b², matching a factorization of the form (x + 2b)(3x + 7b) = 3x² + (6 + 7b)x + 14b² only for the correct coefficient. Testing the given x-coefficients (7, 28, 42, 49) against 6 + 7b shows only 49 yields a positive integer value of b (b = 7), so the expression with a factor of x + 2b is 3x² + 49x + 14b².",
+    "needs_visual_review": false
+  },
+  {
+    "external_id": "T10-MATH-M2-Q26",
+    "skill_name": "Statistics & Probability",
+    "difficulty": 3,
+    "stem": "Two data sets of 23 integers each are summarized in the histograms shown. For each of the histograms, the first interval represents the frequency of integers greater than or equal to 10, but less than 20. The second interval represents the frequency of integers greater than or equal to 20, but less than 30, and so on. What is the smallest possible difference between the mean of data set A and the mean of data set B?",
+    "choices": [
+      "A) 0",
+      "B) 1",
+      "C) 10",
+      "D) 23"
+    ],
+    "correct_answer": "B",
+    "rationale": "The histograms have the same shape, but data set A's values fall in the range 20–60 while data set B's fall in the range 10–50, so the mean of A is greater than the mean of B. The smallest possible difference occurs when A's mean is as small as possible (each value at the low end of its interval) and B's mean is as large as possible (each value at the high end of its interval). Computing these extreme means for the given frequency distribution yields a smallest possible difference of 1.",
+    "needs_visual_review": false
+  },
+  {
+    "external_id": "T10-MATH-M2-Q27",
+    "skill_name": "Triangles & Circles",
+    "difficulty": 2,
+    "stem": "The perimeter of an equilateral triangle is 624 centimeters. The height of this triangle is k√3 centimeters, where k is a constant. What is the value of k?",
+    "choices": null,
+    "correct_answer": "104",
+    "rationale": "The altitude of an equilateral triangle divides it into two 30-60-90 right triangles, where the altitude (opposite the 60° angle) has length k√3 when the side opposite the 30° angle has length k, and the hypotenuse (a side of the equilateral triangle) has length 2k. Since the perimeter is 624, 3(2k) = 624, so k = 104.",
+    "needs_visual_review": false
+  }
+]

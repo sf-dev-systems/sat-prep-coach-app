@@ -1,0 +1,217 @@
+{
+  "_instructions": "Config for SAT Test 6 RW pipeline. Fill in any '?' answers from the scoring guide. stem_overrides and choice_overrides are keyed by external_id (e.g. 'T8-RW-M1-Q14'). missing_qnum_injections: set inject_line to the correct line number from recon output. If multi-track, change scoring_track_index (0-based) and re-run recon to swap keys.",
+  "test_num": 6,
+  "layout": "unknown",
+  "m1_line_start": 24,
+  "m2_line_start": 931,
+  "math_line_start": 1827,
+  "scoring_track_index": 1,
+  "scoring_track_options": [
+    {
+      "page": 2,
+      "m1_q1": "D",
+      "m2_q1": "C"
+    },
+    {
+      "page": 4,
+      "m1_q1": "D",
+      "m2_q1": "C"
+    }
+  ],
+  "m1_answers": {
+    "1": "D",
+    "2": "B",
+    "3": "B",
+    "4": "D",
+    "5": "D",
+    "6": "A",
+    "7": "B",
+    "8": "B",
+    "9": "D",
+    "10": "D",
+    "11": "A",
+    "12": "A",
+    "13": "A",
+    "14": "C",
+    "15": "B",
+    "16": "D",
+    "17": "D",
+    "18": "B",
+    "19": "A",
+    "20": "C",
+    "21": "D",
+    "22": "D",
+    "23": "D",
+    "24": "C",
+    "25": "B",
+    "26": "D",
+    "27": "D",
+    "28": "C",
+    "29": "C",
+    "30": "B",
+    "31": "A",
+    "32": "B",
+    "33": "C"
+  },
+  "m2_answers": {
+    "1": "C",
+    "2": "D",
+    "3": "C",
+    "4": "B",
+    "5": "B",
+    "6": "C",
+    "7": "D",
+    "8": "C",
+    "9": "C",
+    "10": "C",
+    "11": "C",
+    "12": "C",
+    "13": "C",
+    "14": "D",
+    "15": "D",
+    "16": "B",
+    "17": "A",
+    "18": "D",
+    "19": "C",
+    "20": "A",
+    "21": "A",
+    "22": "C",
+    "23": "B",
+    "24": "A",
+    "25": "D",
+    "26": "B",
+    "27": "D",
+    "28": "A",
+    "29": "B",
+    "30": "C",
+    "31": "D",
+    "32": "B",
+    "33": "C"
+  },
+  "missing_qnum_injections": {},
+  "chart_pages": [
+    {
+      "pdf_page": 1,
+      "column": "left",
+      "drawing_count": 224,
+      "text_snippet": "WX4P0010 \nThe SAT® \nPractice \nTest #6 \n \nt:J \nMake time to take the practice test. \nIt is one of the best ways to get ready \nfor the SAT. \nAfter you have taken the practice test, score it \nright away at sat.org/digital-practice. \nThis version of the SAT Practice Test is for students who will be taki"
+    },
+    {
+      "pdf_page": 10,
+      "column": "left",
+      "drawing_count": 26,
+      "text_snippet": "00\n540\n480\n420\n360\n300\n240\n180\n120\n60\n0\nMean test score (higher scores\nindicate greater attentiveness)\nfirst\nsecond\nthird\nMean Attentiveness Scores by\nLeave Time Condition\nTest administration\nno leave\n2–4 days leave\n1–5 weeks leave\nTo investigate potential cognitive benefits of taking \nleave from wo"
+    },
+    {
+      "pdf_page": 11,
+      "column": "left",
+      "drawing_count": 67,
+      "text_snippet": "9"
+    },
+    {
+      "pdf_page": 23,
+      "column": "left",
+      "drawing_count": 84,
+      "text_snippet": "21"
+    },
+    {
+      "pdf_page": 35,
+      "column": "left",
+      "drawing_count": 296,
+      "text_snippet": "33\nUnauthorized copying or reuse of any part of this page is illegal. \nCONTINUE"
+    },
+    {
+      "pdf_page": 36,
+      "column": "right",
+      "drawing_count": 97,
+      "text_snippet": "91\n2\nWhat is the positive solution to the given equation? \nA) 144 \nB) 72 \nC) 38 \nD) 12 \n4 \nDuring a portion of a flight, a small airplane’s \ncruising speed varied between 150 miles per hour \nand 170 miles per hour. Which inequality best \nrepresents this situation, where s is the cruising \nspeed, in"
+    },
+    {
+      "pdf_page": 37,
+      "column": "left",
+      "drawing_count": 14,
+      "text_snippet": "4\n( )\nThe function f represents the total cost, in dollars, of \nattending an arcade when x games are played. How \nmany games can be played for a total cost of $58? \n8 \nf x\nx\nb\n=\n+\n( )\nFor the linear function f, b is a constant. \nWhen x = 0, f x = 30\n( )\n. What is the value of b ? \nA) −30\nB) −1\n30\nC)"
+    },
+    {
+      "pdf_page": 38,
+      "column": "right",
+      "drawing_count": 17,
+      "text_snippet": "8\nFor which of the following tables are all the values of \nx and their corresponding values of y solutions to the \ngiven inequality? \nA) \nx \ny \n2 \n19 \n4 \n30 \n6 \n41 \nB) \nx \ny \n2 \n8 \n4 \n16 \n6 \n24 \nC) \nx \ny \n2 \n13 \n4 \n18 \n6 \n23 \nD) \nx \ny \n2 \n13 \n4 \n21 \n6 \n29 \n12 \nWhich expression is equivalent to \nx\nx"
+    },
+    {
+      "pdf_page": 39,
+      "column": "left",
+      "drawing_count": 82,
+      "text_snippet": "18\nB) y\nx\n= 2 + 8\nC) y\nx\n= 8 + 2\nD) y\nx\n= 3 + 26\n..........................................................................................................................................................................................................................................................."
+    },
+    {
+      "pdf_page": 40,
+      "column": "right",
+      "drawing_count": 49,
+      "text_snippet": "3\n7 = −5\n9 + 21 in the xy-plane? \n.........................................................................................................................................................................................................................................................................."
+    },
+    {
+      "pdf_page": 41,
+      "column": "left",
+      "drawing_count": 39,
+      "text_snippet": "9\n2\n2\n. Circle B (not shown) is the result \nof shifting circle A down 6 units and increasing the \nradius so that the radius of circle B is 2 times the \nradius of circle A. Which equation defines circle B ? \nA) x\ny\n( + 2) + ( + 6) = (4)(9)\n2\n2\nB) \nx\ny\n2( + 2) + 2( + 6) = 9\n2\n2\nC) x\ny\n( + 2) + ( −6) ="
+    },
+    {
+      "pdf_page": 42,
+      "column": "right",
+      "drawing_count": 32,
+      "text_snippet": "27\n3\n−9\n0\n21\n5\n0\n21\n5\nThe table shows three values of x and their \ncorresponding values of g x\n( ), where g x\nf x\nx\n=\n+ 3\n( )\n( )\nand f is a linear function. What is the y-intercept of \nthe graph of y\nf x\n= ( ) in the xy-plane? \nA) 0, 36\n(\n)\nB) \n0, 12\n(\n)\nC) 0, 4\n(\n)\nD) 0, −9\n(\n)\n27 \nIn right triang"
+    },
+    {
+      "pdf_page": 46,
+      "column": "right",
+      "drawing_count": 85,
+      "text_snippet": "8\n( )\n. For what \nvalue of x does f x = 72\n( )\n? \nA) 8 \nB) 9 \nC) 64 \nD) 80 \n2 \nNote: Figure not drawn to scale. \nIn the figure, two lines intersect at a point. Angle 1 \nand angle 2 are vertical angles. The measure of \nangle 1 is 72°. What is the measure of angle 2? \nA) 72°\nB) 108°\nC) 144°\nD) 288°\n.."
+    },
+    {
+      "pdf_page": 47,
+      "column": "left",
+      "drawing_count": 39,
+      "text_snippet": "8\nx\ny\n+ 3\n= 26\n............................................................................................................................................................................................................................................................................................."
+    },
+    {
+      "pdf_page": 48,
+      "column": "left",
+      "drawing_count": 17,
+      "text_snippet": "63\nWhich equation has the same solution as the given \nequation? \nA) \nx\n2 −3 = 9\nB) \nx\n2 −3 = 56\nC) \nx\n2 −21 = 63\nD) \nx\n2 −21 = 78\n11 \nThe function f defined by f t\nt\n= 14 + 9\n( )\n gives the \nestimated length, in inches, of a vine plant t months \nafter Tavon purchased it. Which of the following is \nt"
+    },
+    {
+      "pdf_page": 49,
+      "column": "right",
+      "drawing_count": 12,
+      "text_snippet": "17\nx = −841\n2\nHow many distinct real solutions does the given \nequation have? \nA) Exactly one \nB) Exactly two \nC) Infinitely many \nD) Zero \n18 \nLine k is defined by y\nx\n= 7 + 1\n8 . Line j is \nperpendicular to line k in the xy-plane. What is \nthe slope of line j ? \nA) −8\nB) −1\n7\nC) 1\n8\nD) \nUnauthoriz"
+    },
+    {
+      "pdf_page": 50,
+      "column": "left",
+      "drawing_count": 10,
+      "text_snippet": "9\nB) \nc\np\n55 −\n= 9\nC) \np\nc\n55 −\n= −9\nD) \np\nc\n55 −\n= 9\n20 \nIf 4\n=\n4\nc\n8\n7\n3\n, what is the value of  c ? \n21 \nx\ny\n−2 −4\n+ 7 = 117\n(\n)\n(\n)\nx\ny\n−2 + 4\n+ 7 = 442\n(\n)\n(\n)\nThe solution to the given system of equations is \nx y\n( , ). What is the value of \nx\n6( −2) ? \n........................................"
+    },
+    {
+      "pdf_page": 51,
+      "column": "right",
+      "drawing_count": 37,
+      "text_snippet": "37\nB) \n__t \n26 37\nC) \n__t \n34 37\nD) \n-~t\n·\n34\n37\n23 \nf x\n( ) = (1.84)\nx\n4\nThe function f is defined by the given equation. The \nequation can be rewritten as f x\np\n( ) = 1 + 100\nx\n\n\n\n, \nwhere p is a constant. Which of the following is \nclosest to the value of p ? \nA) 16 \nB) 21 \nC) 46 \nD) 96"
+    },
+    {
+      "pdf_page": 52,
+      "column": "left",
+      "drawing_count": 59,
+      "text_snippet": "9\nB) y\nx\n= 46.8 + 1.5\nC) y\nx\n= 12 + 5.9\nD) y\nx\n= 12 + 1.5\n...............................................................................................................................................................................................................................................\n27"
+    },
+    {
+      "pdf_page": 56,
+      "column": "left",
+      "drawing_count": 582,
+      "text_snippet": "The SAT. \nThe \nSAT® \nGENERAL DIRECTIONS \n• You may work on only one module at a time. \n• If you finish a module before time is called, check your work on that module only. \nYou may NOT turn to any other module. \nTIMING \nReading and Writing, Module 1 : 39 minutes \nReading and Writing, Module 2: 39 mi"
+    }
+  ],
+  "stem_overrides": {},
+  "choice_d_overrides": {},
+  "license": "© 2025 College Board. For educational use only."
+}

@@ -1,0 +1,217 @@
+{
+  "_instructions": "Config for SAT Test 5 RW pipeline. Fill in any '?' answers from the scoring guide. stem_overrides and choice_overrides are keyed by external_id (e.g. 'T8-RW-M1-Q14'). missing_qnum_injections: set inject_line to the correct line number from recon output. If multi-track, change scoring_track_index (0-based) and re-run recon to swap keys.",
+  "test_num": 5,
+  "layout": "unknown",
+  "m1_line_start": 24,
+  "m2_line_start": 903,
+  "math_line_start": 1800,
+  "scoring_track_index": 1,
+  "scoring_track_options": [
+    {
+      "page": 2,
+      "m1_q1": "A",
+      "m2_q1": "C"
+    },
+    {
+      "page": 4,
+      "m1_q1": "A",
+      "m2_q1": "C"
+    }
+  ],
+  "m1_answers": {
+    "1": "A",
+    "2": "B",
+    "3": "B",
+    "4": "D",
+    "5": "B",
+    "6": "D",
+    "7": "B",
+    "8": "C",
+    "9": "B",
+    "10": "B",
+    "11": "D",
+    "12": "A",
+    "13": "D",
+    "14": "B",
+    "15": "C",
+    "16": "B",
+    "17": "A",
+    "18": "B",
+    "19": "A",
+    "20": "C",
+    "21": "A",
+    "22": "D",
+    "23": "B",
+    "24": "D",
+    "25": "B",
+    "26": "B",
+    "27": "D",
+    "28": "D",
+    "29": "B",
+    "30": "D",
+    "31": "A",
+    "32": "C",
+    "33": "D"
+  },
+  "m2_answers": {
+    "1": "C",
+    "2": "D",
+    "3": "A",
+    "4": "A",
+    "5": "C",
+    "6": "C",
+    "7": "B",
+    "8": "A",
+    "9": "A",
+    "10": "D",
+    "11": "A",
+    "12": "D",
+    "13": "D",
+    "14": "D",
+    "15": "D",
+    "16": "B",
+    "17": "A",
+    "18": "A",
+    "19": "B",
+    "20": "A",
+    "21": "C",
+    "22": "B",
+    "23": "A",
+    "24": "C",
+    "25": "C",
+    "26": "B",
+    "27": "C",
+    "28": "D",
+    "29": "D",
+    "30": "A",
+    "31": "D",
+    "32": "D",
+    "33": "A"
+  },
+  "missing_qnum_injections": {},
+  "chart_pages": [
+    {
+      "pdf_page": 1,
+      "column": "left",
+      "drawing_count": 224,
+      "text_snippet": "WX4P0001 \nThe SAT® \nPractice \nTest\n #5 \nMake time to take the practice test. \nIt is one of the best ways to get ready \nfor the SAT. \nAfter you have taken the practice test, score it \nright away at sat.org/digital-practice. \nThis version of the SAT Practice Test is for students who will be taking \nth"
+    },
+    {
+      "pdf_page": 10,
+      "column": "left",
+      "drawing_count": 108,
+      "text_snippet": "8"
+    },
+    {
+      "pdf_page": 23,
+      "column": "left",
+      "drawing_count": 75,
+      "text_snippet": "21"
+    },
+    {
+      "pdf_page": 24,
+      "column": "left",
+      "drawing_count": 38,
+      "text_snippet": "22"
+    },
+    {
+      "pdf_page": 34,
+      "column": "left",
+      "drawing_count": 83,
+      "text_snippet": "16\n11\n\n\n\n\n\n\n\n\nC) (0, −8)\nD) (0, 8)\n..............................................................................................................................................................................................................................................................."
+    },
+    {
+      "pdf_page": 35,
+      "column": "right",
+      "drawing_count": 60,
+      "text_snippet": "27\nr = 3\nWhat is the solution (r, s) to the given system of \nequations? \nA) (6, 3)\nB) (3, 6)\nC) (3, 27)\nD) (27, 3)\n........................................................................................................................................................................................."
+    },
+    {
+      "pdf_page": 36,
+      "column": "left",
+      "drawing_count": 21,
+      "text_snippet": "10\nScott selected 20 employees at random from all \n400 employees at a company. He found that 16 of \nthe employees in this sample are enrolled in exactly \nthree professional development courses this year. \nBased on Scott’s findings, which of the following is \nthe best estimate of the number of employ"
+    },
+    {
+      "pdf_page": 37,
+      "column": "left",
+      "drawing_count": 16,
+      "text_snippet": "4\nB) s ≥1.8\nC) \ns\n0 ≤\n≤0.6\nD) \ns\n0.6 ≤\n≤1.8\n................................................................................................................................................................................................................................................................"
+    },
+    {
+      "pdf_page": 38,
+      "column": "left",
+      "drawing_count": 221,
+      "text_snippet": "36"
+    },
+    {
+      "pdf_page": 39,
+      "column": "right",
+      "drawing_count": 31,
+      "text_snippet": "26\nB) 26x\nC) x + 26\nD) 26\nx\n18 \nKaylani used fabric measuring 5 yards in length to \nmake each suit for a men’s choir. The relationship \nbetween the number of suits that Kaylani made, x, \nand the total length of fabric that she purchased y, in \nyards, is represented by the equation y −5x = 6. \nWhat i"
+    },
+    {
+      "pdf_page": 40,
+      "column": "left",
+      "drawing_count": 22,
+      "text_snippet": "21\nThe graph of the given equation is a circle in the \nxy-plane. The point (a, b) lies on the circle. Which of \nthe following is a possible value for a ? \nA) −16\nB) −14\nC) 11\nD) 19\n23\nA right rectangular prism has a height of 9 inches. \nThe length of the prism’s base is x inches, which is \n7 inches"
+    },
+    {
+      "pdf_page": 41,
+      "column": "left",
+      "drawing_count": 20,
+      "text_snippet": "6\nB) −3\nC) 4\nD) 5\n27 \nThe function g is defined by g(x) = x(x −2)(x + 6)2. \nThe value of g(7 −w) is 0, where w is a constant. \nWhat is the sum of all possible values of w ? \nSTOP \nIf you finish before time is called, you may check your work on this module only. \nDo not turn to any other module in th"
+    },
+    {
+      "pdf_page": 44,
+      "column": "left",
+      "drawing_count": 104,
+      "text_snippet": "30\nB) 37\nC) 40\nD) 43\n4 \nWhich expression is equivalent to 16x3y2 + 14xy ? \nA) 2xy(8xy + 7)\nB) 2xy(8x2y + 7)\nC) 14xy(2x2y + 1)\nD) 14xy(8x2y + 1)\n5 \nA veterinarian recommends that each day a certain \nrabbit should eat 25 calories per pound of the rabbit’s \nweight, plus an additional 11 calories. Which"
+    },
+    {
+      "pdf_page": 45,
+      "column": "right",
+      "drawing_count": 36,
+      "text_snippet": "7\nWhat is a solution to the given equation? \n8 \nLine r in the xy-plane has a slope of 4 and passes \nthrough the point (0, 6). Which equation defines \nline r ? \nA) y = −6x + 4\nB) y = 6x + 4\nC) y = 4x −6\nD) y = 4x + 6\n...................................................................................."
+    },
+    {
+      "pdf_page": 46,
+      "column": "right",
+      "drawing_count": 70,
+      "text_snippet": "9\n2 v2. Which of the following is the best \ninterpretation of K(34) = 5,202 in this context? \nA) The object traveling at 34 meters per second has \na kinetic energy of 5,202 joules. \nB) The object traveling at 340 meters per second has \na kinetic energy of 5,202 joules. \nC) The object traveling at 5,"
+    },
+    {
+      "pdf_page": 47,
+      "column": "right",
+      "drawing_count": 10,
+      "text_snippet": "1\n3(29x + 10) + 5x in the xy-plane? \n14 \nThe length of each edge of a box is 29 inches. Each \nside of the box is in the shape of a square. The box \ndoes not have a lid. What is the exterior surface area, \nin square inches, of this box without a lid? \n................................................."
+    },
+    {
+      "pdf_page": 48,
+      "column": "right",
+      "drawing_count": 56,
+      "text_snippet": "6\nB) 7x3 + 10\nC) 8x3 + 10\nD) 7x3 + 6\n18 \nIf 4 2x = 16, what is the value of 6x ? \nA) 24 \nB) 48 \nC) 72 \nD) 96 \n.............................................................................................................................................................................................."
+    },
+    {
+      "pdf_page": 49,
+      "column": "right",
+      "drawing_count": 20,
+      "text_snippet": "23\n........................................................................................................................................................................................................................................................................................................."
+    },
+    {
+      "pdf_page": 50,
+      "column": "left",
+      "drawing_count": 16,
+      "text_snippet": "6\n4 t)\nThe function P models the population, in thousands, \nof a certain city t years after 2003. According to the \nmodel, the population is predicted to increase by 4%\nevery n months. What is the value of n ? \nA) 8 \nB) 12 \nC) 18 \nD) 72 \n26 \nA circle in the xy-plane has its center at (−1, 1). \nLine"
+    },
+    {
+      "pdf_page": 56,
+      "column": "left",
+      "drawing_count": 582,
+      "text_snippet": "SAT. \nThe \nSAT® \nGENERAL DIRECTIONS \n• You may work on only one module at a time. \n• If you finish a module before time is called, check your work on that module only. \nYou may NOT turn to any other module. \nTIMING \nReading and Writing, Module 1 : 39 minutes \nReading and Writing, Module 2: 39 minute"
+    }
+  ],
+  "stem_overrides": {},
+  "choice_d_overrides": {},
+  "license": "© 2025 College Board. For educational use only."
+}

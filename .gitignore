@@ -37,7 +37,10 @@ yarn-error.log*
 00 SYSTEM/Practice Test Library/
 Pasted image*.png
 
-# RW pipeline intermediate data (large PDFs extracted as text)
-scripts/pipeline_data/*.txt
-scripts/pipeline_data/*.json
-scripts/pipeline_data/*.png
+# RW/Math pipeline intermediate data (large PDFs extracted as text/images)
+scripts/pipeline_data/**/*.txt
+scripts/pipeline_data/**/*.json
+scripts/pipeline_data/**/*.png
+
+# Python cache
+scripts/__pycache__/

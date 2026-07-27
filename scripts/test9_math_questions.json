@@ -1,0 +1,542 @@
+[
+  {
+    "external_id": "T9-MATH-M1-Q01",
+    "skill_name": "Triangles & Circles",
+    "difficulty": 1,
+    "stem": "The lengths of two sides of a triangle are 4 centimeters and 6 centimeters. If the perimeter of the triangle is 18 centimeters, what is the length, in centimeters, of the third side of this triangle?",
+    "choices": ["A) 2", "B) 8", "C) 10", "D) 24"],
+    "correct_answer": "B",
+    "rationale": "The perimeter of a triangle is the sum of the lengths of all three of its sides. Let x represent the length, in centimeters, of the third side. The sum of the lengths of all three sides can be represented by x + 4 + 6. Since the perimeter is 18 centimeters, x + 4 + 6 = 18, or x + 10 = 18. Subtracting 10 from both sides yields x = 8. Therefore, the length of the third side is 8 centimeters.",
+    "needs_visual_review": false
+  },
+  {
+    "external_id": "T9-MATH-M1-Q02",
+    "skill_name": "Linear Equations & Inequalities",
+    "difficulty": 1,
+    "stem": "x/16 + 30 = 190\nWhich equation has the same solution as the given equation?",
+    "choices": ["A) x/16 = 30", "B) x/16 = 130", "C) x/16 = 160", "D) x/16 = 190"],
+    "correct_answer": "C",
+    "rationale": "It's given that x/16 + 30 = 190. Subtracting 30 from each side of this equation yields x/16 = 160. Therefore, the equation x/16 = 160 is equivalent to the given equation and has the same solution.",
+    "needs_visual_review": false
+  },
+  {
+    "external_id": "T9-MATH-M1-Q03",
+    "skill_name": "Linear Equations & Inequalities",
+    "difficulty": 1,
+    "stem": "Ty set a goal to walk at least 24 kilometers every day to prepare for a multiday hike. On a certain day, Ty plans to walk at an average speed of 4 kilometers per hour. What is the minimum number of hours Ty must walk on that day to fulfill the daily goal?",
+    "choices": ["A) 4", "B) 6", "C) 20", "D) 24"],
+    "correct_answer": "B",
+    "rationale": "The number of kilometers Ty will walk is determined by the expression 4s, where s is the number of hours Ty walks. The given goal of at least 24 kilometers means that the inequality 4s ≥ 24 represents the situation. Dividing both sides of this inequality by 4 gives s ≥ 6, which corresponds to a minimum of 6 hours Ty must walk.",
+    "needs_visual_review": false
+  },
+  {
+    "external_id": "T9-MATH-M1-Q04",
+    "skill_name": "Quadratics & Parabolas",
+    "difficulty": 2,
+    "stem": "The function g is defined by g(x) = x² + 9. For which value of x is g(x) = 25?",
+    "choices": ["A) 4", "B) 5", "C) 9", "D) 13"],
+    "correct_answer": "A",
+    "rationale": "Substituting 25 for g(x) yields 25 = x² + 9. Subtracting 9 from both sides yields 16 = x². Taking the square root of each side yields x = ±4. It follows that g(x) = 25 when x is 4 or -4. Only 4 is listed among the choices.",
+    "needs_visual_review": false
+  },
+  {
+    "external_id": "T9-MATH-M1-Q05",
+    "skill_name": "Polynomials & Non-linear Functions",
+    "difficulty": 2,
+    "stem": "Which expression is equivalent to 9x² + 5x?",
+    "choices": ["A) x(9x + 5)", "B) 5x(9 + x)", "C) 9x(x + 5)", "D) x²(9x + 5)"],
+    "correct_answer": "A",
+    "rationale": "Since x is a factor of each term in the given expression, the expression is equivalent to x(9x + 5).",
+    "needs_visual_review": false
+  },
+  {
+    "external_id": "T9-MATH-M1-Q06",
+    "skill_name": "Statistics & Probability",
+    "difficulty": 1,
+    "stem": "Each value in the data set shown represents the height, in centimeters, of a plant.\n6, 10, 13, 2, 15, 22, 10, 4, 4, 4\nWhat is the mean height, in centimeters, of these plants?",
+    "choices": null,
+    "correct_answer": "9",
+    "rationale": "The mean of a data set is the sum of the values divided by the number of values. The sum of the heights (6+10+13+2+15+22+10+4+4+4) is 90, divided by the number of plants, 10, gives a mean height of 9 centimeters.",
+    "needs_visual_review": false
+  },
+  {
+    "external_id": "T9-MATH-M1-Q07",
+    "skill_name": "Linear Equations & Inequalities",
+    "difficulty": 1,
+    "stem": "A student council group is selling school posters for a fundraiser. They use the function p(x) = 5x - 220 to determine their profit p(x), in dollars, for selling x school posters. In order to earn a profit of $900, how many school posters must they sell?",
+    "choices": null,
+    "correct_answer": "224",
+    "rationale": "Substituting 900 for p(x) yields 900 = 5x - 220. Adding 220 to each side yields 1,120 = 5x. Dividing each side by 5 yields x = 224. Therefore, they must sell 224 school posters to earn a profit of $900.",
+    "needs_visual_review": false
+  },
+  {
+    "external_id": "T9-MATH-M1-Q08",
+    "skill_name": "Ratios, Rates & Proportions",
+    "difficulty": 2,
+    "stem": "Jay walks at a speed of 3 miles per hour and runs at a speed of 5 miles per hour. He walks for w hours and runs for r hours for a combined total of 14 miles. Which equation represents this situation?",
+    "choices": ["A) 3w + 5r = 14", "B) (1/3)w + (1/5)r = 14", "C) (1/3)w + (1/5)r = 112", "D) 3w + 5r = 112"],
+    "correct_answer": "A",
+    "rationale": "Since Jay walks at 3 miles per hour for w hours, he walks a total of 3w miles. Since he runs at 5 miles per hour for r hours, he runs a total of 5r miles. The total distance can be represented by 3w + 5r. Since the combined total is 14 miles, the equation 3w + 5r = 14 represents this situation.",
+    "needs_visual_review": false
+  },
+  {
+    "external_id": "T9-MATH-M1-Q09",
+    "skill_name": "Linear Equations & Inequalities",
+    "difficulty": 1,
+    "stem": "John paid a total of $165 for a microscope by making a down payment of $37 plus p monthly payments of $16 each. Which of the following equations represents this situation?",
+    "choices": ["A) 16p - 37 = 165", "B) 37p - 16 = 165", "C) 16p + 37 = 165", "D) 37p + 16 = 165"],
+    "correct_answer": "C",
+    "rationale": "The total amount of the monthly payments can be represented by 16p. Adding the down payment yields the expression 16p + 37, the total amount John paid. Since John paid a total of $165, the equation is 16p + 37 = 165.",
+    "needs_visual_review": false
+  },
+  {
+    "external_id": "T9-MATH-M1-Q10",
+    "skill_name": "Linear Equations & Inequalities",
+    "difficulty": 1,
+    "stem": "y - 57 = px\nThe given equation relates the positive numbers p, x, and y. Which equation correctly expresses y in terms of p and x?",
+    "choices": ["A) y = 57x + p", "B) y = px + 57", "C) y = 57px", "D) y = px/57"],
+    "correct_answer": "B",
+    "rationale": "Adding 57 to each side of the given equation yields y = px + 57. Therefore, the equation y = px + 57 correctly expresses y in terms of p and x.",
+    "needs_visual_review": false
+  },
+  {
+    "external_id": "T9-MATH-M1-Q11",
+    "skill_name": "Polynomials & Non-linear Functions",
+    "difficulty": 3,
+    "stem": "A company opens an account with an initial balance of $36,100.00. The account earns interest, and no additional deposits or withdrawals are made. The account balance is given by an exponential function A, where A(t) is the account balance, in dollars, t years after the account is opened. The account balance after 13 years is $68,071.93. Which equation could define A?",
+    "choices": ["A) A(t) = 36,100.00(1.05)^t", "B) A(t) = 31,971.93(1.05)^t", "C) A(t) = 31,971.93(0.05)^t", "D) A(t) = 36,100.00(0.05)^t"],
+    "correct_answer": "A",
+    "rationale": "Since the account balance can be modeled by an exponential function, A(t) can be written as A(t) = N·r^t, where N is the initial value. Since the initial balance is $36,100.00, N = 36,100.00. Since A(13) = $68,071.93, it follows that 36,100.00·r^13 = 68,071.93, so r^13 = 68,071.93/36,100.00. Taking the 13th root of both sides gives r ≈ 1.05. Therefore, A(t) = 36,100.00(1.05)^t could define A.",
+    "needs_visual_review": false
+  },
+  {
+    "external_id": "T9-MATH-M1-Q12",
+    "skill_name": "Triangles & Circles",
+    "difficulty": 3,
+    "stem": "The circle shown has center O, circumference 144π, and diameters PR and QS. The length of arc PS is twice the length of arc PQ. What is the length of arc QR?",
+    "choices": ["A) 24π", "B) 48π", "C) 72π", "D) 96π"],
+    "correct_answer": "B",
+    "rationale": "Since PR and QS are diameters, OS, OR, OP, and OQ are radii and therefore congruent. Since ∠SOP and ∠ROQ are vertical angles, they are congruent, so arc PS and arc QR are congruent arcs. Similarly, ∠SOR and ∠POQ are vertical angles, so arc SR and arc PQ are congruent arcs. Let x represent the length of arc SR (equal to arc PQ). Since arc PS is twice arc PQ, arc PS = 2x, and since arc PS and arc QR are congruent, arc QR = 2x. This gives x + 2x + x + 2x = 144π, so 6x = 144π, and x = 24π. Therefore, the length of arc QR is 2(24π), or 48π.",
+    "needs_visual_review": false
+  },
+  {
+    "external_id": "T9-MATH-M1-Q13",
+    "skill_name": "Systems of Equations",
+    "difficulty": 1,
+    "stem": "y = -2x\n3x + y = 40\nThe solution to the given system of equations is (x, y). What is the value of x?",
+    "choices": null,
+    "correct_answer": "40",
+    "rationale": "It's given in the first equation that y = -2x. Substituting -2x for y in the second equation yields 3x + (-2x) = 40. Combining like terms on the left-hand side of this equation yields x = 40.",
+    "needs_visual_review": false
+  },
+  {
+    "external_id": "T9-MATH-M1-Q14",
+    "skill_name": "Statistics & Probability",
+    "difficulty": 2,
+    "stem": "Data value: Frequency\n6: 3\n7: 3\n8: 8\n9: 8\n10: 9\n11: 11\n12: 9\n13: 0\n14: 6\nThe frequency table summarizes the 57 data values in a data set. What is the maximum data value in the data set?",
+    "choices": null,
+    "correct_answer": "14",
+    "rationale": "The maximum value is the largest value in the data set with a nonzero frequency. The table shows the data value 6 occurs three times, 7 occurs three times, 8 occurs eight times, 9 occurs eight times, 10 occurs nine times, 11 occurs eleven times, 12 occurs nine times, 13 occurs zero times, and 14 occurs six times. Therefore, the maximum data value in the data set is 14.",
+    "needs_visual_review": false
+  },
+  {
+    "external_id": "T9-MATH-M1-Q15",
+    "skill_name": "Triangles & Circles",
+    "difficulty": 2,
+    "stem": "One leg of a right triangle has a length of 43.2 millimeters. The hypotenuse of the triangle has a length of 196.8 millimeters. What is the length of the other leg of the triangle, in millimeters?",
+    "choices": ["A) 43.2", "B) 120", "C) 192", "D) 201.5"],
+    "correct_answer": "C",
+    "rationale": "By the Pythagorean theorem, 43.2² + b² = 196.8², or 1,866.24 + b² = 38,730.24. Subtracting 1,866.24 from both sides yields b² = 36,864. Taking the positive square root of both sides yields b = 192. Therefore, the length of the other leg, in millimeters, is 192.",
+    "needs_visual_review": false
+  },
+  {
+    "external_id": "T9-MATH-M1-Q16",
+    "skill_name": "Systems of Equations",
+    "difficulty": 2,
+    "stem": "A wire with a length of 106 inches is cut into two parts. One part has a length of x inches, and the other part has a length of y inches. The value of x is 6 more than 4 times the value of y. What is the value of x?",
+    "choices": ["A) 25", "B) 28", "C) 56", "D) 86"],
+    "correct_answer": "D",
+    "rationale": "The situation can be represented by x + y = 106 and x = 4y + 6. Substituting 4y + 6 for x in x + y = 106 yields 4y + 6 + y = 106, or 5y + 6 = 106. Subtracting 6 from each side yields 5y = 100. Dividing each side by 5 yields y = 20. Substituting 20 for y in x = 4y + 6 yields x = 4(20) + 6 = 86.",
+    "needs_visual_review": false
+  },
+  {
+    "external_id": "T9-MATH-M1-Q17",
+    "skill_name": "Polynomials & Non-linear Functions",
+    "difficulty": 3,
+    "stem": "f(x) = (x+6)(x+5)(x-4)\nThe function f is given. Which table of values represents y = f(x-3)?",
+    "choices": ["A) x=-6→y=-9, x=-5→y=-8, x=4→y=1", "B) x=-6→y=-3, x=-5→y=-3, x=4→y=-3", "C) x=-6→y=-3, x=-5→y=-2, x=4→y=7", "D) x=-6→y=3, x=-5→y=3, x=4→y=3"],
+    "correct_answer": "B",
+    "rationale": "Substituting x - 3 for x in f(x) = (x+6)(x+5)(x-4) gives y = (x-3+6)(x-3+5)(x-3-4). Substituting x = -6 yields y = -3. Substituting x = -5 yields y = -3. Substituting x = 4 yields y = -3. Therefore, when x = -6, -5, and 4, y = -3 in each case, so the table of values in choice B represents y = f(x-3).",
+    "needs_visual_review": false
+  },
+  {
+    "external_id": "T9-MATH-M1-Q18",
+    "skill_name": "Ratios, Rates & Proportions",
+    "difficulty": 2,
+    "stem": "A landscaper uses a hose that puts 88x ounces of water in a bucket in 5y minutes. Which expression represents the number of ounces of water the hose puts in the bucket in 9y minutes at this rate?",
+    "choices": ["A) 9x/440", "B) 440x/9", "C) 5x/792", "D) 792x/5"],
+    "correct_answer": "D",
+    "rationale": "The rate at which the hose puts water in the bucket, in ounces per minute, can be represented by 88x/(5y). Let w represent the ounces of water put in the bucket in 9y minutes; this rate is w/(9y). Setting these equal: 88x/(5y) = w/(9y). Multiplying both sides by 9y yields w = 792x/5. Therefore, the number of ounces of water the hose puts in the bucket in 9y minutes is 792x/5.",
+    "needs_visual_review": false
+  },
+  {
+    "external_id": "T9-MATH-M1-Q19",
+    "skill_name": "Systems of Equations",
+    "difficulty": 3,
+    "stem": "4x - 9y = 9y + 5\nhy = 4x + 2\nIn the given system of equations, h is a constant. If the system has no solution, what is the value of h?",
+    "choices": ["A) -9", "B) 0", "C) 9", "D) 18"],
+    "correct_answer": "D",
+    "rationale": "A system of two linear equations has no solution if the lines are distinct and parallel. The first equation can be rewritten in standard form by subtracting 9y from both sides: 4x - 18y = 5. The second equation can be rewritten by subtracting 4x from both sides: -4x + hy = 2. The coefficient of x in the second equation, -4, is -1 times the coefficient of x in the first equation, 4. For the lines to be parallel, the coefficient of y in the second equation, h, must also be -1 times the coefficient of y in the first equation, -18. Thus, h = -1(-18) = 18.",
+    "needs_visual_review": false
+  },
+  {
+    "external_id": "T9-MATH-M1-Q20",
+    "skill_name": "Percentages",
+    "difficulty": 1,
+    "stem": "13 is p% of 25. What is the value of p?",
+    "choices": null,
+    "correct_answer": "52",
+    "rationale": "It's given that 13 is p% of 25, so p/100 = 13/25. Multiplying both sides by 100 gives p = 52.",
+    "needs_visual_review": false
+  },
+  {
+    "external_id": "T9-MATH-M1-Q21",
+    "skill_name": "Quadratics & Parabolas",
+    "difficulty": 2,
+    "stem": "x - 2 = √(3x + 34)\nWhat is the smallest solution to the given equation?",
+    "choices": null,
+    "correct_answer": "-3",
+    "rationale": "Squaring both sides yields (x-2)² = 3x + 34, which can be rewritten as x² - 4x + 4 = 3x + 34. Subtracting 3x and 34 from both sides yields x² - 7x - 30 = 0. This factors as (x-10)(x+3) = 0, giving x = 10 or x = -3. Of these two solutions, -3 is the smallest solution to the given equation.",
+    "needs_visual_review": false
+  },
+  {
+    "external_id": "T9-MATH-M1-Q22",
+    "skill_name": "Polynomials & Non-linear Functions",
+    "difficulty": 3,
+    "stem": "Function f is defined by f(x) = (x+6)(x+5)(x+1). Function g is defined by g(x) = f(x-1). The graph of y = g(x) in the xy-plane has x-intercepts at (a, 0), (b, 0), and (c, 0), where a, b, and c are distinct constants. What is the value of a + b + c?",
+    "choices": ["A) -15", "B) -9", "C) 11", "D) 15"],
+    "correct_answer": "B",
+    "rationale": "Since g(x) = f(x-1), substituting x-1 for x in f(x) = (x+6)(x+5)(x+1) yields g(x) = (x+5)(x+4)(x). The x-intercepts are found by solving x(x+5)(x+4) = 0, which by the zero product property gives x = 0, x = -5, and x = -4. Therefore, a, b, and c are 0, -5, and -4, and a + b + c = 0 + (-5) + (-4) = -9.",
+    "needs_visual_review": false
+  },
+  {
+    "external_id": "T9-MATH-M1-Q23",
+    "skill_name": "Percentages",
+    "difficulty": 1,
+    "stem": "For x > 0, the function f is defined as follows: f(x) equals 201% of x. Which of the following could describe this function?",
+    "choices": ["A) Decreasing exponential", "B) Decreasing linear", "C) Increasing exponential", "D) Increasing linear"],
+    "correct_answer": "D",
+    "rationale": "f(x) equal to 201% of x is equivalent to f(x) = 2.01x for x > 0. As x increases, f(x) also increases, meaning f is increasing, and it increases at a constant rate of 2.01 for each increase of x by 1. A function with a constant rate of change is linear. Thus, f can be described as an increasing linear function.",
+    "needs_visual_review": false
+  },
+  {
+    "external_id": "T9-MATH-M1-Q24",
+    "skill_name": "Quadratics & Parabolas",
+    "difficulty": 3,
+    "stem": "f(x) = 4x² + 64x + 262\nThe function g is defined by g(x) = f(x+5). For what value of x does g(x) reach its minimum?",
+    "choices": ["A) -13", "B) -8", "C) -5", "D) -3"],
+    "correct_answer": "A",
+    "rationale": "Since g(x) = f(x+5), substituting x+5 for x in f yields g(x) = 4(x+5)² + 64(x+5) + 262. Expanding and combining like terms yields g(x) = 4x² + 104x + 682. Completing the square gives g(x) = 4(x+13)² + 6, which is in vertex form with h = -13, k = 6. Therefore, g(x) reaches its minimum when x = -13.",
+    "needs_visual_review": false
+  },
+  {
+    "external_id": "T9-MATH-M1-Q25",
+    "skill_name": "Ratios, Rates & Proportions",
+    "difficulty": 2,
+    "stem": "One gallon of stain will cover 170 square feet of a surface. A yard has a total fence area of w square feet. Which equation represents the total amount of stain S, in gallons, needed to stain the fence in this yard twice?",
+    "choices": ["A) S = w/170", "B) S = 170w", "C) S = 340w", "D) S = w/85"],
+    "correct_answer": "D",
+    "rationale": "Since the fence will be stained twice, the amount of stain needs to cover 2w square feet. Dividing the total area by 170 (the coverage per gallon) gives the gallons needed: 2w/170, or w/85. Therefore, S = w/85 represents the total amount of stain needed to stain the fence twice.",
+    "needs_visual_review": false
+  },
+  {
+    "external_id": "T9-MATH-M1-Q26",
+    "skill_name": "Statistics & Probability",
+    "difficulty": 2,
+    "stem": "Poll Results\nAngel Cruz: 483\nTerry Smith: 320\nThe table shows the results of a poll. A total of 803 voters selected at random were asked which candidate they would vote for in the upcoming election. According to the poll, if 6,424 people vote in the election, by how many votes would Angel Cruz be expected to win?",
+    "choices": ["A) 163", "B) 1,304", "C) 3,864", "D) 5,621"],
+    "correct_answer": "B",
+    "rationale": "The proportion of voters who would vote for Angel Cruz is 483/803. With 6,424 total voters, the expected number voting for Angel Cruz is 6,424(483/803) = 3,864. The number expected not to vote for him is 6,424 - 3,864 = 2,560. The difference in votes is 3,864 - 2,560 = 1,304. Therefore, Angel Cruz would be expected to win by 1,304 votes.",
+    "needs_visual_review": false
+  },
+  {
+    "external_id": "T9-MATH-M1-Q27",
+    "skill_name": "Area & Volume",
+    "difficulty": 3,
+    "stem": "Right rectangular prism X is similar to right rectangular prism Y. The surface area of right rectangular prism X is 58 square centimeters (cm²), and the surface area of right rectangular prism Y is 1,450 cm². The volume of right rectangular prism Y is 1,250 cubic centimeters (cm³). What is the sum of the volumes, in cm³, of right rectangular prism X and right rectangular prism Y?",
+    "choices": null,
+    "correct_answer": "1260",
+    "rationale": "Since prisms X and Y are similar, the surface area of Y is k² times the surface area of X, and the volume of Y is k³ times the volume of X, where k is a positive constant. Since 1,450 = k²(58), dividing both sides by 58 yields k² = 25, so k = 5. Since the volume of prism Y is 1,250 cm³, the volume of prism X is 1,250/k³ = 1,250/125 = 10 cm³. The sum of the volumes is 1,250 + 10 = 1,260.",
+    "needs_visual_review": false
+  },
+  {
+    "external_id": "T9-MATH-M2-Q01",
+    "skill_name": "Linear Equations & Inequalities",
+    "difficulty": 1,
+    "stem": "w + 7 = 357\nWhat value of w is the solution to the given equation?",
+    "choices": ["A) 51", "B) 350", "C) 364", "D) 3,577"],
+    "correct_answer": "B",
+    "rationale": "Subtracting 7 from each side of the given equation yields w = 350. Therefore, the value of w that is the solution to the given equation is 350.",
+    "needs_visual_review": false
+  },
+  {
+    "external_id": "T9-MATH-M2-Q02",
+    "skill_name": "Linear Equations & Inequalities",
+    "difficulty": 1,
+    "stem": "Which expression is equivalent to 16(x + 15)?",
+    "choices": ["A) 16x + 31", "B) 16x + 240", "C) 16x + 1", "D) 16x + 15"],
+    "correct_answer": "B",
+    "rationale": "The expression 16(x+15) can be rewritten as 16x + 16(15), which is equivalent to 16x + 240.",
+    "needs_visual_review": false
+  },
+  {
+    "external_id": "T9-MATH-M2-Q03",
+    "skill_name": "Statistics & Probability",
+    "difficulty": 1,
+    "stem": "Live east of the river | Live west of the river | Total\nLess than 40 years old: 17, 11, 28\nAt least 40 years old: 18, 89, 107\nTotal: 35, 100, 135\nThe table summarizes members of a local organization by age and whether they live east or west of the river. If a member of the organization is selected at random, what is the probability that the selected member is at least 40 years old?",
+    "choices": ["A) 28/135", "B) 35/135", "C) 100/135", "D) 107/135"],
+    "correct_answer": "D",
+    "rationale": "The probability that the selected member is at least 40 years old equals the number of members at least 40 years old divided by the total number of members. According to the table, there are 135 total members, and 107 of these members are at least 40 years old. Therefore, the probability is 107/135.",
+    "needs_visual_review": false
+  },
+  {
+    "external_id": "T9-MATH-M2-Q04",
+    "skill_name": "Systems of Equations",
+    "difficulty": 1,
+    "stem": "3x = 12\n-3x + y = -6\nThe solution to the given system of equations is (x, y). What is the value of y?",
+    "choices": ["A) -3", "B) 6", "C) 18", "D) 30"],
+    "correct_answer": "B",
+    "rationale": "Adding the second equation to the first equation yields 3x + (-3x + y) = 12 + (-6), which is equivalent to y = 6.",
+    "needs_visual_review": false
+  },
+  {
+    "external_id": "T9-MATH-M2-Q05",
+    "skill_name": "Linear Equations & Inequalities",
+    "difficulty": 1,
+    "stem": "A line in the xy-plane has a slope of 1/9 and passes through the point (0, 14). Which equation represents this line?",
+    "choices": ["A) y = -1/9 x - 14", "B) y = -1/9 x + 14", "C) y = 1/9 x - 14", "D) y = 1/9 x + 14"],
+    "correct_answer": "D",
+    "rationale": "The equation of a line can be written as y = mx + b, where m is the slope and (0,b) is the y-intercept. Since the slope is 1/9, m = 1/9. Since the line passes through (0,14), b = 14. Substituting yields y = (1/9)x + 14.",
+    "needs_visual_review": false
+  },
+  {
+    "external_id": "T9-MATH-M2-Q06",
+    "skill_name": "Triangles & Circles",
+    "difficulty": 2,
+    "stem": "In the figure shown, line c intersects parallel lines s and t, forming a 110° angle at line t. What is the value of x?",
+    "choices": null,
+    "correct_answer": "70",
+    "rationale": "Based on the figure, the angle with measure 110° and the angle vertical to the angle with measure x° are same-side interior angles. Since vertical angles are congruent, the angle vertical to the angle with measure x° also has measure x°. Since lines s and t are parallel, same-side interior angles between them are supplementary. It follows that x + 110 = 180. Subtracting 110 from both sides yields x = 70.",
+    "needs_visual_review": false
+  },
+  {
+    "external_id": "T9-MATH-M2-Q07",
+    "skill_name": "Linear Equations & Inequalities",
+    "difficulty": 1,
+    "stem": "The function f is defined by f(x) = x + 8/11. What is the value of f(x) when x = 3/11?",
+    "choices": null,
+    "correct_answer": "1",
+    "rationale": "Substituting 3/11 for x in the given function yields f(3/11) = 3/11 + 8/11, which gives f(3/11) = 11/11, or f(3/11) = 1.",
+    "needs_visual_review": false
+  },
+  {
+    "external_id": "T9-MATH-M2-Q08",
+    "skill_name": "Linear Equations & Inequalities",
+    "difficulty": 2,
+    "stem": "x: 0, 1, 2\ny: 18, 13, 8\nThe table shows three values of x and their corresponding values of y. There is a linear relationship between x and y. Which of the following equations represents this relationship?",
+    "choices": ["A) y = 18x + 13", "B) y = 18x + 18", "C) y = -5x + 13", "D) y = -5x + 18"],
+    "correct_answer": "D",
+    "rationale": "A linear relationship can be represented by y = mx + b. When x = 0, y = 18, so b = 18. When x = 1, y = 13; substituting gives 13 = m(1) + 18, so m = -5. Therefore, the equation y = -5x + 18 represents the relationship.",
+    "needs_visual_review": false
+  },
+  {
+    "external_id": "T9-MATH-M2-Q09",
+    "skill_name": "Systems of Equations",
+    "difficulty": 2,
+    "stem": "x + 7 = 10\ny = (x + 7)²\nWhich ordered pair (x, y) is a solution to the given system of equations?",
+    "choices": ["A) (3, 100)", "B) (3, 3)", "C) (3, 10)", "D) (3, 70)"],
+    "correct_answer": "A",
+    "rationale": "It's given by the first equation that x + 7 = 10. Substituting 10 for x+7 into the second equation yields y = 10², or y = 100. Subtracting 7 from both sides of x+7=10 yields x = 3. Therefore, the ordered pair (3, 100) is a solution to the given system of equations.",
+    "needs_visual_review": false
+  },
+  {
+    "external_id": "T9-MATH-M2-Q10",
+    "skill_name": "Linear Equations & Inequalities",
+    "difficulty": 1,
+    "stem": "The function f is defined by f(x) = 7x - 84. What is the x-intercept of the graph of y = f(x) in the xy-plane?",
+    "choices": ["A) (-12, 0)", "B) (-7, 0)", "C) (7, 0)", "D) (12, 0)"],
+    "correct_answer": "D",
+    "rationale": "The given function is linear, so the graph of y=f(x) has one x-intercept at (k, 0). Substituting 0 for f(x) and k for x yields 0 = 7k - 84. Adding 84 to both sides yields 84 = 7k. Dividing both sides by 7 yields k = 12. Therefore, the x-intercept is (12, 0).",
+    "needs_visual_review": false
+  },
+  {
+    "external_id": "T9-MATH-M2-Q11",
+    "skill_name": "Polynomials & Non-linear Functions",
+    "difficulty": 3,
+    "stem": "Time (years): 0, 1, 2\nTotal amount (dollars): 604.00, 606.42, 608.84\nRosa opened a savings account at a bank. The table shows the exponential relationship between the time t, in years, since Rosa opened the account and the total amount n, in dollars, in the account. If Rosa made no additional deposits or withdrawals, which of the following equations best represents the relationship between t and n?",
+    "choices": ["A) n = (1 + 604)^t", "B) n = (1 + 0.004)^t", "C) n = 604(1 + 0.004)^t", "D) n = 0.004(1 + 604)^t"],
+    "correct_answer": "C",
+    "rationale": "Since the relationship is exponential and increasing, n can be represented by n = a(1+b)^t. When t=0, n=604, so a=604. When t=1, n=606.42, so 606.42 = 604(1+b), giving 1+b ≈ 1.004, so b ≈ 0.004. Substituting gives n = 604(1+0.004)^t.",
+    "needs_visual_review": false
+  },
+  {
+    "external_id": "T9-MATH-M2-Q12",
+    "skill_name": "Linear Equations & Inequalities",
+    "difficulty": 2,
+    "stem": "w(t) = 300 - 4t\nThe function w models the volume of liquid, in milliliters, in a container t seconds after it begins draining from a hole at the bottom. According to the model, what is the predicted volume, in milliliters, draining from the container each second?",
+    "choices": ["A) 300", "B) 296", "C) 75", "D) 4"],
+    "correct_answer": "D",
+    "rationale": "The function w(t) = 300 - 4t can be rewritten as w(t) = -4t + 300. For each increase of t by 1, the value of w(t) decreases by 4(1), or 4. Therefore, the predicted volume draining from the container each second is 4 milliliters.",
+    "needs_visual_review": false
+  },
+  {
+    "external_id": "T9-MATH-M2-Q13",
+    "skill_name": "Linear Equations & Inequalities",
+    "difficulty": 1,
+    "stem": "h(x) = x + b\nFor the linear function h, b is a constant and h(0) = 45. What is the value of b?",
+    "choices": null,
+    "correct_answer": "45",
+    "rationale": "Since h(0) = 45, when x = 0, h(x) = 45. Substituting 0 for x and 45 for h(x) in h(x) = x + b yields 45 = 0 + b, or b = 45.",
+    "needs_visual_review": false
+  },
+  {
+    "external_id": "T9-MATH-M2-Q14",
+    "skill_name": "Quadratics & Parabolas",
+    "difficulty": 2,
+    "stem": "z² + 10z - 24 = 0\nWhat is one of the solutions to the given equation?",
+    "choices": null,
+    "correct_answer": "2",
+    "rationale": "The left-hand side can be factored: the two values that multiply to -24 and add to 10 are 12 and -2. The equation can be rewritten as (z+12)(z-2) = 0. Setting each factor equal to 0 yields z = -12 or z = 2. Both 2 and -12 are valid answers to this question.",
+    "needs_visual_review": false
+  },
+  {
+    "external_id": "T9-MATH-M2-Q15",
+    "skill_name": "Trigonometry",
+    "difficulty": 2,
+    "stem": "Triangle FGH is similar to triangle JKL, where angle F corresponds to angle J and angles G and K are right angles. If sin(F) = 308/317, what is the value of sin(J)?",
+    "choices": ["A) 75/317", "B) 308/317", "C) 317/308", "D) 317/75"],
+    "correct_answer": "B",
+    "rationale": "If two triangles are similar, their corresponding angles are congruent. Since angle F corresponds to angle J, angle F is congruent to angle J, so sin(F) = sin(J). Since sin(F) = 308/317, sin(J) = 308/317.",
+    "needs_visual_review": false
+  },
+  {
+    "external_id": "T9-MATH-M2-Q16",
+    "skill_name": "Percentages",
+    "difficulty": 1,
+    "stem": "The population of Greenville increased by 7% from 2015 to 2016. If the 2016 population is k times the 2015 population, what is the value of k?",
+    "choices": ["A) 0.07", "B) 0.7", "C) 1.07", "D) 1.7"],
+    "correct_answer": "C",
+    "rationale": "Let x be the 2015 population. The increase can be written as 0.07x. The 2016 population is the sum of the 2015 population and the increase: x + 0.07x = 1.07x. Therefore, the value of k is 1.07.",
+    "needs_visual_review": false
+  },
+  {
+    "external_id": "T9-MATH-M2-Q17",
+    "skill_name": "Statistics & Probability",
+    "difficulty": 2,
+    "stem": "Each of the dot plots shown represents the number of glue sticks brought in by each student for two classes, class A and class B (class A ranges 1-7, class B ranges 14-20, both with the identical distribution shape shifted by 13). Which statement best compares the standard deviations of the numbers of glue sticks brought in by each student for these two classes?",
+    "choices": ["A) The standard deviation for class A is less than that for class B.", "B) The standard deviation for class A is equal to that for class B.", "C) The standard deviation for class A is greater than that for class B.", "D) There is not enough information to compare these standard deviations."],
+    "correct_answer": "B",
+    "rationale": "Standard deviation is a measure of the spread of a data set from its mean. The dot plot for class A and the dot plot for class B have the same shape (shifted along the x-axis), meaning both classes have the same frequency distribution and thus the same spread from their respective means. Therefore, the standard deviation for class A is equal to the standard deviation for class B.",
+    "needs_visual_review": false
+  },
+  {
+    "external_id": "T9-MATH-M2-Q18",
+    "skill_name": "Polynomials & Non-linear Functions",
+    "difficulty": 2,
+    "stem": "m(t) = -0.0274t² + 7.3873t + 75.032\nThe function m gives the predicted body mass m(t), in kilograms (kg), of a certain animal t days after it was born in a wildlife reserve, where t ≤ 390. Which of the following is the best interpretation of the statement \"m(330) is approximately equal to 362\" in this context?",
+    "choices": ["A) The predicted body mass of the animal was approximately 330 kg 362 days after it was born.", "B) The predicted body mass of the animal was approximately 362 kg 330 days after it was born.", "C) The predicted body mass of the animal was approximately 362 kg 330/7 days after it was born.", "D) The predicted body mass of the animal was approximately 330/7 kg 362 days after it was born."],
+    "correct_answer": "B",
+    "rationale": "In the statement \"m(330) is approximately equal to 362,\" the input, 330, is the value of t, the elapsed time in days since the animal was born. The approximate value of the function, 362, is the predicted body mass, in kilograms. Therefore, the predicted body mass of the animal was approximately 362 kg 330 days after it was born.",
+    "needs_visual_review": false
+  },
+  {
+    "external_id": "T9-MATH-M2-Q19",
+    "skill_name": "Triangles & Circles",
+    "difficulty": 1,
+    "stem": "Triangle XYZ is similar to triangle RST such that X, Y, and Z correspond to R, S, and T, respectively. The measure of ∠Z is 20° and XY/RS = 2. What is the measure of ∠T?",
+    "choices": ["A) 2°", "B) 10°", "C) 20°", "D) 40°"],
+    "correct_answer": "C",
+    "rationale": "Since corresponding angles of similar triangles are congruent, the measure of ∠Z is congruent to the measure of ∠T. Since the measure of ∠Z is 20°, the measure of ∠T is 20°.",
+    "needs_visual_review": false
+  },
+  {
+    "external_id": "T9-MATH-M2-Q20",
+    "skill_name": "Polynomials & Non-linear Functions",
+    "difficulty": 2,
+    "stem": "The function f(t) = 60,000(2)^(t/410) gives the number of bacteria in a population t minutes after an initial observation. How much time, in minutes, does it take for the number of bacteria in the population to double?",
+    "choices": null,
+    "correct_answer": "410",
+    "rationale": "The expression consists of the initial number of bacteria, 60,000, multiplied by 2^(t/410). Since the base is 2, the expression will double when the exponent increases by 1. Since the exponent is t/410, the exponent increases by 1 when t increases by 410. Therefore, it takes 410 minutes for the population to double.",
+    "needs_visual_review": false
+  },
+  {
+    "external_id": "T9-MATH-M2-Q21",
+    "skill_name": "Polynomials & Non-linear Functions",
+    "difficulty": 3,
+    "stem": "The function f is defined by f(x) = aˣ + b, where a and b are constants and a > 0. In the xy-plane, the graph of y = f(x) has a y-intercept at (0, -25) and passes through the point (2, 23). What is the value of a + b?",
+    "choices": null,
+    "correct_answer": "-19",
+    "rationale": "Since the graph has a y-intercept at (0,-25), f(0) = -25. Substituting 0 for x yields f(0) = a⁰ + b, or f(0) = 1 + b. Substituting -25 for f(0) yields -25 = 1 + b, so b = -26. Since the graph passes through (2,23), f(2) = 23. Substituting 2 for x in f(x) = aˣ - 26 yields f(2) = a² - 26. Substituting 23 for f(2) yields 23 = a² - 26. Adding 26 to each side yields a² = 49, so a = ±7. Since a > 0, a = 7. Therefore, a + b = 7 + (-26) = -19.",
+    "needs_visual_review": false
+  },
+  {
+    "external_id": "T9-MATH-M2-Q22",
+    "skill_name": "Linear Equations & Inequalities",
+    "difficulty": 2,
+    "stem": "y > 13x - 18\nFor which of the following tables are all the values of x and their corresponding values of y solutions to the given inequality?",
+    "choices": ["A) x=3→y=21, x=5→y=47, x=8→y=86", "B) x=3→y=26, x=5→y=42, x=8→y=86", "C) x=3→y=16, x=5→y=42, x=8→y=81", "D) x=3→y=26, x=5→y=52, x=8→y=91"],
+    "correct_answer": "D",
+    "rationale": "Substituting each x value into the inequality: when x=3, y>21; when x=5, y>47; when x=8, y>86. In the table for choice D, when x=3, y=26>21; when x=5, y=52>47; when x=8, y=91>86. Therefore, the table in choice D gives values of x and y that are all solutions to the given inequality.",
+    "needs_visual_review": false
+  },
+  {
+    "external_id": "T9-MATH-M2-Q23",
+    "skill_name": "Area & Volume",
+    "difficulty": 2,
+    "stem": "A certain town has an area of 4.36 square miles. What is the area, in square yards, of this town? (1 mile = 1,760 yards)",
+    "choices": ["A) 404", "B) 7,674", "C) 710,459", "D) 13,505,536"],
+    "correct_answer": "D",
+    "rationale": "Since 1 mile = 1,760 yards, the number of square yards in 1 square mile is 1,760 × 1,760 = 3,097,600. Therefore, the area of the town is 4.36 × 3,097,600 = 13,505,536 square yards.",
+    "needs_visual_review": false
+  },
+  {
+    "external_id": "T9-MATH-M2-Q24",
+    "skill_name": "Triangles & Circles",
+    "difficulty": 2,
+    "stem": "A square is inscribed in a circle. The radius of the circle is 20√2/2 inches. What is the side length, in inches, of the square?",
+    "choices": ["A) 20", "B) 20√2/2", "C) 20√2", "D) 40"],
+    "correct_answer": "A",
+    "rationale": "When a square is inscribed in a circle, a diagonal of the square is a diameter of the circle. Since the radius is 20√2/2 inches, the diameter (and the square's diagonal) is 20√2 inches. A diagonal of a square forms two 45-45-90 right triangles with legs equal to the square's sides. In a 45-45-90 triangle, the hypotenuse is √2 times a leg. Letting s be the leg length, s√2 = 20√2, so s = 20. Therefore, the side length of the square is 20 inches.",
+    "needs_visual_review": false
+  },
+  {
+    "external_id": "T9-MATH-M2-Q25",
+    "skill_name": "Polynomials & Non-linear Functions",
+    "difficulty": 3,
+    "stem": "Which expression is equivalent to (y + 12)/(x - 8) + y(x - 8)/(x²y - 8xy)?",
+    "choices": ["A) (xy + y + 4) / (x³y - 16x²y + 64xy)", "B) (xy + 9y + 12) / (x²y - 8xy + x - 8)", "C) (xy² + 13xy - 8y) / (x²y - 8xy)", "D) (xy² + 13xy - 8y) / (x³y - 16x²y + 64xy)"],
+    "correct_answer": "C",
+    "rationale": "The denominator of the second term, x²y - 8xy, factors as xy(x - 8), so the second term y(x-8)/(xy(x-8)) simplifies to 1/x. The expression becomes (y+12)/(x-8) + 1/x. Using the common denominator x(x-8), this is [x(y+12) + (x-8)] / [x(x-8)], which simplifies to (xy + 13x - 8)/(x² - 8x). Multiplying numerator and denominator by y gives (xy² + 13xy - 8y)/(x²y - 8xy), which matches choice C.",
+    "needs_visual_review": false
+  },
+  {
+    "external_id": "T9-MATH-M2-Q26",
+    "skill_name": "Polynomials & Non-linear Functions",
+    "difficulty": 3,
+    "stem": "The function f is defined by f(x) = a(2.2^x + 2.2^b), where a and b are integer constants and 0 < a < b. The functions g and h are equivalent to function f, where k and m are constants.\nI. g(x) = a(2.2^x + k)\nII. h(x) = a(2.2)^x + m\nWhich of the following equations displays the y-coordinate of the y-intercept of the graph of y = f(x) in the xy-plane as a constant or coefficient?",
+    "choices": ["A) I only", "B) II only", "C) I and II", "D) Neither I nor II"],
+    "correct_answer": "D",
+    "rationale": "A y-intercept of a graph is a point where x = 0. Substituting 0 for x in the equation defining f yields f(0) = a(2.2^0 + 2.2^b) = a(1 + 2.2^b), so the y-coordinate of the y-intercept is a(1 + 2.2^b), equivalently a + a(2.2^b). For function g = a(2.2^x + k) to be equivalent to f, k must equal 2.2^b — but k alone is not the y-intercept value a(1 + 2.2^b), so g does not display it as a constant or coefficient. For function h = a(2.2)^x + m to be equivalent to f, m must equal a(2.2^b) — but m alone is likewise not the full y-intercept value a + a(2.2^b), so h does not display it either. Therefore, neither function g nor function h displays the y-coordinate of the y-intercept as a constant or coefficient.",
+    "needs_visual_review": false
+  },
+  {
+    "external_id": "T9-MATH-M2-Q27",
+    "skill_name": "Quadratics & Parabolas",
+    "difficulty": 3,
+    "stem": "x(kx - 56) = -16\nIn the given equation, k is an integer constant. If the equation has no real solution, what is the least possible value of k?",
+    "choices": null,
+    "correct_answer": "50",
+    "rationale": "An equation of the form ax² + bx + c = 0 has no real solutions if and only if its discriminant, b² - 4ac, is negative. Applying the distributive property to x(kx - 56) = -16 yields kx² - 56x = -16. Adding 16 to each side yields kx² - 56x + 16 = 0. Substituting k for a, -56 for b, and 16 for c in b² - 4ac yields a discriminant of (-56)² - 4(k)(16), or 3,136 - 64k. For no real solution, 3,136 - 64k < 0. Adding 64k to both sides yields 3,136 < 64k. Dividing both sides by 64 yields 49 < k, or k > 49. Since k is an integer, the least possible value of k is 50.",
+    "needs_visual_review": false
+  }
+]

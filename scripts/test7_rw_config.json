@@ -1,0 +1,228 @@
+{
+  "_instructions": "Config for SAT Test 7 RW pipeline. Fill in any '?' answers from the scoring guide. stem_overrides and choice_overrides are keyed by external_id (e.g. 'T8-RW-M1-Q14'). missing_qnum_injections: set inject_line to the correct line number from recon output. If multi-track, change scoring_track_index (0-based) and re-run recon to swap keys.",
+  "test_num": 7,
+  "layout": "q1_before_header",
+  "m1_line_start": 25,
+  "m2_line_start": 920,
+  "math_line_start": 1702,
+  "scoring_track_index": 1,
+  "scoring_track_options": [
+    {
+      "page": 2,
+      "m1_q1": "A",
+      "m2_q1": "C"
+    },
+    {
+      "page": 4,
+      "m1_q1": "A",
+      "m2_q1": "C"
+    }
+  ],
+  "m1_answers": {
+    "1": "A",
+    "2": "D",
+    "3": "B",
+    "4": "B",
+    "5": "A",
+    "6": "A",
+    "7": "A",
+    "8": "C",
+    "9": "A",
+    "10": "A",
+    "11": "D",
+    "12": "D",
+    "13": "A",
+    "14": "B",
+    "15": "A",
+    "16": "B",
+    "17": "C",
+    "18": "D",
+    "19": "A",
+    "20": "D",
+    "21": "D",
+    "22": "C",
+    "23": "C",
+    "24": "A",
+    "25": "D",
+    "26": "D",
+    "27": "A",
+    "28": "D",
+    "29": "A",
+    "30": "C",
+    "31": "B",
+    "32": "C",
+    "33": "D"
+  },
+  "m2_answers": {
+    "1": "C",
+    "2": "D",
+    "3": "C",
+    "4": "D",
+    "5": "B",
+    "6": "A",
+    "7": "B",
+    "8": "B",
+    "9": "D",
+    "10": "B",
+    "11": "B",
+    "12": "D",
+    "13": "C",
+    "14": "C",
+    "15": "D",
+    "16": "D",
+    "17": "B",
+    "18": "B",
+    "19": "D",
+    "20": "D",
+    "21": "C",
+    "22": "C",
+    "23": "C",
+    "24": "A",
+    "25": "B",
+    "26": "D",
+    "27": "B",
+    "28": "D",
+    "29": "A",
+    "30": "D",
+    "31": "C",
+    "32": "A",
+    "33": "C"
+  },
+  "missing_qnum_injections": {
+    "m2_q23": {
+      "qnum": 23,
+      "module": "m2",
+      "between_lines": [
+        1476,
+        1504
+      ],
+      "suggested_inject": 1477,
+      "note": "Number absent from PDF text — inject manually after verifying block"
+    }
+  },
+  "chart_pages": [
+    {
+      "pdf_page": 1,
+      "column": "left",
+      "drawing_count": 224,
+      "text_snippet": "01\n6WSL01\nThe SAT® \nPractic\nTest# 7\ne \ntJ \nMake time to take the practice test. \nIt is one of the best ways to get ready \nfor the SAT. \nAfter you have taken the practice test, score it \nright away at sat.org/digital-practice. \nThis version of the SAT Practice Test is for students who will be taking"
+    },
+    {
+      "pdf_page": 8,
+      "column": "right",
+      "drawing_count": 32,
+      "text_snippet": "1\nThe following text is from Thomas Mann’s\n1924 novel The Magic Mountain, translated by\nJohn E. Woods in 1995.\nThe story of Hans Castorp that we intend to tell\nhere—not for his sake (for the reader will come\nto know him as a perfectly ordinary, if engaging\nyoung man), but for the sake of the story i"
+    },
+    {
+      "pdf_page": 11,
+      "column": "left",
+      "drawing_count": 56,
+      "text_snippet": "5\nWhich choice most effectively uses data from the\ngraph to complete the statement?\nIn a study of urban physical expansion, Richa Mahtta\net al. conducted a meta-analysis of more than\n300 cities worldwide to determine whether urban\nland expansion (ULE) was more strongly influenced\nby urban population"
+    },
+    {
+      "pdf_page": 12,
+      "column": "left",
+      "drawing_count": 51,
+      "text_snippet": "6\nA student is researching the Chinese government’s\n1992 shift to a market economy that emphasizes\ntrade liberalization. One means of trade liberalization\ninvolves expanding from ordinary imports into an\nemphasis on processing imports, which have\ntwo types: processing with assembly (in which a firm"
+    },
+    {
+      "pdf_page": 24,
+      "column": "right",
+      "drawing_count": 8,
+      "text_snippet": "1\nConservationists worldwide are working to protect\necosystems from habitat destruction and biodiversity\nloss, and in many cases, initiatives that rely on\nnatural features or processes can help address such\nchallenges. In response to a rapidly dwindling\npopulation of blueback salmon, the Quinault In"
+    },
+    {
+      "pdf_page": 27,
+      "column": "left",
+      "drawing_count": 14,
+      "text_snippet": "8\nAn analysis by Alain Elayi and colleagues of coins\nminted in Sidon in the fifth and fourth centuries BCE\nreveals a change in their composition over time:\nwhile a coin from circa 450 BCE contains about\n98% silver and \ncopper, a coin from 367 BCE (the\nend of Ba’alšillem II’s reign) contains\nsilver\na"
+    },
+    {
+      "pdf_page": 34,
+      "column": "left",
+      "drawing_count": 66,
+      "text_snippet": "47\nB) 35\nC) 25\nD) 0\n2\nRectangle P has an area of 72 square inches. If a\nrectangle with an area of 20 square inches is removed\nfrom rectangle P, what is the area, in square inches,\nof the resulting figure?\nA) 92\nB) 84\nC) 80\nD) 52\n3\np + 61 = 65\nWhich value is a solution to the given equation?\nA) 65\n61"
+    },
+    {
+      "pdf_page": 35,
+      "column": "right",
+      "drawing_count": 62,
+      "text_snippet": "0\nB) 1\nC) 4\nD) 6\n6\nA line in the xy-plane has a slope of 9 and passes\nthrough the point (0, −5). The equation y\npx\nr\n=\n+\ndefines the line, where p and r are constants. What\nis the value of p ?\n7\nWhat is an x-coordinate of an x-intercept of the\ngraph of y\nx\nx\nx\n= 3( −14)( + 5)( + 4) in the xy-plane?"
+    },
+    {
+      "pdf_page": 36,
+      "column": "right",
+      "drawing_count": 75,
+      "text_snippet": "10\nThe function f is defined by f x\nx\n= 1\n2\n+ 6\n( )\n(\n). What\nis the value of f 4\n( ) ?\nA) 20\nB) 12\nC) 10\nD) 5\n11\nThe graph of a system of an absolute value function\nand a linear function is shown. What is the solution\nx y\n( , ) to this system of two equations?\nA) (0, 8)\nB)\n7\n2, 9\n2\n\n\n\n\n\nC"
+    },
+    {
+      "pdf_page": 37,
+      "column": "right",
+      "drawing_count": 32,
+      "text_snippet": "2\ny\nx\n= 6 + 3\nOne of the two equations in a system of linear\nequations is given. The system has infinitely many\nsolutions. Which equation could be the second\nequation in this system?\nA) y\nx\n= 2 6\n+ 3\n(\n)\nB)\ny\nx\n= 2 6 + 3\n(\n)\nC)\ny\nx\n2\n= 2 6\n+ 3\n( )\n(\n)\nD)\ny\nx\n2\n= 2 6 + 3\n( )\n(\n)\n13\nIf\np\n6\n7\n+ 18 = 54"
+    },
+    {
+      "pdf_page": 38,
+      "column": "right",
+      "drawing_count": 71,
+      "text_snippet": "8\nThe function f t( ) = 40,000(2)\nt\n790 gives the number\nof bacteria in a population t minutes after an initial\nobservation. How much time, in minutes, does it\ntake for the number of bacteria in the population to\ndouble?\nA) 2\nB) 790\nC) 1,580\nD) 40,000\n19\nn\nt\nw\n12 −2 = −2\nThe given equation relates t"
+    },
+    {
+      "pdf_page": 39,
+      "column": "right",
+      "drawing_count": 24,
+      "text_snippet": "2\nPoints Q and R lie on a circle with center P. The\nradius of this circle is 9 inches. Triangle PQR has a\nperimeter of 31 inches. What is the length, in inches,\nof QR ?\nA) 13 2\nB) 13\nC) 9 2\nD) 9\n23\nIn a set of four consecutive odd integers, where the\nintegers are ordered from least to greatest, the"
+    },
+    {
+      "pdf_page": 40,
+      "column": "left",
+      "drawing_count": 10,
+      "text_snippet": "6\nThe cost of renting a carpet cleaner is $52 for the first\nday and $26 for each additional day. Which of the\nfollowing functions gives the cost C d\n( ), in dollars, of\nrenting the carpet cleaner for d days, where d is a\npositive integer?\nA) C d\nd\n= 26\n+ 26\n( )\nB) C d\nd\n= 26\n+ 52\n( )\nC) C d\nd\n= 52 −"
+    },
+    {
+      "pdf_page": 44,
+      "column": "right",
+      "drawing_count": 68,
+      "text_snippet": "35\nB) 130\nC) 165\nD) 330\n2\nThere are 250 trees in a park. Of these trees, 6% are\nbirch trees. How many birch trees are in the park?\nA) 6\nB) 15\nC) 75\nD) 244\n3\nThe graph of the quadratic function y\nf x\n= ( ) is\nshown. What is the vertex of the graph?\nA)\n0, −2\n(\n)\nB)\n0, −3\n(\n)\nC)\n0, 2\n(\n)\nD)\n0, 3\n(\n)\n4"
+    },
+    {
+      "pdf_page": 45,
+      "column": "right",
+      "drawing_count": 24,
+      "text_snippet": "26\nA data set of three numbers is shown. If a number\nfrom this data set is selected at random, what is the\nprobability of selecting a positive number?\nA) 0\nB)\n1\n3\nC) 2\n3\nD) 1\n6\nf x\nx\n= 45 + 600\n( )\nThe function f gives the monthly fee f x\n( ), in dollars,\na facility charges to keep x crates in stora"
+    },
+    {
+      "pdf_page": 46,
+      "column": "right",
+      "drawing_count": 66,
+      "text_snippet": "1\nAt a state fair, attendees can win tokens that are\nworth a different number of points depending on the\nshape. One attendee won S square tokens and\nC circle tokens worth a total of 1,120 points. The\nequation\nS\nC\n80 + 90\n= 1,120 represents this\nsituation. How many more points is a circle token\nworth"
+    },
+    {
+      "pdf_page": 47,
+      "column": "left",
+      "drawing_count": 28,
+      "text_snippet": "4\nIn triangle XYZ, angle Y is a right angle, point P lies\non XZ, and point Q lies on YZ such that PQ is\nparallel to XY . If the measure of angle XZY is 63°,\nwhat is the measure, in degrees, of angle XPQ ?\n15\nAn investment account was opened with an initial\nvalue of $890. The value of the account dou"
+    },
+    {
+      "pdf_page": 48,
+      "column": "left",
+      "drawing_count": 32,
+      "text_snippet": "7\nWhich expression is equivalent to h q\nh q\n15 7\n5 21,\nwhere h > 0 and q > 0 ?\nA) h\nq\n10\n14\nB)\nh\nq\n3\n3\nC) h q\n10 14\nD) h q\n3 3\n18\ny\nx\ny\nx\n3\n= 4 + 17\n−3\n= 9 −23\nThe solution to the given system of equations is\nx y\n,\n(\n). What is the value of\nx\n39\n?\nA) −18\nB) −6\nC) 6\nD) 18\n19\nh t\nt\nb\n= −16\n+\n2\n( )\nThe"
+    },
+    {
+      "pdf_page": 49,
+      "column": "left",
+      "drawing_count": 26,
+      "text_snippet": "2\n1\n–4\n0\n2\nx\nf(x)\n19\n5\n–\n18\n5\n–\nFor the linear function f, the table shows three values\nof x and their corresponding values of f x\n( ). If\nh x\nf x\n=\n−13\n( )\n( )\n, which equation defines h ?\nA) h x\nx\n= 5 −4\n( )\nB) h x\nx\n= 5 + 7\n( )\nC) h x\nx\n= 5 + 9\n( )\nD) h x\nx\n= 5 + 20\n( )\n23\nThe linear function g i"
+    },
+    {
+      "pdf_page": 56,
+      "column": "left",
+      "drawing_count": 582,
+      "text_snippet": "© 2025 College Board. College Board, SAT, and the acorn logo are registered trademarks of College Board.\nThe SAT. \nGENERAL DIRECTIONS \n• You may work on only one module at a time. \n• If you finish a module before time is called, check your work on that module only. \nYou may NOT turn to any other mod"
+    }
+  ],
+  "stem_overrides": {},
+  "choice_d_overrides": {},
+  "license": "© 2025 College Board. For educational use only."
+}

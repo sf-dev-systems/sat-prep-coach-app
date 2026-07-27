@@ -1,135 +1,174 @@
-# AGENT HANDOFF — v60
+# AGENT HANDOFF — v62
 _Rewritten each session. Full history in `02 SESSION_LOG/`._
 
-## Status: Content Import — Tests 4–11 RW Complete
+## Status: SAT content import COMPLETE — RW (8/8 tests) + Math (8/8 tests, T4 + T5–T11 this session)
 
 ### Question Bank
 | Source | Questions | Status |
 |---|---|---|
-| T4 Math | 54 | imported |
-| T4 RW | 66 | imported |
-| T5 RW | 66 | imported |
-| T6 RW | 66 | imported |
-| T7 RW | 66 | imported |
-| T8 RW | 66 | imported (52 answers corrected 2026-07-17) |
-| T9 RW | 66 | imported |
-| T10 RW | 66 | imported (this session) |
-| T11 RW | 66 | imported (this session) |
-| **TOTAL** | **657** | 0 SEVERE in audit, 22 warnings |
+| RW (T4–T11) | 657 | imported, 8/8 tests — complete |
+| Math T4 | 54 | imported (prior session) |
+| Math T5 | 54 | imported this session |
+| Math T6 | 54 | imported this session |
+| Math T7 | 54 | imported this session |
+| Math T8 | 54 | imported this session |
+| Math T9 | 54 | imported this session |
+| Math T10 | 54 | imported this session |
+| Math T11 | 54 | imported this session |
+| **TOTAL** | **1,035** | 0 SEVERE in final audit, 110 warnings (see below) |
 
-### What Was Fixed This Session (2026-07-26)
-- **Working-tree recovery**: found the repo working tree had drifted from the last commit
-  (802ab9c) with no new commit in between — 42 session-log files deleted on disk, 2 docs
-  deleted, one doc moved to the wrong location (`00 SYSTEM/` instead of `01 DOCS/`), an orphaned
-  handoff-archive file. Confirmed with the user this was unintentional and restored everything
-  from git. See `02 SESSION_LOG/2026-07-26_1950_t10-t11-rw-import-footer-bug-fix.md` for full
-  detail.
-- **T10 RW**: straightforward import, 3 `choices_overrides` needed (table/column layout, same
-  pattern as prior tests).
-- **T11 RW — new PDF source variant discovered**: T11's PDF is a "paper practice" format
-  (`6XSL01`) rather than the digital format (`6WSLxx`) used by T4–T10. Two new bugs surfaced:
-  1. Auto-detected module boundaries (`m1_line_start`/`m2_line_start`/`math_line_start`) were
-     badly wrong because this layout has extra page-footer noise between page breaks and module
-     headers that `recon_rw.py`'s heuristic doesn't expect. Fixed by hand for T11's config.
-  2. **Root-cause bug, now fixed generally**: a lone digit line that is the PDF's printed page
-     number, immediately preceded by the "Unauthorized copying..." footer boilerplate, was being
-     accepted by `is_valid_qnum()` as a real question-number marker whenever the page number
-     happened to equal an actual question number in range. This silently mis-bound 9 questions
-     (M1-Q3, M2-Q17–26) to the wrong source line — 2 of them didn't even throw a pipeline error,
-     because `clean_block()`'s existing noise-stripping happened to still find the real content
-     downstream. Fixed in both `pipeline_rw.py` and `recon_rw.py`:
-     `if prev.startswith('Unauthorized copying'): return False` added to `is_valid_qnum()`.
-     Verified this one-line fix alone resolves all 9 collisions without needing manual overrides.
+**Both sections are now fully imported for every SAT test that exists** (T4–T11, 8 tests —
+College Board's public library stops at T11; T12/T13 do not exist, confirmed last session).
+There is no more official SAT content to mine. Remaining untapped source material: 6 PSAT PDFs
+(2× NMSQT, 2× PSAT 10, 2× PSAT 8/9) — not in v1 scope, confirm against the Charter before pulling
+those in.
+
+Audit note: `npm run audit:question-bank` prints "1000 questions" in its summary line — that's
+the script's default Supabase fetch cap, not the real count. Actual total verified via direct SQL
+(`select count(*) from questions`) is 1,035. Worth a one-line fix to `audit-question-bank.ts`
+(add `.range()` or raise the default limit) so future audits don't undercount silently — flagged,
+not fixed, this session.
+
+## What Was Done This Session (2026-07-26)
+
+1. **Corrected a stale assumption**: the prior handoff's "next action" (run `recon_rw.py 12`)
+   was based on more RW tests existing beyond T11. They don't — confirmed via
+   `00 SYSTEM/Practice Test Library/INDEX.md`. RW was already complete as of last session.
+2. **User chose the Math import method** (asked directly): manual per-test approach, same as
+   T4 Math — an agent transcribes/structures each test's Math section from PDF text into JSON,
+   then a vision-review pass checks flagged (diagram/graph-dependent or OCR-garbled) questions
+   against the actual PDF pages before import. Not the automated-pipeline alternative.
+3. **Built the pipeline mechanics reused across all 7 tests** (no new files besides the JSON
+   question sets):
+   - Reused `recon_rw.py <N>` to extract each test's full PDF text and locate the Math section
+     boundary (`math_start` line) — the RW recon script already does PDF extraction + text
+     caching, so no new extraction code was needed.
+   - Extracted each test's Math-only text into `scripts/pipeline_data/test<N>_math_practice.txt`
+     via a small inline Python slice (not a saved script — trivial one-liner, see Pipeline
+     Reference below to reproduce).
+   - Dispatched one background `general-purpose` agent per test to transcribe all 54 questions
+     (27 Module 1 + 27 Module 2) into `scripts/test<N>_math_questions.json`, cross-referencing
+     the practice-test text (stems/choices) against the Answer Explanations PDF text
+     (correct answers + rationales, via `QUESTION N` → `Choice X is correct` markers) — far more
+     reliable than the scoring-guide answer-key table, which for Math renders as a garbled
+     multi-column table that's easy to misread.
+   - For every question the transcribing agent flagged `needs_visual_review: true` (a graph,
+     figure, table, or garbled-OCR answer choices), rendered the actual PDF page(s) to PNG via
+     `fitz` (`page.get_pixmap(matrix=fitz.Matrix(2.2,2.2))`, cropped/zoomed tighter with
+     `clip=fitz.Rect(...)` when needed) and read them directly to verify the transcription.
+   - Ran `npm run import-bank scripts/test<N>_math_questions.json` (existing script, unchanged)
+     per test, then a final full-bank `npm run audit:question-bank`.
+4. **External_id convention for Math** (new, not used for T4 which predates it):
+   `T<N>-MATH-M<module>-Q<qq>` e.g. `T5-MATH-M1-Q01` — mirrors the RW convention
+   (`T9-RW-M1-Q02`), gives idempotent upserts on re-run. T4 Math still has `external_id: null`
+   (pre-dates this convention) — harmless, just not idempotent if ever re-imported.
+
+### Real transcription errors the vision-review pass caught and fixed
+The vision-review step earned its keep — across ~85 flagged questions, most graph/figure-only
+flags turned out accurate (the transcribing agent read the answer-explanation rationale
+correctly even without seeing the image), but questions flagged for **OCR-garbled answer
+choices** had a meaningfully higher error rate. Confirmed and fixed real mistakes in:
+- **T8 M1-Q04**: transcribed leading coefficient wrong across all 4 choices (`x²+7x+10` etc.
+  instead of `2x²+7x+10`) — correct letter was still right by position, but the choice text was
+  wrong. Fixed stem + all 4 choices.
+- **T8 M2-Q25/Q26**: distractor choices didn't match the source PDF (correct answer letter was
+  still right in both cases).
+- **T6 M1-Q17**: choices were shown as `19 + PN` / `19 − PN` (product) instead of the real
+  `(19+P)/N` / `(19−P)/N` (fraction) — correct answer letter unaffected, choice text was wrong.
+- **T7 M1-Q16**: stem transcribed the function as `x|x−4|` instead of the actual `|x−4x|` —
+  different function, same coincidental final answer given the specific numbers in the question.
+- **T7 M2-Q10/Q18**: stem equations differed from the source (`x/39` vs `39x` in Q18); rationale
+  text also updated to match.
+- **T9 M2-Q25**: entire equation was different from the source PDF
+  (`(y+12)/(x-8) + y(x-8)/(x²y-8xy)` vs the transcribed nonsense) — correct answer letter (C)
+  coincidentally still matched after re-deriving from the real equation.
+- **T9 M2-Q26**: function form was wrong (`a(2.2)^(x+b)` vs actual `a(2.2^x + 2.2^b)`) and the
+  constraint was inverted (`a<b<0` vs actual `0<a<b`) — correct answer (D) unaffected.
+- **T10 M2-Q05/Q17**: one garbled distractor choice each, correct answer unaffected.
+- **T11 M2-Q20**: equation exponent was inverted (`t^(7/9)` vs actual `t^(9/7)`) and the given
+  relation was wrong (`p^((n-1)/3)` vs actual `p^(3n-1)`) — final numeric answer (41/81)
+  happened to come out the same after re-deriving with the correct equation, verified by hand.
+
+None of these errors changed a `correct_answer` value from what was already in the JSON (the
+transcribing agents got the graded answer right every time, sourcing it from the explanations
+text's "Choice X is correct" / final-answer line rather than re-deriving from the possibly-wrong
+stem) — but several had materially wrong stem text or distractor choices that would have shown
+students an incorrect version of the question. This is the reason the manual method (vs. a fully
+automated pipeline) still needs a human/vision QC step per question, especially for math notation
+that OCR mangles (exponents, fraction stacks, coefficient digits).
+
+One false alarm caught and reverted: initially misread a T6 parabola graph's plotted points at
+low zoom (thought the answer might be off), re-zoomed and confirmed the original transcription
+(`bc = -24`) was correct — a reminder to verify at high enough resolution before editing.
 
 ## Single Next Action
-**Run T12 RW extraction:**
-```
-python scripts/recon_rw.py 12
-```
-Watch for:
-1. Which PDF variant T12 is — check the header text near the top of
-   `scripts/pipeline_data/test12_practice.txt` for `6WSLxx` (digital format, standard boundary
-   detection works) vs `6XSLxx` (paper format like T11, boundaries likely need manual
-   recomputation — see Pipeline Reference below).
-2. Multi-track scoring: compare `scoring_track_options`, verify against practice.txt semantically
-   if the two tracks disagree.
-3. Missing Q#s / no-choices warnings from `pipeline_rw.py --step 1`.
-
-Then run:
-```
-python scripts/pipeline_rw.py 12
-```
-
-After T12: T13 (if it exists — confirm how many official tests are in the Practice Test Library
-before assuming), then Math sections (T5–T11 Math still not imported — only T4 Math exists in
-the bank so far).
+**No further official SAT content import remains** (both RW and Math are complete for all 8
+available tests). Options for next session, in rough priority order:
+1. **Push the 12 local commits to origin** (ask user first — many sessions of work sitting
+   unpushed).
+2. **T8 RW rationale regeneration** (52 questions still have `[Answer corrected to X. Rationale
+   needs regeneration.]` placeholder text) — see Open Decisions below.
+3. **Full end-to-end study flow** has still never been manually tested in browser — now that the
+   bank is content-complete, this is a good time to actually click through the app.
+4. **PSAT import** — only if the user confirms it's in scope; ask before starting, it's a scope
+   question per CLAUDE.md's phase-discipline rule, not an obvious continuation of "more SAT
+   tests."
+5. Minor: fix `audit-question-bank.ts`'s silent 1000-row fetch cap (see above).
 
 ## Open Decisions
-- **Module-boundary auto-detection for paper-format PDFs (`6XSLxx`) not generalized.** Only one
-  data point (T11) so far. If T12+ turns out to also be paper-format, recompute
-  `m1_line_start`/`m2_line_start`/`math_line_start` by hand the same way (locate each section's
-  `DIRECTIONS` line, use 0-indexed position in `open(file).read().split('\n')`) — see Pipeline
-  Reference below for the exact method. If a 2nd or 3rd paper-format test turns up, worth
-  generalizing the recon heuristic properly instead of hand-fixing each time.
-- **T8 rationales stale**: 52 questions have `[Answer corrected to X. Rationale needs
-  regeneration.]` prefix in rationale field. Correct answer is stored; rationale text explains
-  the wrong answer. Use `scripts/patch-rw-rationales.ts` to regenerate when API budget allows (low
-  priority — app falls back to static rationales).
+- **T8 RW rationales stale**: 52 questions have `[Answer corrected to X. Rationale needs
+  regeneration.]` prefix. Correct answer is stored; rationale explains the wrong answer.
+  Use `scripts/patch-rw-rationales.ts` to regenerate when API budget allows (low priority — app
+  falls back to static rationales).
+- **audit-question-bank.ts undercounts** past 1000 rows (see above) — cosmetic, not a data bug.
 - **GitHub secrets for DB backup workflow** not set (non-blocking).
 - **next@14.2.35 CVEs** — upgrade when convenient.
 - **Full end-to-end study flow** never manually tested in browser.
-- **4 local commits ahead of origin/main, not yet pushed** — push when the user is ready.
+- **12 local commits ahead of origin/main, not yet pushed** — push when the user is ready.
+- **Module-boundary auto-detection for paper-format PDFs (`6XSLxx`)** still not generalized in
+  `recon_rw.py` (only T11 hit this pattern) — moot now unless a future non-SAT paper-format
+  source shows up, since RW/Math import for all SAT tests is done.
 
-## Pipeline Reference (for next agent)
+## Pipeline Reference (for next agent, if ever mining more Math-shaped content)
 
-### Standard run (new test):
+### Math import method used this session (manual, not a saved pipeline script):
+```python
+# 1. Reuse RW recon to get full text + math_start line (from recon_rw.py's own output)
+python scripts/recon_rw.py <N>
+
+# 2. Slice out the Math-only text (inline, not saved as a script)
+lines = open(f'scripts/pipeline_data/test<N>_practice.txt', encoding='utf-8').read().split('\n')
+math_lines = lines[<math_start>:]
+open(f'scripts/pipeline_data/test<N>_math_practice.txt', 'w', encoding='utf-8').write('\n'.join(math_lines))
+```
+Then dispatch an agent per test with a prompt that: points it at
+`test<N>_math_practice.txt` (stems/choices) and `test<N>_explanations.txt` (answers/rationales,
+searched via `MATH: MODULE 1`/`MATH: MODULE 2` → `QUESTION N` → `Choice X is correct`), gives it
+the 10 locked Math skill names (from `scripts/seed-skills.ts`), and has it write
+`scripts/test<N>_math_questions.json` matching `import-official-bank.ts`'s schema, flagging
+`needs_visual_review: true` for anything figure-dependent or OCR-uncertain.
+
+Then for every flagged question, render its PDF page to PNG and Read it directly:
+```python
+import fitz
+doc = fitz.open(r'00 SYSTEM/Practice Test Library/SAT_Digital_Tests/SAT_Test_<N>_PracticeTest.pdf')
+pix = doc[<page_num - 1>].get_pixmap(matrix=fitz.Matrix(2.2,2.2), alpha=False)
+pix.save('scripts/pipeline_data/t<N>_math_pages/page<page_num>.png')
+```
+Page numbers found by grepping `test<N>_practice.txt` for the question's distinctive stem text
+and mapping the line number to the nearest preceding `--- PAGE N ---` marker.
+
+### RW pipeline (still current, unrelated to Math):
 ```
 python scripts/recon_rw.py <N>          # generates scripts/testN_rw_config.json
-# inspect output, fix config if needed (see below)
 python scripts/pipeline_rw.py <N>       # steps 1-6: parse > JSON > charts > upload > import > audit
-python scripts/pipeline_rw.py <N> --step 3  # restart from step 3 if needed
 ```
-
-### IMPORTANT: config line-number fields are 0-indexed array positions, NOT the 1-indexed line
-numbers a text viewer/editor shows you. If you read `test<N>_practice.txt` with a line-numbered
-viewer and see e.g. line 26 = `"DIRECTIONS"`, the value to put in the config is **25** (viewer
-line − 1), because `pipeline_rw.py` does `lines = open(file).read().split('\n')` (0-indexed) and
-uses the config value directly as an index into that array. Getting this off by one silently
-shifts every boundary and is easy to miss — always verify with a quick python snippet like:
-```python
-lines = open('scripts/pipeline_data/test<N>_practice.txt', encoding='utf-8').read().split('\n')
-print(lines[<candidate_index>])   # should print the exact line you expect
-```
-
-### Config fields that often need manual editing:
-```
-m2_line_start: 855           -- set LOWER if M2 Q1/Q2/Q3 are before the module header
-scoring_track_index: 1       -- 0 or 1, check scoring_track_options to verify which Q1 is semantically correct
-missing_qnum_injections:     -- when Q# uses decorative format ('. 1 ,') or is before module header
-  m2_q1: {qnum:1, module:m2, inject_line:880}
-qnum_line_overrides:         -- force Q# to correct line when table values / footer page-numbers cause false detection
-  m1: {"25": 635}
-choices_overrides:           -- supply all 4 choices when PDF column order puts them before the stem
-  T9-RW-M1-Q02: ["A) ...", "B) ...", "C) ...", "D) ..."]
-```
-
-### Multi-track scoring guide verification:
-- recon reports: `Track 0 (page 2): M1-Q1=A` / `Track 1 (page 4): M1-Q1=B`
-- Find M1-Q1 stem in practice.txt (line ~34). Read the question. Pick the track whose answer letter makes grammatical sense for that question.
-- If both tracks have same Q1 (like T9, T10) — keep default (Track 1, last page).
-- To override: `python scripts/recon_rw.py <N> --track 0`
-
-### Known PDF layout patterns:
-| Pattern | Tests | Config fix |
-|---|---|---|
-| Standard (Q1 after module header, `6WSLxx` digital format) | T4, T5, T6, T10 | none |
-| Q1/Q2 before module header | T7, T8 | m2_line_start = Q3s line |
-| Q1/Q2/Q3 before header + decorative format | T9 | m2_line_start = Q3s line + injections for Q1/Q2 |
-| Table value collides with Q# | T9 (Q25) | qnum_line_overrides |
-| Choices before stem (column layout) | T9 (Q2), T10 (M1-Q30, M2-Q12/13) | choices_overrides |
-| **Paper-format PDF (`6XSLxx`)**: extra footer noise before every module header breaks auto-boundary-detection | T11 | recompute m1/m2/math_line_start by hand — locate each `DIRECTIONS` line, use 0-indexed position |
-| **Footer page-number collides with real Q#** | T11 (M1-Q3, M2-Q17–26) | Fixed at the root in `is_valid_qnum()` — should no longer occur on new tests, but verify with the "no `Unauthorized copying` prev-line" audit shown in the 2026-07-26 session log if something looks off |
+See prior handoff versions (git history) for the full RW config-field reference table
+(`m2_line_start`, `qnum_line_overrides`, `choices_overrides`, multi-track scoring, known PDF
+layout patterns per test) — omitted here since RW import is complete and unlikely to be
+re-touched.
 
 ## Commit
-5388837 -- docs: backfill commit hash in handoff/session log
-(4 commits ahead of origin/main, not yet pushed)
+704c2e5 -- docs: correct ahead-of-origin commit count in handoff
+(12 commits ahead of origin/main, not yet pushed — this session's work is uncommitted on top of
+that; commit when the user is ready)

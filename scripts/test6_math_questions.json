@@ -1,0 +1,542 @@
+[
+  {
+    "external_id": "T6-MATH-M1-Q01",
+    "skill_name": "Linear Equations & Inequalities",
+    "difficulty": 1,
+    "stem": "(p + 3) + 8 = 10\n\nWhat value of p is the solution to the given equation?",
+    "choices": ["A) −1", "B) 5", "C) 15", "D) 21"],
+    "correct_answer": "A",
+    "rationale": "Subtracting 8 from both sides of the given equation yields p + 3 = 2. Subtracting 3 from both sides of this equation yields p = −1.",
+    "needs_visual_review": false
+  },
+  {
+    "external_id": "T6-MATH-M1-Q02",
+    "skill_name": "Statistics & Probability",
+    "difficulty": 2,
+    "stem": "The scatterplot shows the relationship between two variables, x and y. Which of the following graphs shows the most appropriate model for the data? [The four answer-choice graphs are images in the source PDF and are not captured in the text extraction.]",
+    "choices": ["A) [scatterplot with fitted model — see PDF]", "B) [scatterplot with fitted model — see PDF]", "C) [scatterplot with fitted model — see PDF]", "D) [scatterplot with fitted model — see PDF]"],
+    "correct_answer": "D",
+    "rationale": "An appropriate model should follow the trend of the data points and should have data points both above and below the model. The scatterplot shows an increasing trend that is curved, so an appropriate model should be an increasing curve with data points both above and below it. Of the given choices, only the model in choice D is an increasing curve with data points both above and below the model.",
+    "needs_visual_review": true
+  },
+  {
+    "external_id": "T6-MATH-M1-Q03",
+    "skill_name": "Quadratics & Parabolas",
+    "difficulty": 1,
+    "stem": "k² − 53 = 91\n\nWhat is the positive solution to the given equation?",
+    "choices": ["A) 144", "B) 72", "C) 38", "D) 12"],
+    "correct_answer": "D",
+    "rationale": "Adding 53 to each side of the given equation yields k² = 144. Taking the square root of each side of this equation yields k = ±12. Therefore, the positive solution to the given equation is 12.",
+    "needs_visual_review": false
+  },
+  {
+    "external_id": "T6-MATH-M1-Q04",
+    "skill_name": "Linear Equations & Inequalities",
+    "difficulty": 1,
+    "stem": "During a portion of a flight, a small airplane's cruising speed varied between 150 miles per hour and 170 miles per hour. Which inequality best represents this situation, where s is the cruising speed, in miles per hour, during this portion of the flight?",
+    "choices": ["A) s ≤ 20", "B) s ≤ 150", "C) s ≤ 170", "D) 150 ≤ s ≤ 170"],
+    "correct_answer": "D",
+    "rationale": "The airplane's cruising speed, in miles per hour, was at least 150, which means s ≥ 150, and was at most 170, which means s ≤ 170. Therefore, the inequality that best represents this situation is 150 ≤ s ≤ 170.",
+    "needs_visual_review": false
+  },
+  {
+    "external_id": "T6-MATH-M1-Q05",
+    "skill_name": "Quadratics & Parabolas",
+    "difficulty": 1,
+    "stem": "An object was launched upward from a platform. The graph shown models the height above ground, y, in meters, of the object x seconds after it was launched. For which of the following intervals of time was the height of the object increasing for the entire interval?",
+    "choices": ["A) From x = 0 to x = 2", "B) From x = 0 to x = 4", "C) From x = 2 to x = 3", "D) From x = 3 to x = 4"],
+    "correct_answer": "A",
+    "rationale": "The graph shows that the height of the object was increasing from x = 0 to x = 2, and decreasing from x = 2 to x = 4. Therefore, the height of the object was increasing for the entire interval of time from x = 0 to x = 2.",
+    "needs_visual_review": true
+  },
+  {
+    "external_id": "T6-MATH-M1-Q06",
+    "skill_name": "Ratios, Rates & Proportions",
+    "difficulty": 1,
+    "stem": "How many yards are equivalent to 1,116 inches? (1 yard = 36 inches)",
+    "choices": null,
+    "correct_answer": "31",
+    "rationale": "Since 1 yard is equal to 36 inches, 1,116 inches is equivalent to 1,116 inches × (1 yard / 36 inches), or 31 yards.",
+    "needs_visual_review": false
+  },
+  {
+    "external_id": "T6-MATH-M1-Q07",
+    "skill_name": "Linear Equations & Inequalities",
+    "difficulty": 1,
+    "stem": "f(x) = 4x + 14\n\nThe function f represents the total cost, in dollars, of attending an arcade when x games are played. How many games can be played for a total cost of $58?",
+    "choices": null,
+    "correct_answer": "11",
+    "rationale": "Substituting 58 for f(x) in the given equation yields 58 = 4x + 14. Subtracting 14 from each side of this equation yields 44 = 4x. Dividing each side by 4 yields x = 11. Therefore, 11 games can be played for a total cost of $58.",
+    "needs_visual_review": false
+  },
+  {
+    "external_id": "T6-MATH-M1-Q08",
+    "skill_name": "Linear Equations & Inequalities",
+    "difficulty": 1,
+    "stem": "f(x) = x + b\n\nFor the linear function f, b is a constant. When x = 0, f(x) = 30. What is the value of b?",
+    "choices": ["A) −30", "B) −1/30", "C) 1/30", "D) 30"],
+    "correct_answer": "D",
+    "rationale": "Substituting 0 for x and 30 for f(x) in the given function yields 30 = 0 + b, or b = 30. Therefore, the value of b is 30.",
+    "needs_visual_review": false
+  },
+  {
+    "external_id": "T6-MATH-M1-Q09",
+    "skill_name": "Polynomials & Non-linear Functions",
+    "difficulty": 1,
+    "stem": "P(t) = 1,800(1.02)^t\n\nThe function P gives the estimated number of marine mammals in a certain area, where t is the number of years since a study began. What is the best interpretation of P(0) = 1,800 in this context?",
+    "choices": ["A) The estimated number of marine mammals in the area was 102 when the study began.", "B) The estimated number of marine mammals in the area was 1,800 when the study began.", "C) The estimated number of marine mammals in the area increased by 102 each year during the study.", "D) The estimated number of marine mammals in the area increased by 1,800 each year during the study."],
+    "correct_answer": "B",
+    "rationale": "The value of P(0) is the value of P(t) when t = 0. Since t is the number of years since the study began, t = 0 corresponds to when the study began. Therefore, the best interpretation of P(0) = 1,800 in this context is that the estimated number of marine mammals in the area was 1,800 when the study began.",
+    "needs_visual_review": false
+  },
+  {
+    "external_id": "T6-MATH-M1-Q10",
+    "skill_name": "Linear Equations & Inequalities",
+    "difficulty": 2,
+    "stem": "A manager is responsible for ordering supplies for a shaved ice shop. The shop's inventory starts with 4,500 paper cups, and the manager estimates that 70 of these paper cups are used each day. Based on this estimate, in how many days will the supply of paper cups reach 1,700?",
+    "choices": ["A) 20", "B) 40", "C) 60", "D) 80"],
+    "correct_answer": "B",
+    "rationale": "Let x represent the number of days in which the estimated supply of paper cups will reach 1,700. The equation 4,500 − 70x = 1,700 represents this situation. Subtracting 4,500 from both sides yields −70x = −2,800. Dividing both sides by −70 yields x = 40. Therefore, based on this estimate, the supply of paper cups will reach 1,700 in 40 days.",
+    "needs_visual_review": false
+  },
+  {
+    "external_id": "T6-MATH-M1-Q11",
+    "skill_name": "Linear Equations & Inequalities",
+    "difficulty": 2,
+    "stem": "y > 4x + 8\n\nFor which of the following tables are all the values of x and their corresponding values of y solutions to the given inequality?",
+    "choices": ["A) x=2,y=19; x=4,y=30; x=6,y=41", "B) x=2,y=8; x=4,y=16; x=6,y=24", "C) x=2,y=13; x=4,y=18; x=6,y=23", "D) x=2,y=13; x=4,y=21; x=6,y=29"],
+    "correct_answer": "A",
+    "rationale": "Substituting 2 for x in the given inequality yields y > 4(2) + 8, or y > 16. Of the given choices, only choice A is a table where the value of y corresponding to x = 2 is greater than 16. Checking the other values of x confirms: substituting 4 for x and 30 for y yields 30 > 24, true; substituting 6 for x and 41 for y yields 41 > 32, true. Therefore, for choice A, all the values of x and their corresponding values of y are solutions to the given inequality.",
+    "needs_visual_review": false
+  },
+  {
+    "external_id": "T6-MATH-M1-Q12",
+    "skill_name": "Polynomials & Non-linear Functions",
+    "difficulty": 2,
+    "stem": "Which expression is equivalent to (x² + 11)² − (x − 5)(x + 5)?",
+    "choices": ["A) x⁴ + 23x² − 14", "B) x⁴ + 23x² + 96", "C) x⁴ + 12x² + 121", "D) x⁴ + 146x²"],
+    "correct_answer": "B",
+    "rationale": "The expression (x² + 11)² can be expanded to x⁴ + 22x² + 121. The expression (x − 5)(x + 5) is equivalent to x² − 25. Therefore, (x² + 11)² − (x − 5)(x + 5) is equivalent to (x⁴ + 22x² + 121) − (x² − 25), which simplifies to x⁴ + 23x² + 96 after combining like terms.",
+    "needs_visual_review": false
+  },
+  {
+    "external_id": "T6-MATH-M1-Q13",
+    "skill_name": "Polynomials & Non-linear Functions",
+    "difficulty": 1,
+    "stem": "The function h is defined by h(x) = 8/(5x + 6). What is the value of h(2)?",
+    "choices": null,
+    "correct_answer": "1/2",
+    "rationale": "Substituting 2 for x in the given equation yields h(2) = 8/(5(2)+6), which is equivalent to h(2) = 8/16, or h(2) = 1/2.",
+    "needs_visual_review": false
+  },
+  {
+    "external_id": "T6-MATH-M1-Q14",
+    "skill_name": "Area & Volume",
+    "difficulty": 2,
+    "stem": "The figure shows the lengths, in inches, of two sides of a right triangle. What is the area of the triangle, in square inches?",
+    "choices": null,
+    "correct_answer": "15/2",
+    "rationale": "The area, A, of a triangle is given by the formula A = (1/2)bh, where b is the length of the base and h is the height. In the right triangle shown, the base is 5 inches and the height is 3 inches. Substituting 5 for b and 3 for h yields A = (1/2)(5)(3) = 15/2. Therefore, the area of the triangle, in square inches, is 15/2.",
+    "needs_visual_review": true
+  },
+  {
+    "external_id": "T6-MATH-M1-Q15",
+    "skill_name": "Polynomials & Non-linear Functions",
+    "difficulty": 1,
+    "stem": "The graph models the number of active projects a company was working on x months after the end of November 2012, where 0 ≤ x ≤ 6. According to the model, what is the predicted number of active projects the company was working on at the end of November 2012?",
+    "choices": ["A) 0", "B) 5", "C) 8", "D) 9"],
+    "correct_answer": "B",
+    "rationale": "The value of x that corresponds to the end of November 2012 is 0. The point at which x = 0 is the y-intercept of the graph, which is the point (0, 5). Therefore, according to the model, the predicted number of active projects the company was working on at the end of November 2012 is 5.",
+    "needs_visual_review": true
+  },
+  {
+    "external_id": "T6-MATH-M1-Q16",
+    "skill_name": "Linear Equations & Inequalities",
+    "difficulty": 1,
+    "stem": "The relationship between two variables, x and y, is linear. For every increase in the value of x by 1, the value of y increases by 8. When the value of x is 2, the value of y is 18. Which equation represents this relationship?",
+    "choices": ["A) y = 2x + 18", "B) y = 2x + 8", "C) y = 8x + 2", "D) y = 3x + 26"],
+    "correct_answer": "C",
+    "rationale": "A linear relationship can be written as y = mx + b, where m is the slope. Since y increases by 8 for every increase of 1 in x, the slope m = 8, giving y = 8x + b. Substituting x = 2 and y = 18 yields 18 = 8(2) + b, or 18 = 16 + b, so b = 2. Therefore, the equation y = 8x + 2 represents this relationship.",
+    "needs_visual_review": false
+  },
+  {
+    "external_id": "T6-MATH-M1-Q17",
+    "skill_name": "Linear Equations & Inequalities",
+    "difficulty": 2,
+    "stem": "P = N(19 − C)\n\nThe given equation relates the positive numbers P, N, and C. Which equation correctly expresses C in terms of P and N?",
+    "choices": ["A) C = (19 + P)/N", "B) C = (19 − P)/N", "C) C = 19 + P/N", "D) C = 19 − P/N"],
+    "correct_answer": "D",
+    "rationale": "Since P, N, and C are positive, dividing each side of the given equation by N yields P/N = 19 − C. Subtracting 19 from each side yields P/N − 19 = −C. Dividing each side by −1 yields C = 19 − P/N.",
+    "needs_visual_review": true
+  },
+  {
+    "external_id": "T6-MATH-M1-Q18",
+    "skill_name": "Quadratics & Parabolas",
+    "difficulty": 2,
+    "stem": "w² + 12w − 40 = 0\n\nWhich of the following is a solution to the given equation?",
+    "choices": ["A) 6 − 2√19", "B) 2√19", "C) √19", "D) −6 + 2√19"],
+    "correct_answer": "D",
+    "rationale": "Adding 40 to both sides of the given equation yields w² + 12w = 40. To complete the square, adding (12/2)² = 36 to both sides yields w² + 12w + 36 = 76, or (w + 6)² = 76. Taking the square root of both sides yields w + 6 = ±2√19. Subtracting 6 from both sides yields w = −6 ± 2√19. Of the two solutions, only −6 + 2√19 is given as a choice.",
+    "needs_visual_review": false
+  },
+  {
+    "external_id": "T6-MATH-M1-Q19",
+    "skill_name": "Statistics & Probability",
+    "difficulty": 2,
+    "stem": "The table shown summarizes the number of employees at each of the 17 restaurants in a town.\n\nNumber of employees | Number of restaurants\n2 to 7 | 2\n8 to 13 | 4\n14 to 19 | 2\n20 to 25 | 7\n26 to 31 | 2\n\nWhich of the following could be the median number of employees for the restaurants in this town?",
+    "choices": ["A) 2", "B) 9", "C) 15", "D) 21"],
+    "correct_answer": "D",
+    "rationale": "With 17 restaurants listed in ascending order, the median is the 9th value. The first 2 restaurants fall in the 2–7 range, the next 4 (3rd–6th) fall in the 8–13 range, the next 2 (7th–8th) fall in the 14–19 range, and the next 7 (9th–15th) fall in the 20–25 range. So the 9th restaurant, which holds the median, falls in the 20–25 range. Of the given choices, the only value in the 20–25 range is 21.",
+    "needs_visual_review": false
+  },
+  {
+    "external_id": "T6-MATH-M1-Q20",
+    "skill_name": "Linear Equations & Inequalities",
+    "difficulty": 2,
+    "stem": "(3/7)x = −(5/9)y + 21\n\nWhat is the y-coordinate of the y-intercept of the graph of the given equation in the xy-plane?",
+    "choices": null,
+    "correct_answer": "189/5",
+    "rationale": "A y-intercept is a point where x = 0. Substituting 0 for x in the given equation yields 0 = −(5/9)y + 21. Subtracting 21 from both sides yields −21 = −(5/9)y. Multiplying both sides by −9 yields 5y = 189. Dividing both sides by 5 yields y = 189/5.",
+    "needs_visual_review": false
+  },
+  {
+    "external_id": "T6-MATH-M1-Q21",
+    "skill_name": "Quadratics & Parabolas",
+    "difficulty": 3,
+    "stem": "The graph of y = 2x² + bx + c is shown, where b and c are constants. What is the value of bc?",
+    "choices": null,
+    "correct_answer": "-24",
+    "rationale": "Since the graph passes through the point (0, −6), substituting x = 0 and y = −6 into the given equation yields −6 = c, so c = −6. Since the graph also passes through the point (−2, −6), substituting x = −2 and y = −6 into y = 2x² + bx − 6 yields −6 = 2(4) − 2b − 6, or −6 = 2 − 2b, so b = 4. Since b = 4 and c = −6, the value of bc is 4(−6) = −24.",
+    "needs_visual_review": false
+  },
+  {
+    "external_id": "T6-MATH-M1-Q22",
+    "skill_name": "Percentages",
+    "difficulty": 2,
+    "stem": "In 2008, Zinah earned 14% more than in 2007, and in 2009 Zinah earned 4% more than in 2008. If Zinah earned y times as much in 2009 as in 2007, what is the value of y?",
+    "choices": ["A) 0.5600", "B) 1.0056", "C) 1.1800", "D) 1.1856"],
+    "correct_answer": "D",
+    "rationale": "Let h represent Zinah's 2007 earnings and j represent 2008 earnings; j = 1.14h. Let k represent 2009 earnings; k = 1.04j. Substituting 1.14h for j yields k = 1.04(1.14h) = 1.1856h. Therefore, y = 1.1856.",
+    "needs_visual_review": false
+  },
+  {
+    "external_id": "T6-MATH-M1-Q23",
+    "skill_name": "Triangles & Circles",
+    "difficulty": 2,
+    "stem": "Circle A (shown) is defined by the equation (x + 2)² + y² = 9. Circle B (not shown) is the result of shifting circle A down 6 units and increasing the radius so that the radius of circle B is 2 times the radius of circle A. Which equation defines circle B?",
+    "choices": ["A) (x+2)² + (y+6)² = (4)(9)", "B) 2(x+2)² + 2(y+6)² = 9", "C) (x+2)² + (y−6)² = (4)(9)", "D) 2(x+2)² + 2(y−6)² = 9"],
+    "correct_answer": "A",
+    "rationale": "Circle A has center (−2, 0) and radius 3. Shifting circle A down 6 units gives a center of (−2, −6). Since the radius of circle B is 2 times the radius of circle A, the radius of circle B is 2(3) = 6, so r² = 36 = (4)(9). Substituting −2 for h, −6 for k, and 2(3) for r in (x − h)² + (y − k)² = r² yields (x+2)² + (y+6)² = (4)(9).",
+    "needs_visual_review": false
+  },
+  {
+    "external_id": "T6-MATH-M1-Q24",
+    "skill_name": "Trigonometry",
+    "difficulty": 2,
+    "stem": "Right triangle ABC is shown, with angle B = 30° and hypotenuse AB = 54. What is the value of tan A? [Angle and side values are taken from the figure, which is not fully captured in text extraction — VERIFY AGAINST PDF]",
+    "choices": ["A) √3/54", "B) √3/3", "C) √3", "D) 27√3"],
+    "correct_answer": "C",
+    "rationale": "Since angle B measures 30° and angle C is a right angle (90°), angle A measures 180° − (30° + 90°) = 60°. In a 30-60-90 right triangle with hypotenuse 54, the leg opposite the 30° angle has length x where 2x = 54, so x = 27, and the leg opposite the 60° angle has length 27√3. The tangent of angle A is the ratio of the opposite leg to the adjacent leg: tan A = 27√3/27 = √3.",
+    "needs_visual_review": true
+  },
+  {
+    "external_id": "T6-MATH-M1-Q25",
+    "skill_name": "Polynomials & Non-linear Functions",
+    "difficulty": 2,
+    "stem": "At the time that an article was first featured on the home page of a news website, there were 40 comments on the article. An exponential model estimates that at the end of each hour after the article was first featured on the home page, the number of comments on the article had increased by 190% of the number of comments on the article at the end of the previous hour. Which of the following equations best represents this model, where C is the estimated number of comments on the article t hours after the article was first featured on the home page and t ≤ 4?",
+    "choices": ["A) C = 40(1.19)^t", "B) C = 40(1.9)^t", "C) C = 40(19)^t", "D) C = 40(2.9)^t"],
+    "correct_answer": "D",
+    "rationale": "The model can be represented by C = Ka^t. Since there were 40 comments when t = 0, K = 40. Since the number of comments increases by 190% each hour, the number of comments at the end of the first hour is 40 plus 190% of 40 (that is, 40 + 76 = 116), so when t = 1, C = 116. Substituting into C = 40a^t yields 116 = 40a, so a = 2.9. Therefore, the equation that best represents this model is C = 40(2.9)^t.",
+    "needs_visual_review": false
+  },
+  {
+    "external_id": "T6-MATH-M1-Q26",
+    "skill_name": "Linear Equations & Inequalities",
+    "difficulty": 3,
+    "stem": "x | g(x)\n−27 | 3\n−9 | 0\n21 | 5\n\nThe table shows three values of x and their corresponding values of g(x), where g(x) = f(x)/(x + 3) and f is a linear function. What is the y-intercept of the graph of y = f(x) in the xy-plane?",
+    "choices": ["A) (0, 36)", "B) (0, 12)", "C) (0, 4)", "D) (0, −9)"],
+    "correct_answer": "A",
+    "rationale": "Since f is linear, f(x) = mx + b. Using the first table value, x = −27 and g(x) = 3: 3 = f(−27)/(−27+3) = f(−27)/(−24), so f(−27) = −72, giving the point (−27, −72) on the graph of y = f(x). Using the second value, x = −9 and g(x) = 0: 0 = f(−9)/(−9+3) = f(−9)/(−6), so f(−9) = 0, giving the point (−9, 0). The slope between these points is m = (0 − (−72))/(−9 − (−27)) = 72/18 = 4. So f(x) = 4x + b. Since f(−9) = 0, 0 = 4(−9) + b = −36 + b, so b = 36. Therefore, the y-intercept of the graph of y = f(x) is (0, 36).",
+    "needs_visual_review": false
+  },
+  {
+    "external_id": "T6-MATH-M1-Q27",
+    "skill_name": "Triangles & Circles",
+    "difficulty": 2,
+    "stem": "In right triangle ABC, angle C is the right angle and BC = 162. Point D on side AB is connected by a line segment with point E on side AC such that line segment DE is parallel to side BC and CE/AE = 2. What is the length of line segment DE?",
+    "choices": null,
+    "correct_answer": "54",
+    "rationale": "Since DE is parallel to BC, triangle ADE is similar to triangle ABC by the angle-angle similarity postulate, with DE corresponding to BC, and AE corresponding to AC. Since corresponding sides of similar triangles are proportional, DE/BC = AE/AC. Since CE = 2·AE and AC = AE + CE, AC = AE + 2AE = 3AE. Substituting BC = 162 and AC = 3AE into DE/BC = AE/AC yields DE/162 = AE/(3AE) = 1/3. Multiplying both sides by 162 yields DE = 54.",
+    "needs_visual_review": false
+  },
+  {
+    "external_id": "T6-MATH-M2-Q01",
+    "skill_name": "Linear Equations & Inequalities",
+    "difficulty": 1,
+    "stem": "The function f is defined by f(x) = 8x. For what value of x does f(x) = 72?",
+    "choices": ["A) 8", "B) 9", "C) 64", "D) 80"],
+    "correct_answer": "B",
+    "rationale": "Substituting 72 for f(x) in the given function yields 72 = 8x. Dividing each side of this equation by 8 yields x = 9. Therefore, f(x) = 72 when the value of x is 9.",
+    "needs_visual_review": false
+  },
+  {
+    "external_id": "T6-MATH-M2-Q02",
+    "skill_name": "Triangles & Circles",
+    "difficulty": 1,
+    "stem": "In the figure, two lines intersect at a point. Angle 1 and angle 2 are vertical angles. The measure of angle 1 is 72°. What is the measure of angle 2?",
+    "choices": ["A) 72°", "B) 108°", "C) 144°", "D) 288°"],
+    "correct_answer": "A",
+    "rationale": "Vertical angles have equal measures. Since angle 1 and angle 2 are vertical angles and the measure of angle 1 is 72°, the measure of angle 2 is also 72°.",
+    "needs_visual_review": false
+  },
+  {
+    "external_id": "T6-MATH-M2-Q03",
+    "skill_name": "Statistics & Probability",
+    "difficulty": 1,
+    "stem": "On a street with 7 houses, 2 houses are blue. If a house from this street is selected at random, what is the probability of selecting a house that is blue?",
+    "choices": ["A) 1/7", "B) 2/7", "C) 5/7", "D) 7/7"],
+    "correct_answer": "B",
+    "rationale": "The probability of selecting a house that is blue is equal to the number of blue houses divided by the total number of houses. Since there are 2 blue houses on a street with 7 total houses, the probability is 2/7.",
+    "needs_visual_review": false
+  },
+  {
+    "external_id": "T6-MATH-M2-Q04",
+    "skill_name": "Linear Equations & Inequalities",
+    "difficulty": 1,
+    "stem": "The graph of function f is shown, where y = f(x). Which of the following describes function f?",
+    "choices": ["A) Increasing linear", "B) Decreasing linear", "C) Increasing exponential", "D) Decreasing exponential"],
+    "correct_answer": "A",
+    "rationale": "The graph shows that as x increases, f(x) also increases, meaning f is an increasing function. The graph of f is a straight line, indicating a constant rate of change, which is characteristic of a linear function. Therefore, function f can be described as increasing linear.",
+    "needs_visual_review": true
+  },
+  {
+    "external_id": "T6-MATH-M2-Q05",
+    "skill_name": "Linear Equations & Inequalities",
+    "difficulty": 1,
+    "stem": "The graph of the function f is shown, where y = f(x). What is the y-intercept of the graph?",
+    "choices": ["A) (0, −1)", "B) (0, −4)", "C) (0, 1)", "D) (0, 4)"],
+    "correct_answer": "B",
+    "rationale": "The y-intercept of a graph is the point where the graph intersects the y-axis. The graph of function f shown intersects the y-axis at the point (0, −4). Therefore, the y-intercept of the graph is (0, −4).",
+    "needs_visual_review": true
+  },
+  {
+    "external_id": "T6-MATH-M2-Q06",
+    "skill_name": "Systems of Equations",
+    "difficulty": 1,
+    "stem": "x = 8\nx + 3y = 26\n\nThe solution to the given system of equations is (x, y). What is the value of y?",
+    "choices": null,
+    "correct_answer": "6",
+    "rationale": "The first equation in the given system is x = 8. Substituting 8 for x in the second equation yields 8 + 3y = 26. Subtracting 8 from both sides of this equation yields 3y = 18. Dividing both sides by 3 yields y = 6.",
+    "needs_visual_review": false
+  },
+  {
+    "external_id": "T6-MATH-M2-Q07",
+    "skill_name": "Percentages",
+    "difficulty": 1,
+    "stem": "The amount of Hanna's bill for a food order was $50. Hanna gave a tip of 20% of the amount of the bill. What is the amount, in dollars, of the tip Hanna gave?",
+    "choices": null,
+    "correct_answer": "10",
+    "rationale": "20% of 50 can be calculated as 50(20/100), which yields 1000/100, or 10. Therefore, the amount, in dollars, of the tip Hanna gave is 10.",
+    "needs_visual_review": false
+  },
+  {
+    "external_id": "T6-MATH-M2-Q08",
+    "skill_name": "Polynomials & Non-linear Functions",
+    "difficulty": 1,
+    "stem": "Which expression is equivalent to 5x⁵ − 6x⁴ + 8x³?",
+    "choices": ["A) x⁴(5x − 6)", "B) x³(5x² − 6x + 8)", "C) 8x³(5x² − 6x + 1)", "D) 6x⁵(x⁴ − 6x³ + 8)"],
+    "correct_answer": "B",
+    "rationale": "Since x³ is a common factor of each term in the given expression, the expression can be rewritten as x³(5x² − 6x + 8).",
+    "needs_visual_review": false
+  },
+  {
+    "external_id": "T6-MATH-M2-Q09",
+    "skill_name": "Ratios, Rates & Proportions",
+    "difficulty": 1,
+    "stem": "The ratio of the length of line segment XY to the length of line segment ZV is 6 to 1. If the length of line segment XY is 102 inches, what is the length, in inches, of line segment ZV?",
+    "choices": ["A) 17", "B) 96", "C) 102", "D) 612"],
+    "correct_answer": "A",
+    "rationale": "Since the ratio of XY to ZV is 6 to 1, XY/ZV = 6/1. Letting ℓ represent the length of ZV, 102/ℓ = 6/1, or 6ℓ = 102. Dividing both sides by 6 yields ℓ = 17. Therefore, the length of line segment ZV is 17 inches.",
+    "needs_visual_review": false
+  },
+  {
+    "external_id": "T6-MATH-M2-Q10",
+    "skill_name": "Linear Equations & Inequalities",
+    "difficulty": 1,
+    "stem": "7(2x − 3) = 63\n\nWhich equation has the same solution as the given equation?",
+    "choices": ["A) 2x − 3 = 9", "B) 2x − 3 = 56", "C) 2x − 21 = 63", "D) 2x − 21 = 78"],
+    "correct_answer": "A",
+    "rationale": "Dividing each side of the given equation by 7 yields 2x − 3 = 9. Therefore, the equation 2x − 3 = 9 is equivalent to the given equation and has the same solution.",
+    "needs_visual_review": false
+  },
+  {
+    "external_id": "T6-MATH-M2-Q11",
+    "skill_name": "Linear Equations & Inequalities",
+    "difficulty": 1,
+    "stem": "The function f defined by f(t) = 14t + 9 gives the estimated length, in inches, of a vine plant t months after Tavon purchased it. Which of the following is the best interpretation of 9 in this context?",
+    "choices": ["A) Tavon will keep the vine plant for 9 months.", "B) The vine plant is expected to grow 9 inches each month.", "C) The vine plant is expected to grow to a maximum length of 9 inches.", "D) The estimated length of the vine plant was 9 inches when Tavon purchased it."],
+    "correct_answer": "D",
+    "rationale": "For a function of the form f(t) = mt + b, b represents the value of f(t) when t = 0. For this function, 9 represents the value of f(t) when t = 0, meaning that 0 months after the vine plant was purchased (that is, when it was purchased), its estimated length was 9 inches.",
+    "needs_visual_review": false
+  },
+  {
+    "external_id": "T6-MATH-M2-Q12",
+    "skill_name": "Polynomials & Non-linear Functions",
+    "difficulty": 1,
+    "stem": "(x + 2)(x − 5)(x + 9) = 0\n\nWhat is a positive solution to the given equation?",
+    "choices": ["A) 3", "B) 4", "C) 5", "D) 18"],
+    "correct_answer": "C",
+    "rationale": "Applying the zero product property to the given equation yields three equations: x + 2 = 0, x − 5 = 0, and x + 9 = 0, giving solutions x = −2, x = 5, and x = −9. Therefore, a positive solution to the given equation is 5.",
+    "needs_visual_review": false
+  },
+  {
+    "external_id": "T6-MATH-M2-Q13",
+    "skill_name": "Ratios, Rates & Proportions",
+    "difficulty": 1,
+    "stem": "Brian saves 2/5 of the $215 he earns each week from his job. If Brian continues to save at this rate, how much money, in dollars, will Brian save in 9 weeks?",
+    "choices": null,
+    "correct_answer": "774",
+    "rationale": "Brian saves 215(2/5), or $86, per week. If Brian continues to save at this rate for 9 weeks, he will save a total of 9(86), or $774.",
+    "needs_visual_review": false
+  },
+  {
+    "external_id": "T6-MATH-M2-Q14",
+    "skill_name": "Area & Volume",
+    "difficulty": 2,
+    "stem": "A rectangle has an area of 155 square inches. The length of the rectangle is 4 inches less than 7 times the width of the rectangle. What is the width of the rectangle, in inches?",
+    "choices": null,
+    "correct_answer": "5",
+    "rationale": "Let x represent the width, in inches, of the rectangle. The length is 7x − 4 inches. Since area equals width times length, x(7x − 4) = 155, or 7x² − 4x − 155 = 0. Factoring yields (7x + 31)(x − 5) = 0, giving x = −31/7 or x = 5. Since the width must be positive, the width of the rectangle is 5 inches.",
+    "needs_visual_review": false
+  },
+  {
+    "external_id": "T6-MATH-M2-Q15",
+    "skill_name": "Statistics & Probability",
+    "difficulty": 1,
+    "stem": "4, 10, 18, 4, 4, 5, 6, 5\n\nWhat is the median of the data set shown?",
+    "choices": ["A) 4", "B) 5", "C) 7", "D) 14"],
+    "correct_answer": "B",
+    "rationale": "The data set contains 8 values. Listed in ascending order, the data set is 4, 4, 4, 5, 5, 6, 10, 18, and the two middle values are 5 and 5. Since the two middle values are the same, the median is 5.",
+    "needs_visual_review": false
+  },
+  {
+    "external_id": "T6-MATH-M2-Q16",
+    "skill_name": "Area & Volume",
+    "difficulty": 1,
+    "stem": "A right circular cylinder has a volume of 432 cubic centimeters. The area of the base of the cylinder is 24 square centimeters. What is the height, in centimeters, of the cylinder?",
+    "choices": ["A) 18", "B) 24", "C) 216", "D) 10,368"],
+    "correct_answer": "A",
+    "rationale": "The volume of a right circular cylinder is V = πr²h, where πr² is the area of the base. Substituting 432 for V and 24 for the base area yields 432 = 24h. Dividing both sides by 24 yields h = 18. Therefore, the height of the cylinder is 18 centimeters.",
+    "needs_visual_review": false
+  },
+  {
+    "external_id": "T6-MATH-M2-Q17",
+    "skill_name": "Quadratics & Parabolas",
+    "difficulty": 1,
+    "stem": "x² = −841\n\nHow many distinct real solutions does the given equation have?",
+    "choices": ["A) Exactly one", "B) Exactly two", "C) Infinitely many", "D) Zero"],
+    "correct_answer": "D",
+    "rationale": "Since the square of a real number is never negative, the given equation isn't true for any real value of x. Therefore, the given equation has zero distinct real solutions.",
+    "needs_visual_review": false
+  },
+  {
+    "external_id": "T6-MATH-M2-Q18",
+    "skill_name": "Linear Equations & Inequalities",
+    "difficulty": 1,
+    "stem": "Line k is defined by y = 7x + 1/8. Line j is perpendicular to line k in the xy-plane. What is the slope of line j?",
+    "choices": ["A) −8", "B) −1/7", "C) 1/8", "D) 7"],
+    "correct_answer": "B",
+    "rationale": "In slope-intercept form y = mx + b, m represents the slope. The slope of line k is 7. Since line j is perpendicular to line k, the slope of line j is the opposite reciprocal of 7, which is −1/7.",
+    "needs_visual_review": false
+  },
+  {
+    "external_id": "T6-MATH-M2-Q19",
+    "skill_name": "Linear Equations & Inequalities",
+    "difficulty": 2,
+    "stem": "Number of cars | Maximum number of passengers and crew\n3 | 174\n5 | 284\n10 | 559\n\nThe table shows the linear relationship between the number of cars, c, on a commuter train and the maximum number of passengers and crew, p, that the train can carry. Which equation represents the linear relationship between c and p?",
+    "choices": ["A) 55c − p = −9", "B) 55c − p = 9", "C) 55p − c = −9", "D) 55p − c = 9"],
+    "correct_answer": "A",
+    "rationale": "The relationship can be represented by p = mc + b. Using two pairs of values from the table, the rate of change is (284−174)/(5−3) = 55. Substituting 55 for m yields p = 55c + b. Substituting c = 10 and p = 559 yields 559 = 55(10) + b = 550 + b, so b = 9. Thus p = 55c + 9. Rearranging gives 55c − p = −9.",
+    "needs_visual_review": false
+  },
+  {
+    "external_id": "T6-MATH-M2-Q20",
+    "skill_name": "Polynomials & Non-linear Functions",
+    "difficulty": 2,
+    "stem": "4^(c/8) = the seventh root of 4³\n\nWhat is the value of c?",
+    "choices": null,
+    "correct_answer": "7/24",
+    "rationale": "An expression of the form the nth root of a^m is equivalent to a^(m/n). Setting the exponents on both sides of the given equation equal and solving for c yields c = 7/24 (equivalently, 0.2917).",
+    "needs_visual_review": false
+  },
+  {
+    "external_id": "T6-MATH-M2-Q21",
+    "skill_name": "Systems of Equations",
+    "difficulty": 3,
+    "stem": "(x − 2) − 4(y + 7) = 117\n(x − 2) + 4(y + 7) = 442\n\nThe solution to the given system of equations is (x, y). What is the value of 6(x − 2)?",
+    "choices": null,
+    "correct_answer": "1677",
+    "rationale": "Adding the first equation to the second equation in the given system causes the (y+7) terms to cancel, yielding 2(x − 2) = 559. Multiplying both sides of this equation by 3 yields 6(x − 2) = 1,677. Therefore, the value of 6(x − 2) is 1,677.",
+    "needs_visual_review": false
+  },
+  {
+    "external_id": "T6-MATH-M2-Q22",
+    "skill_name": "Triangles & Circles",
+    "difficulty": 2,
+    "stem": "In triangle ABC, angle B is a right angle. The length of side AB is 10√37 and the length of side BC is 24√37. What is the length of side AC?",
+    "choices": ["A) 14√37", "B) 26√37", "C) 34√37", "D) 34/37"],
+    "correct_answer": "B",
+    "rationale": "By the Pythagorean theorem, c² = a² + b², where c is the hypotenuse. Substituting 10√37 and 24√37 for the legs yields c² = (10√37)² + (24√37)² = 100(37) + 576(37) = 676(37). Taking the square root of both sides yields c = 26√37 (taking the positive root since c represents a length). Therefore, the length of side AC is 26√37.",
+    "needs_visual_review": false
+  },
+  {
+    "external_id": "T6-MATH-M2-Q23",
+    "skill_name": "Polynomials & Non-linear Functions",
+    "difficulty": 3,
+    "stem": "The function f is defined by f(x) = (1.84)^(x/4). The equation can be rewritten as f(x) = (1 + p/100)^x, where p is a constant. Which of the following is closest to the value of p?",
+    "choices": ["A) 16", "B) 21", "C) 46", "D) 96"],
+    "correct_answer": "A",
+    "rationale": "The equation f(x) = (1.84)^(x/4) can be rewritten as f(x) = (1.84^(1/4))^x, which is approximately f(x) = (1.16467)^x. Since this must equal (1 + p/100)^x, it follows that 1 + p/100 ≈ 1.16467, so p/100 ≈ 0.16467, and p ≈ 16.467. Of the given choices, 16 is closest to the value of p.",
+    "needs_visual_review": false
+  },
+  {
+    "external_id": "T6-MATH-M2-Q24",
+    "skill_name": "Polynomials & Non-linear Functions",
+    "difficulty": 3,
+    "stem": "The function f is defined by f(x) = a√(x + b), where a and b are constants. In the xy-plane, the graph of y = f(x) passes through the point (−24, 0), and f(24) < 0. Which of the following must be true?",
+    "choices": ["A) f(0) = 24", "B) f(0) = −24", "C) a/b > 0", "D) a/b < 0"],
+    "correct_answer": "D",
+    "rationale": "Substituting 24 for x yields f(24) = a√(24 + b). Since f(24) < 0 and the square root term cannot be negative, it follows that a < 0. Since the graph passes through (−24, 0), substituting x = −24 and f(x) = 0 yields 0 = a√(−24 + b) = a√(b − 24). Since a ≠ 0 (as a < 0), it follows that √(b − 24) = 0, so b = 24. Since a < 0 and b = 24 (positive), a/b < 0 must be true.",
+    "needs_visual_review": false
+  },
+  {
+    "external_id": "T6-MATH-M2-Q25",
+    "skill_name": "Triangles & Circles",
+    "difficulty": 3,
+    "stem": "In the xy-plane, a circle has center C with coordinates (h, k). Points A and B lie on the circle. Point A has coordinates (h + 1, k + √102), and angle ACB is a right angle. What is the length of AB?",
+    "choices": ["A) √206", "B) 2√102", "C) 103√2", "D) 103√3"],
+    "correct_answer": "A",
+    "rationale": "Since A and B lie on the circle with center C, AC and BC are both radii and are therefore congruent. Using the distance formula, the length of AC is √((h+1−h)² + (k+√102−k)²) = √(1² + (√102)²) = √(1+102) = √103. So BC is also √103. Since angle ACB is a right angle, triangle ACB is a right triangle with legs AC and BC and hypotenuse AB. By the Pythagorean theorem, AB² = (√103)² + (√103)² = 103 + 103 = 206. Taking the positive square root yields AB = √206.",
+    "needs_visual_review": false
+  },
+  {
+    "external_id": "T6-MATH-M2-Q26",
+    "skill_name": "Statistics & Probability",
+    "difficulty": 3,
+    "stem": "The scatterplot shows the relationship between two variables, x and y, for data set E. A line of best fit is shown. Data set F is created by multiplying the y-coordinate of each data point from data set E by 3.9. Which of the following could be an equation of a line of best fit for data set F?",
+    "choices": ["A) y = 46.8 + 5.9x", "B) y = 46.8 + 1.5x", "C) y = 12 + 5.9x", "D) y = 12 + 1.5x"],
+    "correct_answer": "A",
+    "rationale": "The line of best fit shown for data set E has a y-intercept at approximately (0, 12) and passes approximately through the point (12, 30). Since data set F is created by multiplying each y-coordinate in data set E by 3.9, a line of best fit for data set F has a y-intercept at approximately (0, 12×3.9) = (0, 46.8) and passes approximately through (12, 30×3.9) = (12, 117). The slope is (117−46.8)/(12−0) = 70.2/12 ≈ 5.9. Therefore, y = 46.8 + 5.9x could be an equation of a line of best fit for data set F.",
+    "needs_visual_review": true
+  },
+  {
+    "external_id": "T6-MATH-M2-Q27",
+    "skill_name": "Systems of Equations",
+    "difficulty": 3,
+    "stem": "48x − 64y = 48y + 24\nry = (1/12)x − 8\n\nIn the given system of equations, r is a constant. If the system has no solution, what is the value of r?",
+    "choices": null,
+    "correct_answer": "-28",
+    "rationale": "For a system of two linear equations to have no solution, the lines must be distinct and parallel, meaning the coefficients of x and y in one equation are proportional to the corresponding coefficients in the other equation. Rewriting the first equation in standard form yields 48x − 112y = 24. Rewriting the second equation in standard form yields a coefficient of x that is 1/4 the coefficient of x in the first equation (12/48 = 1/4). For the lines to be parallel, the coefficient of y in the second equation must also be 1/4 of the coefficient of y in the first equation: r = −112 × (1/4) = −28. Thus, if the given system has no solution, the value of r is −28.",
+    "needs_visual_review": false
+  }
+]

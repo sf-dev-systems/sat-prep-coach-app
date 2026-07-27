@@ -1,0 +1,547 @@
+[
+  {
+    "external_id": "T5-MATH-M1-Q01",
+    "skill_name": "Systems of Equations",
+    "difficulty": 1,
+    "stem": "The graph of a system of a linear equation and a nonlinear equation is shown. What is the solution (x, y) to this system? [Graph shown in source PDF, not reproducible as text.]",
+    "choices": ["A) (0, 0)", "B) (0, 4)", "C) (4, 5)", "D) (5, 0)"],
+    "correct_answer": "C",
+    "rationale": "The solution to the system of two equations corresponds to the point where the graphs of the equations intersect. The graphs of the linear equation and the nonlinear equation shown intersect at the point (4, 5). Thus, the solution to the system is (4, 5).",
+    "needs_visual_review": true
+  },
+  {
+    "external_id": "T5-MATH-M1-Q02",
+    "skill_name": "Linear Equations & Inequalities",
+    "difficulty": 1,
+    "stem": "On the first day of a semester, a film club has 90 members. Each day after the first day of the semester, 10 new members join the film club. If no members leave the film club, how many total members will the film club have 4 days after the first day of the semester?",
+    "choices": ["A) 400", "B) 130", "C) 94", "D) 90"],
+    "correct_answer": "B",
+    "rationale": "It's given that the film club has 90 members on the first day of a semester, and 10 new members join the film club each day after the first day of the semester. This means that after 4 days, 4 × 10, or 40, new members will have joined the club. Adding 40 members to the original 90 club members yields 130 members. Thus, the film club will have 130 total members 4 days after the first day of the semester.",
+    "needs_visual_review": false
+  },
+  {
+    "external_id": "T5-MATH-M1-Q03",
+    "skill_name": "Linear Equations & Inequalities",
+    "difficulty": 1,
+    "stem": "The graph of the linear function f is shown, where y = f(x). What is the y-intercept of the graph of f? [Graph shown in source PDF, not reproducible as text.]",
+    "choices": ["A) (0, 0)", "B) (0, −16/11)", "C) (0, −8)", "D) (0, 8)"],
+    "correct_answer": "D",
+    "rationale": "The y-intercept of a graph is the point where the graph intersects the y-axis. The graph of function f shown intersects the y-axis at the point (0, 8). Therefore, the y-intercept of the graph of f is (0, 8).",
+    "needs_visual_review": true
+  },
+  {
+    "external_id": "T5-MATH-M1-Q04",
+    "skill_name": "Systems of Equations",
+    "difficulty": 1,
+    "stem": "s + 7r = 27\nr = 3\nWhat is the solution (r, s) to the given system of equations?",
+    "choices": ["A) (6, 3)", "B) (3, 6)", "C) (3, 27)", "D) (27, 3)"],
+    "correct_answer": "B",
+    "rationale": "The second equation in the given system is r = 3. Substituting 3 for r in the first equation yields s + 7(3) = 27, or s + 21 = 27. Subtracting 21 from both sides of this equation yields s = 6. Therefore, the solution (r, s) to the given system of equations is (3, 6).",
+    "needs_visual_review": false
+  },
+  {
+    "external_id": "T5-MATH-M1-Q05",
+    "skill_name": "Linear Equations & Inequalities",
+    "difficulty": 1,
+    "stem": "The table shows selected values from function f.\nx: −1, 0, 1, 2\nf(x): 16, 17, 18, 19\nWhich of the following is the best description of function f?",
+    "choices": ["A) Decreasing linear", "B) Increasing linear", "C) Decreasing exponential", "D) Increasing exponential"],
+    "correct_answer": "B",
+    "rationale": "The given values show that as x increases, f(x) also increases, which means that f is an increasing function. Furthermore, f(x) increases at a constant rate of 1 for each increase of x by 1. A function with a constant rate of change is linear. Thus, the function f can be described as an increasing linear function.",
+    "needs_visual_review": false
+  },
+  {
+    "external_id": "T5-MATH-M1-Q06",
+    "skill_name": "Systems of Equations",
+    "difficulty": 1,
+    "stem": "The graph of a system of linear equations is shown. The solution to the system is (x, y). What is the value of x? [Graph shown in source PDF, not reproducible as text.]",
+    "choices": null,
+    "correct_answer": "4",
+    "rationale": "A solution to a system of equations must satisfy each equation in the system. It follows that if (x, y) is a solution to the system, the point (x, y) lies on the graph in the xy-plane of each equation in the system. According to the graph, the point (x, y) that lies on the graph of each equation in the system is (4, 1). Therefore, the solution to the system is (4, 1). It follows that the value of x is 4.",
+    "needs_visual_review": true
+  },
+  {
+    "external_id": "T5-MATH-M1-Q07",
+    "skill_name": "Statistics & Probability",
+    "difficulty": 1,
+    "stem": "23, 27, 27, 32, 35, 36, 52\nWhat is the range of the 7 scores shown?",
+    "choices": null,
+    "correct_answer": "29",
+    "rationale": "The range of a data set is the difference between its maximum value and its minimum value. For the data set shown, the maximum score is 52 and the minimum score is 23. The difference between those scores is 52 − 23, or 29. Therefore, the range of the 7 scores shown is 29.",
+    "needs_visual_review": false
+  },
+  {
+    "external_id": "T5-MATH-M1-Q08",
+    "skill_name": "Triangles & Circles",
+    "difficulty": 1,
+    "stem": "In the figure, line m is parallel to line n, and line k intersects both lines. Which of the following statements is true? (Note: figure not drawn to scale.) [Figure shown in source PDF, not reproducible as text — angle x and a 145° angle are marked.]",
+    "choices": ["A) The value of x is less than 145.", "B) The value of x is greater than 145.", "C) The value of x is equal to 145.", "D) The value of x cannot be determined."],
+    "correct_answer": "C",
+    "rationale": "Vertical angles, or angles that are opposite each other when two lines intersect, are congruent. It's given that line k intersects line n. Based on the figure, the angle with measure x° and the angle with measure 145° are vertical angles. Therefore, the value of x is equal to 145.",
+    "needs_visual_review": true
+  },
+  {
+    "external_id": "T5-MATH-M1-Q09",
+    "skill_name": "Linear Equations & Inequalities",
+    "difficulty": 1,
+    "stem": "The equation x + y = 1,440 represents the number of minutes of daylight (between sunrise and sunset), x, and the number of minutes of non-daylight, y, on a particular day in Oak Park, Illinois. If this day has 670 minutes of daylight, how many minutes of non-daylight does it have?",
+    "choices": ["A) 670", "B) 770", "C) 1,373", "D) 1,440"],
+    "correct_answer": "B",
+    "rationale": "It's given that the equation x + y = 1,440 represents the number of minutes of daylight, x, and the number of minutes of non-daylight, y, on a particular day in Oak Park, Illinois, and that this day has 670 minutes of daylight. Substituting 670 for x in the equation x + y = 1,440 yields 670 + y = 1,440. Subtracting 670 from both sides of this equation yields y = 770. Therefore, this day has 770 minutes of non-daylight.",
+    "needs_visual_review": false
+  },
+  {
+    "external_id": "T5-MATH-M1-Q10",
+    "skill_name": "Statistics & Probability",
+    "difficulty": 2,
+    "stem": "Scott selected 20 employees at random from all 400 employees at a company. He found that 16 of the employees in this sample are enrolled in exactly three professional development courses this year. Based on Scott's findings, which of the following is the best estimate of the number of employees at the company who are enrolled in exactly three professional development courses this year?",
+    "choices": ["A) 4", "B) 320", "C) 380", "D) 384"],
+    "correct_answer": "B",
+    "rationale": "It's given that from the sample of 20 employees at the company, 16 of the employees are enrolled in exactly three professional development courses this year. Since 16/20 is equal to 0.80, or 80/100, it follows that 80% of the employees in the sample are enrolled in exactly three professional development courses this year. Therefore, the best estimate for the percentage of employees at the company who are enrolled in exactly three professional development courses this year is 80%. It's given that there are a total of 400 employees at the company. Therefore, the best estimate of the number of employees at the company who are enrolled in exactly three professional development courses this year is 400(80/100), or 320.",
+    "needs_visual_review": false
+  },
+  {
+    "external_id": "T5-MATH-M1-Q11",
+    "skill_name": "Linear Equations & Inequalities",
+    "difficulty": 1,
+    "stem": "If 4x − 28 = −24, what is the value of x − 7?",
+    "choices": ["A) −24", "B) −22", "C) −6", "D) −1"],
+    "correct_answer": "C",
+    "rationale": "Dividing all terms in the given equation by 4 yields x − 7 = −6. Therefore, the value of x − 7 is −6.",
+    "needs_visual_review": false
+  },
+  {
+    "external_id": "T5-MATH-M1-Q12",
+    "skill_name": "Linear Equations & Inequalities",
+    "difficulty": 1,
+    "stem": "For a snowstorm in a certain town, the minimum rate of snowfall recorded was 0.6 inches per hour, and the maximum rate of snowfall recorded was 1.8 inches per hour. Which inequality is true for all values of s, where s represents a rate of snowfall, in inches per hour, recorded for this snowstorm?",
+    "choices": ["A) s ≥ 2.4", "B) s ≥ 1.8", "C) 0 ≤ s ≤ 0.6", "D) 0.6 ≤ s ≤ 1.8"],
+    "correct_answer": "D",
+    "rationale": "It's given that for a snowstorm in a certain town, the minimum rate of snowfall recorded was 0.6 inches per hour, the maximum rate of snowfall recorded was 1.8 inches per hour, and s represents a rate of snowfall, in inches per hour, recorded for this snowstorm. It follows that the inequality 0.6 ≤ s ≤ 1.8 is true for all values of s.",
+    "needs_visual_review": false
+  },
+  {
+    "external_id": "T5-MATH-M1-Q13",
+    "skill_name": "Quadratics & Parabolas",
+    "difficulty": 2,
+    "stem": "y = 4x\ny = x² − 12\nA solution to the given system of equations is (x, y), where x > 0. What is the value of x?",
+    "choices": null,
+    "correct_answer": "6",
+    "rationale": "It's given that y = 4x and y = x² − 12. Substituting 4x for y in the second equation yields 4x = x² − 12. Subtracting 4x from both sides of this equation yields 0 = x² − 4x − 12. This equation can be rewritten as 0 = (x − 6)(x + 2). By the zero product property, x − 6 = 0 or x + 2 = 0, so x = 6 or x = −2. Since it's given that x > 0, and 6 is greater than 0, it follows that the value of x is 6.",
+    "needs_visual_review": false
+  },
+  {
+    "external_id": "T5-MATH-M1-Q14",
+    "skill_name": "Linear Equations & Inequalities",
+    "difficulty": 1,
+    "stem": "A store sells two different-sized containers of blueberries. The store's sales of these blueberries totaled 896.86 dollars last month. The equation 4.51x + 6.07y = 896.86 represents this situation, where x is the number of smaller containers sold and y is the number of larger containers sold. According to the equation, what is the price, in dollars, of each smaller container?",
+    "choices": null,
+    "correct_answer": "4.51",
+    "rationale": "It's given that the equation 4.51x + 6.07y = 896.86 represents this situation, where x is the number of smaller containers sold, y is the number of larger containers sold, and 896.86 is the store's total sales, in dollars, of blueberries last month. Therefore, 4.51x represents the store's sales, in dollars, of smaller containers, and 6.07y represents the store's sales, in dollars, of larger containers. Since x is the number of smaller containers sold, the price, in dollars, of each smaller container is 4.51.",
+    "needs_visual_review": false
+  },
+  {
+    "external_id": "T5-MATH-M1-Q15",
+    "skill_name": "Area & Volume",
+    "difficulty": 1,
+    "stem": "A right circular cylinder has a base diameter of 22 centimeters and a height of 6 centimeters. What is the volume, in cubic centimeters, of the cylinder?",
+    "choices": ["A) 132π", "B) 264π", "C) 726π", "D) 2,904π"],
+    "correct_answer": "C",
+    "rationale": "The volume, V, of a right circular cylinder is given by the formula V = πr²h, where r is the radius of the base and h is the height. It's given that the cylinder has a height of 6 centimeters, so h = 6. The base diameter is 22 centimeters, so the radius is 11 centimeters, and r = 11. Substituting 11 for r and 6 for h in V = πr²h yields V = π(11)²(6), which is equivalent to V = π(121)(6), or V = 726π. Therefore, the volume, in cubic centimeters, of the cylinder is 726π.",
+    "needs_visual_review": false
+  },
+  {
+    "external_id": "T5-MATH-M1-Q16",
+    "skill_name": "Polynomials & Non-linear Functions",
+    "difficulty": 2,
+    "stem": "The graph of the rational function f is shown, where y = f(x) and x ≥ 0. Which of the following is the graph of y = f(x) + 5, where x ≥ 0? [Graphs shown in source PDF as answer choices, not reproducible as text.]",
+    "choices": ["A) [graph]", "B) [graph]", "C) [graph]", "D) [graph]"],
+    "correct_answer": "D",
+    "rationale": "It's given that the graph of the rational function f is shown, where y = f(x) and x ≥ 0. The graph shown passes through the point (3, 3). It follows that when the value of x is 3, the value of f(x) is 3. When the value of f(x) is 3, the value of f(x) + 5 is 3 + 5, or 8. Therefore, the graph of y = f(x) + 5 passes through the point (3, 8). Of the given choices, choice D is the only graph that passes through the point (3, 8) and is therefore the graph of y = f(x) + 5.",
+    "needs_visual_review": true
+  },
+  {
+    "external_id": "T5-MATH-M1-Q17",
+    "skill_name": "Ratios, Rates & Proportions",
+    "difficulty": 1,
+    "stem": "At a particular track meet, the ratio of coaches to athletes is 1 to 26. If there are x coaches at the track meet, which of the following expressions represents the number of athletes at the track meet? (Note: figure not drawn to scale.)",
+    "choices": ["A) x/26", "B) 26x", "C) x + 26", "D) 26/x"],
+    "correct_answer": "B",
+    "rationale": "It's given that at a particular track meet, the ratio of coaches to athletes is 1 to 26. If one number in a ratio is multiplied by a value, the other number must be multiplied by the same value in order to maintain the same ratio. If there are x coaches at the track meet, multiplying both numbers in the ratio by x yields 1(x) to 26(x), or x to 26x. Therefore, the expression 26x represents the number of athletes at the track meet.",
+    "needs_visual_review": false
+  },
+  {
+    "external_id": "T5-MATH-M1-Q18",
+    "skill_name": "Linear Equations & Inequalities",
+    "difficulty": 2,
+    "stem": "Kaylani used fabric measuring 5 yards in length to make each suit for a men's choir. The relationship between the number of suits that Kaylani made, x, and the total length of fabric that she purchased, y, in yards, is represented by the equation y − 5x = 6. What is the best interpretation of 6 in this context?",
+    "choices": ["A) Kaylani made 6 suits.", "B) Kaylani purchased a total of 6 yards of fabric.", "C) Kaylani used a total of 6 yards of fabric to make the suits.", "D) Kaylani purchased 6 yards more fabric than she used to make the suits."],
+    "correct_answer": "D",
+    "rationale": "It's given that the equation y − 5x = 6 represents the relationship between the number of suits that Kaylani made, x, and the total length of fabric she purchased, y, in yards. Adding 5x to both sides of the given equation yields y = 5x + 6. Since Kaylani made x suits and used 5 yards of fabric to make each suit, the expression 5x represents the total amount of fabric she used to make the suits. Since y represents the total length of fabric Kaylani purchased, in yards, it follows from the equation y = 5x + 6 that Kaylani purchased 5x yards of fabric to make the suits, plus an additional 6 yards. Therefore, the best interpretation of 6 in this context is that Kaylani purchased 6 yards more fabric than she used to make the suits.",
+    "needs_visual_review": false
+  },
+  {
+    "external_id": "T5-MATH-M1-Q19",
+    "skill_name": "Trigonometry",
+    "difficulty": 3,
+    "stem": "What is the value of tan(92π/3)?",
+    "choices": ["A) −√3", "B) −√3/3", "C) √3/3", "D) √3"],
+    "correct_answer": "A",
+    "rationale": "A trigonometric ratio can be found using the unit circle, that is, a circle with radius 1 unit. If a central angle of a unit circle in the xy-plane centered at the origin has its starting side on the positive x-axis and its terminal side intersects the circle at a point (x, y), then the value of the tangent of the central angle is equal to the y-coordinate divided by the x-coordinate. There are 2π radians in a circle. Dividing 92π/3 by 2π yields 92/6, which is equivalent to 15 + 2/3. It follows that the angle 92π/3 is the result of 15 revolutions from its starting side on the positive x-axis followed by a rotation through 2π/3 radians. Therefore, the angles 92π/3 and 2π/3 are coterminal angles and tan(92π/3) is equal to tan(2π/3). Since 2π/3 is greater than π/2 and less than π, the terminal side of the angle is in quadrant II and forms an angle of π/3, or 60°, with the negative x-axis. Therefore, the terminal side of the angle intersects the unit circle at the point (−1/2, √3/2). It follows that the value of tan(2π/3) is (√3/2)/(−1/2), which is equivalent to −√3. Therefore, the value of tan(92π/3) is −√3.",
+    "needs_visual_review": false
+  },
+  {
+    "external_id": "T5-MATH-M1-Q20",
+    "skill_name": "Trigonometry",
+    "difficulty": 2,
+    "stem": "In the triangle shown, what is the value of cos x°? [Figure shown in source PDF, not reproducible as text — the side adjacent to angle x measures 11 units and the hypotenuse measures 28 units.]",
+    "choices": null,
+    "correct_answer": "11/28",
+    "rationale": "The cosine of an acute angle in a right triangle is defined as the ratio of the length of the leg adjacent to the angle to the length of the hypotenuse. In the triangle shown, the length of the leg adjacent to the angle with measure x° is 11 units and the length of the hypotenuse is 28 units. Therefore, the value of cos x° is 11/28.",
+    "needs_visual_review": true
+  },
+  {
+    "external_id": "T5-MATH-M1-Q21",
+    "skill_name": "Quadratics & Parabolas",
+    "difficulty": 2,
+    "stem": "The function g is defined by g(x) = (x + 14)(t − x), where t is a constant. In the xy-plane, the graph of y = g(x) passes through the point (24, 0). What is the value of g(0)?",
+    "choices": null,
+    "correct_answer": "336",
+    "rationale": "By the zero product property, if (x + 14)(t − x) = 0, then x + 14 = 0, which gives x = −14, or t − x = 0, which gives x = t. Therefore, g(x) = 0 when x = −14 and when x = t. Since the graph of y = g(x) passes through the point (24, 0), it follows that g(24) = 0, so t = 24. Substituting 24 for t in the equation g(x) = (x + 14)(t − x) yields g(x) = (x + 14)(24 − x). The value of g(0) can be calculated by substituting 0 for x in this equation, which yields g(0) = (0 + 14)(24 − 0), or g(0) = 336.",
+    "needs_visual_review": false
+  },
+  {
+    "external_id": "T5-MATH-M1-Q22",
+    "skill_name": "Triangles & Circles",
+    "difficulty": 2,
+    "stem": "(x + 4)² + (y − 19)² = 121\nThe graph of the given equation is a circle in the xy-plane. The point (a, b) lies on the circle. Which of the following is a possible value for a?",
+    "choices": ["A) −16", "B) −14", "C) 11", "D) 19"],
+    "correct_answer": "A",
+    "rationale": "An equation of the form (x − h)² + (y − k)² = r², where h, k, and r are constants, represents a circle in the xy-plane with center (h, k) and radius r. Therefore, the circle represented by the given equation has center (−4, 19) and radius 11. Since the center of the circle has an x-coordinate of −4 and the radius of the circle is 11, the least possible x-coordinate for any point on the circle is −4 − 11, or −15. Similarly, the greatest possible x-coordinate for any point on the circle is −4 + 11, or 7. Therefore, if the point (a, b) lies on the circle, it must be true that −15 ≤ a ≤ 7. Of the given choices, only −14 satisfies this inequality.",
+    "needs_visual_review": false
+  },
+  {
+    "external_id": "T5-MATH-M1-Q23",
+    "skill_name": "Area & Volume",
+    "difficulty": 2,
+    "stem": "A right rectangular prism has a height of 9 inches. The length of the prism's base is x inches, which is 7 inches more than the width of the prism's base. Which function V gives the volume of the prism, in cubic inches, in terms of the length of the prism's base?",
+    "choices": ["A) V(x) = x(x + 9)(x + 7)", "B) V(x) = x(x + 9)(x − 7)", "C) V(x) = 9x(x + 7)", "D) V(x) = 9x(x − 7)"],
+    "correct_answer": "D",
+    "rationale": "The volume of a right rectangular prism is equal to the area of its base times its height. It's given that the length of the prism's base is x inches, which is 7 inches more than the width of the prism's base. This means that the width of the prism's base is x − 7 inches. It follows that the area of the prism's base, in square inches, is x(x − 7) and the volume, in cubic inches, of the prism is 9x(x − 7). Thus, the function V that gives the volume of this right rectangular prism, in cubic inches, in terms of the length of the prism's base, x, is V(x) = 9x(x − 7).",
+    "needs_visual_review": false
+  },
+  {
+    "external_id": "T5-MATH-M1-Q24",
+    "skill_name": "Polynomials & Non-linear Functions",
+    "difficulty": 3,
+    "stem": "Which of the following functions has (have) a minimum value at −3?\nI. f(x) = −6(3)^x − 3\nII. g(x) = −3(6)^x",
+    "choices": ["A) I only", "B) II only", "C) I and II", "D) Neither I nor II"],
+    "correct_answer": "D",
+    "rationale": "A function of the form f(x) = a(b)^x + c, where a < 0 and b > 1, is a decreasing function. Both of the given functions are of this form; therefore, both are decreasing functions. If a function f is decreasing, as the value of x increases, the corresponding value of f(x) decreases; therefore, the function doesn't have a minimum value. Thus, neither of the given functions has a minimum value.",
+    "needs_visual_review": false
+  },
+  {
+    "external_id": "T5-MATH-M1-Q25",
+    "skill_name": "Percentages",
+    "difficulty": 1,
+    "stem": "The result of increasing the quantity x by 400% is 60. What is the value of x?",
+    "choices": ["A) 12", "B) 15", "C) 240", "D) 340"],
+    "correct_answer": "A",
+    "rationale": "It's given that the result of increasing the quantity x by 400% is 60. This can be written as x + x(400/100) = 60, which is equivalent to x + 4x = 60, or 5x = 60. Dividing each side of this equation by 5 yields x = 12. Therefore, the value of x is 12.",
+    "needs_visual_review": false
+  },
+  {
+    "external_id": "T5-MATH-M1-Q26",
+    "skill_name": "Quadratics & Parabolas",
+    "difficulty": 3,
+    "stem": "The function f is defined by f(x) = ax² + bx + c, where a, b, and c are constants. The graph of y = f(x) in the xy-plane passes through the points (7, 0) and (−3, 0). If a is an integer greater than 1, which of the following could be the value of a + b?",
+    "choices": ["A) −6", "B) −3", "C) 4", "D) 5"],
+    "correct_answer": "A",
+    "rationale": "Since the value of f(x) is 0 when the value of x is either 7 or −3, the function may be written in factored form as f(x) = a(x − 7)(x + 3). Distributing yields f(x) = a(x² − 4x − 21), or f(x) = ax² − 4ax − 21a. Since f(x) = ax² + bx + c, it follows that b = −4a. Adding a to each side yields a + b = −3a. Since a + b = −3a, if a is an integer, the value of a + b must be a multiple of 3. If a is an integer greater than 1, then a ≥ 2, so a + b ≤ −3(2), or −6. Of the given choices, only −6 is a multiple of 3 that's less than or equal to −6.",
+    "needs_visual_review": false
+  },
+  {
+    "external_id": "T5-MATH-M1-Q27",
+    "skill_name": "Polynomials & Non-linear Functions",
+    "difficulty": 3,
+    "stem": "The function g is defined by g(x) = x(x − 2)(x + 6)². The value of g(7 − w) is 0, where w is a constant. What is the sum of all possible values of w?",
+    "choices": null,
+    "correct_answer": "25",
+    "rationale": "The value of g(7 − w) is the value of g(x) when x = 7 − w. Substituting 7 − w for x in the given equation yields g(7 − w) = (7 − w)(5 − w)(13 − w)², which is set equal to 0. Since the product of the three factors is equal to 0, at least one of these factors must be equal to 0. Setting 7 − w = 0 gives w = 7. Setting 5 − w = 0 gives w = 5. Setting (13 − w)² = 0 gives w = 13. Adding the three possible values of w yields 7 + 5 + 13, or 25. Therefore, the sum of all possible values of w is 25.",
+    "needs_visual_review": false
+  },
+  {
+    "external_id": "T5-MATH-M2-Q01",
+    "skill_name": "Percentages",
+    "difficulty": 1,
+    "stem": "What is 20% of 440?",
+    "choices": ["A) 44", "B) 88", "C) 880", "D) 1,760"],
+    "correct_answer": "B",
+    "rationale": "20% of 440 can be calculated as 440(20/100), which is equivalent to 8,800/100, or 88.",
+    "needs_visual_review": false
+  },
+  {
+    "external_id": "T5-MATH-M2-Q02",
+    "skill_name": "Linear Equations & Inequalities",
+    "difficulty": 1,
+    "stem": "Argon is placed inside a container with a constant volume. The graph shows the estimated pressure y, in pounds per square inch (psi), of the argon when its temperature is x kelvins. What is the estimated pressure of the argon, in psi, when the temperature is 600 kelvins? [Graph shown in source PDF, not reproducible as text.]",
+    "choices": ["A) 6", "B) 12", "C) 300", "D) 600"],
+    "correct_answer": "B",
+    "rationale": "For the graph shown, the x-axis represents temperature, in kelvins, and the y-axis represents the estimated pressure, in psi. The estimated pressure of the argon when the temperature is 600 kelvins can be found by locating the point on the graph where the value of x is equal to 600. The graph passes through the point (600, 12). This means that when the temperature is 600 kelvins, the estimated pressure is 12 psi.",
+    "needs_visual_review": true
+  },
+  {
+    "external_id": "T5-MATH-M2-Q03",
+    "skill_name": "Linear Equations & Inequalities",
+    "difficulty": 1,
+    "stem": "The function f is defined by f(x) = 4x − 3. What is the value of f(10)?",
+    "choices": ["A) −30", "B) 37", "C) 40", "D) 43"],
+    "correct_answer": "B",
+    "rationale": "Substituting 10 for x in the given function yields f(10) = 4(10) − 3, which is equivalent to f(10) = 40 − 3, or f(10) = 37. Therefore, the value of f(10) is 37.",
+    "needs_visual_review": false
+  },
+  {
+    "external_id": "T5-MATH-M2-Q04",
+    "skill_name": "Polynomials & Non-linear Functions",
+    "difficulty": 1,
+    "stem": "Which expression is equivalent to 16x³y² + 14xy?",
+    "choices": ["A) 2xy(8xy + 7)", "B) 2xy(8x²y + 7)", "C) 14xy(2x²y + 1)", "D) 14xy(8x²y + 1)"],
+    "correct_answer": "B",
+    "rationale": "Since 2xy is a common factor of each term in the given expression, the expression can be rewritten as 2xy(8x²y + 7).",
+    "needs_visual_review": false
+  },
+  {
+    "external_id": "T5-MATH-M2-Q05",
+    "skill_name": "Linear Equations & Inequalities",
+    "difficulty": 1,
+    "stem": "A veterinarian recommends that each day a certain rabbit should eat 25 calories per pound of the rabbit's weight, plus an additional 11 calories. Which equation represents this situation, where c is the total number of calories the veterinarian recommends the rabbit should eat each day if the rabbit's weight is x pounds?",
+    "choices": ["A) c = 25x", "B) c = 36x", "C) c = 11x + 25", "D) c = 25x + 11"],
+    "correct_answer": "D",
+    "rationale": "If the rabbit's weight is x pounds, then multiplying 25 calories per pound by the rabbit's weight, x pounds, yields 25x calories. Adding the additional 11 calories that the rabbit should eat each day yields 25x + 11 calories. Since c is the total number of calories the veterinarian recommends the rabbit should eat each day, this situation can be represented by the equation c = 25x + 11.",
+    "needs_visual_review": false
+  },
+  {
+    "external_id": "T5-MATH-M2-Q06",
+    "skill_name": "Linear Equations & Inequalities",
+    "difficulty": 1,
+    "stem": "If 6n = 12, what is the value of n + 4?",
+    "choices": null,
+    "correct_answer": "6",
+    "rationale": "Dividing both sides of the equation 6n = 12 by 6 yields n = 2. Substituting 2 for n in the expression n + 4 yields 2 + 4, or 6.",
+    "needs_visual_review": false
+  },
+  {
+    "external_id": "T5-MATH-M2-Q07",
+    "skill_name": "Quadratics & Parabolas",
+    "difficulty": 1,
+    "stem": "(d − 30)(d + 30) − 7 = −7\nWhat is a solution to the given equation?",
+    "choices": null,
+    "correct_answer": "30",
+    "rationale": "Adding 7 to each side of the given equation yields (d − 30)(d + 30) = 0. Since a product of two factors is equal to 0 if and only if at least one of the factors is 0, either d − 30 = 0 or d + 30 = 0. Adding 30 to each side of d − 30 = 0 yields d = 30. Subtracting 30 from each side of d + 30 = 0 yields d = −30. Therefore, the solutions to the given equation are −30 and 30 (either is an acceptable answer).",
+    "needs_visual_review": false
+  },
+  {
+    "external_id": "T5-MATH-M2-Q08",
+    "skill_name": "Linear Equations & Inequalities",
+    "difficulty": 1,
+    "stem": "Line r in the xy-plane has a slope of 4 and passes through the point (0, 6). Which equation defines line r?",
+    "choices": ["A) y = −6x + 4", "B) y = 6x + 4", "C) y = 4x − 6", "D) y = 4x + 6"],
+    "correct_answer": "D",
+    "rationale": "A line in the xy-plane with a slope of m and a y-intercept of (0, b) can be defined by an equation in the form y = mx + b. It's given that line r has a slope of 4 and passes through the point (0, 6), so m = 4 and b = 6. Substituting these values into y = mx + b yields y = 4x + 6. Therefore, the equation y = 4x + 6 defines line r.",
+    "needs_visual_review": false
+  },
+  {
+    "external_id": "T5-MATH-M2-Q09",
+    "skill_name": "Quadratics & Parabolas",
+    "difficulty": 2,
+    "stem": "A competitive diver dives from a platform into the water. The graph shown gives the height above the water y, in meters, of the diver x seconds after diving from the platform. What is the best interpretation of the x-intercept of the graph? [Graph shown in source PDF, not reproducible as text.]",
+    "choices": ["A) The diver reaches a maximum height above the water at 1.6 seconds.", "B) The diver hits the water at 1.6 seconds.", "C) The diver reaches a maximum height above the water at 0.2 seconds.", "D) The diver hits the water at 0.2 seconds."],
+    "correct_answer": "B",
+    "rationale": "The x-intercept of a graph is the point at which the graph intersects the x-axis, or when the value of y is 0. The graph shown intersects the x-axis between x = 1 and x = 2. In other words, the diver is 0 meters above the water, or hits the water, between 1 and 2 seconds after diving from the platform. Of the given choices, only choice B includes an interpretation where the diver hits the water between 1 and 2 seconds. Therefore, the best interpretation of the x-intercept of the graph is that the diver hits the water at 1.6 seconds.",
+    "needs_visual_review": true
+  },
+  {
+    "external_id": "T5-MATH-M2-Q10",
+    "skill_name": "Quadratics & Parabolas",
+    "difficulty": 1,
+    "stem": "The kinetic energy, in joules, of an object with mass 9 kilograms traveling at a speed of v meters per second is given by the function K, where K(v) = (9/2)v². Which of the following is the best interpretation of K(34) = 5,202 in this context?",
+    "choices": ["A) The object traveling at 34 meters per second has a kinetic energy of 5,202 joules.", "B) The object traveling at 340 meters per second has a kinetic energy of 5,202 joules.", "C) The object traveling at 5,202 meters per second has a kinetic energy of 34 joules.", "D) The object traveling at 23,409 meters per second has a kinetic energy of 34 joules."],
+    "correct_answer": "A",
+    "rationale": "It's given that the kinetic energy, in joules, of an object with a mass of 9 kilograms traveling at a speed of v meters per second is given by the function K, where K(v) = (9/2)v². It follows that in the equation K(34) = 5,202, 34 is the value of v, or the speed of the object, in meters per second, and 5,202 is the kinetic energy, in joules, of the object at that speed. Therefore, the best interpretation of K(34) = 5,202 in this context is that the object traveling at 34 meters per second has a kinetic energy of 5,202 joules.",
+    "needs_visual_review": false
+  },
+  {
+    "external_id": "T5-MATH-M2-Q11",
+    "skill_name": "Statistics & Probability",
+    "difficulty": 1,
+    "stem": "The scatterplot shows the relationship between two variables x and y. A line of best fit for the data is also shown. For how many of the 10 data points is the actual y-value greater than the y-value predicted by the line of best fit? [Scatterplot shown in source PDF, not reproducible as text.]",
+    "choices": ["A) 3", "B) 4", "C) 6", "D) 7"],
+    "correct_answer": "C",
+    "rationale": "Any data point that's located above the line of best fit has a y-value that's greater than the y-value predicted by the line of best fit. For the scatterplot shown, 6 of the data points are above the line of best fit. Therefore, 6 of the data points have an actual y-value that's greater than the y-value predicted by the line of best fit.",
+    "needs_visual_review": true
+  },
+  {
+    "external_id": "T5-MATH-M2-Q12",
+    "skill_name": "Statistics & Probability",
+    "difficulty": 1,
+    "stem": "At a movie theater, there are a total of 350 customers. Each customer is located in either theater A, theater B, or theater C. If one of these customers is selected at random, the probability of selecting a customer who is located in theater A is 0.48, and the probability of selecting a customer who is located in theater B is 0.24. How many customers are located in theater C?",
+    "choices": ["A) 28", "B) 40", "C) 84", "D) 98"],
+    "correct_answer": "D",
+    "rationale": "If the probability of selecting a customer in theater A is 0.48, then 0.48(350), or 168, customers are located in theater A. If the probability of selecting a customer in theater B is 0.24, then 0.24(350), or 84, customers are located in theater B. It follows that there are 168 + 84, or 252, customers in theater A and theater B. Therefore, there are 350 − 252, or 98, customers in theater C.",
+    "needs_visual_review": false
+  },
+  {
+    "external_id": "T5-MATH-M2-Q13",
+    "skill_name": "Linear Equations & Inequalities",
+    "difficulty": 2,
+    "stem": "What is the slope of the graph of y = (1/3)(29x + 10) + 5x in the xy-plane?",
+    "choices": null,
+    "correct_answer": "44/3",
+    "rationale": "A linear equation can be written in the form y = mx + b, where m is the slope of the graph in the xy-plane and (0, b) is the y-intercept. Distributing the 1/3 in the equation y = (1/3)(29x + 10) + 5x yields y = (29/3)x + 10/3 + 5x. Combining like terms on the right-hand side yields y = (44/3)x + 10/3. This equation is in the form y = mx + b, where m = 44/3 and b = 10/3. Therefore, the slope of the graph of the given equation is 44/3.",
+    "needs_visual_review": false
+  },
+  {
+    "external_id": "T5-MATH-M2-Q14",
+    "skill_name": "Area & Volume",
+    "difficulty": 2,
+    "stem": "The length of each edge of a box is 29 inches. Each side of the box is in the shape of a square. The box does not have a lid. What is the exterior surface area, in square inches, of this box without a lid?",
+    "choices": null,
+    "correct_answer": "4205",
+    "rationale": "The exterior surface area of a figure is the sum of the areas of all its faces. It's given that the box does not have a lid and that each side of the box is in the shape of a square. Therefore, the box consists of 5 congruent square faces. It's also given that the length of each edge is 29 inches. The area of a square is equal to s², so the area of each of the 5 square faces is equal to 29², or 841, square inches. Since the box consists of 5 congruent square faces, the exterior surface area of this box without a lid is 5(841), or 4,205, square inches.",
+    "needs_visual_review": false
+  },
+  {
+    "external_id": "T5-MATH-M2-Q15",
+    "skill_name": "Statistics & Probability",
+    "difficulty": 1,
+    "stem": "Five Eretmochelys imbricata, a type of sea turtle, each have a nest. The table shows an original data set of the number of eggs that each turtle laid in its nest.\nNest A: 149 eggs\nNest B: 144 eggs\nNest C: 148 eggs\nNest D: 136 eggs\nNest E: 139 eggs\nA sixth nest with 121 eggs is added to create a new data set. Which of the following correctly compares the means of the two data sets?",
+    "choices": ["A) The mean of the original data set is greater than the mean of the new data set.", "B) The mean of the original data set is less than the mean of the new data set.", "C) The means of both data sets are equal.", "D) There is not enough information to compare the means."],
+    "correct_answer": "A",
+    "rationale": "It's given that the table shows an original data set of 5 values, and that a sixth value, 121, is added to create a new data set. Since the additional value, 121, is less than any value in the original data set, the mean of the original data set is greater than the mean of the new data set.",
+    "needs_visual_review": false
+  },
+  {
+    "external_id": "T5-MATH-M2-Q16",
+    "skill_name": "Triangles & Circles",
+    "difficulty": 1,
+    "stem": "In △RST, the measure of ∠R is 63°. Which of the following could be the measure, in degrees, of ∠S?",
+    "choices": ["A) 116", "B) 118", "C) 126", "D) 180"],
+    "correct_answer": "A",
+    "rationale": "The sum of the measures of the angles of a triangle is 180°. Therefore, the sum of the measures of ∠R, ∠S, and ∠T is 180°. Since the measure of ∠R is 63°, the sum of the measures of ∠S and ∠T is 180° − 63°, or 117°. Therefore, the measure of ∠S, in degrees, must be less than 117. Of the given choices, only 116 is less than 117. Thus, the measure, in degrees, of ∠S could be 116.",
+    "needs_visual_review": false
+  },
+  {
+    "external_id": "T5-MATH-M2-Q17",
+    "skill_name": "Polynomials & Non-linear Functions",
+    "difficulty": 1,
+    "stem": "Which expression is equivalent to (8x³ + 8) − (x³ − 2)?",
+    "choices": ["A) 8x³ + 6", "B) 7x³ + 10", "C) 8x³ + 10", "D) 7x³ + 6"],
+    "correct_answer": "B",
+    "rationale": "The given expression is equivalent to 8x³ + 8 − x³ + 2. Combining like terms in this expression yields 7x³ + 10.",
+    "needs_visual_review": false
+  },
+  {
+    "external_id": "T5-MATH-M2-Q18",
+    "skill_name": "Polynomials & Non-linear Functions",
+    "difficulty": 2,
+    "stem": "If 4√(2x) = 16, what is the value of 6x?",
+    "choices": ["A) 24", "B) 48", "C) 72", "D) 96"],
+    "correct_answer": "B",
+    "rationale": "Dividing each side of the given equation by 4 yields √(2x) = 4. Squaring both sides of this equation yields 2x = 16. Multiplying each side of this equation by 3 yields 6x = 48. Therefore, the value of 6x is 48.",
+    "needs_visual_review": false
+  },
+  {
+    "external_id": "T5-MATH-M2-Q19",
+    "skill_name": "Linear Equations & Inequalities",
+    "difficulty": 2,
+    "stem": "2x − y > 883\nFor which of the following tables are all the values of x and their corresponding values of y solutions to the given inequality?",
+    "choices": [
+      "A) x: 440, 441, 442 → y: 0, −2, −4",
+      "B) x: 440, 442, 441 → y: 0, −2, −4",
+      "C) x: 442, 440, 441 → y: 0, −2, −4",
+      "D) x: 442, 441, 440 → y: 0, −2, −4"
+    ],
+    "correct_answer": "D",
+    "rationale": "Substituting 440 for x in the given inequality yields y < −3. Substituting 441 for x yields y < −1. Substituting 442 for x yields y < 1. For the table in choice D, when x = 440, y = −4, which is less than −3; when x = 441, y = −2, which is less than −1; when x = 442, y = 0, which is less than 1. Therefore, the table in choice D gives values of x and their corresponding values of y that are all solutions to the given inequality.",
+    "needs_visual_review": false
+  },
+  {
+    "external_id": "T5-MATH-M2-Q20",
+    "skill_name": "Systems of Equations",
+    "difficulty": 2,
+    "stem": "5y = 10x + 11\n−5y = 5x − 21\nThe solution to the given system of equations is (x, y). What is the value of 30x?",
+    "choices": null,
+    "correct_answer": "20",
+    "rationale": "Adding the first equation to the second equation in the given system yields 5y − 5y = 10x + 5x + 11 − 21, or 0 = 15x − 10. Adding 10 to both sides of this equation yields 10 = 15x. Multiplying both sides of this equation by 2 yields 20 = 30x. Therefore, the value of 30x is 20.",
+    "needs_visual_review": false
+  },
+  {
+    "external_id": "T5-MATH-M2-Q21",
+    "skill_name": "Triangles & Circles",
+    "difficulty": 3,
+    "stem": "A rectangle is inscribed in a circle, such that each vertex of the rectangle lies on the circumference of the circle. The diagonal of the rectangle is twice the length of the shortest side of the rectangle. The area of the rectangle is 1,089√3 square units. What is the length, in units, of the diameter of the circle?",
+    "choices": null,
+    "correct_answer": "66",
+    "rationale": "Since each vertex of the rectangle lies on the circumference of the circle, the length of the diameter of the circle is equal to the length of the diagonal of the rectangle. The diagonal of a rectangle forms a right triangle with the shortest and longest sides of the rectangle as the legs. Let s represent the length of the shortest side; since the diagonal is twice the shortest side, the diagonal is 2s. By the Pythagorean theorem, s² + b² = (2s)², so b² = 3s², giving b = s√3 for the longest side. The area of the rectangle is s(s√3), and it's given that this equals 1,089√3, so s² = 1,089, giving s = 33. The length of the diagonal is 2s = 2(33), or 66. Since the length of the diameter of the circle equals the length of the diagonal of the rectangle, the length, in units, of the diameter of the circle is 66.",
+    "needs_visual_review": false
+  },
+  {
+    "external_id": "T5-MATH-M2-Q22",
+    "skill_name": "Area & Volume",
+    "difficulty": 2,
+    "stem": "Rectangles ABCD and EFGH are similar. The length of each side of EFGH is 6 times the length of the corresponding side of ABCD. The area of ABCD is 54 square units. What is the area, in square units, of EFGH?",
+    "choices": ["A) 9", "B) 36", "C) 324", "D) 1,944"],
+    "correct_answer": "D",
+    "rationale": "Let x represent the length of the base of rectangle ABCD, and let y represent its height, so the area of ABCD is xy. Since the length of each side of EFGH is 6 times the length of the corresponding side of ABCD, the base and height of EFGH are 6x and 6y, so its area is (6x)(6y), which is equivalent to 36xy. It's given that the area of ABCD is 54 square units. Since xy = 54, substituting 54 for xy in 36xy yields 36(54), or 1,944. Therefore, the area, in square units, of EFGH is 1,944.",
+    "needs_visual_review": false
+  },
+  {
+    "external_id": "T5-MATH-M2-Q23",
+    "skill_name": "Polynomials & Non-linear Functions",
+    "difficulty": 2,
+    "stem": "Which expression is equivalent to 42a/k + 42ak, where k > 0?",
+    "choices": ["A) 84a/k", "B) 84ak²/k", "C) 42a(k + 1)/k", "D) 42a(k² + 1)/k"],
+    "correct_answer": "D",
+    "rationale": "Two fractions can be added together when they have a common denominator. Since k > 0, multiplying the second term, 42ak, by k/k yields 42ak²/k. Therefore, the expression 42a/k + 42ak can be written as 42a/k + 42ak²/k, which is equivalent to (42a + 42ak²)/k. Since each term in the numerator has a factor of 42a, this can be rewritten as 42a(1 + k²)/k, which is equivalent to 42a(k² + 1)/k.",
+    "needs_visual_review": false
+  },
+  {
+    "external_id": "T5-MATH-M2-Q24",
+    "skill_name": "Quadratics & Parabolas",
+    "difficulty": 2,
+    "stem": "Which quadratic equation has no real solutions?",
+    "choices": ["A) x² + 14x − 49 = 0", "B) x² − 14x + 49 = 0", "C) 5x² − 14x − 49 = 0", "D) 5x² − 14x + 49 = 0"],
+    "correct_answer": "D",
+    "rationale": "The number of solutions to a quadratic equation in the form ax² + bx + c = 0 can be determined by the value of the discriminant, b² − 4ac. If the discriminant is greater than zero, the equation has two distinct real solutions; if equal to zero, exactly one real solution; if less than zero, no real solutions. For choice D, a = 5, b = −14, and c = 49. Substituting these values into b² − 4ac yields (−14)² − 4(5)(49), or −784. Since −784 is less than zero, the quadratic equation 5x² − 14x + 49 = 0 has no real solutions.",
+    "needs_visual_review": false
+  },
+  {
+    "external_id": "T5-MATH-M2-Q25",
+    "skill_name": "Polynomials & Non-linear Functions",
+    "difficulty": 3,
+    "stem": "P(t) = 260(1.04)^((6/4)t)\nThe function P models the population, in thousands, of a certain city t years after 2003. According to the model, the population is predicted to increase by 4% every n months. What is the value of n?",
+    "choices": ["A) 8", "B) 12", "C) 18", "D) 72"],
+    "correct_answer": "A",
+    "rationale": "The value of the base of the given exponential function, 1.04, corresponds to an increase of 4% for every increase of 1 in the exponent, (6/4)t. Setting the exponent equal to 1, (6/4)t = 1, and solving for t yields t = 4/6, or 2/3, of a year. Therefore, the population is predicted to increase by 4% every 2/3 of a year. Since there are 12 months in a year, 2/3 of a year is equivalent to 12(2/3), or 8, months. Therefore, the value of n is 8.",
+    "needs_visual_review": false
+  },
+  {
+    "external_id": "T5-MATH-M2-Q26",
+    "skill_name": "Triangles & Circles",
+    "difficulty": 3,
+    "stem": "A circle in the xy-plane has its center at (−1, 1). Line t is tangent to this circle at the point (5, −4). Which of the following points also lies on line t?",
+    "choices": ["A) (0, 6/5)", "B) (4, 7)", "C) (10, 2)", "D) (11, 1)"],
+    "correct_answer": "C",
+    "rationale": "The points (−1, 1) and (5, −4) are the endpoints of the radius of the circle at the point of tangency. The slope of this radius is (−4 − 1)/(5 − (−1)) = −5/6. A line tangent to a circle is perpendicular to the radius at the point of tangency, so the slope of line t is the negative reciprocal of −5/6, which is 6/5. Testing choice C, (10, 2): the slope of the segment connecting (10, 2) and (5, −4) is (2 − (−4))/(10 − 5) = 6/5, which matches. Therefore, the point (10, 2) lies on line t.",
+    "needs_visual_review": false
+  },
+  {
+    "external_id": "T5-MATH-M2-Q27",
+    "skill_name": "Area & Volume",
+    "difficulty": 3,
+    "stem": "For an electric field passing through a flat surface perpendicular to it, the electric flux of the electric field through the surface is the product of the electric field's strength and the area of the surface. A certain flat surface consists of two adjacent squares, where the side length, in meters, of the larger square is 3 times the side length, in meters, of the smaller square. An electric field with strength 29.00 volts per meter passes uniformly through this surface, which is perpendicular to the electric field. If the total electric flux of the electric field through this surface is 4,640 volts·meters, what is the electric flux, in volts·meters, of the electric field through the larger square?",
+    "choices": null,
+    "correct_answer": "4176",
+    "rationale": "It's given that the side length of the larger square is 3 times the side length of the smaller square, so the area of the larger square is 3², or 9, times the area of the smaller square. If the area of the smaller square is x, the area of the larger square is 9x, and the total area of the two adjacent squares is x + 9x, or 10x. Since electric flux is the product of the electric field's strength and the area, 29.00(10x) = 4,640, or 290x = 4,640. Dividing each side by 290 yields x = 16. Substituting 16 for x in the expression for the area of the larger square, 9x, yields 9(16), or 144, square meters. The electric flux through the larger square is 144(29.00), or 4,176 volts·meters.",
+    "needs_visual_review": false
+  }
+]

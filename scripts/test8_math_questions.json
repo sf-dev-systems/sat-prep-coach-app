@@ -1,0 +1,542 @@
+[
+{
+"external_id": "T8-MATH-M1-Q01",
+"skill_name": "Ratios, Rates & Proportions",
+"difficulty": 1,
+"stem": "A bus is traveling at a constant speed along a straight portion of road. The equation d/t = 30 gives the distance d, in feet from a road marker, that the bus will be t seconds after passing the marker. How many feet from the marker will the bus be 2 seconds after passing the marker?",
+"choices": ["A) 30", "B) 32", "C) 60", "D) 90"],
+"correct_answer": "C",
+"rationale": "It's given that t represents the number of seconds after the bus passes the marker. Substituting 2 for t in the given equation d/t = 30 yields d = 30(2), or d = 60. Therefore, the bus will be 60 feet from the marker 2 seconds after passing it.",
+"needs_visual_review": false
+},
+{
+"external_id": "T8-MATH-M1-Q02",
+"skill_name": "Statistics & Probability",
+"difficulty": 1,
+"stem": "For a particular machine that produces beads, 29 out of every 100 beads it produces have a defect. A bead produced by the machine will be selected at random. What is the probability of selecting a bead that has a defect?",
+"choices": ["A) 1/2,900", "B) 1/29", "C) 29/100", "D) 29/10"],
+"correct_answer": "C",
+"rationale": "It's given that 29 out of every 100 beads that the machine produces have a defect. If the machine produces k beads, the number with a defect is (29/100)k. The probability of selecting a bead that has a defect is the number of defective beads divided by the total number of beads, (29/100)k divided by k, which simplifies to 29/100.",
+"needs_visual_review": false
+},
+{
+"external_id": "T8-MATH-M1-Q03",
+"skill_name": "Linear Equations & Inequalities",
+"difficulty": 1,
+"stem": "What is the y-intercept of the graph shown?",
+"choices": ["A) (-8, 0)", "B) (-6, 0)", "C) (0, 6)", "D) (0, 8)"],
+"correct_answer": "D",
+"rationale": "The y-intercept of a graph in the xy-plane is the point at which the graph crosses the y-axis. The graph shown crosses the y-axis at the point (0, 8). Therefore, the y-intercept of the graph shown is (0, 8).",
+"needs_visual_review": true
+},
+{
+"external_id": "T8-MATH-M1-Q04",
+"skill_name": "Polynomials & Non-linear Functions",
+"difficulty": 2,
+"stem": "Which expression is equivalent to (2x^2 + x - 9) + (x^2 + 6x + 1)?",
+"choices": ["A) 2x^2 + 7x + 10", "B) 2x^2 + 6x - 8", "C) 3x^2 + 7x - 10", "D) 3x^2 + 7x - 8"],
+"correct_answer": "D",
+"rationale": "The given expression is equivalent to (2x^2+x-9)+(x^2+6x+1), which can be rewritten as (2x^2+x^2)+(x+6x)+(-9+1). Adding like terms yields 3x^2+7x-8.",
+"needs_visual_review": false
+},
+{
+"external_id": "T8-MATH-M1-Q05",
+"skill_name": "Statistics & Probability",
+"difficulty": 1,
+"stem": "An analyst collected data on the price of a carton of grape tomatoes at 30 locations selected at random in Utah. The mean price of a carton of grape tomatoes in Utah was estimated to be $4.23, with an associated margin of error of $0.08. Which of the following is a plausible statement about the mean price of a carton of grape tomatoes for all locations that sell this product in Utah?",
+"choices": ["A) It is between $4.15 and $4.31.", "B) It is either less than $4.15 or greater than $4.31.", "C) It is less than $4.15.", "D) It is greater than $4.31."],
+"correct_answer": "A",
+"rationale": "It's given that the mean price was estimated to be $4.23, with an associated margin of error of $0.08. It follows that plausible values for this mean price are between $4.23 - $0.08 and $4.23 + $0.08. Therefore, it's plausible that the mean price is between $4.15 and $4.31.",
+"needs_visual_review": false
+},
+{
+"external_id": "T8-MATH-M1-Q06",
+"skill_name": "Linear Equations & Inequalities",
+"difficulty": 1,
+"stem": "2.6 + x = 2.8. What value of x is the solution to the given equation?",
+"choices": null,
+"correct_answer": "0.2",
+"rationale": "Subtracting 2.6 from each side of the given equation yields x = 0.2.",
+"needs_visual_review": false
+},
+{
+"external_id": "T8-MATH-M1-Q07",
+"skill_name": "Percentages",
+"difficulty": 1,
+"stem": "Out of 300 seeds that were planted, 80% sprouted. How many of these seeds sprouted?",
+"choices": null,
+"correct_answer": "240",
+"rationale": "It's given that 80% of the 300 seeds sprouted. The number of seeds that sprouted can be calculated by multiplying the number of seeds planted by 80/100, which gives 300(80/100), or 240.",
+"needs_visual_review": false
+},
+{
+"external_id": "T8-MATH-M1-Q08",
+"skill_name": "Linear Equations & Inequalities",
+"difficulty": 1,
+"stem": "f(x) = 4x + b. For the linear function f, b is a constant and f(7) = 28. What is the value of b?",
+"choices": ["A) 0", "B) 1", "C) 4", "D) 7"],
+"correct_answer": "A",
+"rationale": "It's given that f(7) = 28. Substituting 7 for x and 28 for f(x) in the given function yields 28 = 4(7) + b, or 28 = 28 + b. Subtracting 28 from each side of this equation yields b = 0.",
+"needs_visual_review": false
+},
+{
+"external_id": "T8-MATH-M1-Q09",
+"skill_name": "Triangles & Circles",
+"difficulty": 1,
+"stem": "Right triangles LMN and PQR are similar, where L and M correspond to P and Q, respectively. Angle M has a measure of 53 degrees. What is the measure of angle Q?",
+"choices": ["A) 37 degrees", "B) 53 degrees", "C) 127 degrees", "D) 143 degrees"],
+"correct_answer": "B",
+"rationale": "It's given that triangle LMN is similar to triangle PQR. Corresponding angles of similar triangles are congruent. Since angle M and angle Q correspond to each other, they must be congruent. Therefore, if the measure of angle M is 53 degrees, then the measure of angle Q is also 53 degrees.",
+"needs_visual_review": false
+},
+{
+"external_id": "T8-MATH-M1-Q10",
+"skill_name": "Linear Equations & Inequalities",
+"difficulty": 1,
+"stem": "What is the equation of the line that passes through the point (0, 5) and is parallel to the graph of y = 7x + 4 in the xy-plane?",
+"choices": ["A) y = 5x", "B) y = 7x + 5", "C) y = 7x", "D) y = 5x + 7"],
+"correct_answer": "B",
+"rationale": "The equation of a line can be written in slope-intercept form y = mx + b, where m is the slope and (0, b) is the y-intercept. It's given that the line passes through (0, 5), so b = 5. Since the line is parallel to y = 7x + 4, it has the same slope, m = 7. Substituting yields y = 7x + 5.",
+"needs_visual_review": false
+},
+{
+"external_id": "T8-MATH-M1-Q11",
+"skill_name": "Statistics & Probability",
+"difficulty": 2,
+"stem": "Which of the following equations is the most appropriate linear model for the data shown in the scatterplot?",
+"choices": ["A) y = -1.9x - 10.1", "B) y = -1.9x + 10.1", "C) y = 1.9x - 10.1", "D) y = 1.9x + 10.1"],
+"correct_answer": "B",
+"rationale": "The scatterplot shows that as the x-values increase, the y-values decrease, meaning the model has a negative slope. The data points are also close to the y-axis at a positive value of y, so the y-intercept is positive. Of the given choices, only y = -1.9x + 10.1 has a negative slope and a positive y-intercept.",
+"needs_visual_review": true
+},
+{
+"external_id": "T8-MATH-M1-Q12",
+"skill_name": "Polynomials & Non-linear Functions",
+"difficulty": 2,
+"stem": "A model predicts that the population of Bergen was 15,000 in 2005. The model also predicts that each year for the next 5 years, the population p increased by 4% of the previous year's population. Which equation best represents this model, where x is the number of years after 2005, for x <= 5?",
+"choices": ["A) p = 0.96(15,000)^x", "B) p = 1.04(15,000)^x", "C) p = 15,000(0.96)^x", "D) p = 15,000(1.04)^x"],
+"correct_answer": "D",
+"rationale": "Each year, the predicted population is found by multiplying the previous year's population by 1.04. Since the predicted population in 2005 was 15,000, the predicted population x years later is p = 15,000(1.04)^x.",
+"needs_visual_review": false
+},
+{
+"external_id": "T8-MATH-M1-Q13",
+"skill_name": "Systems of Equations",
+"difficulty": 2,
+"stem": "2a + 8b = 198\n2a + 4b = 98\nThe solution to the given system of equations is (a, b). What is the value of b?",
+"choices": null,
+"correct_answer": "25",
+"rationale": "Subtracting the second equation from the first equation yields (2a+8b)-(2a+4b) = 198-98, which simplifies to 4b = 100. Dividing each side by 4 yields b = 25.",
+"needs_visual_review": false
+},
+{
+"external_id": "T8-MATH-M1-Q14",
+"skill_name": "Polynomials & Non-linear Functions",
+"difficulty": 2,
+"stem": "The expression 90y^5 - 54y^4 is equivalent to ry^4(15y - 9), where r is a constant. What is the value of r?",
+"choices": null,
+"correct_answer": "6",
+"rationale": "Applying the distributive property to ry^4(15y-9) yields 15ry^5 - 9ry^4. Since this is equivalent to 90y^5 - 54y^4, corresponding coefficients must be equal: 15r = 90 and -9r = -54. Dividing 15r = 90 by 15 yields r = 6.",
+"needs_visual_review": false
+},
+{
+"external_id": "T8-MATH-M1-Q15",
+"skill_name": "Polynomials & Non-linear Functions",
+"difficulty": 2,
+"stem": "The graph of y = f(x) is shown, where the function f is defined by f(x) = ax^3 + bx^2 + cx + d and a, b, c, and d are constants. For how many values of x does f(x) = 0?",
+"choices": ["A) One", "B) Two", "C) Three", "D) Four"],
+"correct_answer": "C",
+"rationale": "If a value of x satisfies f(x)=0, the graph of y=f(x) will contain a point (x,0) and thus touch the x-axis. Since there are 3 points at which this graph touches the x-axis, there are 3 values of x for which f(x)=0.",
+"needs_visual_review": true
+},
+{
+"external_id": "T8-MATH-M1-Q16",
+"skill_name": "Polynomials & Non-linear Functions",
+"difficulty": 1,
+"stem": "The area A, in square centimeters, of a rectangular cutting board can be represented by the expression w(w+9), where w is the width, in centimeters, of the cutting board. Which expression represents the length, in centimeters, of the cutting board?",
+"choices": ["A) w(w+9)", "B) w", "C) 9", "D) (w+9)"],
+"correct_answer": "D",
+"rationale": "The area of a rectangle is its length times its width. Since the area is represented by w(w+9), where w is the width, the length is represented by (w+9).",
+"needs_visual_review": false
+},
+{
+"external_id": "T8-MATH-M1-Q17",
+"skill_name": "Linear Equations & Inequalities",
+"difficulty": 2,
+"stem": "p = k/(4j + 9). The given equation relates the distinct positive numbers p, k, and j. Which equation correctly expresses 4j + 9 in terms of p and k?",
+"choices": ["A) 4j + 9 = k/p", "B) 4j + 9 = kp", "C) 4j + 9 = -k/p", "D) 4j + 9 = p/k"],
+"correct_answer": "A",
+"rationale": "Since j is positive, 4j+9 is not zero, so multiplying both sides of p = k/(4j+9) by (4j+9) yields p(4j+9) = k. Since p is positive (not zero), dividing both sides by p yields 4j+9 = k/p.",
+"needs_visual_review": false
+},
+{
+"external_id": "T8-MATH-M1-Q18",
+"skill_name": "Area & Volume",
+"difficulty": 2,
+"stem": "Circle A has a radius of 3n and circle B has a radius of 129n, where n is a positive constant. The area of circle B is how many times the area of circle A?",
+"choices": ["A) 43", "B) 86", "C) 129", "D) 1,849"],
+"correct_answer": "D",
+"rationale": "The area of a circle is A = pi*r^2. Substituting 3n for r gives the area of circle A: pi(3n)^2 = 9*pi*n^2. Substituting 129n for r gives the area of circle B: pi(129n)^2 = 16,641*pi*n^2. Dividing the area of circle B by the area of circle A gives 16,641*pi*n^2 / 9*pi*n^2 = 1,849.",
+"needs_visual_review": false
+},
+{
+"external_id": "T8-MATH-M1-Q19",
+"skill_name": "Trigonometry",
+"difficulty": 2,
+"stem": "The measure of angle R is 2*pi/3 radians. The measure of angle T is 5*pi/12 radians greater than the measure of angle R. What is the measure of angle T, in degrees?",
+"choices": ["A) 75", "B) 120", "C) 195", "D) 390"],
+"correct_answer": "C",
+"rationale": "The measure of angle T is 2*pi/3 + 5*pi/12 radians. Rewriting 2*pi/3 as 8*pi/12 gives 8*pi/12 + 5*pi/12 = 13*pi/12 radians. Converting to degrees by multiplying by 180/pi yields (13*pi/12)(180/pi) = 195 degrees.",
+"needs_visual_review": false
+},
+{
+"external_id": "T8-MATH-M1-Q20",
+"skill_name": "Quadratics & Parabolas",
+"difficulty": 1,
+"stem": "y = x^2 - 14x + 22. The given equation relates the variables x and y. For what value of x does the value of y reach its minimum?",
+"choices": null,
+"correct_answer": "7",
+"rationale": "For an equation of the form y = ax^2 + bx + c, y reaches its minimum when x = -b/(2a). Here a = 1 and b = -14, so x = -(-14)/(2*1) = 7.",
+"needs_visual_review": false
+},
+{
+"external_id": "T8-MATH-M1-Q21",
+"skill_name": "Linear Equations & Inequalities",
+"difficulty": 3,
+"stem": "A small business owner budgets $2,200 to purchase candles. The owner must purchase a minimum of 200 candles to maintain the discounted pricing. If the owner pays $4.90 per candle to purchase small candles and $11.60 per candle to purchase large candles, what is the maximum number of large candles the owner can purchase to stay within the budget and maintain the discounted pricing?",
+"choices": null,
+"correct_answer": "182",
+"rationale": "Let s = number of small candles and l = number of large candles. The cost constraint gives 4.90s + 11.60l <= 2,200, and the minimum-candle constraint gives s + l >= 200. Solving s >= 200 - l and substituting into the cost inequality: 4.90(200-l) + 11.60l <= 2,200, which simplifies to 980 + 6.70l <= 2,200, so 6.70l <= 1,220, giving l <= 182.09. Since l must be a whole number, the maximum number of large candles is 182.",
+"needs_visual_review": false
+},
+{
+"external_id": "T8-MATH-M1-Q22",
+"skill_name": "Linear Equations & Inequalities",
+"difficulty": 2,
+"stem": "y <= x + 7\ny >= -2x - 1\nWhich point (x, y) is a solution to the given system of inequalities in the xy-plane?",
+"choices": ["A) (-14, 0)", "B) (0, -14)", "C) (0, 14)", "D) (14, 0)"],
+"correct_answer": "D",
+"rationale": "Substituting 14 for x and 0 for y in y <= x+7 yields 0 <= 21, which is true. Substituting the same values in y >= -2x-1 yields 0 >= -29, which is true. Therefore, (14, 0) is a solution to the system.",
+"needs_visual_review": false
+},
+{
+"external_id": "T8-MATH-M1-Q23",
+"skill_name": "Statistics & Probability",
+"difficulty": 3,
+"stem": "Weight (pounds) - Frequency: 13-12, 14-8, 15-5, 16-7, 17-9, 18-10, 19-13, 20-7. The frequency table summarizes a data set of the weights, rounded to the nearest pound, of 71 tortoises. A weight of 39 pounds is added to the original data set, creating a new data set of the weights, rounded to the nearest pound, of 72 tortoises. Which statement best compares the mean and median of the new data set to the mean and median of the original data set?",
+"choices": ["A) The mean of the new data set is greater than the mean of the original data set, and the median of the new data set is greater than the median of the original data set.", "B) The mean of the new data set is greater than the mean of the original data set, and the medians of the two data sets are equal.", "C) The mean of the new data set is less than the mean of the original data set, and the median of the new data set is less than the median of the original data set.", "D) The mean of the new data set is less than the mean of the original data set, and the medians of the two data sets are equal."],
+"correct_answer": "B",
+"rationale": "The mean is the sum of the values divided by the number of values. Since the added weight of 39 is greater than every value in the original data set, the mean of the new data set is greater than the mean of the original. For the original 71 tortoises (an odd count), the median is the 36th value in ascending order, which is 17. For the new 72 tortoises, the median is between the 36th and 37th values; since 39 is placed at the top of the ordered list, the 36th and 37th values are both still 17. So the medians of the two data sets are equal. Therefore, the mean of the new data set is greater, and the medians are equal.",
+"needs_visual_review": false
+},
+{
+"external_id": "T8-MATH-M1-Q24",
+"skill_name": "Quadratics & Parabolas",
+"difficulty": 3,
+"stem": "(x - a)(x - 29) = x - 29. Which of the following are solutions to the given equation, where a is a constant and a > 30? I. a  II. a + 1  III. 29",
+"choices": ["A) I and II only", "B) I and III only", "C) II and III only", "D) I, II, and III"],
+"correct_answer": "C",
+"rationale": "Subtracting (x-29) from both sides yields 0 = (x-a)(x-29) - (x-29), which can be rewritten as 0 = (x-29)(x-a-1), or 0 = (x-29)(x-(a+1)). By the zero product property, x = 29 or x = a+1. Therefore, the solutions are 29 and a+1, not a.",
+"needs_visual_review": false
+},
+{
+"external_id": "T8-MATH-M1-Q25",
+"skill_name": "Quadratics & Parabolas",
+"difficulty": 3,
+"stem": "In the xy-plane, the graph of the equation y = -x^2 + 9x - 100 intersects the line y = c at exactly one point. What is the value of c?",
+"choices": ["A) -481/4", "B) -100", "C) -319/4", "D) -9/2"],
+"correct_answer": "C",
+"rationale": "A parabola intersects a horizontal line at exactly one point only at its vertex, so c equals the y-coordinate of the vertex. Rewriting y = -x^2+9x-100 in vertex form gives y = -(x - 9/2)^2 - 319/4. Therefore, c = -319/4.",
+"needs_visual_review": false
+},
+{
+"external_id": "T8-MATH-M1-Q26",
+"skill_name": "Polynomials & Non-linear Functions",
+"difficulty": 3,
+"stem": "The functions f and g are defined by the given equations, where x >= 0. Which of the following equations displays, as a constant or coefficient, the maximum value of the function it defines, where x >= 0? I. f(x) = 18(1.25)^x + 41  II. g(x) = 9(0.73)^x",
+"choices": ["A) I only", "B) II only", "C) I and II", "D) Neither I nor II"],
+"correct_answer": "B",
+"rationale": "For f, since the base 1.25 is greater than 1, f is increasing for x >= 0 and has no maximum value. For g, since the base 0.73 is less than 1, g is decreasing for x >= 0, so its maximum occurs at x = 0: g(0) = 9(0.73)^0 = 9. Since 9 appears as a coefficient in the equation for g, only equation II displays its maximum value as a constant or coefficient.",
+"needs_visual_review": false
+},
+{
+"external_id": "T8-MATH-M1-Q27",
+"skill_name": "Triangles & Circles",
+"difficulty": 3,
+"stem": "The perimeter of an equilateral triangle is 852 centimeters. The three vertices of the triangle lie on a circle. The radius of the circle is w*sqrt(3) centimeters. What is the value of w?",
+"choices": null,
+"correct_answer": "284/3",
+"rationale": "Each side of the equilateral triangle has length 852/3 = 284 cm. Forming right triangle AMO, where M is the midpoint of a side, A is an endpoint of that side, and O is the circle's center, gives a 30-60-90 triangle with AM = 142 cm (half of 284) as the side opposite the 60-degree angle, and AO = w*sqrt(3) as the hypotenuse. In a 30-60-90 triangle, the side opposite 60 degrees equals (sqrt(3)/2) times the hypotenuse, so 142 = (sqrt(3)/2)(w*sqrt(3)) = (3/2)w. Solving gives w = 284/3.",
+"needs_visual_review": false
+},
+{
+"external_id": "T8-MATH-M2-Q01",
+"skill_name": "Linear Equations & Inequalities",
+"difficulty": 1,
+"stem": "What is the y-intercept of the line graphed?",
+"choices": ["A) (-5, 0)", "B) (0, 0)", "C) (0, 5)", "D) (0, 9)"],
+"correct_answer": "C",
+"rationale": "The y-intercept of a graph is the point where the graph intersects the y-axis. The line graphed intersects the y-axis at the point (0, 5).",
+"needs_visual_review": true
+},
+{
+"external_id": "T8-MATH-M2-Q02",
+"skill_name": "Statistics & Probability",
+"difficulty": 1,
+"stem": "Average number of store employees by type of store, for a certain region in 2016: Warehouse store - 365, Department store - 213, Supermarket - 130. Based on the table, how much greater was the average number of store employees in warehouse stores than in supermarkets?",
+"choices": ["A) 83", "B) 152", "C) 235", "D) 495"],
+"correct_answer": "C",
+"rationale": "The average number of store employees in warehouse stores was 365, and in supermarkets was 130. Subtracting, 365 - 130 = 235. The average number of store employees was 235 greater in warehouse stores than in supermarkets.",
+"needs_visual_review": false
+},
+{
+"external_id": "T8-MATH-M2-Q03",
+"skill_name": "Triangles & Circles",
+"difficulty": 2,
+"stem": "In the figure, line m is parallel to line n, and line t intersects both lines, forming an angle of 33 degrees as marked in the figure. What is the value of x?",
+"choices": ["A) 33", "B) 57", "C) 123", "D) 147"],
+"correct_answer": "D",
+"rationale": "Since line t is a transversal of parallel lines m and n, exterior angles on the same side of the transversal are supplementary. Thus x + 33 = 180. Subtracting 33 from both sides yields x = 147.",
+"needs_visual_review": true
+},
+{
+"external_id": "T8-MATH-M2-Q04",
+"skill_name": "Linear Equations & Inequalities",
+"difficulty": 1,
+"stem": "Sean rents a tent at a cost of $11 per day plus a onetime insurance fee of $10. Which equation represents the total cost c, in dollars, to rent the tent with insurance for d days?",
+"choices": ["A) c = 11(d + 10)", "B) c = 10(d + 11)", "C) c = 11d + 10", "D) c = 10d + 11"],
+"correct_answer": "C",
+"rationale": "The rental cost is $11 per day for d days, or 11d dollars. Adding the onetime $10 insurance fee gives the total cost: c = 11d + 10.",
+"needs_visual_review": false
+},
+{
+"external_id": "T8-MATH-M2-Q05",
+"skill_name": "Triangles & Circles",
+"difficulty": 1,
+"stem": "For the right triangle shown, a = 4 and b = 5. Which expression represents the value of c?",
+"choices": ["A) 4 + 5", "B) (4)(5)", "C) sqrt(4 + 5)", "D) sqrt(4^2 + 5^2)"],
+"correct_answer": "D",
+"rationale": "By the Pythagorean theorem, c^2 = a^2 + b^2. Substituting 4 for a and 5 for b yields c^2 = 4^2 + 5^2. Taking the square root of both sides and keeping the positive value (since a side length must be positive) gives c = sqrt(4^2 + 5^2).",
+"needs_visual_review": false
+},
+{
+"external_id": "T8-MATH-M2-Q06",
+"skill_name": "Linear Equations & Inequalities",
+"difficulty": 1,
+"stem": "The function g is defined by g(x) = 6x. For what value of x is g(x) = 54?",
+"choices": null,
+"correct_answer": "9",
+"rationale": "Substituting 54 for g(x) in g(x)=6x yields 54 = 6x. Dividing both sides by 6 yields x = 9.",
+"needs_visual_review": false
+},
+{
+"external_id": "T8-MATH-M2-Q07",
+"skill_name": "Polynomials & Non-linear Functions",
+"difficulty": 1,
+"stem": "The function f is defined by f(x) = 8x^3 + 4. What is the value of f(2)?",
+"choices": null,
+"correct_answer": "68",
+"rationale": "Substituting 2 for x yields f(2) = 8(2)^3 + 4 = 8(8) + 4 = 68.",
+"needs_visual_review": false
+},
+{
+"external_id": "T8-MATH-M2-Q08",
+"skill_name": "Linear Equations & Inequalities",
+"difficulty": 1,
+"stem": "The function f is defined by f(x) = (1/10)x - 2. What is the y-intercept of the graph of y = f(x) in the xy-plane?",
+"choices": ["A) (-2, 0)", "B) (0, -2)", "C) (0, 1/10)", "D) (1/10, 0)"],
+"correct_answer": "B",
+"rationale": "The y-intercept of a function's graph is the point where x = 0. Substituting 0 for x in f(x)=(1/10)x-2 yields f(0) = 0 - 2 = -2. Therefore, the y-intercept of the graph of y=f(x) is (0, -2).",
+"needs_visual_review": false
+},
+{
+"external_id": "T8-MATH-M2-Q09",
+"skill_name": "Linear Equations & Inequalities",
+"difficulty": 1,
+"stem": "A producer is creating a video with a length of 70 minutes. The video will consist of segments that are 1 minute long and segments that are 3 minutes long. Which equation represents this situation, where x represents the number of 1-minute segments and y represents the number of 3-minute segments?",
+"choices": ["A) 4xy = 70", "B) 4(x + y) = 70", "C) 3x + y = 70", "D) x + 3y = 70"],
+"correct_answer": "D",
+"rationale": "The total length of the video is 1*x + 3*y, or x + 3y, minutes. Since the video is 70 minutes long, the equation x + 3y = 70 represents this situation.",
+"needs_visual_review": false
+},
+{
+"external_id": "T8-MATH-M2-Q10",
+"skill_name": "Polynomials & Non-linear Functions",
+"difficulty": 2,
+"stem": "The function f is defined by f(x) = 7x^3. In the xy-plane, the graph of y = g(x) is the result of shifting the graph of y = f(x) down 2 units. Which equation defines function g? [UNCLEAR TRANSCRIPTION -- VERIFY AGAINST PDF: the answer choice formatting was badly garbled in source extraction]",
+"choices": ["A) g(x) = 7(x - 2)^3", "B) g(x) = 7x^3 - 3", "C) g(x) = 7x^3 + 2", "D) g(x) = 7x^3 - 2"],
+"correct_answer": "D",
+"rationale": "If the graph of y=g(x) is the result of shifting the graph of y=f(x) down k units, then g(x) = f(x) - k. Substituting 7x^3 for f(x) and 2 for k yields g(x) = 7x^3 - 2.",
+"needs_visual_review": true
+},
+{
+"external_id": "T8-MATH-M2-Q11",
+"skill_name": "Systems of Equations",
+"difficulty": 1,
+"stem": "y = -3x\n4x + y = 15\nThe solution to the given system of equations is (x, y). What is the value of x?",
+"choices": ["A) 1", "B) 5", "C) 15", "D) 45"],
+"correct_answer": "C",
+"rationale": "Substituting -3x for y from the first equation into the second equation yields 4x + (-3x) = 15, which simplifies to x = 15.",
+"needs_visual_review": false
+},
+{
+"external_id": "T8-MATH-M2-Q12",
+"skill_name": "Trigonometry",
+"difficulty": 2,
+"stem": "In the right triangle shown, side BC (opposite angle A) has length 35 units and hypotenuse AB has length 171 units. What is the value of sin(A)?",
+"choices": ["A) 1/171", "B) 35/171", "C) 171/35", "D) 171"],
+"correct_answer": "B",
+"rationale": "The sine of an acute angle in a right triangle is the ratio of the length of the side opposite that angle to the length of the hypotenuse. Since BC (opposite angle A) has length 35 and AB (the hypotenuse) has length 171, sin(A) = 35/171.",
+"needs_visual_review": true
+},
+{
+"external_id": "T8-MATH-M2-Q13",
+"skill_name": "Area & Volume",
+"difficulty": 1,
+"stem": "What is the area, in square centimeters, of a rectangle with a length of 34 centimeters (cm) and a width of 29 cm?",
+"choices": null,
+"correct_answer": "986",
+"rationale": "The area of a rectangle is A = length times width. Substituting 34 for length and 29 for width yields A = 34 * 29 = 986 square centimeters.",
+"needs_visual_review": false
+},
+{
+"external_id": "T8-MATH-M2-Q14",
+"skill_name": "Ratios, Rates & Proportions",
+"difficulty": 2,
+"stem": "If x/y = 4 and x/(ny) = 4/24, what is the value of n?",
+"choices": null,
+"correct_answer": "24",
+"rationale": "The equation x/(ny) can be rewritten as (1/n)(x/y). Substituting 4 for x/y yields (1/n)(4) = 4/24. Multiplying both sides by n and simplifying gives n = 24.",
+"needs_visual_review": false
+},
+{
+"external_id": "T8-MATH-M2-Q15",
+"skill_name": "Ratios, Rates & Proportions",
+"difficulty": 2,
+"stem": "A bowl contains 20 ounces of water. When the bowl is uncovered, the amount of water in the bowl decreases by 1 ounce every 4 days. If 9 ounces of water remain in this bowl, for how many days has it been uncovered?",
+"choices": ["A) 3", "B) 7", "C) 36", "D) 44"],
+"correct_answer": "D",
+"rationale": "The bowl has lost 20 - 9 = 11 ounces of water. Since the water decreases by 1 ounce every 4 days, letting t be the number of days uncovered gives t/4 = 11, so t = 44.",
+"needs_visual_review": false
+},
+{
+"external_id": "T8-MATH-M2-Q16",
+"skill_name": "Linear Equations & Inequalities",
+"difficulty": 2,
+"stem": "If 9(4x - 3) + 2 = 8(4x - 3) + 18, what is the value of 4x - 3?",
+"choices": ["A) -16", "B) -4", "C) 4", "D) 16"],
+"correct_answer": "D",
+"rationale": "Subtracting 2 from both sides yields 9(4x-3) = 8(4x-3) + 16. Subtracting 8(4x-3) from both sides yields (4x-3) = 16.",
+"needs_visual_review": false
+},
+{
+"external_id": "T8-MATH-M2-Q17",
+"skill_name": "Linear Equations & Inequalities",
+"difficulty": 2,
+"stem": "A certain township consists of a 5-hectare industrial park and a 24-hectare neighborhood. The total number of trees in the township is 4,529. The equation 5x + 24y = 4,529 represents this situation. Which of the following is the best interpretation of x in this context?",
+"choices": ["A) The average number of trees per hectare in the industrial park", "B) The average number of trees per hectare in the neighborhood", "C) The total number of trees in the industrial park", "D) The total number of trees in the neighborhood"],
+"correct_answer": "A",
+"rationale": "The total number of trees in an area equals its size in hectares times the average number of trees per hectare. Since 5x represents the number of trees in the 5-hectare industrial park, x must represent the average number of trees per hectare in the industrial park.",
+"needs_visual_review": false
+},
+{
+"external_id": "T8-MATH-M2-Q18",
+"skill_name": "Polynomials & Non-linear Functions",
+"difficulty": 2,
+"stem": "Which expression is equivalent to a^(11/12), where a > 0?",
+"choices": ["A) the 12th root of a^132", "B) the 144th root of a^132", "C) the 121st root of a^132", "D) the 11th root of a^132"],
+"correct_answer": "B",
+"rationale": "Multiplying the exponent 11/12 by 12/12 gives the equivalent exponent 132/144, so a^(11/12) = a^(132/144) = (a^132)^(1/144). An expression of the form m^(1/k), where m>0 and k>0, is equivalent to the kth root of m. Therefore, (a^132)^(1/144) is equivalent to the 144th root of a^132.",
+"needs_visual_review": false
+},
+{
+"external_id": "T8-MATH-M2-Q19",
+"skill_name": "Statistics & Probability",
+"difficulty": 3,
+"stem": "The dot plots represent the distributions of values in data sets A and B. Which of the following statements must be true? I. The median of data set A is equal to the median of data set B. II. The standard deviation of data set A is equal to the standard deviation of data set B.",
+"choices": ["A) I only", "B) II only", "C) I and II", "D) Neither I nor II"],
+"correct_answer": "A",
+"rationale": "Both dot plots are symmetric with an odd number of values, so each median is the middle value: 13 for both data set A and data set B, making statement I true. Data sets A and B have the same frequencies at values 11, 12, 14, and 15, but data set A has a frequency of 1 at the extreme values 10 and 16, while data set B has a frequency of 2 at those values. Since both sets have the same mean (13) but data set B has more values farther from the mean, data set B has a larger standard deviation, making statement II false. Therefore, only statement I must be true.",
+"needs_visual_review": true
+},
+{
+"external_id": "T8-MATH-M2-Q20",
+"skill_name": "Triangles & Circles",
+"difficulty": 2,
+"stem": "A circle has center O, and points R and S lie on the circle. In triangle ORS, the measure of angle ROS is 88 degrees. What is the measure of angle RSO, in degrees? (Disregard the degree symbol when entering your answer.)",
+"choices": null,
+"correct_answer": "46",
+"rationale": "Since OR and OS are both radii, OR = OS, so triangle ORS is isosceles and the base angles angle RSO and angle ORS are congruent. Letting x degrees represent the measure of angle RSO, the triangle angle sum gives 88 + x + x = 180, so 2x = 92, and x = 46.",
+"needs_visual_review": false
+},
+{
+"external_id": "T8-MATH-M2-Q21",
+"skill_name": "Percentages",
+"difficulty": 2,
+"stem": "The regular price of a shirt at a store is $11.70. The sale price of the shirt is 80% less than the regular price, and the sale price is 30% greater than the store's cost for the shirt. What was the store's cost, in dollars, for the shirt? (Disregard the $ sign when entering your answer. For example, if your answer is $4.97, enter 4.97)",
+"choices": null,
+"correct_answer": "1.8",
+"rationale": "The sale price is 80% less than $11.70, or 11.70(1 - 0.80) = 11.70(0.2) = $2.34. Since the sale price is 30% greater than the store's cost x, 2.34 = x(1.30). Dividing both sides by 1.3 yields x = 1.80.",
+"needs_visual_review": false
+},
+{
+"external_id": "T8-MATH-M2-Q22",
+"skill_name": "Area & Volume",
+"difficulty": 2,
+"stem": "A cube has an edge length of 68 inches. A solid sphere with a radius of 34 inches is inside the cube, such that the sphere touches the center of each face of the cube. To the nearest cubic inch, what is the volume of the space in the cube not taken up by the sphere?",
+"choices": ["A) 149,796", "B) 164,500", "C) 190,955", "D) 310,800"],
+"correct_answer": "A",
+"rationale": "The volume of the cube is 68^3 = 314,432 cubic inches. The volume of the sphere is (4/3)*pi*(34)^3, or approximately 164,636 cubic inches. Subtracting the volume of the sphere from the volume of the cube gives 314,432 - 164,636 = 149,796 cubic inches.",
+"needs_visual_review": false
+},
+{
+"external_id": "T8-MATH-M2-Q23",
+"skill_name": "Systems of Equations",
+"difficulty": 2,
+"stem": "y = 6x + 18. One of the equations in a system of two linear equations is given. The system has no solution. Which equation could be the second equation in the system?",
+"choices": ["A) -6x + y = 18", "B) -6x + y = 22", "C) -12x + y = 36", "D) -12x + y = 18"],
+"correct_answer": "B",
+"rationale": "A system of two linear equations has no solution if the lines are parallel and distinct. Rewriting y=6x+18 in standard form gives -6x + y = 18. The equation in choice B, -6x + y = 22, has coefficients proportional to those of the given equation (same ratio for x and y) but a different constant, so the lines are parallel and distinct, meaning the system has no solution.",
+"needs_visual_review": false
+},
+{
+"external_id": "T8-MATH-M2-Q24",
+"skill_name": "Triangles & Circles",
+"difficulty": 3,
+"stem": "Triangles PQR and LMN are graphed in the xy-plane. Triangle PQR has vertices P, Q, and R at (4, 5), (4, 7), and (6, 5), respectively. Triangle LMN has vertices L, M, and N at (4, 5), (4, 7+k), and (6+k, 5), respectively, where k is a positive constant. If the measure of angle Q is t degrees, what is the measure of angle N?",
+"choices": ["A) (90 - (t - k)) degrees", "B) (90 - (t + k)) degrees", "C) (90 - t) degrees", "D) (90 + k) degrees"],
+"correct_answer": "C",
+"rationale": "Triangle PQR is a right isosceles triangle with the right angle at P and angle Q = angle R = 45 degrees, so t = 45. Triangle LMN, formed the same way with legs of length (2+k) instead of 2, is also a right isosceles triangle with the right angle at L and angle M = angle N = 45 degrees. Of the given choices, only (90 - t) degrees equals 45 degrees (since t=45), so the measure of angle N is (90 - t) degrees.",
+"needs_visual_review": false
+},
+{
+"external_id": "T8-MATH-M2-Q25",
+"skill_name": "Systems of Equations",
+"difficulty": 3,
+"stem": "2x + 3y = 7\n10x + 15y = 35\nFor each real number r, which of the following points lies on the graph of each equation in the xy-plane for the given system? [UNCLEAR TRANSCRIPTION -- VERIFY AGAINST PDF: the answer choice formatting was badly garbled in source extraction]",
+"choices": ["A) (r/5 + 7, -r/5 + 35)", "B) (-3/2 r + 7/2, r)", "C) (r, 2/3 r + 7/3)", "D) (r, -3/2 r + 7/2)"],
+"correct_answer": "B",
+"rationale": "The second equation is the first equation multiplied by 5, so the two equations are equivalent and their graphs are coincident lines -- any point satisfying one satisfies both. Substituting the coordinates of choice B, x = -3/2 r + 7/2 and y = r, into the first equation gives 2(-3/2 r + 7/2) + 3r = 7, which simplifies to -3r + 7 + 3r = 7, or 7 = 7, a true statement. Therefore, the point (-3/2 r + 7/2, r) lies on the graph of each equation.",
+"needs_visual_review": true
+},
+{
+"external_id": "T8-MATH-M2-Q26",
+"skill_name": "Quadratics & Parabolas",
+"difficulty": 3,
+"stem": "x^2/sqrt(x^2 - c^2) = c^2/sqrt(x^2 - c^2) + 39. In the given equation, c is a positive constant. Which of the following is one of the solutions to the given equation?",
+"choices": ["A) -c", "B) -c^2 - 39^2", "C) -sqrt(39^2 - c^2)", "D) -sqrt(c^2 + 39^2)"],
+"correct_answer": "D",
+"rationale": "Working through the equation and squaring both sides eventually isolates x^2: x^2 = c^2 + 39^2. Taking the square root of both sides gives two solutions, x = sqrt(c^2+39^2) and x = -sqrt(c^2+39^2). Therefore, of the given choices, -sqrt(c^2+39^2) is one of the solutions to the given equation.",
+"needs_visual_review": true
+},
+{
+"external_id": "T8-MATH-M2-Q27",
+"skill_name": "Quadratics & Parabolas",
+"difficulty": 2,
+"stem": "The quadratic function g models the depth, in meters, below the surface of the water of a seal t minutes after the seal entered the water during a dive. The function estimates that the seal reached its maximum depth of 302.4 meters 6 minutes after it entered the water and then reached the surface of the water 12 minutes after it entered the water. Based on the function, what was the estimated depth, to the nearest meter, of the seal 10 minutes after it entered the water?",
+"choices": null,
+"correct_answer": "168",
+"rationale": "Since the maximum depth of 302.4 meters occurs at t=6, the function can be written in vertex form as g(t) = a(t-6)^2 + 302.4. Since the seal reaches the surface at t=12, g(12)=0: 0 = a(12-6)^2 + 302.4, so 0 = 36a + 302.4, giving a = -8.4. Substituting into g(t) = -8.4(t-6)^2 + 302.4 and evaluating at t=10: g(10) = -8.4(4)^2 + 302.4 = -8.4(16) + 302.4 = -134.4 + 302.4 = 168.",
+"needs_visual_review": false
+}
+]
