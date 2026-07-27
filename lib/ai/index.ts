@@ -105,17 +105,35 @@ export async function callAnthropicWithCeiling(
   const supportsCustomTemperature = model !== 'claude-sonnet-5';
 
   try {
-    const response = await anthropic.messages.create({
+    // claude-sonnet-5 invokes extended thinking by default on non-trivial
+    // prompts, and thinking tokens are drawn from the same `max_tokens`
+    // budget as the answer — confirmed live: a 400-token budget on a real
+    // tutor-explanation prompt was entirely consumed by a 399-token
+    // thinking block, hit stop_reason 'max_tokens', and returned ZERO text
+    // (the "degrade, never block" fallback never triggers here since this
+    // isn't an error, just empty content that fails downstream
+    // JSON.parse/schema checks or renders blank). These are short
+    // pedagogical completions (hints/explanations/lessons), not tasks
+    // needing visible chain-of-thought, so thinking is disabled outright
+    // rather than trying to size maxTokens against an unpredictable
+    // thinking budget. `thinking` predates this SDK version's (0.24.3)
+    // published types, so the request body is built as a loosely-typed
+    // object rather than the SDK's `MessageCreateParams`.
+    const requestParams: Record<string, unknown> = {
       model,
       max_tokens: maxTokens,
       ...(supportsCustomTemperature ? { temperature } : {}),
+      thinking: { type: 'disabled' },
       system: systemPrompt,
       messages: [{ role: 'user', content: userMessage }],
-    });
+    };
+    const response = await anthropic.messages.create(requestParams as any);
 
     // claude-sonnet-5 prepends a `thinking` content block before the `text`
     // block (confirmed live), so the first block is no longer reliably the
     // answer — find the first `text` block instead of assuming index 0.
+    // (Kept as a defensive find() even with thinking disabled above, in
+    // case a future call site re-enables it.)
     const textBlock = response.content.find((block) => block.type === 'text');
     const contentText = textBlock && textBlock.type === 'text' ? textBlock.text : '';
     const inputTokens = response.usage?.input_tokens ?? null;

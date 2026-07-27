@@ -4,7 +4,7 @@ type: session-log-index
 status: active
 owner: Sienna (Oni Technologies LLC)
 created: 2026-07-10
-updated: 2026-07-26
+updated: 2026-07-27
 source_of_truth: false
 related: ["AGENT_HANDOFF.md", "CLAUDE.md"]
 ---
@@ -66,4 +66,5 @@ reconstruction for chronological sorting, not a verified timestamp.
 | [2026-07-26_2130_math-t5-t11-import-complete.md](2026-07-26_2130_math-t5-t11-import-complete.md) | Claude (Sonnet 5) | User chose manual per-test Math method. Imported Math T5-T11 (378q) via parallel transcription agents + vision-review QC pass, catching 17 real transcription errors across 6 tests. Bank: 1,035q total, 0 SEVERE — both RW and Math now complete for all 8 SAT tests. |
 | [2026-07-26_2245_audit-fix-t8-rationale-cleanup.md](2026-07-26_2245_audit-fix-t8-rationale-cleanup.md) | Claude (Sonnet 5) | Pushed 6 commits (fixed non-recursive .gitignore bug first). Fixed audit-question-bank.ts (1000-row cap + false-positive section-check bug). T8 RW "stale rationale" turned out already-correct, just a leftover tag — stripped, 0 API calls. Bank: 1,035q, 0 severe, 0 warnings. |
 | [2026-07-26_2339_ai-pipeline-dead-model-fix.md](2026-07-26_2339_ai-pipeline-dead-model-fix.md) | Claude (Sonnet 5) | Planned manual browser E2E test pivoted to code+live-data review (no password entry). Found the entire AI tutoring pipeline had been dead since launch — `ai_log` showed 100% fallback-error. Root-caused 3 compounding bugs in `lib/ai/index.ts` (retired model IDs, rejected `temperature` param, wrong content-block index) and fixed all three, verified against the real API. Also fixed a fallback-vs-real misreporting bug and an AI-hallucinated `skill.id` in `study/lesson`. Uncommitted — pending user go-ahead. |
+| [2026-07-27_0100_ai-pipeline-backend-e2e-verify-thinking-fix.md](2026-07-27_0100_ai-pipeline-backend-e2e-verify-thinking-fix.md) | Claude (Sonnet 5) | User asked for backend testing instead of browser login. Ran the real hint/explanation/classify/study_lesson pipeline against live data via a service-role script (no credentials). Found a 4th bug: claude-sonnet-5's extended thinking silently ate the whole `max_tokens` budget on real prompts, producing empty (explanation) or truncated-JSON (study_lesson) output with no error. Fixed by disabling thinking on every call. Re-ran: 20/20 checks passed — pipeline is genuinely live end-to-end. Uncommitted — pending user go-ahead. |
 

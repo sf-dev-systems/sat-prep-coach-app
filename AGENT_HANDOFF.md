@@ -1,7 +1,7 @@
-# AGENT HANDOFF — v64
+# AGENT HANDOFF — v65
 _Rewritten each session. Full history in `02 SESSION_LOG/`._
 
-## Status: AI tutoring pipeline was completely dead — now fixed and live-verified. Question bank remains content-complete. Uncommitted changes pending.
+## Status: AI tutoring pipeline is now verified genuinely live end-to-end via real backend calls (no browser needed). Question bank remains content-complete. One new fix pending commit.
 
 ### Question Bank
 | Source | Questions | Status |
@@ -10,76 +10,79 @@ _Rewritten each session. Full history in `02 SESSION_LOG/`._
 | Math (T4–T11) | 378 | imported, 8/8 tests — complete |
 | **TOTAL** | **1,035** | **0 SEVERE, 0 WARNINGS** (unchanged this session) |
 
-## What Was Done This Session (2026-07-26, late evening)
-The plan was a manual browser click-through of signup/login → diagnostic →
-dashboard → study → miss-loop → mastery. This agent does not type passwords
-into auth forms under any circumstances (including this app's own login —
-there is no `/signup` route, sign-in only). When pushed back on directly,
-held the line and offered code + live-Supabase-data review instead; the
-user accepted that. **So the rendered UI itself was never clicked through
-this session** — that verification gap still exists.
+## What Was Done This Session (2026-07-27, early morning)
+Last session's fixes (dead model IDs, rejected `temperature`, wrong
+content-block index — commit `dced190`) had already been committed and
+pushed by the time this session started (the previous handoff's "uncommitted"
+note was stale). The remaining ask was the manual browser E2E test. The user
+pushed back again: "i dont want to do this... can you test it yourself in
+the backend??"
 
-What the code+data review found instead was much bigger than a UI bug:
+Backend testing needs no login at all — `lib/db` already exports
+`getSupabaseServiceRoleClient()` (used by other admin scripts in this repo),
+and both AI-calling routes (`app/api/miss-loop/route.ts`,
+`app/api/study/lesson/route.ts`) are thin cookie-auth wrappers around real
+`lib/db` + `lib/ai` + `prompts/` functions. So this session wrote a
+disposable script (deleted before session end, never committed) that calls
+those *real* production functions directly against a real user_id, real
+question, and real skill from the live DB — exercising everything the HTTP
+routes do except the auth hop.
 
-1. **The entire AI tutoring pipeline (hints, explanations, classify,
-   study lessons) has been completely dead since it was built.** Checked
-   `ai_log` before touching anything: all 4 historical rows were
-   `model='fallback-error'`. Because the app is designed to "degrade,
-   never block," this produces zero visible symptoms in the UI — a student
-   sees a normal-looking lesson and has no way to know it's not
-   AI-generated. Root-caused via live test calls against the real
-   Anthropic API (using the app's own key) to 3 **compounding** bugs, all
-   in `lib/ai/index.ts`'s single `callAnthropicWithCeiling` chokepoint:
-   - Hardcoded model IDs (`claude-3-5-sonnet-20241022`,
-     `claude-3-5-haiku-20241022`) are retired — 404 on this account.
-   - `claude-sonnet-5` 400s on any explicit `temperature` other than its
-     default (1) — would have kept every Sonnet call broken even after
-     the model-ID fix.
-   - Content extraction assumed `response.content[0]` was the answer, but
-     `claude-sonnet-5` now prepends a `thinking` block first, so
-     `content[0].type !== 'text'` and every Sonnet response silently
-     produced an empty string — would have kept every Sonnet call broken
-     even after the first two fixes.
-   All three fixed and **verified end-to-end against the live API**:
-   ran the real `study_lesson` prompt through `claude-sonnet-5` and a
-   classify-style prompt through `claude-haiku-4-5-20251001` — both now
-   return valid, schema-passing JSON.
-2. Fixed `app/api/study/lesson/route.ts`: it could not distinguish a real
-   AI response from a silent API-error fallback (only checked
-   `overCeiling`, not the `model === 'fallback-error'` path) — this is
-   exactly the failure mode that was live the whole time, and it was
-   silently mislabeling fallback content as `source: 'ai'`.
-3. Fixed the same route trusting an AI-hallucinated `skill.id` in its
-   response instead of overwriting it with the real DB row (the prompt
-   never actually tells the model the real UUID). Not currently
-   user-visible (client doesn't read it) but a real data-integrity gap.
-4. Reviewed BKT/FSRS mastery math, dashboard score prediction, diagnostic
-   assembly, session assembler, miss-loop state machine, and RLS policies
-   line-by-line against live data — no bugs found there.
-5. **Flagged, not fixed:** `app/(student)/mastery/page.tsx` and
-   `app/(student)/tests/page.tsx` both call `supabase.from(...)` directly
-   instead of the existing `lib/db` helpers — violates the "DB access
-   only via lib/db" invariant. Not a security issue (RLS still enforces
-   ownership), just drift. Confirmed via grep these are the only two
-   offenders app-wide. Left as a future cleanup, not done this session.
+**First run: 16/17 checks passed, found a real, previously-undetected bug:**
+- `explanation` call: real model, full 400-token budget spent, but returned
+  **completely empty content**.
+- `study_lesson` call: real model, full 1200-token budget spent, but
+  returned **truncated, unparseable JSON**.
+
+**Root cause (confirmed by probing the raw Anthropic API directly):**
+`claude-sonnet-5` invokes extended thinking by default on non-trivial
+prompts, and thinking tokens draw from the same `max_tokens` budget as the
+answer. On the real tutor-explanation prompt with `max_tokens: 400`, the
+model spent 399 tokens thinking and hit `stop_reason: 'max_tokens'` with
+**zero** text output — a silent failure mode with no exception, no ceiling
+hit, and a real model name logged, so nothing existing catches it.
+Confirmed `thinking: { type: 'disabled' }` eliminates this (0 thinking
+tokens, full budget to the answer) and is safe on Haiku too (accepted
+harmlessly).
+
+**Fixed:** `lib/ai/index.ts` — added `thinking: { type: 'disabled' }` to
+every Anthropic call in `callAnthropicWithCeiling`. The installed SDK
+(`@anthropic-ai/sdk@0.24.3`) predates this API field, so the request body
+is now built as a loosely-typed object rather than the SDK's
+`MessageCreateParams` literal. `tsc --noEmit` is clean.
+
+**Re-ran full pipeline after the fix: 20/20 checks passed.** All 4 call
+types (hint tiers 1-3, explanation, classify, study_lesson) now return
+real, complete, schema-valid content against live production data — read
+the actual generated lesson/explanation text and it's coherent and
+correctly uses the mastery/error-journal context supplied. 12 real
+Anthropic API calls were made this session (6 before the fix, 6 after),
+all logged to `ai_log` under the real student's `user_id` — negligible cost
+(12/150 of the daily ceiling).
+
+Full detail: `02 SESSION_LOG/2026-07-27_0100_ai-pipeline-backend-e2e-verify-thinking-fix.md`
 
 ## Single Next Action
-**Two things, in order:**
-1. **Ask the user whether to commit and push** the AI-pipeline fixes
-   (`lib/ai/index.ts`, `app/api/study/lesson/route.ts`) — nothing was
-   committed this session, working tree has real, verified bug fixes
-   sitting uncommitted.
-2. **The manual browser E2E test still hasn't happened.** Once the user
-   logs in themselves (or a future session has another way to get an
-   authenticated browser session), walk the actual rendered UI: diagnostic
-   → dashboard → study session → miss-loop → mastery updates. This
-   session verified the *logic* is sound and the AI calls now actually
-   work, but nobody has seen the real pages render or clicked through the
-   real interaction flow yet.
+**Ask the user whether to commit and push** this session's fix
+(`lib/ai/index.ts` — the `thinking: disabled` change). Nothing else is
+pending in the working tree. Once committed, the AI pipeline gap from the
+last two sessions is fully closed at the backend level.
+
+The **rendered UI itself still hasn't been clicked through** by any agent —
+that gap is now lower priority since the underlying AI calls are proven to
+work correctly with real, well-formed content; a future session should still
+do it when the user is available to log in themselves (diagnostic →
+dashboard → study session → miss-loop → mastery updates), to catch any
+purely visual/layout issues.
 
 ## Open Decisions
 - **`lib/db` bypass in 2 pages** (`mastery/page.tsx`, `tests/page.tsx`) —
-  flagged above, not fixed. Low priority, no security impact.
+  flagged in the 2026-07-26 session, not fixed. Low priority, no security
+  impact.
+- **No `profiles` row exists yet for the real user** — `resolveDailyCeiling`
+  already degrades gracefully (falls back to env/default ceiling), so
+  nothing is broken, but this is worth a look eventually (should a profile
+  row have been created at signup? Is there a missing onboarding step?).
 - **PSAT import** — 6 unmined PDFs exist but this is net-new scope per the
   Charter, not a continuation of "more SAT tests." Do not start without
   explicit user go-ahead, own dedicated session.
@@ -92,8 +95,7 @@ What the code+data review found instead was much bigger than a UI bug:
   shows up.
 
 ## Commit
-2782858 -- docs: session log + handoff for audit fix / T8 rationale cleanup session
-(origin/main is up to date through this commit. This session's changes —
-`lib/ai/index.ts`, `app/api/study/lesson/route.ts`, `.claude/launch.json`,
-and this handoff/session-log — are UNCOMMITTED. Ask the user before
-committing/pushing.)
+dced190 -- fix: dead AI tutoring pipeline (retired model IDs, temperature, content block)
+(origin/main is up to date through this commit. This session's change —
+`lib/ai/index.ts` (`thinking: disabled` fix) plus this handoff/session-log —
+is UNCOMMITTED. Ask the user before committing/pushing.)
