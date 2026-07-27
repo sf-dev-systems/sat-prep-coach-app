@@ -46,17 +46,35 @@ interface AuditIssue {
   issue: string
 }
 
+async function fetchAllQuestions() {
+  const PAGE_SIZE = 1000
+  const all: Record<string, unknown>[] = []
+  let from = 0
+
+  while (true) {
+    const { data, error } = await supabase
+      .from('questions')
+      .select('id, external_id, skill_id, difficulty, choices, correct_answer, rationale, validated, source, skills(id, section)')
+      .range(from, from + PAGE_SIZE - 1)
+
+    if (error) {
+      console.error('Failed to fetch questions:', error.message)
+      process.exit(1)
+    }
+
+    if (!data || data.length === 0) break
+    all.push(...data)
+    if (data.length < PAGE_SIZE) break
+    from += PAGE_SIZE
+  }
+
+  return all
+}
+
 async function main() {
   console.log('Fetching questions...')
 
-  const { data: questions, error } = await supabase
-    .from('questions')
-    .select('id, external_id, skill_id, difficulty, choices, correct_answer, rationale, validated, source, skills(id)')
-
-  if (error) {
-    console.error('Failed to fetch questions:', error.message)
-    process.exit(1)
-  }
+  const questions = await fetchAllQuestions()
 
   if (!questions || questions.length === 0) {
     console.log('No questions found in database.')
