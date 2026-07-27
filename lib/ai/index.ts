@@ -92,22 +92,32 @@ export async function callAnthropicWithCeiling(
   // Haiku for classification, Sonnet for everything else (tutoring, generation, reports, coaching)
   const isClassification = callType === 'classify';
   const model = isClassification
-    ? 'claude-3-5-haiku-20241022'
-    : 'claude-3-5-sonnet-20241022'; // Defaulting to Sonnet
+    ? 'claude-haiku-4-5-20251001'
+    : 'claude-sonnet-5'; // Defaulting to Sonnet
 
   // 3. Make Anthropic API Call
   const anthropic = getAnthropicClient();
-  
+
+  // claude-sonnet-5 rejects any explicit `temperature` other than its
+  // default (1) with a 400 invalid_request_error ("deprecated for this
+  // model") — confirmed live against this account. Haiku still accepts a
+  // custom temperature, so only omit it for Sonnet calls.
+  const supportsCustomTemperature = model !== 'claude-sonnet-5';
+
   try {
     const response = await anthropic.messages.create({
       model,
       max_tokens: maxTokens,
-      temperature,
+      ...(supportsCustomTemperature ? { temperature } : {}),
       system: systemPrompt,
       messages: [{ role: 'user', content: userMessage }],
     });
 
-    const contentText = response.content[0].type === 'text' ? response.content[0].text : '';
+    // claude-sonnet-5 prepends a `thinking` content block before the `text`
+    // block (confirmed live), so the first block is no longer reliably the
+    // answer — find the first `text` block instead of assuming index 0.
+    const textBlock = response.content.find((block) => block.type === 'text');
+    const contentText = textBlock && textBlock.type === 'text' ? textBlock.text : '';
     const inputTokens = response.usage?.input_tokens ?? null;
     const outputTokens = response.usage?.output_tokens ?? null;
 

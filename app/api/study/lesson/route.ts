@@ -158,6 +158,16 @@ export async function POST(req: NextRequest) {
     return NextResponse.json(buildStaticFallback(skill, true));
   }
 
+  // 8b. callAnthropicWithCeiling degrades to fallbackRationale on a hard API
+  // error too (not just over-ceiling) — model is stamped 'fallback-error' in
+  // that case. Without this check, aiResult.content is our own fallback JSON
+  // parroted back through the schema validation below and stamped
+  // source: 'ai' in step 10, which would misreport a failed AI call as a
+  // genuine one and suppress the "AI is resting" notice client-side.
+  if (aiResult.model === 'fallback-error') {
+    return NextResponse.json(buildStaticFallback(skill, false));
+  }
+
   // 9. Parse and validate AI response
   let lessonJson: unknown;
   try {
@@ -173,9 +183,19 @@ export async function POST(req: NextRequest) {
     return NextResponse.json(buildStaticFallback(skill, false));
   }
 
-  // 10. Return validated lesson — stamp source and context flags
+  // 10. Return validated lesson — stamp source/context flags and overwrite
+  // `skill` with the trusted DB row rather than the AI's echoed copy. The
+  // prompt's user message never actually tells the model the real skill.id
+  // (only name/section/domain), so an AI-authored id is a guess, not data —
+  // same reasoning as why context flags below are always server-stamped.
   const lesson: StudyLessonResponse = {
     ...validated.data,
+    skill: {
+      id: skill.id,
+      name: skill.name,
+      section: skill.section,
+      domain: skill.domain,
+    },
     context: {
       ...validated.data.context,
       usedErrorJournal: errorJournal.length > 0,
