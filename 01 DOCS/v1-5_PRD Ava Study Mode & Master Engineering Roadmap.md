@@ -97,6 +97,8 @@ To protect future scalability (such as moving from a single-user MVP to a multi-
     
 - **D5:** Offline practice session local caching.
     
+- **D6 (added 2026-07-27):** PSAT practice-test import as question-bank content. 6 unmined PSAT PDFs exist (PSAT 10, PSAT 8/9, PSAT NMSQT — 2 tests each) but this was never part of the v1 content plan; PSAT appears in this PRD only as a one-time score-baseline input to the prediction model (§10), not as a question source. Net-new scope, not a continuation of the SAT T4–T11 import. Requires a difficulty-normalization decision (PSAT and SAT are scaled differently) before any import work starts.
+    
 
 ## 4. Complete Database Schema
 
